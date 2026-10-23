@@ -19,5 +19,6 @@
   <ItemGroup Condition="'$(Configuration)' == 'ExportRelease'">
     <Compile Remove="tests/**" />
     <Compile Remove="addons/ReusableGameSystems/tests/**" />
+    <Compile Remove="gdunit4_testadapter_v5/**" />
   </ItemGroup>
 </Project>

@@ -16,3 +16,10 @@ config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 [dotnet]
 
 project/assembly_name="DontBeLate"
+
+[autoload]
+
+Events="*res://scenes/autoload/events.tscn"
+Rng="*res://scenes/autoload/rng.tscn"
+Runs="*res://scenes/autoload/runs.tscn"
+Clock="*res://scenes/autoload/clock.tscn"
