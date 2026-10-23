@@ -55,6 +55,8 @@ If a library system is missing something this game needs, **improve the library 
 - **Loose coupling:** systems communicate through the event bus and signals, not direct references.
 - **Autoloads only for true globals:** event bus, clock, run manager, RNG, save. Everything else is a node or resource. Autoloads are scenes in `scenes/autoload/` (so their exports can be tuned) named `Events`, `Rng`, `Runs`, `Clock`; an autoload name can't match its `[GlobalClass]` name. From C#, use the class's static `Instance` (e.g. `GameClock.Instance`).
 - **Determinism:** all randomness goes through the seeded RNG service so any run can be replayed from its seed.
+- **Input actions** (in `project.godot`): `move_forward/back/left/right`, `sprint`, `jump`, `crouch`, `interact`, `interact_alt`, `interact_alt2`, `drop`, `throw`. Use these names; add new actions in the editor's Input Map rather than hardcoding keys.
+- **Player:** start from the library's `Characters/FirstPersonPlayer.tscn` (motor, camera, interactor, abilities, inventory) instead of building a new controller.
 - **Custom resources and nodes:** mark reusable `Resource` and `Node` classes with `[GlobalClass]` so they appear in the editor's Create dialog and inspector.
 
 ## Code style
