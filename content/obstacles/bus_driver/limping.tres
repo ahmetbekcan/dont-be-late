@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BoardingRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/HasStatusCondition.cs" id="1_pnfn8"]
+[ext_resource type="Script" path="res://src/Stages/BoardingRule.cs" id="2_nn81p"]
+
+[sub_resource type="Resource" id="Resource_gqceg"]
+script = ExtResource("1_pnfn8")
+StatusId = "limping"
+
+[resource]
+script = ExtResource("2_nn81p")
+Id = "limping"
+When = SubResource("Resource_gqceg")
+DriverLine = "Rough morning, huh?"
+Refuse = false

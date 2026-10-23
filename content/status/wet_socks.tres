@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="1_r3q05"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="2_m7p4v"]
+
+[sub_resource type="Resource" id="Resource_r3j4v"]
+script = ExtResource("1_r3q05")
+EventName = "toast"
+Payload = "Squelch. Your socks are soaked."
+
+[resource]
+script = ExtResource("2_m7p4v")
+Id = "wet_socks"
+DisplayName = "Wet socks"
+Duration = 120.0
+Multipliers = Dictionary[String, float]({
+"move_speed": 0.9,
+"sprint_speed": 0.9
+})
+OnApplied = SubResource("Resource_r3j4v")

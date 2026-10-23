@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MeterDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterDefinition.cs" id="1_ic1of"]
+
+[resource]
+script = ExtResource("1_ic1of")
+Id = "wetness"
+DisplayName = "Wetness"
+DriftPerSecond = -0.5
+Thresholds = PackedFloat32Array(25, 60)

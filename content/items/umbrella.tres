@@ -6,5 +6,5 @@
 script = ExtResource("1_1jtxe")
 Id = "umbrella"
 DisplayName = "Umbrella"
-Description = "Keeps you dry. Mostly."
+Description = "Keeps the rain off. Mostly."
 EquipSlot = "hand"

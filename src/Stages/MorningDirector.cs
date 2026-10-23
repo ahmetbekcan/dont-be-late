@@ -7,10 +7,13 @@ using Godot;
 using ReusableGameSystems.Clock;
 using ReusableGameSystems.Consequences;
 using ReusableGameSystems.Events;
-using ReusableGameSystems.Interaction;
+using ReusableGameSystems.Conditions;
+using ReusableGameSystems.Items;
+using ReusableGameSystems.Meters;
 using ReusableGameSystems.Pools;
 using ReusableGameSystems.Randomness;
 using ReusableGameSystems.Runs;
+using ReusableGameSystems.StatusEffects;
 using ReusableGameSystems.UI;
 using ReusableGameSystems.WorldState;
 
@@ -18,7 +21,7 @@ namespace DontBeLate.Stages;
 
 /// <summary>
 /// Runs one morning in a stage scene: starts the run, resets the clock and world, draws the morning's scenarios
-/// and applies them, finishes the stage at the front door, and shows the fail / success screen. Continuing reloads
+/// and applies them, ends the morning when the player gets on a bus (or misses the last one), and shows the fail / success screen. Continuing reloads
 /// the scene, which starts the next morning.
 /// </summary>
 [GlobalClass]
@@ -63,7 +66,11 @@ public partial class MorningDirector : Node
     public string StartTime { get; set; } = "07:30";
 
     [Export(PropertyHint.MultilineText)]
-    public string StartMessage { get; set; } = "7:30. The bus leaves at 8:00. Don't be late.";
+    public string StartMessage { get; set; } = "7:30. Work starts at 9:00. Buses at 7:45, 8:00 and 8:10.";
+
+    /// <summary>Meter id used to describe how wet the player is on the end screen.</summary>
+    [Export]
+    public string WetnessMeter { get; set; } = "wetness";
 
     [ExportGroup("Scene")]
     [Export]
@@ -72,16 +79,9 @@ public partial class MorningDirector : Node
     [Export]
     public ConsequenceSystem? Consequences { get; set; }
 
-    /// <summary>Using <see cref="LeaveVerb"/> on it ends the stage.</summary>
+    /// <summary>The buses. Getting on one ends the morning; missing the last one that's on time fails it.</summary>
     [Export]
-    public Interactable? FrontDoor { get; set; }
-
-    [Export]
-    public string LeaveVerb { get; set; } = "leave";
-
-    /// <summary>Location reported to the consequence system when the player leaves.</summary>
-    [Export]
-    public string FrontDoorLocation { get; set; } = "front_door";
+    public BusService? Buses { get; set; }
 
     [Export]
     public EndScreen? EndScreen { get; set; }
@@ -92,10 +92,12 @@ public partial class MorningDirector : Node
     {
         Current = this;
         ScenarioCommands.Register();
+        BusCommands.Register();
 
-        if (FrontDoor != null)
+        if (Buses != null)
         {
-            FrontDoor.InteractedWith += OnDoorUsed;
+            Buses.Boarded += OnBoarded;
+            Buses.LastOnTimeBusMissed += OnLastBusMissed;
         }
 
         if (EndScreen != null)
@@ -133,9 +135,10 @@ public partial class MorningDirector : Node
             _runs.Loop.Ended -= OnRunEnded;
         }
 
-        if (FrontDoor != null && IsInstanceValid(FrontDoor))
+        if (Buses != null && IsInstanceValid(Buses))
         {
-            FrontDoor.InteractedWith -= OnDoorUsed;
+            Buses.Boarded -= OnBoarded;
+            Buses.LastOnTimeBusMissed -= OnLastBusMissed;
         }
 
         if (Current == this)
@@ -216,20 +219,68 @@ public partial class MorningDirector : Node
         }
     }
 
-    private void OnDoorUsed(Interactable door, InteractionVerb verb, Node? actor)
+    private void OnBoarded(int bus, string departure, string arrivalAtWork, bool onTime)
     {
-        if (verb.Id != LeaveVerb || _runs == null || !_runs.Loop.IsRunning)
+        if (_runs == null || !_runs.Loop.IsRunning)
         {
             return;
         }
 
-        // Anything that was waiting for the player to step outside happens now (it may fail the run).
-        Consequences?.ReportLocation(FrontDoorLocation);
-        if (_runs.Loop.IsRunning)
+        if (onTime)
         {
-            string time = GameClock.Instance?.Now.ToString() ?? "";
-            _runs.CompleteRun($"Out the door at {time}");
+            _runs.CompleteRun($"You caught the {departure} bus. You'll be at work by {arrivalAtWork}.{DescribePlayer()}");
         }
+        else
+        {
+            _runs.FailRun($"You caught the {departure} bus, but you won't be at work until {arrivalAtWork}.{DescribePlayer()}");
+        }
+    }
+
+    private void OnLastBusMissed(string departure)
+    {
+        if (_runs != null && _runs.Loop.IsRunning)
+        {
+            _runs.FailRun($"The {departure} bus left without you. It was the last one that gets you to work by 9:00.{DescribePlayer()}");
+        }
+    }
+
+    /// <summary>How the player looks right now ("wet socks, scratched, soaked"), for the end screen.</summary>
+    private string DescribePlayer()
+    {
+        var parts = new List<string>();
+        if (LogicContext.GetGlobal<MeterSet>()?.Get(WetnessMeter) is { } wetness)
+        {
+            if (wetness.Value >= 60)
+            {
+                parts.Add("soaked");
+            }
+            else if (wetness.Value >= 25)
+            {
+                parts.Add("damp");
+            }
+        }
+
+        if (LogicContext.GetGlobal<StatusEffectSet>() is { } effects)
+        {
+            foreach (var effect in effects.Active)
+            {
+                if (!string.IsNullOrEmpty(effect.Definition.DisplayName))
+                {
+                    parts.Add(effect.Definition.DisplayName.ToLowerInvariant());
+                }
+            }
+        }
+
+        if (LogicContext.GetGlobal<Inventory>()?.GetEquipped("feet") is { } feet)
+        {
+            parts.Add($"in {feet.Definition.DisplayName.ToLowerInvariant()}");
+        }
+        else
+        {
+            parts.Add("barefoot");
+        }
+
+        return $"\nYou look: {string.Join(", ", parts.Distinct())}.";
     }
 
     private void OnRunEnded(RunEnded ended)
@@ -252,8 +303,8 @@ public partial class MorningDirector : Node
                 break;
             case RunOutcome.Completed:
                 EndScreen.ShowScreen(
-                    "Out the door!",
-                    $"{ended.Reason}.\nThe street, the bus and the office are still to come.\n\nMorning #{ended.RunNumber}",
+                    "On the bus!",
+                    $"{ended.Reason}\n(The ride and the office are still to come.)\n\nMorning #{ended.RunNumber}",
                     "Another morning");
                 break;
         }

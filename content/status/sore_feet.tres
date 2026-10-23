@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="1_h4dtt"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="2_0cvxi"]
+
+[sub_resource type="Resource" id="Resource_77axy"]
+script = ExtResource("1_h4dtt")
+EventName = "toast"
+Payload = "Ow! Ow! Bare feet on the pavement!"
+
+[resource]
+script = ExtResource("2_0cvxi")
+Id = "sore_feet"
+DisplayName = "Sore feet"
+Duration = 1.5
+Multipliers = Dictionary[String, float]({
+"move_speed": 0.55,
+"sprint_speed": 0.6
+})
+OnApplied = SubResource("Resource_77axy")

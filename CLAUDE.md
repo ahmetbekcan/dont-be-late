@@ -27,8 +27,8 @@ When unsure, split it: a generic mechanism in the library, the specific use in t
 addons/ReusableGameSystems/  library (git submodule): one folder per system, namespace ReusableGameSystems.<Folder>
 src/<Area>/                  game C# code, namespace DontBeLate.<Area>
                              (Scenarios, Obstacles, Requirements, Stages, WakeUp, Clues, Carryover, Scoring, DebugCommands)
-content/                     data resources (.tres): scenarios, obstacles, items, conditions, consequences, carryover, dialogue, journal
-scenes/                      main, stages/{home,street,bus,office}, wake_up, ui, props, characters
+content/                     data resources (.tres): scenarios, obstacles, items, meters, status, conditions, consequences, carryover, dialogue, journal
+scenes/                      main (morning.tscn: the playable world), stages/{home,street,bus,office}, wake_up, ui, props, characters
 assets/                      models, materials, textures, audio/{music,sfx}, fonts
 localization/                translation files
 tests/                       GdUnit4 (C#) tests for game code, namespace DontBeLate.Tests.<Area>
@@ -56,7 +56,7 @@ If a library system is missing something this game needs, **improve the library 
 - **Autoloads only for true globals:** event bus, clock, run manager, RNG, save. Everything else is a node or resource. Autoloads are scenes in `scenes/autoload/` (so their exports can be tuned) named `Events`, `Rng`, `Runs`, `Clock`; an autoload name can't match its `[GlobalClass]` name. From C#, use the class's static `Instance` (e.g. `GameClock.Instance`).
 - **Determinism:** all randomness goes through the seeded RNG service so any run can be replayed from its seed.
 - **Input actions** (in `project.godot`): `move_forward/back/left/right`, `sprint`, `jump`, `crouch`, `interact`, `interact_alt`, `interact_alt2`, `drop`, `throw`. Use these names; add new actions in the editor's Input Map rather than hardcoding keys.
-- **Player:** start from the library's `Characters/FirstPersonPlayer.tscn` (motor, camera, interactor, abilities, inventory) instead of building a new controller.
+- **Player:** start from the library's `Characters/FirstPersonPlayer.tscn` (motor, camera, interactor, abilities, inventory, meters, status effects) instead of building a new controller.
 - **Custom resources and nodes:** mark reusable `Resource` and `Node` classes with `[GlobalClass]` so they appear in the editor's Create dialog and inspector.
 
 ## Code style
@@ -69,22 +69,33 @@ If a library system is missing something this game needs, **improve the library 
 - Avoid per-frame allocations in `_Process`/`_PhysicsProcess` (LINQ, closures, boxing) in hot paths.
 - Keep classes small and focused; one responsibility per class.
 
+## Player freedom and consequences
+
+The core rule: **never block the player; let the world react.** The player can do anything (leave barefoot, jump out of the window, ignore the rain). Mistakes aren't refused or punished on the spot. They come back later through systems that keep running.
+
+- **No gates.** Don't put requirements on verbs that stop the player doing something sensible. A requirement may only describe what's physically possible right now (you can't "wear" shoes a cat is sitting on, but you can always "grab" them).
+- **No artificial time penalties.** Don't use `AdvanceClockEffect` for mistakes. The clock just runs; consequences cost time naturally (you walk slower, you have to go back for a towel, the bus leaves without you).
+- **Consequences are world reactions**, built from library systems:
+  - meters (`wetness`) and status effects (`wet_socks`, `sore_feet`, `limping`) on the player;
+  - `EffectZone`s for rain, puddles, pavement, shelters and indoors;
+  - characters and NPCs that react (the cat, the bus driver's `BoardingRule`s).
+- **The run only fails when the deadline becomes impossible** (the last bus that gets you to work by 9:00 leaves), or when you board a bus that's too late.
+
 ## Scenarios and stages
 
+- **The world is one continuous scene:** `scenes/main/morning.tscn` instances `scenes/stages/home/home.tscn` (the flat, upstairs, with outdoor stairs) and `scenes/stages/street/street.tscn` (pavement, puddles, bus stop, buses), plus the player, HUD and `MorningDirector`. Later stages join the same way.
 - **What a scenario is:** a `ScenarioDefinition` resource (`src/Scenarios/`, data in `content/scenarios/`). It is a pool entry (weight, tags, exclusions, difficulty) with:
   - a clue, a meaning and a requirement (text, for the journal and debug);
-  - `Facts` set when the morning starts;
-  - `Consequences` registered when the morning starts.
-- **Clues and obstacles are not scripted per scenario.** Level objects react to facts:
-  - a `ConditionalActivator` shows a prop only when a fact is set;
-  - interaction verbs use conditions (e.g. the shoes can't be taken while `cat_on_shoes`).
-- **Requirements are delayed consequences.** They are checked at a time or a location (`front_door`), not when the player makes the mistake.
+  - `Facts` set when the morning starts (e.g. `raining`, `cat_on_shoes`);
+  - optional `Consequences` registered when the morning starts.
+- **Scenarios only set facts.** Everything else reacts to them: zones and props switch on (`ConditionalActivator`), NPCs change behavior (the cat sits on the shoes), conditions in data change outcomes.
+- **Facts the world keeps:** `indoors` (inside the flat), `under_cover` (bus shelter), plus scenario facts.
 - **To add a scenario:**
   1. Create the `.tres` and add it to `content/scenarios/home_pool.tres`.
-  2. Add the props that react to its facts.
-  3. Add a test in `tests/Stages/` that plays it through.
-- **Morning flow:** `MorningDirector` (in each stage scene) runs it. It starts the run, resets clock, facts and consequences, draws scenarios (`ScenarioPlanner`), handles the front door and the end screens. Continuing reloads the scene for the next morning.
-- **Rules every morning has** (the 8:00 bus) live in `content/scenarios/base_morning.tres`.
+  2. Add the props, zones or NPC behavior that react to its facts, and the consequence that catches up with a player who ignored the clue.
+  3. Add a test in `tests/Stages/MorningTest.cs` that plays it through.
+- **Morning flow:** `MorningDirector` starts the run, resets clock, facts and consequences, draws scenarios (`ScenarioPlanner`), and ends the morning on `BusService` signals (boarded, or the last on-time bus missed). Continuing reloads the scene for the next morning.
+- **Buses:** `BusService` (in the street scene) drives buses from the game clock (schedule 7:45, 8:00, 8:10; 49-minute ride; work at 9:00, all configurable). The driver checks the rules in `content/obstacles/bus_driver/`.
 
 ## Debugging
 
@@ -94,10 +105,16 @@ The debug console and overlay must be able to force any scenario, set the clock,
 - Standard commands already cover time, runs/seed, facts, items, consequences and events (`help` in the console). Add new items to `content/items/item_catalog.tres` so `give` can find them.
 - Register game commands with `DebugConsole.Instance?.Commands.Register(...)` and watches with `DebugOverlay.Instance?.Watch(...)`. Put them in `src/DebugCommands/`.
 - Scenario commands: `scenario` (active), `scenario list`, `scenario force <id>` (next morning), `scenario clear`, `restart`.
+- Bus commands: `bus` (timetable), `bus next` (jump to just before the next bus), `bus board`. The library's `meter` and `status` commands show or change the player's wetness and status effects.
 
 ## Workflow
 
 - Build toward the first playable: event bus, RNG, run manager, clock → blackboard, conditions, content pool, delayed consequences → controller, interaction, inventory → debug console → Home stage with two scenarios.
 - Run tests before committing: `dotnet test` (uses `.runsettings`; set `GODOT_BIN` there to your Godot .NET executable).
+- **Keep the test loop fast:**
+  - While working, run only the tests you touched: `dotnet test --filter "FullyQualifiedName~MorningTest"` (add `--no-build` when only re-running). Run the full suite once before committing.
+  - In scene tests, advance time with `runner.Step(frames)` / `StepSeconds(s)` (library `TestTime`), never `SimulateFrames(n, 16)`: it runs 8x faster than real time with the same physics step.
+  - Test logic as plain C# where possible (like `BusTimetable`), and keep full-scene tests to behavior that needs the real world.
+  - Move rigid bodies in tests through the physics server (see `MorningTest.Teleport`); setting `GlobalPosition` on a resting body can be overwritten.
 - After cloning, run `git submodule update --init` to fetch the library.
 - When the design doc leaves something open (run length, time scale, between-run unlocks), make it configurable rather than hardcoding a choice.

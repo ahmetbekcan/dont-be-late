@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Don't Be Late"
-run/main_scene="res://scenes/stages/home/home.tscn"
+run/main_scene="res://scenes/main/morning.tscn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 
 [autoload]

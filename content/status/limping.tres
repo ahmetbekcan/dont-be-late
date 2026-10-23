@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="1_4jrsu"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="2_5y0d1"]
+
+[sub_resource type="Resource" id="Resource_nuvvd"]
+script = ExtResource("1_4jrsu")
+EventName = "toast"
+Payload = "You land hard. Your ankle is NOT happy."
+
+[resource]
+script = ExtResource("2_5y0d1")
+Id = "limping"
+DisplayName = "Limping"
+Duration = 60.0
+Multipliers = Dictionary[String, float]({
+"move_speed": 0.55,
+"sprint_speed": 0.6
+})
+OnApplied = SubResource("Resource_nuvvd")

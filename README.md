@@ -20,14 +20,14 @@ Reusable systems live in the [ReusableGameSystems](https://github.com/ahmetbekca
 
 ## Playing
 
-Press F5 in the editor. The first playable is the **Home** stage:
+Press F5 in the editor. The playable world is one morning: your flat (upstairs), the street and the bus stop.
 
-1. You wake up at 7:30 and the bus leaves at 8:00. The clock runs at 3x, so that's 10 real minutes.
+1. You wake up at 7:30. Work starts at 9:00; buses leave the stop at 7:45, 8:00 and 8:10. The clock runs at 3x.
 2. Look around for clues. Something may be different this morning: puddles outside the window, or the cat missing from its bed.
-3. Get ready: put on shoes, take what you need.
-4. Leave through the front door.
+3. Do whatever you want. Nothing stops you: leave barefoot, in slippers, through the window...
+4. Get on a bus.
 
-If you missed what the clue meant, it catches up with you at the door. Fail and you're back in bed for a new morning.
+Consequences catch up with you as the morning goes on: rain soaks you, puddles fill your sneakers, bare feet hurt on the pavement, a jump from the window leaves you limping, and the bus driver may not let you on. Miss the last bus that gets you to work by 9:00 and you're back in bed for a new morning.
 
 | Key | Action |
 | --- | --- |
@@ -35,7 +35,7 @@ If you missed what the clue meant, it catches up with you at the door. Fail and 
 | Shift, Space, Ctrl | Sprint, jump, crouch |
 | E, F, R | Interact (each object shows which key does what) |
 | Q / left click | Drop / throw a held object |
-| `` ` `` or F1 | Debug console (`help`, `scenario force rain`, `restart`, `time 7:59`, `give boots`...) |
+| `` ` `` or F1 | Debug console (`help`, `scenario force rain`, `restart`, `bus next`, `time 7:59`, `give boots`, `meter wetness 80`, `status`...) |
 | F3 | Debug overlay |
 
 ## Content
@@ -44,7 +44,9 @@ If you missed what the clue meant, it catches up with you at the door. Fail and 
 | --- | --- |
 | Scenarios and the scenario pool | `content/scenarios/` |
 | Items and the item catalog | `content/items/` |
-| Home stage | `scenes/stages/home/home.tscn` |
+| Meters and status effects | `content/meters/`, `content/status/` |
+| Bus driver rules | `content/obstacles/bus_driver/` |
+| The playable world | `scenes/main/morning.tscn` (instances `scenes/stages/home/` and `scenes/stages/street/`) |
 | Game code | `src/` |
 
 ## Tests
@@ -53,4 +55,5 @@ Tests use GdUnit4 (C#). Set `GODOT_BIN` in `.runsettings` to your Godot .NET exe
 
 ```sh
 dotnet test
+dotnet test --filter "FullyQualifiedName~MorningTest"   # one test class while working
 ```

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="1_chwid"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="2_8uy7t"]
+
+[sub_resource type="Resource" id="Resource_0pe83"]
+script = ExtResource("1_chwid")
+EventName = "toast"
+Payload = "Your slippers flap and slide on the pavement."
+
+[resource]
+script = ExtResource("2_8uy7t")
+Id = "slipper_flap"
+DisplayName = "Slippers outside"
+Duration = 1.5
+Multipliers = Dictionary[String, float]({
+"move_speed": 0.85,
+"sprint_speed": 0.75
+})
+OnApplied = SubResource("Resource_0pe83")

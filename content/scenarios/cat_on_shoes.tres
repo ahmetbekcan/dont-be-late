@@ -8,7 +8,7 @@ script = ExtResource("2_4jg6b")
 DisplayName = "Cat on your shoes"
 Clue = "The cat is not on its bed."
 Meaning = "It's sleeping on your shoes by the door."
-Requirement = "Bribe it with tuna, fight it, or go in slippers."
+Requirement = "Lure it off with tuna, scare it off, grab the shoes anyway, or go in slippers."
 Facts = {
 "cat_on_shoes": true
 }

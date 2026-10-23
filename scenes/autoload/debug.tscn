@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/DebugTools/DebugConsole.cs" id="1_console"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/DebugTools/DebugOverlay.cs" id="2_overlay"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="3_1vego"]
 [ext_resource type="Resource" path="res://content/items/item_catalog.tres" id="3_items"]
+[ext_resource type="Resource" path="res://content/status/wet_socks.tres" id="4_lvdjo"]
+[ext_resource type="Resource" path="res://content/status/sore_feet.tres" id="5_vpwo6"]
+[ext_resource type="Resource" path="res://content/status/slipper_flap.tres" id="6_uynsh"]
+[ext_resource type="Resource" path="res://content/status/limping.tres" id="7_eid5r"]
+[ext_resource type="Resource" path="res://content/status/stunned.tres" id="8_ppt3l"]
+[ext_resource type="Resource" path="res://content/status/scratched.tres" id="9_hx52t"]
 
-[node name="Debug" type="Node"]
+[node name="Debug" type="Node" unique_id=1388495794]
 
-[node name="Console" type="CanvasLayer" parent="."]
+[node name="Console" type="CanvasLayer" parent="." unique_id=767127396]
 script = ExtResource("1_console")
 ItemCatalog = ExtResource("3_items")
+StatusEffects = Array[ExtResource("3_1vego")]([ExtResource("4_lvdjo"), ExtResource("5_vpwo6"), ExtResource("6_uynsh"), ExtResource("7_eid5r"), ExtResource("8_ppt3l"), ExtResource("9_hx52t")])
 
-[node name="Overlay" type="CanvasLayer" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="." unique_id=1340455220]
 script = ExtResource("2_overlay")

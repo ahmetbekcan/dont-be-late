@@ -84,6 +84,6 @@ public class ScenarioPlannerTest
         var pool = Godot.GD.Load<ContentPool>("res://content/scenarios/home_pool.tres");
         var ids = pool.Entries.OfType<ScenarioDefinition>().Select(s => s.Id).ToList();
         AssertArray(ids).ContainsExactlyInAnyOrder("rain", "cat_on_shoes");
-        AssertInt(pool.Entries.OfType<ScenarioDefinition>().Single(s => s.Id == "rain").Consequences.Count).IsEqual(1);
+        AssertBool(pool.Entries.OfType<ScenarioDefinition>().Single(s => s.Id == "rain").Facts.ContainsKey("raining")).IsTrue();
     }
 }

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="1_anao0"]
+
+[resource]
+script = ExtResource("1_anao0")
+Id = "scratched"
+DisplayName = "Scratched"
+Duration = 0.0
