@@ -28,10 +28,10 @@ albedo_color = Color(0.72, 0.42, 0.33, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_abye7"]
 material = SubResource("StandardMaterial3D_gjq8d")
-size = Vector3(12.4, 3, 8.4)
+size = Vector3(12.4, 2.8, 8.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e86g6"]
-size = Vector3(12.4, 3, 8.4)
+size = Vector3(12.4, 2.8, 8.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glhvi"]
 albedo_color = Color(0.35, 0.3, 0.3, 1)
@@ -804,65 +804,65 @@ Effect = SubResource("Resource_8ovlp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xmxrf"]
 size = Vector3(0.5, 0.45, 0.8)
 
-[node name="Home" type="Node3D" unique_id=1804876754]
+[node name="Home" type="Node3D" unique_id=548807930]
 
-[node name="Building" type="Node3D" parent="." unique_id=1504228461]
+[node name="Building" type="Node3D" parent="." unique_id=93215836]
 
-[node name="GroundFloor" type="StaticBody3D" parent="Building" unique_id=1575170363]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="GroundFloor" type="StaticBody3D" parent="Building" unique_id=1649827171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/GroundFloor" unique_id=1786829158]
+[node name="Mesh" type="MeshInstance3D" parent="Building/GroundFloor" unique_id=1116215429]
 mesh = SubResource("BoxMesh_abye7")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/GroundFloor" unique_id=71655743]
+[node name="Shape" type="CollisionShape3D" parent="Building/GroundFloor" unique_id=1587575256]
 shape = SubResource("BoxShape3D_e86g6")
 
-[node name="Roof" type="StaticBody3D" parent="Building" unique_id=143725653]
+[node name="Roof" type="StaticBody3D" parent="Building" unique_id=243253528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.05, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/Roof" unique_id=1660137775]
+[node name="Mesh" type="MeshInstance3D" parent="Building/Roof" unique_id=161748360]
 mesh = SubResource("BoxMesh_nreis")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/Roof" unique_id=1711324145]
+[node name="Shape" type="CollisionShape3D" parent="Building/Roof" unique_id=1634228790]
 shape = SubResource("BoxShape3D_ulyqi")
 
-[node name="Landing" type="StaticBody3D" parent="Building" unique_id=1217324558]
+[node name="Landing" type="StaticBody3D" parent="Building" unique_id=1670337969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 2.9, 2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/Landing" unique_id=1797117133]
+[node name="Mesh" type="MeshInstance3D" parent="Building/Landing" unique_id=500812155]
 mesh = SubResource("BoxMesh_rdudj")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/Landing" unique_id=1286260932]
+[node name="Shape" type="CollisionShape3D" parent="Building/Landing" unique_id=808458050]
 shape = SubResource("BoxShape3D_86j0p")
 
-[node name="Stairs" type="StaticBody3D" parent="Building" unique_id=444926328]
+[node name="Stairs" type="StaticBody3D" parent="Building" unique_id=485816268]
 transform = Transform3D(1, 0, 0, 0, 0.8528902, 0.5220904, 0, -0.5220904, 0.8528902, 7.3, 1.415, -1.698)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/Stairs" unique_id=1277234606]
+[node name="Mesh" type="MeshInstance3D" parent="Building/Stairs" unique_id=1639159581]
 mesh = SubResource("BoxMesh_o7f1t")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/Stairs" unique_id=1604986502]
+[node name="Shape" type="CollisionShape3D" parent="Building/Stairs" unique_id=1038891268]
 shape = SubResource("BoxShape3D_whpsr")
 
-[node name="LandingRailEast" type="StaticBody3D" parent="Building" unique_id=388450977]
+[node name="LandingRailEast" type="StaticBody3D" parent="Building" unique_id=1757082875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36, 3.5, 2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/LandingRailEast" unique_id=2127764377]
+[node name="Mesh" type="MeshInstance3D" parent="Building/LandingRailEast" unique_id=1590735398]
 mesh = SubResource("BoxMesh_iauc7")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/LandingRailEast" unique_id=1078778548]
+[node name="Shape" type="CollisionShape3D" parent="Building/LandingRailEast" unique_id=740014458]
 shape = SubResource("BoxShape3D_aoyfe")
 
-[node name="LandingRailSouth" type="StaticBody3D" parent="Building" unique_id=2001855901]
+[node name="LandingRailSouth" type="StaticBody3D" parent="Building" unique_id=1123810529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 3.5, 3.26)
 
-[node name="Mesh" type="MeshInstance3D" parent="Building/LandingRailSouth" unique_id=113210133]
+[node name="Mesh" type="MeshInstance3D" parent="Building/LandingRailSouth" unique_id=614603917]
 mesh = SubResource("BoxMesh_buhjh")
 
-[node name="Shape" type="CollisionShape3D" parent="Building/LandingRailSouth" unique_id=1976640393]
+[node name="Shape" type="CollisionShape3D" parent="Building/LandingRailSouth" unique_id=428001087]
 shape = SubResource("BoxShape3D_qoajm")
 
-[node name="Note" type="Label3D" parent="Building" unique_id=1383224817]
+[node name="Note" type="Label3D" parent="Building" unique_id=541156713]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.2, -4.22)
 pixel_size = 0.004
 modulate = Color(0.95, 0.95, 0.9, 1)
@@ -870,393 +870,393 @@ text = "12"
 font_size = 120
 outline_size = 0
 
-[node name="Flat" type="Node3D" parent="." unique_id=2045538621]
+[node name="Flat" type="Node3D" parent="." unique_id=1538261839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="Lights" type="Node3D" parent="Flat" unique_id=286077243]
+[node name="Lights" type="Node3D" parent="Flat" unique_id=1456198808]
 
-[node name="@OmniLight3D@2" type="OmniLight3D" parent="Flat/Lights" unique_id=2123772283]
+[node name="@OmniLight3D@2" type="OmniLight3D" parent="Flat/Lights" unique_id=66117974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.5, 0)
 light_color = Color(1, 0.93, 0.82, 1)
 light_energy = 1.4
 shadow_enabled = true
 omni_range = 7.0
 
-[node name="@OmniLight3D@3" type="OmniLight3D" parent="Flat/Lights" unique_id=437971125]
+[node name="@OmniLight3D@3" type="OmniLight3D" parent="Flat/Lights" unique_id=1370831572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.5, -1)
 light_color = Color(1, 0.93, 0.82, 1)
 light_energy = 1.4
 shadow_enabled = true
 omni_range = 7.0
 
-[node name="@OmniLight3D@4" type="OmniLight3D" parent="Flat/Lights" unique_id=1643458654]
+[node name="@OmniLight3D@4" type="OmniLight3D" parent="Flat/Lights" unique_id=1325267479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, 2)
 light_color = Color(1, 0.93, 0.82, 1)
 light_energy = 1.4
 shadow_enabled = true
 omni_range = 7.0
 
-[node name="Indoors" type="Area3D" parent="Flat" unique_id=56123073]
+[node name="Indoors" type="Area3D" parent="Flat" unique_id=826051652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 script = ExtResource("1_ahafl")
 EnterEffect = SubResource("Resource_dihmd")
 ExitEffect = SubResource("Resource_i7hsr")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Indoors" unique_id=1442684622]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Indoors" unique_id=1668376428]
 shape = SubResource("BoxShape3D_ukiag")
 
-[node name="Shell" type="Node3D" parent="Flat" unique_id=1145043351]
+[node name="Shell" type="Node3D" parent="Flat" unique_id=318554427]
 
-[node name="Floor" type="StaticBody3D" parent="Flat/Shell" unique_id=1244630591]
+[node name="Floor" type="StaticBody3D" parent="Flat/Shell" unique_id=196839636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/Floor" unique_id=2141653395]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/Floor" unique_id=1634961490]
 mesh = SubResource("BoxMesh_nopa4")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/Floor" unique_id=328954345]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/Floor" unique_id=294738552]
 shape = SubResource("BoxShape3D_nhcaj")
 
-[node name="Ceiling" type="StaticBody3D" parent="Flat/Shell" unique_id=568432965]
+[node name="Ceiling" type="StaticBody3D" parent="Flat/Shell" unique_id=1747504257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/Ceiling" unique_id=903995374]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/Ceiling" unique_id=664745792]
 mesh = SubResource("BoxMesh_m2ke3")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/Ceiling" unique_id=1736735824]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/Ceiling" unique_id=891269159]
 shape = SubResource("BoxShape3D_vv2ri")
 
-[node name="WallSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=11051853]
+[node name="WallSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=1412458689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallSouth" unique_id=1175704305]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallSouth" unique_id=1306444983]
 mesh = SubResource("BoxMesh_c3618")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallSouth" unique_id=1053204369]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallSouth" unique_id=1007927881]
 shape = SubResource("BoxShape3D_qeu7c")
 
-[node name="WallWest" type="StaticBody3D" parent="Flat/Shell" unique_id=1308498246]
+[node name="WallWest" type="StaticBody3D" parent="Flat/Shell" unique_id=1715395487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, 1.4, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallWest" unique_id=343066996]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallWest" unique_id=140051235]
 mesh = SubResource("BoxMesh_ltecd")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallWest" unique_id=2129123782]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallWest" unique_id=1171804484]
 shape = SubResource("BoxShape3D_ith0f")
 
-[node name="WallNorthLeft" type="StaticBody3D" parent="Flat/Shell" unique_id=1781880477]
+[node name="WallNorthLeft" type="StaticBody3D" parent="Flat/Shell" unique_id=286425504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85, 1.4, -4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthLeft" unique_id=978232443]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthLeft" unique_id=757814066]
 mesh = SubResource("BoxMesh_wk734")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthLeft" unique_id=340928450]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthLeft" unique_id=412188303]
 shape = SubResource("BoxShape3D_wm6pc")
 
-[node name="WallNorthRight" type="StaticBody3D" parent="Flat/Shell" unique_id=1104737213]
+[node name="WallNorthRight" type="StaticBody3D" parent="Flat/Shell" unique_id=1062204169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85, 1.4, -4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthRight" unique_id=1159707837]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthRight" unique_id=1298245151]
 mesh = SubResource("BoxMesh_lq4y6")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthRight" unique_id=738035321]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthRight" unique_id=777152142]
 shape = SubResource("BoxShape3D_nypei")
 
-[node name="WallNorthBelowWindow" type="StaticBody3D" parent="Flat/Shell" unique_id=1665540574]
+[node name="WallNorthBelowWindow" type="StaticBody3D" parent="Flat/Shell" unique_id=903878213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, -4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthBelowWindow" unique_id=1876012938]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthBelowWindow" unique_id=105247177]
 mesh = SubResource("BoxMesh_wjvhg")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthBelowWindow" unique_id=1740642253]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthBelowWindow" unique_id=964120723]
 shape = SubResource("BoxShape3D_hkjuq")
 
-[node name="WallNorthAboveWindow" type="StaticBody3D" parent="Flat/Shell" unique_id=1027391646]
+[node name="WallNorthAboveWindow" type="StaticBody3D" parent="Flat/Shell" unique_id=786530120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.65, -4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthAboveWindow" unique_id=1928362732]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallNorthAboveWindow" unique_id=1443018102]
 mesh = SubResource("BoxMesh_qcare")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthAboveWindow" unique_id=140509844]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallNorthAboveWindow" unique_id=1239530509]
 shape = SubResource("BoxShape3D_h1i01")
 
-[node name="WallEastNorth" type="StaticBody3D" parent="Flat/Shell" unique_id=1146676708]
+[node name="WallEastNorth" type="StaticBody3D" parent="Flat/Shell" unique_id=1821207839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 1.4, -1.35)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastNorth" unique_id=1380026573]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastNorth" unique_id=759537965]
 mesh = SubResource("BoxMesh_c365i")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastNorth" unique_id=2016053038]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastNorth" unique_id=1520291753]
 shape = SubResource("BoxShape3D_ojuob")
 
-[node name="WallEastSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=1247159713]
+[node name="WallEastSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=224561398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 1.4, 3.35)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastSouth" unique_id=922711653]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastSouth" unique_id=1248423177]
 mesh = SubResource("BoxMesh_5auw1")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastSouth" unique_id=192909837]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastSouth" unique_id=940682091]
 shape = SubResource("BoxShape3D_vp1tl")
 
-[node name="WallEastAboveDoor" type="StaticBody3D" parent="Flat/Shell" unique_id=293498484]
+[node name="WallEastAboveDoor" type="StaticBody3D" parent="Flat/Shell" unique_id=265983682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 2.45, 2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastAboveDoor" unique_id=181772257]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallEastAboveDoor" unique_id=1433946972]
 mesh = SubResource("BoxMesh_3jkiv")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastAboveDoor" unique_id=1515683961]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallEastAboveDoor" unique_id=958819079]
 shape = SubResource("BoxShape3D_n15lq")
 
-[node name="WallBedroomNorth" type="StaticBody3D" parent="Flat/Shell" unique_id=1518643285]
+[node name="WallBedroomNorth" type="StaticBody3D" parent="Flat/Shell" unique_id=561588224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.4, -1.75)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomNorth" unique_id=1355123837]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomNorth" unique_id=737292005]
 mesh = SubResource("BoxMesh_gxn2p")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomNorth" unique_id=2007092424]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomNorth" unique_id=1222806374]
 shape = SubResource("BoxShape3D_a5d3d")
 
-[node name="WallBedroomSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=952768534]
+[node name="WallBedroomSouth" type="StaticBody3D" parent="Flat/Shell" unique_id=1015317213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.4, 3)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomSouth" unique_id=1361142858]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomSouth" unique_id=1122337043]
 mesh = SubResource("BoxMesh_05bxt")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomSouth" unique_id=1492596553]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomSouth" unique_id=452216093]
 shape = SubResource("BoxShape3D_1pwl4")
 
-[node name="WallBedroomAboveDoor" type="StaticBody3D" parent="Flat/Shell" unique_id=901262276]
+[node name="WallBedroomAboveDoor" type="StaticBody3D" parent="Flat/Shell" unique_id=1507374885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.45, 1.25)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomAboveDoor" unique_id=1582499891]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WallBedroomAboveDoor" unique_id=380158166]
 mesh = SubResource("BoxMesh_b135e")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomAboveDoor" unique_id=460448493]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WallBedroomAboveDoor" unique_id=777606194]
 shape = SubResource("BoxShape3D_xv32t")
 
-[node name="WindowGlass" type="StaticBody3D" parent="Flat/Shell" unique_id=2108856858]
+[node name="WindowGlass" type="StaticBody3D" parent="Flat/Shell" unique_id=1953118607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -4.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WindowGlass" unique_id=782812181]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Shell/WindowGlass" unique_id=1222813298]
 mesh = SubResource("BoxMesh_n2f7d")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WindowGlass" unique_id=2137373293]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WindowGlass" unique_id=1516849723]
 shape = SubResource("BoxShape3D_3x82o")
 
-[node name="Interactable" type="Area3D" parent="Flat/Shell/WindowGlass" unique_id=2014203337]
+[node name="Interactable" type="Area3D" parent="Flat/Shell/WindowGlass" unique_id=2093984155]
 script = ExtResource("3_xsn48")
 DisplayName = "Window"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_w5n3h")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WindowGlass/Interactable" unique_id=1815084819]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Shell/WindowGlass/Interactable" unique_id=154270234]
 shape = SubResource("BoxShape3D_ef38c")
 
-[node name="Openable" type="Node" parent="Flat/Shell/WindowGlass" unique_id=385462077 node_paths=PackedStringArray("Target", "BlockingShapes")]
+[node name="Openable" type="Node" parent="Flat/Shell/WindowGlass" unique_id=1291852864 node_paths=PackedStringArray("Target", "BlockingShapes")]
 script = ExtResource("5_eejt3")
 Target = NodePath("..")
 OpenRotationDegrees = Vector3(0, 0, 0)
 OpenOffset = Vector3(2.6, 0, 0)
 BlockingShapes = [NodePath("../Shape")]
 
-[node name="Props" type="Node3D" parent="Flat" unique_id=542963702]
+[node name="Props" type="Node3D" parent="Flat" unique_id=151720187]
 
-[node name="Bed" type="StaticBody3D" parent="Flat/Props" unique_id=390251833]
+[node name="Bed" type="StaticBody3D" parent="Flat/Props" unique_id=1885604294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0.25, -2.6)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Bed" unique_id=890416417]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Bed" unique_id=176158159]
 mesh = SubResource("BoxMesh_is770")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Bed" unique_id=1543196185]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Bed" unique_id=119872741]
 shape = SubResource("BoxShape3D_5kfur")
 
-[node name="Pillow" type="RigidBody3D" parent="Flat/Props" unique_id=980267685]
+[node name="Pillow" type="RigidBody3D" parent="Flat/Props" unique_id=926731811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0.6, -3.45)
 mass = 0.5
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Pillow" unique_id=960077678]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Pillow" unique_id=1164928556]
 mesh = SubResource("BoxMesh_gr48n")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Pillow" unique_id=1174746264]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Pillow" unique_id=635419528]
 shape = SubResource("BoxShape3D_t654h")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Pillow" unique_id=1601403496]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Pillow" unique_id=1449939853]
 script = ExtResource("3_xsn48")
 DisplayName = "Pillow"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_2tk4v")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Pillow/Interactable" unique_id=1018685271]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Pillow/Interactable" unique_id=954989418]
 shape = SubResource("BoxShape3D_q52f2")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Pillow" unique_id=418238591]
+[node name="Carryable" type="Node" parent="Flat/Props/Pillow" unique_id=1547565814]
 script = ExtResource("6_c1wwd")
 
-[node name="Slippers" type="StaticBody3D" parent="Flat/Props" unique_id=1127202925]
+[node name="Slippers" type="StaticBody3D" parent="Flat/Props" unique_id=1496852507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.05, -2.9)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Slippers" unique_id=1042189706]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Slippers" unique_id=1576862196]
 mesh = SubResource("BoxMesh_61f3j")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Slippers" unique_id=1296798716]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Slippers" unique_id=954200237]
 shape = SubResource("BoxShape3D_ha612")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Slippers" unique_id=811182508]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Slippers" unique_id=570097902]
 script = ExtResource("3_xsn48")
 DisplayName = "Slippers"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_25ufj")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Slippers/Interactable" unique_id=976403937]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Slippers/Interactable" unique_id=1730227806]
 shape = SubResource("BoxShape3D_yc3ls")
 
-[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Slippers/Interactable" unique_id=306844554]
+[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Slippers/Interactable" unique_id=332682373]
 script = ExtResource("9_236g8")
 VerbId = "wear"
 
-[node name="CatBed" type="StaticBody3D" parent="Flat/Props" unique_id=483239595]
+[node name="CatBed" type="StaticBody3D" parent="Flat/Props" unique_id=453052126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.08, 3.2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/CatBed" unique_id=1389140246]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/CatBed" unique_id=1559686730]
 mesh = SubResource("BoxMesh_sg3s2")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/CatBed" unique_id=1761026267]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/CatBed" unique_id=293194329]
 shape = SubResource("BoxShape3D_tjd2c")
 
-[node name="LaundryBasket" type="RigidBody3D" parent="Flat/Props" unique_id=1676435525]
+[node name="LaundryBasket" type="RigidBody3D" parent="Flat/Props" unique_id=2138275988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.2, 3.4)
 mass = 2.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/LaundryBasket" unique_id=415410879]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/LaundryBasket" unique_id=560726004]
 mesh = SubResource("BoxMesh_dixqd")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/LaundryBasket" unique_id=507774140]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/LaundryBasket" unique_id=2090780361]
 shape = SubResource("BoxShape3D_gdk5t")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/LaundryBasket" unique_id=1206316030]
+[node name="Interactable" type="Area3D" parent="Flat/Props/LaundryBasket" unique_id=1923421683]
 script = ExtResource("3_xsn48")
 DisplayName = "Laundry basket"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_ngan3")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/LaundryBasket/Interactable" unique_id=2067607570]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/LaundryBasket/Interactable" unique_id=1012347194]
 shape = SubResource("BoxShape3D_yytvc")
 
-[node name="Carryable" type="Node" parent="Flat/Props/LaundryBasket" unique_id=415873765]
+[node name="Carryable" type="Node" parent="Flat/Props/LaundryBasket" unique_id=1349115831]
 script = ExtResource("6_c1wwd")
 
-[node name="Counter" type="StaticBody3D" parent="Flat/Props" unique_id=212046304]
+[node name="Counter" type="StaticBody3D" parent="Flat/Props" unique_id=1567708707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35, 0.45, -3.65)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Counter" unique_id=1114341851]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Counter" unique_id=1661153690]
 mesh = SubResource("BoxMesh_xy0h4")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Counter" unique_id=734985667]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Counter" unique_id=497073215]
 shape = SubResource("BoxShape3D_m3ur8")
 
-[node name="Mug" type="RigidBody3D" parent="Flat/Props" unique_id=1474303650]
+[node name="Mug" type="RigidBody3D" parent="Flat/Props" unique_id=697877068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 0.97, -3.6)
 mass = 0.3
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Mug" unique_id=1704657764]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Mug" unique_id=736916130]
 mesh = SubResource("CylinderMesh_dkum0")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Mug" unique_id=1914125384]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Mug" unique_id=1814938550]
 shape = SubResource("CylinderShape3D_ml8pd")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Mug" unique_id=89603992]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Mug" unique_id=1568654277]
 script = ExtResource("3_xsn48")
 DisplayName = "Mug"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_o1nb0")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Mug/Interactable" unique_id=454969694]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Mug/Interactable" unique_id=179045391]
 shape = SubResource("BoxShape3D_ns28g")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Mug" unique_id=178398323]
+[node name="Carryable" type="Node" parent="Flat/Props/Mug" unique_id=1468232365]
 script = ExtResource("6_c1wwd")
 
-[node name="Fridge" type="Node3D" parent="Flat/Props" unique_id=1535513173]
+[node name="Fridge" type="Node3D" parent="Flat/Props" unique_id=2146455184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45, 0, -3.5)
 
-[node name="Back" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1194787678]
+[node name="Back" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=243179056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.375)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Back" unique_id=840649067]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Back" unique_id=1522344305]
 mesh = SubResource("BoxMesh_khyt1")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Back" unique_id=2011334381]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Back" unique_id=2009715973]
 shape = SubResource("BoxShape3D_1iu3l")
 
-[node name="SideLeft" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1033975089]
+[node name="SideLeft" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1337546247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 0.95, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/SideLeft" unique_id=1497451957]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/SideLeft" unique_id=1056538612]
 mesh = SubResource("BoxMesh_nrgh2")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/SideLeft" unique_id=1609044622]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/SideLeft" unique_id=1305560811]
 shape = SubResource("BoxShape3D_6hsny")
 
-[node name="SideRight" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1505643463]
+[node name="SideRight" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=2015728777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425, 0.95, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/SideRight" unique_id=1221669540]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/SideRight" unique_id=161620675]
 mesh = SubResource("BoxMesh_lhfi3")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/SideRight" unique_id=2066532117]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/SideRight" unique_id=2049061690]
 shape = SubResource("BoxShape3D_udbvg")
 
-[node name="Top" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=842902128]
+[node name="Top" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1006942269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.875, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Top" unique_id=1819368098]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Top" unique_id=1632214746]
 mesh = SubResource("BoxMesh_uxpgr")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Top" unique_id=412635188]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Top" unique_id=1665365922]
 shape = SubResource("BoxShape3D_odd53")
 
-[node name="Bottom" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=1584983021]
+[node name="Bottom" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=2130050102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Bottom" unique_id=75982870]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Bottom" unique_id=1857954906]
 mesh = SubResource("BoxMesh_7ensj")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Bottom" unique_id=297033198]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Bottom" unique_id=1813371692]
 shape = SubResource("BoxShape3D_88g76")
 
-[node name="Shelf" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=611562561]
+[node name="Shelf" type="StaticBody3D" parent="Flat/Props/Fridge" unique_id=905013304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Shelf" unique_id=1432427924]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/Shelf" unique_id=148374999]
 mesh = SubResource("BoxMesh_rtriu")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Shelf" unique_id=2086230700]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/Shelf" unique_id=1387244829]
 shape = SubResource("BoxShape3D_m4b65")
 
-[node name="Light" type="OmniLight3D" parent="Flat/Props/Fridge" unique_id=40738505]
+[node name="Light" type="OmniLight3D" parent="Flat/Props/Fridge" unique_id=1103653612]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 omni_range = 1.0
 
-[node name="DoorHinge" type="Node3D" parent="Flat/Props/Fridge" unique_id=1865914496]
+[node name="DoorHinge" type="Node3D" parent="Flat/Props/Fridge" unique_id=1615582813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, 0.4)
 
-[node name="Door" type="StaticBody3D" parent="Flat/Props/Fridge/DoorHinge" unique_id=1626157518]
+[node name="Door" type="StaticBody3D" parent="Flat/Props/Fridge/DoorHinge" unique_id=347523898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.95, 0.025)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=28524010]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=1522886241]
 mesh = SubResource("BoxMesh_jnjlr")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=1810263950]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=1313880591]
 shape = SubResource("BoxShape3D_5qmqp")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=1545112220]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=805585079]
 script = ExtResource("3_xsn48")
 DisplayName = "Fridge"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_l7v8o")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/DoorHinge/Door/Interactable" unique_id=734720871]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Fridge/DoorHinge/Door/Interactable" unique_id=1413229093]
 shape = SubResource("BoxShape3D_unlow")
 
-[node name="Openable" type="Node" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=889862656 node_paths=PackedStringArray("Target")]
+[node name="Openable" type="Node" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=204514618 node_paths=PackedStringArray("Target")]
 script = ExtResource("5_eejt3")
 Target = NodePath("../..")
 OpenRotationDegrees = Vector3(0, 100, 0)
 
-[node name="Note" type="Label3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=547203936]
+[node name="Note" type="Label3D" parent="Flat/Props/Fridge/DoorHinge/Door" unique_id=277099409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.035)
 pixel_size = 0.004
 modulate = Color(0.15, 0.15, 0.2, 1)
@@ -1265,296 +1265,296 @@ TUNA (for emergencies)"
 font_size = 22
 outline_size = 0
 
-[node name="Tuna" type="RigidBody3D" parent="Flat/Props" unique_id=658730538 groups=["cat_food"]]
+[node name="Tuna" type="RigidBody3D" parent="Flat/Props" unique_id=796772267 groups=["cat_food"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45, 0.96, -3.5)
 mass = 0.3
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Tuna" unique_id=878556116]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Tuna" unique_id=464587646]
 mesh = SubResource("CylinderMesh_tie1s")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Tuna" unique_id=990950253]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Tuna" unique_id=278819873]
 shape = SubResource("CylinderShape3D_gddob")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Tuna" unique_id=2002179587]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Tuna" unique_id=1979850256]
 script = ExtResource("3_xsn48")
 DisplayName = "Can of tuna"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_2yc3h")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Tuna/Interactable" unique_id=2034056065]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Tuna/Interactable" unique_id=633661718]
 shape = SubResource("BoxShape3D_qu2y3")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Tuna" unique_id=1757579341]
+[node name="Carryable" type="Node" parent="Flat/Props/Tuna" unique_id=1619685148]
 script = ExtResource("6_c1wwd")
 
-[node name="Table" type="StaticBody3D" parent="Flat/Props" unique_id=2016498070]
+[node name="Table" type="StaticBody3D" parent="Flat/Props" unique_id=2146753404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.4, 0.2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Table" unique_id=834602061]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Table" unique_id=974049748]
 mesh = SubResource("BoxMesh_3xno2")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Table" unique_id=2113094829]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Table" unique_id=1003151116]
 shape = SubResource("BoxShape3D_prqgw")
 
-[node name="Book" type="RigidBody3D" parent="Flat/Props" unique_id=944105543]
+[node name="Book" type="RigidBody3D" parent="Flat/Props" unique_id=1922353130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.83, 0.1)
 mass = 0.6
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Book" unique_id=1807239715]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Book" unique_id=1795029124]
 mesh = SubResource("BoxMesh_plmwn")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book" unique_id=1545434902]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book" unique_id=1068937289]
 shape = SubResource("BoxShape3D_ciaen")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Book" unique_id=1911425376]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Book" unique_id=778252230]
 script = ExtResource("3_xsn48")
 DisplayName = "Book"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_53yj2")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book/Interactable" unique_id=451928426]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book/Interactable" unique_id=1678626280]
 shape = SubResource("BoxShape3D_rdt4w")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Book" unique_id=1361954706]
+[node name="Carryable" type="Node" parent="Flat/Props/Book" unique_id=688254549]
 script = ExtResource("6_c1wwd")
 
-[node name="Book2" type="RigidBody3D" parent="Flat/Props" unique_id=1099148764]
+[node name="Book2" type="RigidBody3D" parent="Flat/Props" unique_id=538505051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.89, 0.12)
 mass = 0.6
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Book2" unique_id=81706204]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Book2" unique_id=1626999726]
 mesh = SubResource("BoxMesh_bxfh5")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book2" unique_id=164245301]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book2" unique_id=1208677010]
 shape = SubResource("BoxShape3D_8j08e")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Book2" unique_id=2124517277]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Book2" unique_id=1402185766]
 script = ExtResource("3_xsn48")
 DisplayName = "Book"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_faxqn")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book2/Interactable" unique_id=506911900]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Book2/Interactable" unique_id=450378068]
 shape = SubResource("BoxShape3D_etyjl")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Book2" unique_id=534191133]
+[node name="Carryable" type="Node" parent="Flat/Props/Book2" unique_id=439032009]
 script = ExtResource("6_c1wwd")
 
-[node name="ChairA" type="RigidBody3D" parent="Flat/Props" unique_id=265739766]
+[node name="ChairA" type="RigidBody3D" parent="Flat/Props" unique_id=1743284235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.45, 1.05)
 mass = 6.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ChairA" unique_id=830592502]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ChairA" unique_id=1297287913]
 mesh = SubResource("BoxMesh_bbjc3")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairA" unique_id=1229478396]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairA" unique_id=1777105236]
 shape = SubResource("BoxShape3D_o4oam")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/ChairA" unique_id=1861483772]
+[node name="Interactable" type="Area3D" parent="Flat/Props/ChairA" unique_id=394756746]
 script = ExtResource("3_xsn48")
 DisplayName = "Chair"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_dgvrr")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairA/Interactable" unique_id=1434740340]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairA/Interactable" unique_id=2105509447]
 shape = SubResource("BoxShape3D_anf5q")
 
-[node name="Carryable" type="Node" parent="Flat/Props/ChairA" unique_id=1358274844]
+[node name="Carryable" type="Node" parent="Flat/Props/ChairA" unique_id=259419037]
 script = ExtResource("6_c1wwd")
 
-[node name="ChairB" type="RigidBody3D" parent="Flat/Props" unique_id=1520033805]
+[node name="ChairB" type="RigidBody3D" parent="Flat/Props" unique_id=1670901339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0.45, -0.65)
 mass = 6.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ChairB" unique_id=723423957]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ChairB" unique_id=706707448]
 mesh = SubResource("BoxMesh_8va7v")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairB" unique_id=855953518]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairB" unique_id=984780674]
 shape = SubResource("BoxShape3D_u31m5")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/ChairB" unique_id=120375905]
+[node name="Interactable" type="Area3D" parent="Flat/Props/ChairB" unique_id=2025953719]
 script = ExtResource("3_xsn48")
 DisplayName = "Chair"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_pfsn3")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairB/Interactable" unique_id=1552525581]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ChairB/Interactable" unique_id=2067269303]
 shape = SubResource("BoxShape3D_27wv1")
 
-[node name="Carryable" type="Node" parent="Flat/Props/ChairB" unique_id=41119625]
+[node name="Carryable" type="Node" parent="Flat/Props/ChairB" unique_id=431773655]
 script = ExtResource("6_c1wwd")
 
-[node name="Sofa" type="StaticBody3D" parent="Flat/Props" unique_id=1581766997]
+[node name="Sofa" type="StaticBody3D" parent="Flat/Props" unique_id=1613345124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0.35, 3.45)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Sofa" unique_id=1117592846]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Sofa" unique_id=1340549747]
 mesh = SubResource("BoxMesh_73pts")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sofa" unique_id=565346341]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sofa" unique_id=2007249276]
 shape = SubResource("BoxShape3D_chpcv")
 
-[node name="Cushion" type="RigidBody3D" parent="Flat/Props" unique_id=1697399460]
+[node name="Cushion" type="RigidBody3D" parent="Flat/Props" unique_id=650238011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.78, 3.4)
 mass = 0.4
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Cushion" unique_id=679225159]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Cushion" unique_id=618556276]
 mesh = SubResource("BoxMesh_i8fbm")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cushion" unique_id=655165678]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cushion" unique_id=83978248]
 shape = SubResource("BoxShape3D_ip4n0")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Cushion" unique_id=1430734987]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Cushion" unique_id=2139684792]
 script = ExtResource("3_xsn48")
 DisplayName = "Cushion"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_ex2ah")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cushion/Interactable" unique_id=1143340640]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cushion/Interactable" unique_id=322243102]
 shape = SubResource("BoxShape3D_k0tkn")
 
-[node name="Carryable" type="Node" parent="Flat/Props/Cushion" unique_id=1445514303]
+[node name="Carryable" type="Node" parent="Flat/Props/Cushion" unique_id=1412160471]
 script = ExtResource("6_c1wwd")
 
-[node name="PlantPot" type="RigidBody3D" parent="Flat/Props" unique_id=935740411]
+[node name="PlantPot" type="RigidBody3D" parent="Flat/Props" unique_id=1694727498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.225, -3.6)
 mass = 5.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/PlantPot" unique_id=1724293300]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/PlantPot" unique_id=246273054]
 mesh = SubResource("CylinderMesh_3u22m")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/PlantPot" unique_id=537755018]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/PlantPot" unique_id=1379074322]
 shape = SubResource("CylinderShape3D_8wu6p")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/PlantPot" unique_id=1753839746]
+[node name="Interactable" type="Area3D" parent="Flat/Props/PlantPot" unique_id=1083689959]
 script = ExtResource("3_xsn48")
 DisplayName = "Plant pot"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_oi2vu")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/PlantPot/Interactable" unique_id=1501078417]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/PlantPot/Interactable" unique_id=592941176]
 shape = SubResource("BoxShape3D_narx4")
 
-[node name="Carryable" type="Node" parent="Flat/Props/PlantPot" unique_id=2120003564]
+[node name="Carryable" type="Node" parent="Flat/Props/PlantPot" unique_id=319305093]
 script = ExtResource("6_c1wwd")
 
-[node name="ShoeRack" type="StaticBody3D" parent="Flat/Props" unique_id=2041373249]
+[node name="ShoeRack" type="StaticBody3D" parent="Flat/Props" unique_id=2098804950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0.3, 0.1)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ShoeRack" unique_id=757150611]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/ShoeRack" unique_id=172605218]
 mesh = SubResource("BoxMesh_0vfup")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ShoeRack" unique_id=1809691652]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/ShoeRack" unique_id=331101385]
 shape = SubResource("BoxShape3D_ux8qb")
 
-[node name="Boots" type="StaticBody3D" parent="Flat/Props" unique_id=1355636028]
+[node name="Boots" type="StaticBody3D" parent="Flat/Props" unique_id=252214950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0.71, -0.25)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Boots" unique_id=1195115253]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Boots" unique_id=1669633927]
 mesh = SubResource("BoxMesh_f343p")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Boots" unique_id=1391173633]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Boots" unique_id=1567536938]
 shape = SubResource("BoxShape3D_ypm83")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Boots" unique_id=268288533]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Boots" unique_id=1423133387]
 script = ExtResource("3_xsn48")
 DisplayName = "Rain boots"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_iffw3"), SubResource("Resource_6pjad")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Boots/Interactable" unique_id=1094560029]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Boots/Interactable" unique_id=366694955]
 shape = SubResource("BoxShape3D_bcjxg")
 
-[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Boots/Interactable" unique_id=543902189]
+[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Boots/Interactable" unique_id=1283737596]
 script = ExtResource("9_236g8")
 VerbId = "wear"
 
-[node name="Sneakers" type="StaticBody3D" parent="Flat/Props" unique_id=1462191832]
+[node name="Sneakers" type="StaticBody3D" parent="Flat/Props" unique_id=1804473727]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0.71, 0.45)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Sneakers" unique_id=738241641]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Sneakers" unique_id=2139969727]
 mesh = SubResource("BoxMesh_enjj8")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sneakers" unique_id=1628644097]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sneakers" unique_id=774372971]
 shape = SubResource("BoxShape3D_fv7q4")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Sneakers" unique_id=564078702]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Sneakers" unique_id=186433561]
 script = ExtResource("3_xsn48")
 DisplayName = "Sneakers"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_bn1j1"), SubResource("Resource_5chrt")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sneakers/Interactable" unique_id=614546829]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Sneakers/Interactable" unique_id=1715702251]
 shape = SubResource("BoxShape3D_82t73")
 
-[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Sneakers/Interactable" unique_id=2037553282]
+[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Sneakers/Interactable" unique_id=1970449174]
 script = ExtResource("9_236g8")
 VerbId = "wear"
 
-[node name="UmbrellaStand" type="StaticBody3D" parent="Flat/Props" unique_id=364164039]
+[node name="UmbrellaStand" type="StaticBody3D" parent="Flat/Props" unique_id=1136048106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65, 0.3, 3.5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/UmbrellaStand" unique_id=1587643350]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/UmbrellaStand" unique_id=143310055]
 mesh = SubResource("BoxMesh_rb6vm")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/UmbrellaStand" unique_id=1205943859]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/UmbrellaStand" unique_id=656300556]
 shape = SubResource("BoxShape3D_oejc0")
 
-[node name="Umbrella" type="StaticBody3D" parent="Flat/Props" unique_id=238494509]
+[node name="Umbrella" type="StaticBody3D" parent="Flat/Props" unique_id=657822751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65, 0.8, 3.5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Umbrella" unique_id=1499111737]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Umbrella" unique_id=1762961366]
 mesh = SubResource("BoxMesh_tpmhq")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Umbrella" unique_id=775475941]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Umbrella" unique_id=1724016898]
 shape = SubResource("BoxShape3D_5qslq")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Umbrella" unique_id=1824975351]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Umbrella" unique_id=211176662]
 script = ExtResource("3_xsn48")
 DisplayName = "Umbrella"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_0hmj3")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Umbrella/Interactable" unique_id=488640850]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Umbrella/Interactable" unique_id=1607588724]
 shape = SubResource("BoxShape3D_jih3m")
 
-[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Umbrella/Interactable" unique_id=1253233648]
+[node name="RemoveOnInteract" type="Node" parent="Flat/Props/Umbrella/Interactable" unique_id=350234059]
 script = ExtResource("9_236g8")
 VerbId = "take"
 
-[node name="Towel" type="StaticBody3D" parent="Flat/Props" unique_id=2062470845]
+[node name="Towel" type="StaticBody3D" parent="Flat/Props" unique_id=1991141266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 1.2, 3.97)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Towel" unique_id=196598334]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/Towel" unique_id=1626249621]
 mesh = SubResource("BoxMesh_h8el7")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Towel" unique_id=1662677689]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Towel" unique_id=428034783]
 shape = SubResource("BoxShape3D_rna82")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Towel" unique_id=271007490]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Towel" unique_id=938304823]
 script = ExtResource("3_xsn48")
 DisplayName = "Towel"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_24gke")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Towel/Interactable" unique_id=1822800726]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Towel/Interactable" unique_id=1322355097]
 shape = SubResource("BoxShape3D_eqv3k")
 
-[node name="FrontDoorHinge" type="Node3D" parent="Flat/Props" unique_id=551795006]
+[node name="FrontDoorHinge" type="Node3D" parent="Flat/Props" unique_id=226652810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1.5)
 
-[node name="FrontDoor" type="StaticBody3D" parent="Flat/Props/FrontDoorHinge" unique_id=961946375]
+[node name="FrontDoor" type="StaticBody3D" parent="Flat/Props/FrontDoorHinge" unique_id=1956979110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0.5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=1875975991]
+[node name="Mesh" type="MeshInstance3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=969561139]
 mesh = SubResource("BoxMesh_equ6s")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=1321888918]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=398272452]
 shape = SubResource("BoxShape3D_5751q")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=1252741712]
+[node name="Interactable" type="Area3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=864083239]
 script = ExtResource("3_xsn48")
 DisplayName = "Front door"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_8ap5a")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/FrontDoorHinge/FrontDoor/Interactable" unique_id=1553196033]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/FrontDoorHinge/FrontDoor/Interactable" unique_id=1982093810]
 shape = SubResource("BoxShape3D_44f5g")
 
-[node name="Openable" type="Node" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=1440858413 node_paths=PackedStringArray("Target", "BlockingShapes")]
+[node name="Openable" type="Node" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=71746270 node_paths=PackedStringArray("Target", "BlockingShapes")]
 script = ExtResource("5_eejt3")
 Target = NodePath("../..")
 OpenRotationDegrees = Vector3(0, -95, 0)
 BlockingShapes = [NodePath("../Shape")]
 
-[node name="Note" type="Label3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=109797948]
+[node name="Note" type="Label3D" parent="Flat/Props/FrontDoorHinge/FrontDoor" unique_id=2030697248]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.06, 0.45, 0)
 pixel_size = 0.004
 modulate = Color(0.15, 0.15, 0.2, 1)
@@ -1562,13 +1562,13 @@ text = "SHOES!"
 font_size = 40
 outline_size = 0
 
-[node name="CatBedSpot" type="Node3D" parent="Flat/Props" unique_id=2089690256]
+[node name="CatBedSpot" type="Node3D" parent="Flat/Props" unique_id=43931168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.2, 3.2)
 
-[node name="ShoesSpot" type="Node3D" parent="Flat/Props" unique_id=1933811788]
+[node name="ShoesSpot" type="Node3D" parent="Flat/Props" unique_id=1865345588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0.85, 0.1)
 
-[node name="Cat" type="CharacterBody3D" parent="Flat/Props" unique_id=930694955 node_paths=PackedStringArray("Mover", "FoodSensor", "HitBox", "Bed", "ShoesSpot", "Shoes")]
+[node name="Cat" type="CharacterBody3D" parent="Flat/Props" unique_id=654146013 node_paths=PackedStringArray("Mover", "FoodSensor", "HitBox", "Bed", "ShoesSpot", "Shoes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.2, 3.2)
 script = ExtResource("18_0uqyn")
 Mover = NodePath("Mover")
@@ -1580,42 +1580,42 @@ Shoes = [NodePath("../Boots/Interactable"), NodePath("../Sneakers/Interactable")
 SwipeStatus = ExtResource("19_cpv2s")
 ScratchedStatus = ExtResource("20_q1ulb")
 
-[node name="Body" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=704943619]
+[node name="Body" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=167762571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
 mesh = SubResource("BoxMesh_agpog")
 
-[node name="Head" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=1721759661]
+[node name="Head" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=1297694190]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.36)
 mesh = SubResource("BoxMesh_emwyt")
 
-[node name="Tail" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=411737337]
+[node name="Tail" type="MeshInstance3D" parent="Flat/Props/Cat" unique_id=1809589747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0.48)
 mesh = SubResource("BoxMesh_yaw6j")
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat" unique_id=102271918]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat" unique_id=2042648358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
 shape = SubResource("BoxShape3D_ykfyn")
 
-[node name="Mover" type="Node" parent="Flat/Props/Cat" unique_id=868493377]
+[node name="Mover" type="Node" parent="Flat/Props/Cat" unique_id=1779838894]
 script = ExtResource("21_nsm7e")
 
-[node name="FoodSensor" type="Node3D" parent="Flat/Props/Cat" unique_id=1848087638]
+[node name="FoodSensor" type="Node3D" parent="Flat/Props/Cat" unique_id=1963716594]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 script = ExtResource("22_a0xka")
 Radius = 6.0
 RequireLineOfSight = true
 
-[node name="HitBox" type="Area3D" parent="Flat/Props/Cat" unique_id=1988086969]
+[node name="HitBox" type="Area3D" parent="Flat/Props/Cat" unique_id=1030404429]
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat/HitBox" unique_id=956437251]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat/HitBox" unique_id=1215078837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("BoxShape3D_b2sxa")
 
-[node name="Interactable" type="Area3D" parent="Flat/Props/Cat" unique_id=1645423760]
+[node name="Interactable" type="Area3D" parent="Flat/Props/Cat" unique_id=578494978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 script = ExtResource("3_xsn48")
 DisplayName = "Cat"
 Verbs = Array[ExtResource("4_2cu7f")]([SubResource("Resource_2t6di")])
 
-[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat/Interactable" unique_id=1715883454]
+[node name="Shape" type="CollisionShape3D" parent="Flat/Props/Cat/Interactable" unique_id=2109140857]
 shape = SubResource("BoxShape3D_xmxrf")

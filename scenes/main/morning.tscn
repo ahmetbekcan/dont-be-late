@@ -103,20 +103,20 @@ Payload = "You're drying off a bit."
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1d66"]
 bg_color = Color(0.3, 0.55, 0.95, 1)
 
-[node name="Morning" type="Node3D" unique_id=224145212]
+[node name="Morning" type="Node3D" unique_id=319040760]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=606543890]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=844562914]
 environment = SubResource("Environment_y4iof")
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1011264383]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=160430031]
 transform = Transform3D(0.9396926, -0.24184474, 0.24184474, 0, 0.70710677, 0.70710677, -0.34202012, -0.664463, 0.664463, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Home" type="Node3D" parent="." unique_id=1804876754 instance=ExtResource("1_hwk53")]
+[node name="Home" type="Node3D" parent="." unique_id=548807930 instance=ExtResource("1_hwk53")]
 
-[node name="Street" type="Node3D" parent="." unique_id=994234859 instance=ExtResource("2_ginbs")]
+[node name="Street" type="Node3D" parent="." unique_id=1710273473 instance=ExtResource("2_ginbs")]
 
-[node name="Player" parent="." unique_id=1685351807 node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("3_2nhnt")]
+[node name="Player" parent="." unique_id=643573574 node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("3_2nhnt")]
 transform = Transform3D(-0.7638152, 0, -0.645435, 0, 1, 0, 0.645435, 0, -0.7638152, -3.4, 3.05, -1.6)
 script = ExtResource("4_4ntss")
 InputSource = NodePath("Input")
@@ -186,7 +186,7 @@ Holder = NodePath("../StatusEffects")
 script = ExtResource("19_w5a0l")
 Effect = SubResource("Resource_hw3if")
 
-[node name="Drizzle" type="CPUParticles3D" parent="Player" unique_id=1899398656]
+[node name="Drizzle" type="CPUParticles3D" parent="Player" unique_id=1989857580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 amount = 500
 lifetime = 0.6
@@ -199,40 +199,40 @@ gravity = Vector3(0, -30, 0)
 initial_velocity_min = 8.0
 initial_velocity_max = 10.0
 
-[node name="ActiveWhen" type="Node" parent="Player/Drizzle" unique_id=1964713249]
+[node name="ActiveWhen" type="Node" parent="Player/Drizzle" unique_id=838128243]
 script = ExtResource("22_nvd7e")
 Condition = SubResource("Resource_4pfut")
 
-[node name="World" type="Node" parent="." unique_id=926064143]
+[node name="World" type="Node" parent="." unique_id=443102335]
 script = ExtResource("27_hgt7a")
 
-[node name="Consequences" type="Node" parent="." unique_id=141590376]
+[node name="Consequences" type="Node" parent="." unique_id=1905903810]
 script = ExtResource("28_hfh3m")
 
-[node name="Feedback" type="Node" parent="." unique_id=1518452038]
+[node name="Feedback" type="Node" parent="." unique_id=1915493457]
 
-[node name="Wetness25Up" type="Node" parent="Feedback" unique_id=45887832]
+[node name="Wetness25Up" type="Node" parent="Feedback" unique_id=1468837665]
 script = ExtResource("29_mxbjl")
 MeterId = "wetness"
 Threshold = 25.0
 Effect = SubResource("Resource_0csqs")
 
-[node name="Wetness60Up" type="Node" parent="Feedback" unique_id=1240058073]
+[node name="Wetness60Up" type="Node" parent="Feedback" unique_id=88209090]
 script = ExtResource("29_mxbjl")
 MeterId = "wetness"
 Threshold = 60.0
 Effect = SubResource("Resource_ti11c")
 
-[node name="Wetness60Down" type="Node" parent="Feedback" unique_id=1509538159]
+[node name="Wetness60Down" type="Node" parent="Feedback" unique_id=81318893]
 script = ExtResource("29_mxbjl")
 MeterId = "wetness"
 Threshold = 60.0
 Direction = 1
 Effect = SubResource("Resource_8icmk")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1507556669]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=537965663]
 
-[node name="Clock" type="Label" parent="HUD" unique_id=1867452877]
+[node name="Clock" type="Label" parent="HUD" unique_id=611437528]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -247,7 +247,7 @@ horizontal_alignment = 1
 script = ExtResource("31_sw7ex")
 WarnFrom = "08:05"
 
-[node name="Crosshair" type="Label" parent="HUD" unique_id=1142856197]
+[node name="Crosshair" type="Label" parent="HUD" unique_id=886446739]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -255,7 +255,7 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Prompt" type="Label" parent="HUD" unique_id=1446762904 node_paths=PackedStringArray("Interactor")]
+[node name="Prompt" type="Label" parent="HUD" unique_id=1406799579 node_paths=PackedStringArray("Interactor")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -271,7 +271,7 @@ theme_override_constants/outline_size = 6
 script = ExtResource("32_ld4m5")
 Interactor = NodePath("../../Player/Head/Interactor")
 
-[node name="Toast" type="Label" parent="HUD" unique_id=1083155305]
+[node name="Toast" type="Label" parent="HUD" unique_id=1820031477]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -287,7 +287,7 @@ theme_override_constants/outline_size = 8
 horizontal_alignment = 1
 script = ExtResource("33_6qgy6")
 
-[node name="You" type="VBoxContainer" parent="HUD" unique_id=813064089]
+[node name="You" type="VBoxContainer" parent="HUD" unique_id=999657858]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -297,7 +297,7 @@ offset_right = 520.0
 offset_bottom = -16.0
 alignment = 2
 
-[node name="Status" type="Label" parent="HUD/You" unique_id=189706086]
+[node name="Status" type="Label" parent="HUD/You" unique_id=173673511]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
@@ -305,7 +305,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 script = ExtResource("34_olgof")
 
-[node name="Wetness" type="ProgressBar" parent="HUD/You" unique_id=1833068680]
+[node name="Wetness" type="ProgressBar" parent="HUD/You" unique_id=1423129857]
 custom_minimum_size = Vector2(200, 16)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -313,7 +313,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_x1d66")
 script = ExtResource("35_787ld")
 MeterId = "wetness"
 
-[node name="Label" type="Label" parent="HUD/You/Wetness" unique_id=40485899]
+[node name="Label" type="Label" parent="HUD/You/Wetness" unique_id=1928781106]
 layout_mode = 0
 offset_left = 6.0
 offset_top = -1.0
@@ -322,7 +322,7 @@ offset_bottom = -1.0
 theme_override_font_sizes/font_size = 12
 text = "wet"
 
-[node name="Gear" type="Label" parent="HUD/You" unique_id=680982610]
+[node name="Gear" type="Label" parent="HUD/You" unique_id=1740798158]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -332,10 +332,10 @@ Slots = PackedStringArray("feet", "hand")
 SlotLabels = PackedStringArray("Feet", "Hand")
 EmptyText = "nothing"
 
-[node name="EndScreen" type="CanvasLayer" parent="." unique_id=2954297]
+[node name="EndScreen" type="CanvasLayer" parent="." unique_id=1913526405]
 script = ExtResource("37_ocry4")
 
-[node name="Director" type="Node" parent="." unique_id=1165019197 node_paths=PackedStringArray("World", "Consequences", "Buses", "EndScreen")]
+[node name="Director" type="Node" parent="." unique_id=88323814 node_paths=PackedStringArray("World", "Consequences", "Buses", "EndScreen")]
 script = ExtResource("38_n08op")
 ScenarioPool = ExtResource("39_w3d8b")
 BaseRules = ExtResource("40_fv88a")
