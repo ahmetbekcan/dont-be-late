@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="ScenarioDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/ConsequenceDefinition.cs" id="1_ic5x2"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/FailRunEffect.cs" id="2_58g5l"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/Condition.cs" id="3_ittkl"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HasItemCondition.cs" id="4_1pojk"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/EquippedSlotCondition.cs" id="5_yty4k"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/AllCondition.cs" id="6_xw784"]
+[ext_resource type="Script" path="res://src/Scenarios/ScenarioDefinition.cs" id="7_qnoxv"]
+
+[sub_resource type="Resource" id="Resource_j0coa"]
+script = ExtResource("2_58g5l")
+Reason = "You stepped outside and got soaked to the bone.
+Those puddles outside the window meant something..."
+
+[sub_resource type="Resource" id="Resource_wqmcb"]
+script = ExtResource("4_1pojk")
+ItemId = "umbrella"
+
+[sub_resource type="Resource" id="Resource_k2h34"]
+script = ExtResource("5_yty4k")
+Slot = "feet"
+ItemId = "boots"
+
+[sub_resource type="Resource" id="Resource_f13i7"]
+script = ExtResource("6_xw784")
+Conditions = Array[ExtResource("3_ittkl")]([SubResource("Resource_wqmcb"), SubResource("Resource_k2h34")])
+
+[sub_resource type="Resource" id="Resource_42xke"]
+script = ExtResource("1_ic5x2")
+Id = "soaked"
+Requirement = SubResource("Resource_f13i7")
+TriggerLocation = "front_door"
+Effect = SubResource("Resource_j0coa")
+
+[resource]
+script = ExtResource("7_qnoxv")
+DisplayName = "Rain overnight"
+Clue = "Puddles outside the window."
+Meaning = "It rained overnight and the street is soaked."
+Requirement = "Take the umbrella and wear the rain boots."
+Facts = {
+"raining": true
+}
+Consequences = Array[ExtResource("1_ic5x2")]([SubResource("Resource_42xke")])
+Id = "rain"
+Tags = PackedStringArray("weather")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ContentPool" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Pools/PoolEntry.cs" id="1_s3wd7"]
+[ext_resource type="Resource" path="res://content/scenarios/rain.tres" id="2_yeqdk"]
+[ext_resource type="Resource" path="res://content/scenarios/cat_on_shoes.tres" id="3_tgqx3"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Pools/ContentPool.cs" id="4_e6ue5"]
+
+[resource]
+script = ExtResource("4_e6ue5")
+Entries = Array[ExtResource("1_s3wd7")]([ExtResource("2_yeqdk"), ExtResource("3_tgqx3")])

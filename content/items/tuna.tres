@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="1_4ovq2"]
+
+[resource]
+script = ExtResource("1_4ovq2")
+Id = "tuna"
+DisplayName = "Can of tuna"
+Description = "The cat's favorite."

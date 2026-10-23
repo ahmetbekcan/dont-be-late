@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ScenarioDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/ConsequenceDefinition.cs" id="1_u1fnv"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="2_6wu4n"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/FailRunEffect.cs" id="3_vovh7"]
+[ext_resource type="Script" path="res://src/Scenarios/ScenarioDefinition.cs" id="4_1ejrh"]
+
+[sub_resource type="Resource" id="Resource_tm8w5"]
+script = ExtResource("2_6wu4n")
+EventName = "toast"
+Payload = "The bus leaves in 5 minutes!"
+
+[sub_resource type="Resource" id="Resource_e40kt"]
+script = ExtResource("1_u1fnv")
+Id = "bus_soon"
+TriggerTime = "07:55"
+Effect = SubResource("Resource_tm8w5")
+
+[sub_resource type="Resource" id="Resource_sfy65"]
+script = ExtResource("3_vovh7")
+Reason = "You missed the 8:00 bus."
+
+[sub_resource type="Resource" id="Resource_lxybr"]
+script = ExtResource("1_u1fnv")
+Id = "missed_bus"
+TriggerTime = "08:00"
+Effect = SubResource("Resource_sfy65")
+
+[resource]
+script = ExtResource("4_1ejrh")
+DisplayName = "Every morning"
+Requirement = "Leave home before the 8:00 bus."
+Consequences = Array[ExtResource("1_u1fnv")]([SubResource("Resource_e40kt"), SubResource("Resource_lxybr")])
+Id = "base_morning"

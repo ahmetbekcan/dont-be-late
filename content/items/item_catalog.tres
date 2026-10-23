@@ -1,6 +1,13 @@
-[gd_resource type="Resource" script_class="ItemCatalog" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ItemCatalog" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemCatalog.cs" id="1_catalog"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="1_asac2"]
+[ext_resource type="Resource" path="res://content/items/umbrella.tres" id="2_f66rx"]
+[ext_resource type="Resource" path="res://content/items/boots.tres" id="3_ea6ko"]
+[ext_resource type="Resource" path="res://content/items/sneakers.tres" id="4_xbh1u"]
+[ext_resource type="Resource" path="res://content/items/slippers.tres" id="5_vgpph"]
+[ext_resource type="Resource" path="res://content/items/tuna.tres" id="6_wpc0x"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemCatalog.cs" id="7_qaa4s"]
 
 [resource]
-script = ExtResource("1_catalog")
+script = ExtResource("7_qaa4s")
+Items = Array[ExtResource("1_asac2")]([ExtResource("2_f66rx"), ExtResource("3_ea6ko"), ExtResource("4_xbh1u"), ExtResource("5_vgpph"), ExtResource("6_wpc0x")])

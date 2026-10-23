@@ -69,6 +69,23 @@ If a library system is missing something this game needs, **improve the library 
 - Avoid per-frame allocations in `_Process`/`_PhysicsProcess` (LINQ, closures, boxing) in hot paths.
 - Keep classes small and focused; one responsibility per class.
 
+## Scenarios and stages
+
+- **What a scenario is:** a `ScenarioDefinition` resource (`src/Scenarios/`, data in `content/scenarios/`). It is a pool entry (weight, tags, exclusions, difficulty) with:
+  - a clue, a meaning and a requirement (text, for the journal and debug);
+  - `Facts` set when the morning starts;
+  - `Consequences` registered when the morning starts.
+- **Clues and obstacles are not scripted per scenario.** Level objects react to facts:
+  - a `ConditionalActivator` shows a prop only when a fact is set;
+  - interaction verbs use conditions (e.g. the shoes can't be taken while `cat_on_shoes`).
+- **Requirements are delayed consequences.** They are checked at a time or a location (`front_door`), not when the player makes the mistake.
+- **To add a scenario:**
+  1. Create the `.tres` and add it to `content/scenarios/home_pool.tres`.
+  2. Add the props that react to its facts.
+  3. Add a test in `tests/Stages/` that plays it through.
+- **Morning flow:** `MorningDirector` (in each stage scene) runs it. It starts the run, resets clock, facts and consequences, draws scenarios (`ScenarioPlanner`), handles the front door and the end screens. Continuing reloads the scene for the next morning.
+- **Rules every morning has** (the 8:00 bus) live in `content/scenarios/base_morning.tres`.
+
 ## Debugging
 
 The debug console and overlay must be able to force any scenario, set the clock, give items and show blackboard values. When adding a new scenario or system, add the matching debug commands.
@@ -76,6 +93,7 @@ The debug console and overlay must be able to force any scenario, set the clock,
 - The `Debug` autoload (`scenes/autoload/debug.tscn`) holds the library's `DebugConsole` (`` ` `` or F1) and `DebugOverlay` (F3). Both are stripped from release builds.
 - Standard commands already cover time, runs/seed, facts, items, consequences and events (`help` in the console). Add new items to `content/items/item_catalog.tres` so `give` can find them.
 - Register game commands with `DebugConsole.Instance?.Commands.Register(...)` and watches with `DebugOverlay.Instance?.Watch(...)`. Put them in `src/DebugCommands/`.
+- Scenario commands: `scenario` (active), `scenario list`, `scenario force <id>` (next morning), `scenario clear`, `restart`.
 
 ## Workflow
 
