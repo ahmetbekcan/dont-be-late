@@ -73,6 +73,10 @@ If a library system is missing something this game needs, **improve the library 
 
 The debug console and overlay must be able to force any scenario, set the clock, give items and show blackboard values. When adding a new scenario or system, add the matching debug commands.
 
+- The `Debug` autoload (`scenes/autoload/debug.tscn`) holds the library's `DebugConsole` (`` ` `` or F1) and `DebugOverlay` (F3). Both are stripped from release builds.
+- Standard commands already cover time, runs/seed, facts, items, consequences and events (`help` in the console). Add new items to `content/items/item_catalog.tres` so `give` can find them.
+- Register game commands with `DebugConsole.Instance?.Commands.Register(...)` and watches with `DebugOverlay.Instance?.Watch(...)`. Put them in `src/DebugCommands/`.
+
 ## Workflow
 
 - Build toward the first playable: event bus, RNG, run manager, clock → blackboard, conditions, content pool, delayed consequences → controller, interaction, inventory → debug console → Home stage with two scenarios.

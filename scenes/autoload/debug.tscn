@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/DebugTools/DebugConsole.cs" id="1_console"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/DebugTools/DebugOverlay.cs" id="2_overlay"]
+[ext_resource type="Resource" path="res://content/items/item_catalog.tres" id="3_items"]
+
+[node name="Debug" type="Node"]
+
+[node name="Console" type="CanvasLayer" parent="."]
+script = ExtResource("1_console")
+ItemCatalog = ExtResource("3_items")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+script = ExtResource("2_overlay")
