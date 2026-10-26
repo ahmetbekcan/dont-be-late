@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_apalm"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_airp1"]
+
+[sub_resource type="Resource" id="Resource_sbqrk"]
+script = ExtResource("1_apalm")
+Offset = Vector3(0.062, 0.205, 0.112)
+Size = Vector3(0.115, 0.115, 0.115)
+Sides = 8
+Wobble = 0.02
+Role = 4
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_4yr4e"]
+script = ExtResource("1_apalm")
+Offset = Vector3(0.06, 0.2, 0.168)
+Size = Vector3(0.045, 0.045, 0.045)
+Wobble = 0.0
+Role = 5
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_1fhtl"]
+script = ExtResource("1_apalm")
+Profile = 7
+Offset = Vector3(0.058, 0.27, 0.14)
+Rotation = Vector3(0, 0, -18)
+Size = Vector3(0.08, 0.02, 0.025)
+Sides = 4
+Role = 1
+Mirror = true
+
+[resource]
+script = ExtResource("2_airp1")
+Id = "angry"
+DisplayName = "Angry"
+Slot = "eyes"
+Shapes = Array[ExtResource("1_apalm")]([SubResource("Resource_sbqrk"), SubResource("Resource_4yr4e"), SubResource("Resource_1fhtl")])

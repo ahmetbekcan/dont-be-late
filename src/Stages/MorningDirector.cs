@@ -93,6 +93,7 @@ public partial class MorningDirector : Node
         Current = this;
         ScenarioCommands.Register();
         BusCommands.Register();
+        CharacterCommands.Register();
 
         if (Buses != null)
         {

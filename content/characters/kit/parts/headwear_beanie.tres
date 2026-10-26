@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_54ti5"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_qpyjl"]
+
+[sub_resource type="Resource" id="Resource_cfjgs"]
+script = ExtResource("1_54ti5")
+Profile = 1
+Offset = Vector3(0, 0.3, -0.005)
+Size = Vector3(0.31, 0.18, 0.32)
+Sides = 8
+Rings = 3
+
+[sub_resource type="Resource" id="Resource_6v0kk"]
+script = ExtResource("1_54ti5")
+Profile = 3
+Offset = Vector3(0, 0.235, -0.005)
+Size = Vector3(0.315, 0.06, 0.325)
+Sides = 8
+Wobble = 0.03
+
+[resource]
+script = ExtResource("2_qpyjl")
+Id = "beanie"
+DisplayName = "Beanie"
+Slot = "headwear"
+Shapes = Array[ExtResource("1_54ti5")]([SubResource("Resource_cfjgs"), SubResource("Resource_6v0kk")])
+DefaultPrimary = Color(0.3, 0.7, 0.25, 1)
+Hides = PackedStringArray("hair")
+Weight = 2.0

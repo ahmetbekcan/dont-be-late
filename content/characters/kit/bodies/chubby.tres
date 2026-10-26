@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BodyType" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BodyType.cs" id="1_5k6b7"]
+
+[resource]
+script = ExtResource("1_5k6b7")
+Id = "chubby"
+DisplayName = "Chubby"
+ShoulderWidth = 0.46
+HipWidth = 0.4
+TorsoDepth = 0.3
+Belly = 0.8
+LimbThickness = 1.22
+HeadSize = 1.4
+Weight = 2.0

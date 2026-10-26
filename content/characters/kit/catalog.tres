@@ -1,0 +1,145 @@
+[gd_resource type="Resource" script_class="CharacterCatalog" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BodyType.cs" id="1_nd3e5"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/average.tres" id="2_gve8p"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/slim.tres" id="3_11e4y"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/chubby.tres" id="4_uctq2"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/tall.tres" id="5_prxca"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/short.tres" id="6_e3nff"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/broad.tres" id="7_uyvwk"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="8_08k6r"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_egg.tres" id="9_myxim"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_long.tres" id="10_vot3k"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_round.tres" id="11_6xjbt"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_square.tres" id="12_hcrfg"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_wide.tres" id="13_ef3nc"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_googly.tres" id="14_dubye"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_wonky.tres" id="15_vfore"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_cross.tres" id="16_yqjos"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_sleepy.tres" id="17_6354l"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_small.tres" id="18_snj7q"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_angry.tres" id="19_qb7rt"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_worried.tres" id="20_a8sit"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_button.tres" id="21_pvbh3"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_big.tres" id="22_24ufy"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_long.tres" id="23_3uryd"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_pointy.tres" id="24_ja0ab"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_potato.tres" id="25_5ublf"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_round.tres" id="26_05o4a"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_big.tres" id="27_4r460"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_pointy.tres" id="28_quxhn"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_small.tres" id="29_2ki7i"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_line.tres" id="30_woswe"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_smile.tres" id="31_vcxla"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_frown.tres" id="32_hkoq2"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_open.tres" id="33_omtyq"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_grin.tres" id="34_i0ynv"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/facial_hair_moustache.tres" id="35_mg8j0"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/facial_hair_walrus.tres" id="36_a3n8c"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/facial_hair_handlebar.tres" id="37_lhqpr"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/facial_hair_beard.tres" id="38_o12cb"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/facial_hair_goatee.tres" id="39_lmt1k"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_short.tres" id="40_l6cqa"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_spiky.tres" id="41_dunyw"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_mohawk.tres" id="42_iirlx"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_long.tres" id="43_jwd82"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_bun.tres" id="44_r3xb8"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_bowl.tres" id="45_klr1o"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_quiff.tres" id="46_b7sb8"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_comb_over.tres" id="47_qmemq"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_ring.tres" id="48_hr03y"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/glasses_sunglasses.tres" id="49_lvxdt"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/glasses_round.tres" id="50_wgr4y"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/glasses_square.tres" id="51_awjpt"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/headwear_beanie.tres" id="52_8mst6"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/headwear_cap.tres" id="53_ui347"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/headwear_bucket.tres" id="54_5bbcm"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/headwear_party.tres" id="55_dbj3r"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_tshirt.tres" id="56_wb5ct"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_longsleeve.tres" id="57_qgepk"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_tank.tres" id="58_uw768"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_sailor.tres" id="59_4huv6"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_hoodie.tres" id="60_o8kp4"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/outer_apron.tres" id="61_2q68g"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/outer_vest.tres" id="62_4etks"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_jeans.tres" id="63_kmehs"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_shorts.tres" id="64_xksp0"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_trousers.tres" id="65_rjuno"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_skirt.tres" id="66_ymvo8"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/shoes_sneakers.tres" id="67_wnnay"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/shoes_boots.tres" id="68_dahet"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/shoes_slippers.tres" id="69_wpu3b"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/shoes_dress_shoes.tres" id="70_bf684"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/SlotRule.cs" id="71_jclyh"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterCatalog.cs" id="72_1vygc"]
+
+[sub_resource type="Resource" id="Resource_8o4rb"]
+script = ExtResource("71_jclyh")
+Slot = "head"
+
+[sub_resource type="Resource" id="Resource_nlof5"]
+script = ExtResource("71_jclyh")
+Slot = "eyes"
+
+[sub_resource type="Resource" id="Resource_kf4qi"]
+script = ExtResource("71_jclyh")
+Slot = "nose"
+
+[sub_resource type="Resource" id="Resource_mn40q"]
+script = ExtResource("71_jclyh")
+Slot = "mouth"
+
+[sub_resource type="Resource" id="Resource_3pvq6"]
+script = ExtResource("71_jclyh")
+Slot = "ears"
+Chance = 0.9
+
+[sub_resource type="Resource" id="Resource_dkjrn"]
+script = ExtResource("71_jclyh")
+Slot = "hair"
+Chance = 0.85
+
+[sub_resource type="Resource" id="Resource_gvphc"]
+script = ExtResource("71_jclyh")
+Slot = "facial_hair"
+Chance = 0.3
+
+[sub_resource type="Resource" id="Resource_y1jhk"]
+script = ExtResource("71_jclyh")
+Slot = "glasses"
+Chance = 0.18
+
+[sub_resource type="Resource" id="Resource_rmj2e"]
+script = ExtResource("71_jclyh")
+Slot = "headwear"
+Chance = 0.3
+
+[sub_resource type="Resource" id="Resource_ficv5"]
+script = ExtResource("71_jclyh")
+Slot = "top"
+Chance = 0.92
+
+[sub_resource type="Resource" id="Resource_nh5kw"]
+script = ExtResource("71_jclyh")
+Slot = "outer"
+Chance = 0.12
+
+[sub_resource type="Resource" id="Resource_ju1di"]
+script = ExtResource("71_jclyh")
+Slot = "bottom"
+
+[sub_resource type="Resource" id="Resource_602re"]
+script = ExtResource("71_jclyh")
+Slot = "shoes"
+Chance = 0.9
+
+[resource]
+script = ExtResource("72_1vygc")
+Parts = Array[ExtResource("8_08k6r")]([ExtResource("9_myxim"), ExtResource("10_vot3k"), ExtResource("11_6xjbt"), ExtResource("12_hcrfg"), ExtResource("13_ef3nc"), ExtResource("14_dubye"), ExtResource("15_vfore"), ExtResource("16_yqjos"), ExtResource("17_6354l"), ExtResource("18_snj7q"), ExtResource("19_qb7rt"), ExtResource("20_a8sit"), ExtResource("21_pvbh3"), ExtResource("22_24ufy"), ExtResource("23_3uryd"), ExtResource("24_ja0ab"), ExtResource("25_5ublf"), ExtResource("26_05o4a"), ExtResource("27_4r460"), ExtResource("28_quxhn"), ExtResource("29_2ki7i"), ExtResource("30_woswe"), ExtResource("31_vcxla"), ExtResource("32_hkoq2"), ExtResource("33_omtyq"), ExtResource("34_i0ynv"), ExtResource("35_mg8j0"), ExtResource("36_a3n8c"), ExtResource("37_lhqpr"), ExtResource("38_o12cb"), ExtResource("39_lmt1k"), ExtResource("40_l6cqa"), ExtResource("41_dunyw"), ExtResource("42_iirlx"), ExtResource("43_jwd82"), ExtResource("44_r3xb8"), ExtResource("45_klr1o"), ExtResource("46_b7sb8"), ExtResource("47_qmemq"), ExtResource("48_hr03y"), ExtResource("49_lvxdt"), ExtResource("50_wgr4y"), ExtResource("51_awjpt"), ExtResource("52_8mst6"), ExtResource("53_ui347"), ExtResource("54_5bbcm"), ExtResource("55_dbj3r"), ExtResource("56_wb5ct"), ExtResource("57_qgepk"), ExtResource("58_uw768"), ExtResource("59_4huv6"), ExtResource("60_o8kp4"), ExtResource("61_2q68g"), ExtResource("62_4etks"), ExtResource("63_kmehs"), ExtResource("64_xksp0"), ExtResource("65_rjuno"), ExtResource("66_ymvo8"), ExtResource("67_wnnay"), ExtResource("68_dahet"), ExtResource("69_wpu3b"), ExtResource("70_bf684")])
+BodyTypes = Array[ExtResource("1_nd3e5")]([ExtResource("2_gve8p"), ExtResource("3_11e4y"), ExtResource("4_uctq2"), ExtResource("5_prxca"), ExtResource("6_e3nff"), ExtResource("7_uyvwk")])
+SkinColors = PackedColorArray(0.98, 0.85, 0.74, 1, 0.94, 0.76, 0.6, 1, 0.86, 0.65, 0.47, 1, 0.73, 0.52, 0.36, 1, 0.56, 0.37, 0.25, 1, 0.4, 0.26, 0.18, 1)
+FunSkinColors = PackedColorArray(1, 0.86, 0.25, 1, 0.55, 0.82, 0.45, 1, 0.6, 0.75, 1, 1)
+HairColors = PackedColorArray(0.08, 0.07, 0.07, 1, 0.25, 0.15, 0.08, 1, 0.45, 0.29, 0.14, 1, 0.88, 0.72, 0.38, 1, 0.75, 0.33, 0.12, 1, 0.6, 0.6, 0.6, 1, 0.92, 0.92, 0.9, 1)
+EyeColors = PackedColorArray(0.05, 0.05, 0.07, 1, 0.2, 0.12, 0.06, 1, 0.1, 0.25, 0.5, 1)
+ClothingColors = PackedColorArray(0.85, 0.2, 0.2, 1, 0.25, 0.5, 0.9, 1, 0.12, 0.16, 0.38, 1, 0.25, 0.6, 0.3, 1, 0.98, 0.8, 0.25, 1, 0.95, 0.5, 0.15, 1, 0.95, 0.95, 0.93, 1, 0.12, 0.12, 0.13, 1, 0.5, 0.5, 0.52, 1, 0.55, 0.3, 0.7, 1, 0.15, 0.6, 0.6, 1, 0.95, 0.55, 0.7, 1, 0.45, 0.45, 0.2, 1, 0.45, 0.3, 0.18, 1)
+Rules = Array[ExtResource("71_jclyh")]([SubResource("Resource_8o4rb"), SubResource("Resource_nlof5"), SubResource("Resource_kf4qi"), SubResource("Resource_mn40q"), SubResource("Resource_3pvq6"), SubResource("Resource_dkjrn"), SubResource("Resource_gvphc"), SubResource("Resource_y1jhk"), SubResource("Resource_rmj2e"), SubResource("Resource_ficv5"), SubResource("Resource_nh5kw"), SubResource("Resource_ju1di"), SubResource("Resource_602re")])

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BodyType" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BodyType.cs" id="1_hclkh"]
+
+[resource]
+script = ExtResource("1_hclkh")
+Id = "slim"
+DisplayName = "Slim"
+ShoulderWidth = 0.37
+HipWidth = 0.28
+TorsoDepth = 0.19
+LimbThickness = 0.82
+HeadSize = 1.34
+Weight = 2.0

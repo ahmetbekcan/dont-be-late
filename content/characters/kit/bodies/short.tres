@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BodyType" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BodyType.cs" id="1_yknuf"]
+
+[resource]
+script = ExtResource("1_yknuf")
+Id = "short"
+DisplayName = "Short"
+LegLength = 0.7
+TorsoLength = 0.5
+ArmLength = 0.54
+HeadSize = 1.42

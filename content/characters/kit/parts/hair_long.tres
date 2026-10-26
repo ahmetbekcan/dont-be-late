@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_xi4ri"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_l2vwl"]
+
+[sub_resource type="Resource" id="Resource_dbwhv"]
+script = ExtResource("1_xi4ri")
+Profile = 1
+Offset = Vector3(0, 0.3, -0.008)
+Size = Vector3(0.29, 0.13, 0.3)
+Sides = 8
+Wobble = 0.06
+Role = 1
+
+[sub_resource type="Resource" id="Resource_5xgt7"]
+script = ExtResource("1_xi4ri")
+Profile = 7
+Offset = Vector3(0, 0.17, -0.12)
+Size = Vector3(0.29, 0.3, 0.07)
+Sides = 4
+Role = 1
+
+[sub_resource type="Resource" id="Resource_bt6yi"]
+script = ExtResource("1_xi4ri")
+Profile = 7
+Offset = Vector3(0.135, 0.17, -0.03)
+Size = Vector3(0.05, 0.27, 0.16)
+Sides = 4
+Role = 1
+Mirror = true
+
+[resource]
+script = ExtResource("2_l2vwl")
+Id = "long"
+DisplayName = "Long"
+Shapes = Array[ExtResource("1_xi4ri")]([SubResource("Resource_dbwhv"), SubResource("Resource_5xgt7"), SubResource("Resource_bt6yi")])
+Weight = 2.0

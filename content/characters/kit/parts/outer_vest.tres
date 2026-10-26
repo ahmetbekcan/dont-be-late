@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_2iwym"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_f3g5x"]
+
+[resource]
+script = ExtResource("2_f3g5x")
+Covers = 6
+Thickness = 0.1
+Layer = 2
+Id = "vest"
+DisplayName = "Vest"
+Slot = "outer"
+DefaultPrimary = Color(0.45, 0.3, 0.18, 1)

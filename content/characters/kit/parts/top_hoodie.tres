@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_6xaol"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_n57vk"]
+
+[sub_resource type="Resource" id="Resource_ih1e2"]
+script = ExtResource("1_6xaol")
+Joint = "Neck"
+Offset = Vector3(0, 0.03, -0.12)
+Size = Vector3(0.3, 0.14, 0.14)
+Sides = 7
+
+[resource]
+script = ExtResource("2_n57vk")
+Covers = 54
+Id = "hoodie"
+DisplayName = "Hoodie"
+Slot = "top"
+Shapes = Array[ExtResource("1_6xaol")]([SubResource("Resource_ih1e2")])
+DefaultPrimary = Color(0.5, 0.5, 0.52, 1)

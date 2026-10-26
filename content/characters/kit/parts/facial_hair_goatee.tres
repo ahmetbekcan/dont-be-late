@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_da674"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_e7bhw"]
+
+[sub_resource type="Resource" id="Resource_wftc2"]
+script = ExtResource("1_da674")
+Profile = 2
+Offset = Vector3(0, 0.04, 0.12)
+Rotation = Vector3(180, 0, 0)
+Size = Vector3(0.05, 0.07, 0.04)
+Sides = 5
+Role = 1
+
+[resource]
+script = ExtResource("2_e7bhw")
+Id = "goatee"
+DisplayName = "Goatee"
+Slot = "facial_hair"
+Shapes = Array[ExtResource("1_da674")]([SubResource("Resource_wftc2")])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_0oa8e"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_owycs"]
+
+[resource]
+script = ExtResource("2_owycs")
+Covers = 54
+Id = "longsleeve"
+DisplayName = "Long sleeves"
+Slot = "top"
+DefaultPrimary = Color(0.25, 0.6, 0.3, 1)
+Weight = 2.0

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_u0wrw"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_q402s"]
+
+[sub_resource type="Resource" id="Resource_2d6fd"]
+script = ExtResource("1_u0wrw")
+Profile = 5
+Offset = Vector3(0, 0.17, 0)
+Size = Vector3(0.26, 0.34, 0.27)
+Sides = 7
+Rings = 3
+Role = 0
+
+[resource]
+script = ExtResource("2_q402s")
+Id = "egg"
+DisplayName = "Egg"
+Slot = "head"
+Shapes = Array[ExtResource("1_u0wrw")]([SubResource("Resource_2d6fd")])
+Weight = 3.0

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_5xbsx"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_xt7rx"]
+
+[sub_resource type="Resource" id="Resource_wlvr1"]
+script = ExtResource("1_5xbsx")
+Profile = 7
+Offset = Vector3(0, 0.118, 0.138)
+Size = Vector3(0.1, 0.024, 0.03)
+Sides = 4
+Wobble = 0.1
+Role = 1
+
+[resource]
+script = ExtResource("2_xt7rx")
+Id = "moustache"
+DisplayName = "Moustache"
+Slot = "facial_hair"
+Shapes = Array[ExtResource("1_5xbsx")]([SubResource("Resource_wlvr1")])
+Weight = 3.0

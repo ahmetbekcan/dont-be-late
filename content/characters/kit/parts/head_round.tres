@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_ffueg"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_5st78"]
+
+[sub_resource type="Resource" id="Resource_34trr"]
+script = ExtResource("1_ffueg")
+Offset = Vector3(0, 0.17, 0)
+Size = Vector3(0.3, 0.33, 0.29)
+Sides = 8
+Rings = 3
+Role = 0
+
+[resource]
+script = ExtResource("2_5st78")
+Id = "round"
+DisplayName = "Round"
+Slot = "head"
+Shapes = Array[ExtResource("1_ffueg")]([SubResource("Resource_34trr")])
+Weight = 2.0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_v4rlq"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_ybul1"]
+
+[resource]
+script = ExtResource("2_ybul1")
+Covers = 392
+Id = "jeans"
+DisplayName = "Jeans"
+Slot = "bottom"
+DefaultPrimary = Color(0.2, 0.28, 0.5, 1)
+Palette = PackedColorArray(0.2, 0.28, 0.5, 1, 0.12, 0.16, 0.3, 1, 0.1, 0.1, 0.11, 1, 0.5, 0.45, 0.35, 1)
+Weight = 3.0

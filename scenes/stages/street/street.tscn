@@ -28,6 +28,8 @@
 [ext_resource type="Resource" path="res://content/obstacles/bus_driver/limping.tres" id="26_smxes"]
 [ext_resource type="Resource" path="res://content/obstacles/bus_driver/scratched.tres" id="27_ls488"]
 
+[ext_resource type="PackedScene" path="res://scenes/characters/npc.tscn" id="90_npc"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjokx"]
 albedo_color = Color(0.42, 0.55, 0.36, 1)
 
@@ -1443,3 +1445,17 @@ Door = NodePath("../Bus/Interactable")
 StopX = 35.5
 EntryX = -45.0
 Rules = Array[ExtResource("22_ofwq1")]([ExtResource("23_u0js0"), ExtResource("24_ox8el"), ExtResource("25_2b216"), ExtResource("26_smxes"), ExtResource("27_ls488")])
+
+[node name="Waiting" type="Node3D" parent="."]
+
+[node name="OnTheBench" parent="Waiting" instance=ExtResource("90_npc")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 37.4, 0, -4.85)
+
+[node name="Body" parent="Waiting/OnTheBench" index="1"]
+Pose = 1
+
+[node name="ByThePole" parent="Waiting" instance=ExtResource("90_npc")]
+transform = Transform3D(-0.94, 0, 0.34, 0, 1, 0, -0.34, 0, -0.94, 39.6, 0, -5.4)
+
+[node name="BySideWall" parent="Waiting" instance=ExtResource("90_npc")]
+transform = Transform3D(-0.94, 0, -0.34, 0, 1, 0, 0.34, 0, -0.94, 36.6, 0, -6.2)

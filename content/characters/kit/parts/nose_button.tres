@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_k1rbr"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_e4brv"]
+
+[sub_resource type="Resource" id="Resource_elfqm"]
+script = ExtResource("1_k1rbr")
+Offset = Vector3(0, 0.15, 0.143)
+Size = Vector3(0.045, 0.045, 0.045)
+Role = 0
+
+[resource]
+script = ExtResource("2_e4brv")
+Id = "button"
+DisplayName = "Button"
+Slot = "nose"
+Shapes = Array[ExtResource("1_k1rbr")]([SubResource("Resource_elfqm")])
+Weight = 2.0

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_1gkva"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_iwloe"]
+
+[sub_resource type="Resource" id="Resource_1vo7b"]
+script = ExtResource("1_1gkva")
+Profile = 9
+Offset = Vector3(0.14, 0.21, -0.01)
+Rotation = Vector3(0, 0, -28)
+Size = Vector3(0.035, 0.13, 0.055)
+Role = 0
+Mirror = true
+
+[resource]
+script = ExtResource("2_iwloe")
+Id = "pointy"
+DisplayName = "Pointy"
+Slot = "ears"
+Shapes = Array[ExtResource("1_1gkva")]([SubResource("Resource_1vo7b")])

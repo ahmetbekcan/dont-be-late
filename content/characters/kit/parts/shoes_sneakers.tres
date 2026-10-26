@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_shumc"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_0wk3u"]
+
+[sub_resource type="Resource" id="Resource_614fc"]
+script = ExtResource("1_shumc")
+Joint = "FootL"
+Profile = 7
+Offset = Vector3(0, -0.066, 0.045)
+Size = Vector3(0.112, 0.024, 0.255)
+Sides = 4
+Wobble = 0.02
+Role = 3
+Mirror = true
+
+[resource]
+script = ExtResource("2_0wk3u")
+Covers = 512
+Id = "sneakers"
+DisplayName = "Sneakers"
+Slot = "shoes"
+Shapes = Array[ExtResource("1_shumc")]([SubResource("Resource_614fc")])
+DefaultPrimary = Color(0.85, 0.2, 0.2, 1)
+DefaultSecondary = Color(0.97, 0.97, 0.95, 1)
+Weight = 3.0

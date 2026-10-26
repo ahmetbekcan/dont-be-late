@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_bc4v3"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_610em"]
+
+[sub_resource type="Resource" id="Resource_2jibi"]
+script = ExtResource("1_bc4v3")
+Offset = Vector3(0.145, 0.185, -0.01)
+Rotation = Vector3(0, 0, -12)
+Size = Vector3(0.04, 0.11, 0.085)
+Role = 0
+Mirror = true
+
+[resource]
+script = ExtResource("2_610em")
+Id = "big"
+DisplayName = "Big"
+Slot = "ears"
+Shapes = Array[ExtResource("1_bc4v3")]([SubResource("Resource_2jibi")])

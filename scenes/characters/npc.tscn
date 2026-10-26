@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterBody.cs" id="1_body"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/RandomLook.cs" id="2_random"]
+[ext_resource type="Resource" path="res://content/characters/kit/catalog.tres" id="3_catalog"]
+
+[sub_resource type="CapsuleShape3D" id="shape"]
+radius = 0.3
+height = 1.9
+
+[node name="Npc" type="StaticBody3D"]
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+shape = SubResource("shape")
+
+[node name="Body" type="Node3D" parent="."]
+script = ExtResource("1_body")
+
+[node name="RandomLook" type="Node" parent="Body"]
+script = ExtResource("2_random")
+Catalog = ExtResource("3_catalog")

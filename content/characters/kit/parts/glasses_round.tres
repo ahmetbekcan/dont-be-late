@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_glyo1"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_cg7u0"]
+
+[sub_resource type="Resource" id="Resource_gmmo0"]
+script = ExtResource("1_glyo1")
+Profile = 8
+Offset = Vector3(0.058, 0.205, 0.182)
+Rotation = Vector3(90, 0, 0)
+Size = Vector3(0.085, 0.012, 0.085)
+Sides = 8
+Wobble = 0.0
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_vmpyl"]
+script = ExtResource("1_glyo1")
+Profile = 8
+Offset = Vector3(0.058, 0.205, 0.186)
+Rotation = Vector3(90, 0, 0)
+Size = Vector3(0.065, 0.008, 0.065)
+Sides = 8
+Wobble = 0.0
+Role = 7
+Color = Color(0.75, 0.88, 1, 1)
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_50jnw"]
+script = ExtResource("1_glyo1")
+Profile = 7
+Offset = Vector3(0.135, 0.21, 0.11)
+Size = Vector3(0.01, 0.012, 0.16)
+Sides = 4
+Wobble = 0.0
+Mirror = true
+
+[resource]
+script = ExtResource("2_cg7u0")
+Id = "round"
+DisplayName = "Round glasses"
+Slot = "glasses"
+Shapes = Array[ExtResource("1_glyo1")]([SubResource("Resource_gmmo0"), SubResource("Resource_vmpyl"), SubResource("Resource_50jnw")])
+DefaultPrimary = Color(0.15, 0.15, 0.15, 1)

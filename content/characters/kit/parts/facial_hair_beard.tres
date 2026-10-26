@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_7qlsv"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_it085"]
+
+[sub_resource type="Resource" id="Resource_seqc5"]
+script = ExtResource("1_7qlsv")
+Profile = 5
+Offset = Vector3(0, 0.04, 0.06)
+Size = Vector3(0.25, 0.15, 0.17)
+Sides = 7
+Wobble = 0.1
+Role = 1
+
+[sub_resource type="Resource" id="Resource_xf6tu"]
+script = ExtResource("1_7qlsv")
+Profile = 7
+Offset = Vector3(0, 0.118, 0.138)
+Size = Vector3(0.1, 0.024, 0.03)
+Sides = 4
+Wobble = 0.1
+Role = 1
+
+[resource]
+script = ExtResource("2_it085")
+Id = "beard"
+DisplayName = "Beard"
+Slot = "facial_hair"
+Shapes = Array[ExtResource("1_7qlsv")]([SubResource("Resource_seqc5"), SubResource("Resource_xf6tu")])

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_4p4tj"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_kxebj"]
+
+[resource]
+script = ExtResource("2_kxebj")
+Covers = 6
+Id = "tank"
+DisplayName = "Tank top"
+Slot = "top"
+DefaultPrimary = Color(0.95, 0.95, 0.93, 1)

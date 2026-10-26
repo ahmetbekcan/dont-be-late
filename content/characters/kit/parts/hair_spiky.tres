@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_xbd0m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_yxrsh"]
+
+[sub_resource type="Resource" id="Resource_ogbj3"]
+script = ExtResource("1_xbd0m")
+Profile = 1
+Offset = Vector3(0, 0.3, -0.008)
+Size = Vector3(0.29, 0.13, 0.3)
+Sides = 8
+Wobble = 0.06
+Role = 1
+
+[sub_resource type="Resource" id="Resource_sk3gs"]
+script = ExtResource("1_xbd0m")
+Profile = 2
+Offset = Vector3(0, 0.39, 0.02)
+Rotation = Vector3(15, 0, 0)
+Size = Vector3(0.07, 0.1, 0.07)
+Sides = 4
+Role = 1
+
+[sub_resource type="Resource" id="Resource_08urt"]
+script = ExtResource("1_xbd0m")
+Profile = 2
+Offset = Vector3(0.07, 0.37, -0.02)
+Rotation = Vector3(0, 0, -25)
+Size = Vector3(0.07, 0.1, 0.07)
+Sides = 4
+Role = 1
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_tci0o"]
+script = ExtResource("1_xbd0m")
+Profile = 2
+Offset = Vector3(0, 0.37, -0.08)
+Rotation = Vector3(-30, 0, 0)
+Size = Vector3(0.07, 0.1, 0.07)
+Sides = 4
+Role = 1
+
+[resource]
+script = ExtResource("2_yxrsh")
+Id = "spiky"
+DisplayName = "Spiky"
+Shapes = Array[ExtResource("1_xbd0m")]([SubResource("Resource_ogbj3"), SubResource("Resource_sk3gs"), SubResource("Resource_08urt"), SubResource("Resource_tci0o")])

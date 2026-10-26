@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_tds8g"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_6y34x"]
+
+[sub_resource type="Resource" id="Resource_s4f6n"]
+script = ExtResource("1_tds8g")
+Profile = 7
+Offset = Vector3(0.058, 0.235, 0.186)
+Size = Vector3(0.09, 0.014, 0.016)
+Sides = 4
+Wobble = 0.0
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_ptjh4"]
+script = ExtResource("1_tds8g")
+Profile = 7
+Offset = Vector3(0.058, 0.178, 0.186)
+Size = Vector3(0.09, 0.012, 0.016)
+Sides = 4
+Wobble = 0.0
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_c882k"]
+script = ExtResource("1_tds8g")
+Profile = 7
+Offset = Vector3(0.135, 0.22, 0.11)
+Size = Vector3(0.012, 0.014, 0.16)
+Sides = 4
+Wobble = 0.0
+Mirror = true
+
+[resource]
+script = ExtResource("2_6y34x")
+Id = "square"
+DisplayName = "Square glasses"
+Slot = "glasses"
+Shapes = Array[ExtResource("1_tds8g")]([SubResource("Resource_s4f6n"), SubResource("Resource_ptjh4"), SubResource("Resource_c882k")])
+DefaultPrimary = Color(0.1, 0.1, 0.12, 1)

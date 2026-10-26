@@ -65,6 +65,10 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneApp.cs" id="73_appscript"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/ScheduledMessage.cs" id="74_schedscript"]
 
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterCreatorScreen.cs" id="80_creator"]
+[ext_resource type="Resource" path="res://content/characters/kit/catalog.tres" id="81_catalog"]
+[ext_resource type="Script" path="res://src/Characters/PlayerCreator.cs" id="82_pcreator"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0csqs"]
 
 [sub_resource type="Sky" id="Sky_ti11c"]
@@ -402,8 +406,18 @@ RotateLeftAction = "move_left"
 RotateRightAction = "move_right"
 SlotSpecs = Array[ExtResource("38_y4iof")]([SubResource("Resource_fsiad")])
 FigureScene = ExtResource("41_yf2fv")
+FigureCameraPosition = Vector3(0, 1.05, 3.9)
+FigureCameraTarget = Vector3(0, 0.98, 0)
 EquipText = "Put on"
 MouseHintText = "Drag onto a slot or yourself to wear  ·  drag off to drop  ·  A/D to turn"
+
+[node name="Creator" type="CanvasLayer" parent="."]
+script = ExtResource("80_creator")
+Catalog = ExtResource("81_catalog")
+
+[node name="PlayerCreator" type="Node" parent="." node_paths=PackedStringArray("Creator")]
+script = ExtResource("82_pcreator")
+Creator = NodePath("../Creator")
 
 [node name="EndScreen" type="CanvasLayer" parent="." unique_id=219996350]
 script = ExtResource("42_vvooy")

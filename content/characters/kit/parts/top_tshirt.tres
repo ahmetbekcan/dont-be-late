@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_ibdh8"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_vi6lm"]
+
+[resource]
+script = ExtResource("2_vi6lm")
+Covers = 22
+Id = "tshirt"
+DisplayName = "T-shirt"
+Slot = "top"
+DefaultPrimary = Color(0.25, 0.5, 0.9, 1)
+Weight = 3.0

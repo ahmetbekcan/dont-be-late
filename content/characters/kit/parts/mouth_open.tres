@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_rmsmp"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_hyst5"]
+
+[sub_resource type="Resource" id="Resource_qttrh"]
+script = ExtResource("1_rmsmp")
+Offset = Vector3(0, 0.09, 0.125)
+Size = Vector3(0.05, 0.04, 0.03)
+Role = 6
+
+[resource]
+script = ExtResource("2_hyst5")
+Id = "open"
+DisplayName = "Open"
+Slot = "mouth"
+Shapes = Array[ExtResource("1_rmsmp")]([SubResource("Resource_qttrh")])

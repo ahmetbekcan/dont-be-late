@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_5d7xi"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_eyt2l"]
+
+[sub_resource type="Resource" id="Resource_wldtp"]
+script = ExtResource("1_5d7xi")
+Profile = 1
+Offset = Vector3(0, 0.3, -0.008)
+Size = Vector3(0.29, 0.13, 0.3)
+Sides = 8
+Wobble = 0.06
+Role = 1
+
+[sub_resource type="Resource" id="Resource_xwfyt"]
+script = ExtResource("1_5d7xi")
+Offset = Vector3(0, 0.37, -0.1)
+Size = Vector3(0.12, 0.11, 0.11)
+Role = 1
+
+[resource]
+script = ExtResource("2_eyt2l")
+Id = "bun"
+DisplayName = "Bun"
+Shapes = Array[ExtResource("1_5d7xi")]([SubResource("Resource_wldtp"), SubResource("Resource_xwfyt")])

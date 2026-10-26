@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ClothingPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_msl33"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_akl2m"]
+
+[resource]
+script = ExtResource("2_akl2m")
+Covers = 392
+Id = "trousers"
+DisplayName = "Trousers"
+Slot = "bottom"
+DefaultPrimary = Color(0.25, 0.25, 0.27, 1)
+Weight = 2.0

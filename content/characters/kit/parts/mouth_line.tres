@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_osr6w"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_jrlph"]
+
+[sub_resource type="Resource" id="Resource_lt5ky"]
+script = ExtResource("1_osr6w")
+Profile = 7
+Offset = Vector3(0, 0.092, 0.128)
+Size = Vector3(0.075, 0.014, 0.025)
+Sides = 4
+Wobble = 0.0
+Role = 6
+
+[resource]
+script = ExtResource("2_jrlph")
+Id = "line"
+DisplayName = "Line"
+Slot = "mouth"
+Shapes = Array[ExtResource("1_osr6w")]([SubResource("Resource_lt5ky")])
+Weight = 3.0
