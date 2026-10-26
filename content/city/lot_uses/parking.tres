@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="LotUse" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="1_u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PlazaBuilder.cs" id="2_b"]
+[ext_resource type="Resource" path="res://content/city/props/car_red.tres" id="3_a"]
+[ext_resource type="Resource" path="res://content/city/props/car_blue.tres" id="3_b"]
+[ext_resource type="Resource" path="res://content/city/props/car_yellow.tres" id="3_c"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropModel.cs" id="5_pm"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("2_b")
+Props = Array[ExtResource("5_pm")]([ExtResource("3_a"), ExtResource("3_b"), ExtResource("3_c")])
+Density = 1.2
+MinGap = 3.0
+FaceStreet = true
+
+[resource]
+script = ExtResource("1_u")
+Id = "parking"
+Weight = 0.5
+GroundColor = Color(0.5, 0.52, 0.56, 1)
+MapColor = Color(0.8, 0.8, 0.82, 1)
+Category = "parking"
+Builder = SubResource("Builder")

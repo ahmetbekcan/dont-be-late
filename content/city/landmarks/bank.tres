@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="1_l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/bank.png" id="2_icon"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="3_u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/BoxBuildingBuilder.cs" id="4_b"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("4_b")
+MinFloors = 3
+MaxFloors = 3
+StreetSetback = 1.0
+WallColors = PackedColorArray(0.93, 0.9, 0.82, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.45, 0.28, 0.2, 1)
+
+[sub_resource type="Resource" id="Use"]
+script = ExtResource("3_u")
+Id = "bank"
+MinArea = 200.0
+MapColor = Color(1.0, 0.92, 0.7, 1)
+Category = "money"
+Builder = SubResource("Builder")
+
+[resource]
+script = ExtResource("1_l")
+Id = "bank"
+DisplayName = "Bank"
+Category = "money"
+Icon = ExtResource("2_icon")
+MapColor = Color(0.95, 0.78, 0.2, 1)
+Use = SubResource("Use")
+Preference = 1
+MinSpacing = 50.0

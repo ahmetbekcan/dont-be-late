@@ -1,0 +1,153 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Zones/EffectZone.cs" id="1_zone"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/SetFactEffect.cs" id="2_fact"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_roof"]
+albedo_color = Color(0.3, 0.35, 0.4, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_roof"]
+material = SubResource("Mat_roof")
+size = Vector3(4.2, 0.12, 2.2)
+
+[sub_resource type="BoxShape3D" id="Shape_roof"]
+size = Vector3(4.2, 0.12, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_glass"]
+transparency = 1
+albedo_color = Color(0.7, 0.85, 0.95, 0.3)
+
+[sub_resource type="BoxMesh" id="Mesh_back"]
+material = SubResource("Mat_glass")
+size = Vector3(4.2, 2.2, 0.05)
+
+[sub_resource type="BoxShape3D" id="Shape_back"]
+size = Vector3(4.2, 2.2, 0.05)
+
+[sub_resource type="BoxMesh" id="Mesh_side"]
+material = SubResource("Mat_glass")
+size = Vector3(0.05, 2.2, 2.2)
+
+[sub_resource type="BoxShape3D" id="Shape_side"]
+size = Vector3(0.05, 2.2, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_bench"]
+albedo_color = Color(0.45, 0.3, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_bench"]
+material = SubResource("Mat_bench")
+size = Vector3(2, 0.45, 0.5)
+
+[sub_resource type="BoxShape3D" id="Shape_bench"]
+size = Vector3(2, 0.45, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_pole"]
+albedo_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_pole"]
+material = SubResource("Mat_pole")
+size = Vector3(0.08, 2.6, 0.08)
+
+[sub_resource type="BoxShape3D" id="Shape_pole"]
+size = Vector3(0.08, 2.6, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="Mat_sign"]
+albedo_color = Color(0.1, 0.35, 0.7, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_sign"]
+material = SubResource("Mat_sign")
+size = Vector3(0.6, 0.6, 0.04)
+
+[sub_resource type="BoxShape3D" id="Shape_sign"]
+size = Vector3(0.6, 0.6, 0.04)
+
+[sub_resource type="Resource" id="Effect_enter"]
+script = ExtResource("2_fact")
+Key = "under_cover"
+
+[sub_resource type="Resource" id="Effect_exit"]
+script = ExtResource("2_fact")
+Key = "under_cover"
+Value = false
+
+[sub_resource type="BoxShape3D" id="Shape_shelter"]
+size = Vector3(4.2, 2.5, 2.2)
+
+[node name="BusStop" type="Node3D"]
+
+[node name="Roof" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Roof"]
+mesh = SubResource("Mesh_roof")
+
+[node name="Shape" type="CollisionShape3D" parent="Roof"]
+shape = SubResource("Shape_roof")
+
+[node name="Back" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 1.15)
+
+[node name="Mesh" type="MeshInstance3D" parent="Back"]
+mesh = SubResource("Mesh_back")
+
+[node name="Shape" type="CollisionShape3D" parent="Back"]
+shape = SubResource("Shape_back")
+
+[node name="Side" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 1.3, 0.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Side"]
+mesh = SubResource("Mesh_side")
+
+[node name="Shape" type="CollisionShape3D" parent="Side"]
+shape = SubResource("Shape_side")
+
+[node name="Bench" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Bench"]
+mesh = SubResource("Mesh_bench")
+
+[node name="Shape" type="CollisionShape3D" parent="Bench"]
+shape = SubResource("Shape_bench")
+
+[node name="Pole" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 1.3, -1.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Pole"]
+mesh = SubResource("Mesh_pole")
+
+[node name="Shape" type="CollisionShape3D" parent="Pole"]
+shape = SubResource("Shape_pole")
+
+[node name="Sign" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 2.6, -1.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Sign"]
+mesh = SubResource("Mesh_sign")
+
+[node name="Shape" type="CollisionShape3D" parent="Sign"]
+shape = SubResource("Shape_sign")
+
+[node name="Front" type="Label3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+pixel_size = 0.004
+text = "BUS 42"
+font_size = 40
+outline_size = 0
+
+[node name="Back" type="Label3D" parent="Sign"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.03)
+pixel_size = 0.004
+text = "BUS 42"
+font_size = 40
+outline_size = 0
+
+[node name="Shelter" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0.1)
+script = ExtResource("1_zone")
+EnterEffect = SubResource("Effect_enter")
+ExitEffect = SubResource("Effect_exit")
+
+[node name="Shape" type="CollisionShape3D" parent="Shelter"]
+shape = SubResource("Shape_shelter")

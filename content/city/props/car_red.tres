@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShapePropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/ShapePropModel.cs" id="1_s"]
+
+[resource]
+script = ExtResource("1_s")
+Id = "car_red"
+CollisionSize = Vector3(1.8, 1.3, 4)
+CollisionCenter = Vector3(0, 0.65, 0)
+Size = Vector3(1.8, 1.3, 4)
+Color = Color(0.92, 0.3, 0.3, 1)
+Sides = 4

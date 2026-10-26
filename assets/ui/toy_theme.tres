@@ -386,6 +386,49 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mapchip"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.12, 0.13, 0.26, 1)
+corner_radius_top_left = 23
+corner_radius_top_right = 23
+corner_radius_bottom_right = 23
+corner_radius_bottom_left = 23
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mapchip_on"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.9, 0.94, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.12, 0.13, 0.26, 1)
+corner_radius_top_left = 23
+corner_radius_top_right = 23
+corner_radius_bottom_right = 23
+corner_radius_bottom_left = 23
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mapcard"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.08, 0.1, 0.18, 0.92)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
 [resource]
 default_font = SubResource("FontVariation_m4m58")
 default_font_size = 20
@@ -463,3 +506,10 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_2e0c2")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_htdpg")
 TooltipLabel/colors/font_color = Color(0.12, 0.13, 0.26, 1)
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_m3qri")
+MapPlaceButton/base_type = &"Button"
+MapPlaceButton/styles/focus = SubResource("StyleBoxFlat_mapchip_on")
+MapPlaceButton/styles/hover = SubResource("StyleBoxFlat_mapchip_on")
+MapPlaceButton/styles/normal = SubResource("StyleBoxFlat_mapchip")
+MapPlaceButton/styles/pressed = SubResource("StyleBoxFlat_mapchip_on")
+MapPlaceCard/base_type = &"PanelContainer"
+MapPlaceCard/styles/panel = SubResource("StyleBoxFlat_mapcard")

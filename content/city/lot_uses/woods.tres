@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="LotUse" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="1_u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/ParkBuilder.cs" id="2_b"]
+[ext_resource type="Resource" path="res://content/city/props/fir.tres" id="3_tree"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("2_b")
+Tree = ExtResource("3_tree")
+TreeDensity = 0.9
+Benches = 0
+PathColor = Color(0.75, 0.65, 0.45, 1)
+
+[resource]
+script = ExtResource("1_u")
+Id = "woods"
+Weight = 0.4
+MinArea = 250.0
+GroundColor = Color(0.38, 0.62, 0.33, 1)
+MapColor = Color(0.45, 0.72, 0.42, 1)
+Category = "park"
+Builder = SubResource("Builder")

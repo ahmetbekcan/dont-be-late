@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="CityStyle" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CityStyle.cs" id="1_style"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/GridRoadLayout.cs" id="2_grid"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="3_rule"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/StreetFurnitureRule.cs" id="4_furniture"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/lot_uses.tres" id="5_uses"]
+[ext_resource type="Resource" path="res://content/city/landmarks/home.tres" id="6_home"]
+[ext_resource type="Resource" path="res://content/city/landmarks/bus_stop.tres" id="7_stop"]
+[ext_resource type="Resource" path="res://content/city/landmarks/photo_studio.tres" id="8_photo"]
+[ext_resource type="Resource" path="res://content/city/landmarks/bank.tres" id="9_bank"]
+[ext_resource type="Resource" path="res://content/city/props/lamp.tres" id="10_lamp"]
+[ext_resource type="Resource" path="res://content/city/props/tree.tres" id="11_tree"]
+[ext_resource type="Resource" path="res://content/city/props/bench.tres" id="12_bench"]
+[ext_resource type="Resource" path="res://content/city/props/bin.tres" id="13_bin"]
+
+[sub_resource type="Resource" id="Grid"]
+script = ExtResource("2_grid")
+Columns = 4
+Rows = 4
+BlockSizeMin = 42.0
+BlockSizeMax = 60.0
+MaxTiltDegrees = 3.0
+StreetWidth = 8.0
+MainRoadWidth = 11.0
+MainRoadsPerAxis = 1
+DropChance = 0.15
+
+[sub_resource type="Resource" id="Lamps"]
+script = ExtResource("4_furniture")
+Model = ExtResource("10_lamp")
+Spacing = 18.0
+
+[sub_resource type="Resource" id="Trees"]
+script = ExtResource("4_furniture")
+Model = ExtResource("11_tree")
+Spacing = 10.0
+Jitter = 1.0
+Chance = 0.55
+Inset = 0.7
+ScaleMin = 0.8
+ScaleMax = 1.15
+
+[sub_resource type="Resource" id="Benches"]
+script = ExtResource("4_furniture")
+Model = ExtResource("12_bench")
+Spacing = 35.0
+Chance = 0.35
+Side = 1
+Inset = 0.45
+SeatCapacity = 2
+
+[sub_resource type="Resource" id="Bins"]
+script = ExtResource("4_furniture")
+Model = ExtResource("13_bin")
+Spacing = 28.0
+Jitter = 3.0
+Chance = 0.4
+Inset = 0.45
+
+[resource]
+script = ExtResource("1_style")
+Layout = SubResource("Grid")
+LotUses = ExtResource("5_uses")
+Landmarks = Array[ExtResource("3_rule")]([ExtResource("6_home"), ExtResource("7_stop"), ExtResource("8_photo"), ExtResource("9_bank")])
+Furniture = Array[ExtResource("4_furniture")]([SubResource("Lamps"), SubResource("Trees"), SubResource("Benches"), SubResource("Bins")])
+AsphaltColor = Color(0.32, 0.34, 0.4, 1)
+PavementColor = Color(0.8, 0.79, 0.78, 1)
+KerbColor = Color(0.66, 0.66, 0.7, 1)
+OutskirtsColor = Color(0.5, 0.72, 0.4, 1)

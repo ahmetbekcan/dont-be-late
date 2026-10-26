@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="LotUse" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="1_u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/BoxBuildingBuilder.cs" id="2_b"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("2_b")
+MinFloors = 3
+MaxFloors = 6
+StreetSetback = 1.0
+WallColors = PackedColorArray(0.82, 0.82, 0.86, 1, 0.7, 0.78, 0.9, 1, 0.95, 0.8, 0.55, 1, 0.9, 0.68, 0.6, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.45, 0.28, 0.2, 1)
+
+[resource]
+script = ExtResource("1_u")
+Id = "flats"
+Weight = 3
+MinArea = 220.0
+MapColor = Color(0.85, 0.8, 0.92, 1)
+Category = "home"
+Builder = SubResource("Builder")

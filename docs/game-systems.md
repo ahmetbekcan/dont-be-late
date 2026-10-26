@@ -24,6 +24,7 @@ The core of this game is a data-driven scenario engine, and almost every piece o
 - **Cross-run memory with decay:** facts that carry into later runs with a probability that fades each run (the shot neighbor, the angry tourist).
 - **Heat / alert level:** accumulating chaos that escalates world responses (police patrols, the chasing kid). Works like a wanted level.
 - **Journal / codex:** unlockable entries with discovery state; drives the fridge of sticky notes.
+- **City generator:** a low-poly town from a style and a seed: streets, kerbs, crossings, traffic lights, lots with buildings and parks, props and required landmarks. Alongside the geometry it produces walk graphs (pavements, crossings tied to signals, doors, seats), car lanes and signal timing for NPCs and traffic, and a 2D map view.
 
 ### Player and actors
 
@@ -58,6 +59,7 @@ Built on the library, kept in the game repo:
 - **Obstacles:** the puzzle boxes, built from interactables, NPCs and rideables.
 - **Requirement chains:** no bus card → no balance → kiosk only takes cash.
 - **The four stages** and their scenes.
+- **The town:** a generated city (library `CityGen`) with the game's lot uses, props and landmarks (home, bus stop, photo studio, bank). It's new every run or one kept city, and the phone's Map app shows it with walking routes.
 - **Wake-up mini games:** snooze fight, heavy eyelids, dream escape.
 - **Clue presentation:** radio, window puddles, sticky notes, phone alerts.
 - **Carryover content:** the specific return variants (shotgun neighbor, police tourist, kid with friends).

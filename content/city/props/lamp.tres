@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LampPostModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LampPostModel.cs" id="1_s"]
+
+[resource]
+script = ExtResource("1_s")
+Id = "lamp"
+PoleColor = Color(0.16, 0.2, 0.35, 1)

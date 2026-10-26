@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="1_l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/photo_studio.png" id="2_icon"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="3_u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/BoxBuildingBuilder.cs" id="4_b"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("4_b")
+MinFloors = 1
+MaxFloors = 2
+StreetSetback = 0.5
+WallColors = PackedColorArray(0.78, 0.6, 0.95, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.45, 0.28, 0.2, 1)
+
+[sub_resource type="Resource" id="Use"]
+script = ExtResource("3_u")
+Id = "photo_studio"
+MinFrontage = 9.0
+MapColor = Color(0.88, 0.78, 0.98, 1)
+Category = "shop"
+Builder = SubResource("Builder")
+
+[resource]
+script = ExtResource("1_l")
+Id = "photo_studio"
+DisplayName = "Photo studio"
+Category = "shop"
+Icon = ExtResource("2_icon")
+MapColor = Color(0.7, 0.4, 0.95, 1)
+Use = SubResource("Use")
+MinSpacing = 50.0

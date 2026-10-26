@@ -1,0 +1,220 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/City/CityStage.cs" id="1_stage"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CityBuilder.cs" id="2_builder"]
+[ext_resource type="Resource" path="res://content/city/city_style.tres" id="3_style"]
+[ext_resource type="PackedScene" path="res://addons/ReusableGameSystems/Characters/FirstPersonPlayer.tscn" id="4_player"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CharacterMotor.cs" id="5_motor"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactor.cs" id="6_interactor"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/PlayerInputSource.cs" id="7_input"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/MouseLook.cs" id="8_look"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/SprintAbility.cs" id="9_sprint"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/JumpAbility.cs" id="10_jump"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CrouchAbility.cs" id="11_crouch"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/ClimbAbility.cs" id="12_climb"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CarryAbility.cs" id="13_carry"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/InventoryHolder.cs" id="14_inventory"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterHolder.cs" id="15_meters"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectHolder.cs" id="16_status"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusSpeedAbility.cs" id="17_speed"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/HardLanding.cs" id="18_landing"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HotbarHolder.cs" id="19_hotbar"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HeldItemView.cs" id="20_held"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="21_itemdef"]
+[ext_resource type="Resource" path="res://content/items/phone.tres" id="22_phone_item"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/WorldState/WorldStateStore.cs" id="23_world"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InteractionPrompt.cs" id="24_prompt"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ToastLabel.cs" id="25_toast"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/HotbarHud.cs" id="26_hud"]
+[ext_resource type="Resource" path="res://assets/ui/inventory_skins/toy.tres" id="27_skin"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneScreen.cs" id="28_phone"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneApp.cs" id="29_appscript"]
+[ext_resource type="Resource" path="res://content/phone/apps/map.tres" id="30_app_map"]
+[ext_resource type="Resource" path="res://content/phone/apps/weather.tres" id="31_app_wx"]
+[ext_resource type="Resource" path="res://content/phone/apps/messages.tres" id="32_app_msg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMaterial")
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_energy = 0.5
+tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="Capsule"]
+radius = 0.4
+height = 1.8
+
+[node name="CityPreview" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9396926, -0.24184474, 0.24184474, 0, 0.70710677, 0.70710677, -0.34202012, -0.664463, 0.664463, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="Stage" type="Node3D" parent="." node_paths=PackedStringArray("City", "Player")]
+script = ExtResource("1_stage")
+City = NodePath("City")
+Player = NodePath("../Player")
+
+[node name="City" type="Node3D" parent="Stage"]
+script = ExtResource("2_builder")
+Style = ExtResource("3_style")
+
+[node name="Player" parent="." node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("4_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("5_motor")
+InputSource = NodePath("Input")
+ViewReference = NodePath("Head")
+
+[node name="Shape" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("Capsule")
+
+[node name="Head" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera" parent="Player/Head" index="0"]
+current = true
+fov = 80.0
+
+[node name="Interactor" parent="Player/Head" index="1"]
+script = ExtResource("6_interactor")
+
+[node name="HoldPoint" parent="Player/Head" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.3, -1.1)
+
+[node name="Input" parent="Player" index="2"]
+script = ExtResource("7_input")
+
+[node name="MouseLook" parent="Player" index="3" node_paths=PackedStringArray("YawTarget", "PitchTarget")]
+script = ExtResource("8_look")
+YawTarget = NodePath("..")
+PitchTarget = NodePath("../Head")
+
+[node name="Sprint" parent="Player" index="4"]
+script = ExtResource("9_sprint")
+
+[node name="Jump" parent="Player" index="5"]
+script = ExtResource("10_jump")
+
+[node name="Crouch" parent="Player" index="6" node_paths=PackedStringArray("Shape", "Head")]
+script = ExtResource("11_crouch")
+Shape = NodePath("../Shape")
+Head = NodePath("../Head")
+
+[node name="Climb" parent="Player" index="7"]
+script = ExtResource("12_climb")
+
+[node name="Carry" parent="Player" index="8" node_paths=PackedStringArray("HoldPoint")]
+script = ExtResource("13_carry")
+HoldPoint = NodePath("../Head/HoldPoint")
+
+[node name="Inventory" parent="Player" index="9"]
+script = ExtResource("14_inventory")
+RegisterAsGlobalService = true
+StartingItems = Array[ExtResource("21_itemdef")]([ExtResource("22_phone_item")])
+
+[node name="Meters" parent="Player" index="10"]
+script = ExtResource("15_meters")
+RegisterAsGlobalService = true
+
+[node name="StatusEffects" parent="Player" index="11"]
+script = ExtResource("16_status")
+RegisterAsGlobalService = true
+
+[node name="StatusSpeed" parent="Player" index="12" node_paths=PackedStringArray("Holder")]
+script = ExtResource("17_speed")
+Holder = NodePath("../StatusEffects")
+
+[node name="HardLanding" parent="Player" index="13"]
+script = ExtResource("18_landing")
+
+[node name="Hotbar" type="Node" parent="Player" node_paths=PackedStringArray("Holder", "DropPoint", "Carry")]
+script = ExtResource("19_hotbar")
+Holder = NodePath("../Inventory")
+DropPoint = NodePath("../Head/HoldPoint")
+Carry = NodePath("../Carry")
+RegisterAsGlobalService = true
+
+[node name="HeldItem" type="Node3D" parent="Player/Head" node_paths=PackedStringArray("Hotbar")]
+transform = Transform3D(0.53, 0.14, 0.1, -0.14, 0.53, 0.05, -0.08, -0.07, 0.54, 0.36, -0.3, -0.6)
+script = ExtResource("20_held")
+Hotbar = NodePath("../../Hotbar")
+
+[node name="World" type="Node" parent="."]
+script = ExtResource("23_world")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="Label" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PromptBox" type="VBoxContainer" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 600.0
+offset_bottom = 300.0
+mouse_filter = 2
+
+[node name="Prompt" type="Label" parent="HUD/PromptBox" node_paths=PackedStringArray("Interactor")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"HudPrompt"
+script = ExtResource("24_prompt")
+Interactor = NodePath("../../../Player/Head/Interactor")
+
+[node name="ToastBox" type="CenterContainer" parent="HUD"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -190.0
+offset_bottom = -130.0
+mouse_filter = 2
+
+[node name="Toast" type="Label" parent="HUD/ToastBox"]
+layout_mode = 2
+theme_type_variation = &"HudToast"
+horizontal_alignment = 1
+script = ExtResource("25_toast")
+
+[node name="Hotbar" type="VBoxContainer" parent="HUD" node_paths=PackedStringArray("Hotbar")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+offset_bottom = -14.0
+mouse_filter = 2
+script = ExtResource("26_hud")
+Hotbar = NodePath("../../Player/Hotbar")
+Skin = ExtResource("27_skin")
+CellSize = Vector2(58, 58)
+
+[node name="Phone" type="CanvasLayer" parent="." node_paths=PackedStringArray("Hotbar", "Look")]
+script = ExtResource("28_phone")
+Apps = Array[ExtResource("29_appscript")]([ExtResource("30_app_map"), ExtResource("31_app_wx"), ExtResource("32_app_msg")])
+Hotbar = NodePath("../Player/Hotbar")
+Look = NodePath("../Player/MouseLook")
+DayText = "Any day"
+HomeSubtitle = "Explore the town"
+
+[editable path="Player"]

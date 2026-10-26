@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="1_l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/bus_stop.png" id="2_icon"]
+[ext_resource type="PackedScene" path="res://scenes/props/city/bus_stop.tscn" id="5_scene"]
+
+[resource]
+script = ExtResource("1_l")
+Id = "bus_stop"
+DisplayName = "Bus stop"
+Category = "transport"
+Icon = ExtResource("2_icon")
+MapColor = Color(0.3, 0.6, 1.0, 1)
+Placement = 1
+Scene = ExtResource("5_scene")
+MinSpacing = 70.0
+SeatCapacity = 3
+ClearRadius = 4.0
