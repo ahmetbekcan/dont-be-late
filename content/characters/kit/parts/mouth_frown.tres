@@ -6,20 +6,18 @@
 [sub_resource type="Resource" id="Resource_t6ywu"]
 script = ExtResource("1_cbyjv")
 Profile = 4
-Offset = Vector3(0, 0.096, 0.13)
+Offset = Vector3(0, 0.086, 0.129)
 Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.016, 0.055, 0.022)
-Sides = 5
+Size = Vector3(0.011, 0.045, 0.014)
 Wobble = 0.0
 Role = 6
 
 [sub_resource type="Resource" id="Resource_ep7c6"]
 script = ExtResource("1_cbyjv")
 Profile = 4
-Offset = Vector3(0.036, 0.087, 0.126)
-Rotation = Vector3(0, 0, 55)
-Size = Vector3(0.016, 0.035, 0.022)
-Sides = 5
+Offset = Vector3(0.029, 0.079, 0.126)
+Rotation = Vector3(0, 0, 60)
+Size = Vector3(0.011, 0.026, 0.014)
 Wobble = 0.0
 Role = 6
 Mirror = true

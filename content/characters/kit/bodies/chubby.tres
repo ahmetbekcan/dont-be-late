@@ -6,10 +6,11 @@
 script = ExtResource("1_5k6b7")
 Id = "chubby"
 DisplayName = "Chubby"
-ShoulderWidth = 0.46
-HipWidth = 0.4
-TorsoDepth = 0.3
-Belly = 0.8
-LimbThickness = 1.22
-HeadSize = 1.4
+ArmLength = 0.68
+ShoulderWidth = 0.44
+HipWidth = 0.38
+TorsoDepth = 0.28
+Belly = 0.75
+LimbThickness = 1.15
+HeadSize = 1.08
 Weight = 2.0

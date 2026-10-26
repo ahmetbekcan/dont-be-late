@@ -6,11 +6,10 @@
 [sub_resource type="Resource" id="Resource_aq1vt"]
 script = ExtResource("1_kly8e")
 Profile = 4
-Offset = Vector3(0.062, 0.278, 0.142)
-Rotation = Vector3(0, 0, 82)
-Size = Vector3(0.012, 0.08, 0.018)
-Sides = 5
-Wobble = 0.04
+Offset = Vector3(0.058, 0.252, 0.13)
+Rotation = Vector3(-8, 0, 84)
+Size = Vector3(0.009, 0.068, 0.012)
+Wobble = 0.0
 Role = 1
 Mirror = true
 

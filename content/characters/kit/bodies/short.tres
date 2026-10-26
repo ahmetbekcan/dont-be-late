@@ -6,7 +6,7 @@
 script = ExtResource("1_yknuf")
 Id = "short"
 DisplayName = "Short"
-LegLength = 0.7
-TorsoLength = 0.5
-ArmLength = 0.54
-HeadSize = 1.42
+LegLength = 0.74
+TorsoLength = 0.51
+ShoulderWidth = 0.38
+HeadSize = 1.1

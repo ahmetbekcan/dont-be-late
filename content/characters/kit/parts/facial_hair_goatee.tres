@@ -5,15 +5,36 @@
 
 [sub_resource type="Resource" id="Resource_wftc2"]
 script = ExtResource("1_da674")
-Profile = 9
-Offset = Vector3(0, 0.045, 0.12)
-Rotation = Vector3(180, 0, 0)
-Size = Vector3(0.05, 0.08, 0.04)
+Profile = 4
+Offset = Vector3(0, 0.105, 0.132)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.016, 0.07, 0.02)
+Sides = 8
+Wobble = 0.0
 Role = 1
+
+[sub_resource type="Resource" id="Resource_1i6n5"]
+script = ExtResource("1_da674")
+Profile = 4
+Offset = Vector3(0, 0.045, 0.112)
+Size = Vector3(0.07, 0.06, 0.04)
+Sides = 8
+Wobble = 0.0
+Role = 1
+
+[sub_resource type="Resource" id="Resource_wrcx8"]
+script = ExtResource("1_da674")
+Profile = 4
+Offset = Vector3(0.033, 0.07, 0.122)
+Size = Vector3(0.012, 0.05, 0.014)
+Wobble = 0.0
+Role = 1
+Mirror = true
 
 [resource]
 script = ExtResource("2_e7bhw")
 Id = "goatee"
 DisplayName = "Goatee"
 Slot = "facial_hair"
-Shapes = Array[ExtResource("1_da674")]([SubResource("Resource_wftc2")])
+Shapes = Array[ExtResource("1_da674")]([SubResource("Resource_wftc2"), SubResource("Resource_1i6n5"), SubResource("Resource_wrcx8")])
+Weight = 2.0

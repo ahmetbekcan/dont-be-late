@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_xdagk"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_r6m6v"]
+
+[sub_resource type="Resource" id="Resource_w0jno"]
+script = ExtResource("1_xdagk")
+Offset = Vector3(0.056, 0.2, 0.1)
+Size = Vector3(0.08, 0.08, 0.08)
+Sides = 8
+Wobble = 0.0
+Role = 4
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_lw5hm"]
+script = ExtResource("1_xdagk")
+Offset = Vector3(0.05, 0.196, 0.138)
+Size = Vector3(0.036, 0.036, 0.014)
+Sides = 8
+Wobble = 0.0
+Role = 5
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_5q0hx"]
+script = ExtResource("1_xdagk")
+Profile = 1
+Offset = Vector3(0.056, 0.208, 0.1)
+Rotation = Vector3(-14, 0, 0)
+Size = Vector3(0.088, 0.04, 0.088)
+Sides = 8
+Wobble = 0.0
+Role = 0
+Mirror = true
+
+[resource]
+script = ExtResource("2_r6m6v")
+Id = "glazed"
+DisplayName = "Glazed"
+Slot = "eyes"
+Shapes = Array[ExtResource("1_xdagk")]([SubResource("Resource_w0jno"), SubResource("Resource_lw5hm"), SubResource("Resource_5q0hx")])

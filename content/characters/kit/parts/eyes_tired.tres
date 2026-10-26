@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_hq6qq"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_mq2rb"]
+
+[sub_resource type="Resource" id="Resource_iyyn1"]
+script = ExtResource("1_hq6qq")
+Offset = Vector3(0.056, 0.2, 0.1)
+Size = Vector3(0.08, 0.08, 0.08)
+Sides = 8
+Wobble = 0.0
+Role = 4
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_5gokm"]
+script = ExtResource("1_hq6qq")
+Offset = Vector3(0.056, 0.195, 0.138)
+Size = Vector3(0.032, 0.032, 0.014)
+Sides = 8
+Wobble = 0.0
+Role = 5
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_eegh7"]
+script = ExtResource("1_hq6qq")
+Profile = 1
+Offset = Vector3(0.056, 0.205, 0.1)
+Rotation = Vector3(-12, 0, 0)
+Size = Vector3(0.088, 0.04, 0.088)
+Sides = 8
+Wobble = 0.0
+Role = 0
+Mirror = true
+
+[resource]
+script = ExtResource("2_mq2rb")
+Id = "tired"
+DisplayName = "Tired"
+Slot = "eyes"
+Shapes = Array[ExtResource("1_hq6qq")]([SubResource("Resource_iyyn1"), SubResource("Resource_5gokm"), SubResource("Resource_eegh7")])
+Weight = 2.0

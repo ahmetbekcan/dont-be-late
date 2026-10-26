@@ -5,11 +5,11 @@
 
 [sub_resource type="Resource" id="Resource_01ob6"]
 script = ExtResource("1_0qioi")
-Profile = 6
 Offset = Vector3(0, 0.175, 0)
-Size = Vector3(0.24, 0.36, 0.26)
-Sides = 7
-Rings = 3
+Size = Vector3(0.235, 0.36, 0.255)
+Sides = 8
+Rings = 4
+Wobble = 0.0
 Role = 0
 
 [resource]

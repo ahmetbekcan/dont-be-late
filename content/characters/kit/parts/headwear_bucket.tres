@@ -8,14 +8,16 @@ script = ExtResource("1_425es")
 Profile = 4
 Offset = Vector3(0, 0.33, 0)
 Size = Vector3(0.3, 0.17, 0.31)
-Sides = 10
+Sides = 12
+Wobble = 0.0
 
 [sub_resource type="Resource" id="Resource_dollc"]
 script = ExtResource("1_425es")
 Profile = 8
 Offset = Vector3(0, 0.265, 0)
-Size = Vector3(0.42, 0.02, 0.43)
-Sides = 12
+Size = Vector3(0.4, 0.018, 0.41)
+Sides = 14
+Wobble = 0.0
 
 [resource]
 script = ExtResource("2_oxqt4")

@@ -7,22 +7,28 @@
 script = ExtResource("1_qme2f")
 Profile = 1
 Offset = Vector3(0, 0.29, -0.01)
-Size = Vector3(0.305, 0.15, 0.315)
-Sides = 9
+Size = Vector3(0.3, 0.15, 0.31)
+Sides = 10
 Rings = 3
+Wobble = 0.0
 
 [sub_resource type="Resource" id="Resource_bdyjh"]
 script = ExtResource("1_qme2f")
 Profile = 8
 Offset = Vector3(0, 0.245, 0.15)
-Size = Vector3(0.22, 0.018, 0.16)
-Sides = 10
-Wobble = 0.02
+Size = Vector3(0.22, 0.016, 0.16)
+Sides = 12
+Wobble = 0.0
 
 [sub_resource type="Resource" id="Resource_dkiga"]
 script = ExtResource("1_qme2f")
-Offset = Vector3(0, 0.37, 0)
-Size = Vector3(0.025, 0.025, 0.025)
+Profile = 7
+Offset = Vector3(0, 0.3, 0.145)
+Rotation = Vector3(-25, 0, 0)
+Size = Vector3(0.1, 0.03, 0.01)
+Sides = 4
+Wobble = 0.0
+Role = 3
 
 [resource]
 script = ExtResource("2_6d610")
@@ -30,6 +36,7 @@ Id = "cap"
 DisplayName = "Cap"
 Slot = "headwear"
 Shapes = Array[ExtResource("1_qme2f")]([SubResource("Resource_vnrft"), SubResource("Resource_bdyjh"), SubResource("Resource_dkiga")])
-DefaultPrimary = Color(0.85, 0.2, 0.2, 1)
+DefaultPrimary = Color(0.15, 0.2, 0.45, 1)
+DefaultSecondary = Color(0.95, 0.8, 0.2, 1)
 HidesHairTop = true
 Weight = 2.0

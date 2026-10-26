@@ -5,27 +5,29 @@
 
 [sub_resource type="Resource" id="Resource_fr2yf"]
 script = ExtResource("1_ix14a")
-Profile = 1
-Offset = Vector3(0, 0.29, -0.006)
-Size = Vector3(0.3, 0.17, 0.31)
-Sides = 9
-Rings = 3
+Offset = Vector3(0, 0.248, -0.024)
+Size = Vector3(0.3, 0.17, 0.315)
+Sides = 10
+Rings = 4
+Wobble = 0.0
 Role = 1
 HideUnderHat = true
 
 [sub_resource type="Resource" id="Resource_70wdn"]
 script = ExtResource("1_ix14a")
 Profile = 5
-Offset = Vector3(0, 0.23500001, -0.07)
-Size = Vector3(0.28, 0.19000001, 0.16)
-Sides = 8
+Offset = Vector3(0, 0.225, -0.06)
+Size = Vector3(0.272, 0.17, 0.17)
+Sides = 10
+Rings = 3
+Wobble = 0.0
 Role = 1
 
 [sub_resource type="Resource" id="Resource_vwe8b"]
 script = ExtResource("1_ix14a")
 Offset = Vector3(0.08, 0.35, 0.06)
 Size = Vector3(0.09, 0.09, 0.09)
-Wobble = 0.1
+Wobble = 0.0
 Role = 1
 Mirror = true
 HideUnderHat = true
@@ -33,7 +35,7 @@ HideUnderHat = true
 [sub_resource type="Resource" id="Resource_xmu4p"]
 script = ExtResource("1_ix14a")
 Offset = Vector3(0, 0.38, 0)
-Wobble = 0.1
+Wobble = 0.0
 Role = 1
 HideUnderHat = true
 
@@ -41,7 +43,7 @@ HideUnderHat = true
 script = ExtResource("1_ix14a")
 Offset = Vector3(0.1, 0.33, -0.06)
 Size = Vector3(0.09, 0.09, 0.09)
-Wobble = 0.1
+Wobble = 0.0
 Role = 1
 Mirror = true
 HideUnderHat = true
@@ -50,7 +52,7 @@ HideUnderHat = true
 script = ExtResource("1_ix14a")
 Offset = Vector3(0.12, 0.25, -0.06)
 Size = Vector3(0.08, 0.08, 0.08)
-Wobble = 0.1
+Wobble = 0.0
 Role = 1
 Mirror = true
 

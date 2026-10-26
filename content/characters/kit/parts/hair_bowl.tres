@@ -5,21 +5,22 @@
 
 [sub_resource type="Resource" id="Resource_6043e"]
 script = ExtResource("1_gbls2")
-Profile = 1
-Offset = Vector3(0, 0.255, 0)
-Size = Vector3(0.305, 0.19, 0.31)
+Offset = Vector3(0, 0.235, -0.004)
+Size = Vector3(0.285, 0.29, 0.3)
 Sides = 10
-Rings = 3
-Wobble = 0.02
+Rings = 4
+Wobble = 0.0
 Role = 1
 HideUnderHat = true
 
 [sub_resource type="Resource" id="Resource_ykef3"]
 script = ExtResource("1_gbls2")
 Profile = 5
-Offset = Vector3(0, 0.245, -0.07)
-Size = Vector3(0.28, 0.17000002, 0.16)
-Sides = 8
+Offset = Vector3(0, 0.235, -0.06)
+Size = Vector3(0.272, 0.15, 0.17)
+Sides = 10
+Rings = 3
+Wobble = 0.0
 Role = 1
 
 [resource]

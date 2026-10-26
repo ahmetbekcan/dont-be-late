@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_we3yn"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_nyqqr"]
+
+[sub_resource type="Resource" id="Resource_17tv5"]
+script = ExtResource("1_we3yn")
+Profile = 4
+Offset = Vector3(0, 0.145, 0.135)
+Rotation = Vector3(22, 0, 0)
+Size = Vector3(0.034, 0.065, 0.038)
+Sides = 8
+Wobble = 0.0
+Role = 0
+
+[resource]
+script = ExtResource("2_nyqqr")
+Id = "small"
+DisplayName = "Small"
+Slot = "nose"
+Shapes = Array[ExtResource("1_we3yn")]([SubResource("Resource_17tv5")])
+Weight = 3.0

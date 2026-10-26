@@ -6,15 +6,19 @@
 [sub_resource type="Resource" id="Resource_d3wts"]
 script = ExtResource("1_55qjw")
 Profile = 4
-Offset = Vector3(0, 0.17, 0.15)
-Rotation = Vector3(30, 0, 0)
-Size = Vector3(0.04, 0.09, 0.045)
+Offset = Vector3(0, 0.16, 0.14)
+Rotation = Vector3(32, 0, 0)
+Size = Vector3(0.034, 0.075, 0.04)
+Sides = 8
+Wobble = 0.0
 Role = 0
 
 [sub_resource type="Resource" id="Resource_jeyr2"]
 script = ExtResource("1_55qjw")
-Offset = Vector3(0, 0.135, 0.17)
-Size = Vector3(0.045, 0.04, 0.04)
+Offset = Vector3(0, 0.133, 0.153)
+Size = Vector3(0.036, 0.032, 0.032)
+Sides = 8
+Wobble = 0.0
 Role = 0
 
 [resource]

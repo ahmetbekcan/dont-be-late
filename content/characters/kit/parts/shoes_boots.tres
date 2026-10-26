@@ -8,20 +8,20 @@ script = ExtResource("1_bp6jg")
 Joint = "FootL"
 Profile = 4
 Offset = Vector3(0, 0.08, -0.005)
-Size = Vector3(0.2, 0.24, 0.2)
-Sides = 9
-Wobble = 0.02
+Size = Vector3(0.19, 0.24, 0.19)
+Sides = 10
+Wobble = 0.0
 Mirror = true
 
 [sub_resource type="Resource" id="Resource_hugub"]
 script = ExtResource("1_bp6jg")
 Joint = "FootL"
 Profile = 4
-Offset = Vector3(0, -0.072, 0.05)
+Offset = Vector3(0, -0.07, 0.05)
 Rotation = Vector3(90, 0, 0)
-Size = Vector3(0.135, 0.29, 0.03)
-Sides = 8
-Wobble = 0.01
+Size = Vector3(0.14, 0.29, 0.035)
+Sides = 10
+Wobble = 0.0
 Role = 3
 Mirror = true
 
@@ -32,5 +32,5 @@ Id = "boots"
 DisplayName = "Boots"
 Slot = "shoes"
 Shapes = Array[ExtResource("1_bp6jg")]([SubResource("Resource_0jist"), SubResource("Resource_hugub")])
-DefaultPrimary = Color(0.22, 0.38, 0.22, 1)
-DefaultSecondary = Color(0.15, 0.25, 0.15, 1)
+DefaultPrimary = Color(0.12, 0.12, 0.13, 1)
+DefaultSecondary = Color(0.06, 0.06, 0.06, 1)

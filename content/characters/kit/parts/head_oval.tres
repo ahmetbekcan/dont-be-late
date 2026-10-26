@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_axs07"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_2udbv"]
+
+[sub_resource type="Resource" id="Resource_5ohkr"]
+script = ExtResource("1_axs07")
+Offset = Vector3(0, 0.17, 0)
+Size = Vector3(0.25, 0.34, 0.265)
+Sides = 8
+Rings = 4
+Wobble = 0.0
+Role = 0
+
+[resource]
+script = ExtResource("2_2udbv")
+Id = "oval"
+DisplayName = "Oval"
+Slot = "head"
+Shapes = Array[ExtResource("1_axs07")]([SubResource("Resource_5ohkr")])
+Weight = 3.0

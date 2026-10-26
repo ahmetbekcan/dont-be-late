@@ -7,27 +7,26 @@
 script = ExtResource("1_ced7a")
 Joint = "Neck"
 Profile = 7
-Offset = Vector3(0.04, 0, 0.06)
-Rotation = Vector3(-20, 25, -30)
-Size = Vector3(0.07, 0.05, 0.02)
+Offset = Vector3(0.042, 0, 0.062)
+Rotation = Vector3(-25, 28, -32)
+Size = Vector3(0.075, 0.055, 0.016)
 Sides = 4
 Wobble = 0.0
 Mirror = true
 
 [sub_resource type="Resource" id="Resource_3yl7g"]
 script = ExtResource("1_ced7a")
-Joint = "Spine"
-Offset = Vector3(0, 0.38, 0.004)
-Size = Vector3(0.018, 0.018, 0.01)
-Sides = 5
+Joint = "Neck"
+Profile = 4
+Offset = Vector3(0, 0, -0.01)
+Size = Vector3(0.155, 0.05, 0.145)
+Sides = 12
 Wobble = 0.0
-Role = 3
-OnTorsoFront = true
 
 [sub_resource type="Resource" id="Resource_0jax4"]
 script = ExtResource("1_ced7a")
 Joint = "Spine"
-Offset = Vector3(0, 0.27, 0.004)
+Offset = Vector3(0, 0.44, 0.004)
 Size = Vector3(0.018, 0.018, 0.01)
 Sides = 5
 Wobble = 0.0
@@ -37,7 +36,7 @@ OnTorsoFront = true
 [sub_resource type="Resource" id="Resource_bbp12"]
 script = ExtResource("1_ced7a")
 Joint = "Spine"
-Offset = Vector3(0, 0.16, 0.004)
+Offset = Vector3(0, 0.34, 0.004)
 Size = Vector3(0.018, 0.018, 0.01)
 Sides = 5
 Wobble = 0.0
@@ -47,9 +46,29 @@ OnTorsoFront = true
 [sub_resource type="Resource" id="Resource_wx8jp"]
 script = ExtResource("1_ced7a")
 Joint = "Spine"
+Offset = Vector3(0, 0.24, 0.004)
+Size = Vector3(0.018, 0.018, 0.01)
+Sides = 5
+Wobble = 0.0
+Role = 3
+OnTorsoFront = true
+
+[sub_resource type="Resource" id="Resource_p4n47"]
+script = ExtResource("1_ced7a")
+Joint = "Spine"
+Offset = Vector3(0, 0.14, 0.004)
+Size = Vector3(0.018, 0.018, 0.01)
+Sides = 5
+Wobble = 0.0
+Role = 3
+OnTorsoFront = true
+
+[sub_resource type="Resource" id="Resource_1hvk0"]
+script = ExtResource("1_ced7a")
+Joint = "Spine"
 Profile = 7
-Offset = Vector3(0.075, -0.14, 0.004)
-Size = Vector3(0.07, 0.075, 0.012)
+Offset = Vector3(0.08, -0.15, 0.004)
+Size = Vector3(0.07, 0.075, 0.01)
 Sides = 4
 Wobble = 0.0
 FromTorsoTop = true
@@ -58,9 +77,11 @@ OnTorsoFront = true
 [resource]
 script = ExtResource("2_0gix3")
 Covers = 54
+TuckedIn = true
 Id = "shirt"
 DisplayName = "Shirt"
 Slot = "top"
-Shapes = Array[ExtResource("1_ced7a")]([SubResource("Resource_i3fmu"), SubResource("Resource_3yl7g"), SubResource("Resource_0jax4"), SubResource("Resource_bbp12"), SubResource("Resource_wx8jp")])
-DefaultPrimary = Color(0.85, 0.88, 0.95, 1)
-Weight = 2.0
+Shapes = Array[ExtResource("1_ced7a")]([SubResource("Resource_i3fmu"), SubResource("Resource_3yl7g"), SubResource("Resource_0jax4"), SubResource("Resource_bbp12"), SubResource("Resource_wx8jp"), SubResource("Resource_p4n47"), SubResource("Resource_1hvk0")])
+DefaultPrimary = Color(0.3, 0.85, 0.2, 1)
+DefaultSecondary = Color(0.1, 0.25, 0.1, 1)
+Weight = 3.0

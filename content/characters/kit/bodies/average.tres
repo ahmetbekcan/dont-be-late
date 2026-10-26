@@ -4,5 +4,7 @@
 
 [resource]
 script = ExtResource("1_hn27s")
-HeadSize = 1.38
+ArmLength = 0.7
+ShoulderWidth = 0.4
+HeadSize = 1.06
 Weight = 3.0

@@ -9,8 +9,9 @@ Joint = "Hips"
 Profile = 3
 Offset = Vector3(0, -0.14, 0)
 Size = Vector3(0.44, 0.3, 0.36)
-Sides = 12
-Wobble = 0.02
+Sides = 14
+Wobble = 0.0
+FitBody = true
 
 [resource]
 script = ExtResource("2_upukp")

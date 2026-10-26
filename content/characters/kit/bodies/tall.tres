@@ -6,7 +6,8 @@
 script = ExtResource("1_aqpxe")
 Id = "tall"
 DisplayName = "Tall"
-LegLength = 0.98
-TorsoLength = 0.62
-ArmLength = 0.7
-HeadSize = 1.32
+LegLength = 0.96
+TorsoLength = 0.6
+ArmLength = 0.76
+ShoulderWidth = 0.41
+HeadSize = 1.03

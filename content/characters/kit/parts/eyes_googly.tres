@@ -8,7 +8,7 @@ script = ExtResource("1_niyex")
 Offset = Vector3(0.062, 0.205, 0.112)
 Size = Vector3(0.115, 0.115, 0.115)
 Sides = 8
-Wobble = 0.02
+Wobble = 0.0
 Role = 4
 Mirror = true
 
@@ -23,7 +23,7 @@ Mirror = true
 [resource]
 script = ExtResource("2_rbmx8")
 Id = "googly"
-DisplayName = "Googly"
+DisplayName = "Googly (cartoon)"
 Slot = "eyes"
 Shapes = Array[ExtResource("1_niyex")]([SubResource("Resource_t3gkw"), SubResource("Resource_58ga3")])
-Weight = 3.0
+Weight = 0.1

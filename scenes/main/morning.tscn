@@ -415,9 +415,10 @@ MouseHintText = "Drag onto a slot or yourself to wear  ·  drag off to drop  · 
 script = ExtResource("80_creator")
 Catalog = ExtResource("81_catalog")
 
-[node name="PlayerCreator" type="Node" parent="." node_paths=PackedStringArray("Creator")]
+[node name="PlayerCreator" type="Node" parent="." node_paths=PackedStringArray("Creator", "Inventory")]
 script = ExtResource("82_pcreator")
 Creator = NodePath("../Creator")
+Inventory = NodePath("../InventoryScreen")
 
 [node name="EndScreen" type="CanvasLayer" parent="." unique_id=219996350]
 script = ExtResource("42_vvooy")

@@ -5,16 +5,19 @@
 
 [sub_resource type="Resource" id="Resource_h0yac"]
 script = ExtResource("1_7fmvd")
-Profile = 7
+Profile = 6
 Offset = Vector3(0, 0.17, 0)
-Size = Vector3(0.26, 0.33, 0.26)
-Sides = 4
-Wobble = 0.08
+Rotation = Vector3(180, 0, 0)
+Size = Vector3(0.27, 0.33, 0.27)
+Sides = 8
+Rings = 3
+Wobble = 0.0
 Role = 0
 
 [resource]
 script = ExtResource("2_mepe6")
 Id = "square"
-DisplayName = "Square"
+DisplayName = "Square jaw"
 Slot = "head"
 Shapes = Array[ExtResource("1_7fmvd")]([SubResource("Resource_h0yac")])
+Weight = 2.0

@@ -5,30 +5,15 @@
 
 [sub_resource type="Resource" id="Resource_qttrh"]
 script = ExtResource("1_rmsmp")
-Offset = Vector3(0, 0.09, 0.123)
-Size = Vector3(0.055, 0.045, 0.035)
-Sides = 7
+Offset = Vector3(0, 0.08, 0.122)
+Size = Vector3(0.04, 0.03, 0.025)
+Sides = 8
+Wobble = 0.0
 Role = 6
-
-[sub_resource type="Resource" id="Resource_a7f1w"]
-script = ExtResource("1_rmsmp")
-Profile = 4
-Offset = Vector3(0, 0.112, 0.13)
-Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.018, 0.06, 0.022)
-Role = 9
-
-[sub_resource type="Resource" id="Resource_r3wkb"]
-script = ExtResource("1_rmsmp")
-Profile = 4
-Offset = Vector3(0, 0.068, 0.128)
-Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.02, 0.055, 0.024)
-Role = 9
 
 [resource]
 script = ExtResource("2_hyst5")
 Id = "open"
 DisplayName = "Open"
 Slot = "mouth"
-Shapes = Array[ExtResource("1_rmsmp")]([SubResource("Resource_qttrh"), SubResource("Resource_a7f1w"), SubResource("Resource_r3wkb")])
+Shapes = Array[ExtResource("1_rmsmp")]([SubResource("Resource_qttrh")])

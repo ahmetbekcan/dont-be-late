@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_kvc3e"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_fpins"]
+
+[sub_resource type="Resource" id="Resource_aec1g"]
+script = ExtResource("1_kvc3e")
+Offset = Vector3(0.056, 0.2, 0.1)
+Size = Vector3(0.085, 0.085, 0.085)
+Sides = 8
+Wobble = 0.0
+Role = 4
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_b8hqn"]
+script = ExtResource("1_kvc3e")
+Offset = Vector3(0.056, 0.198, 0.138)
+Size = Vector3(0.028, 0.028, 0.014)
+Sides = 8
+Wobble = 0.0
+Role = 5
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_bp2x6"]
+script = ExtResource("1_kvc3e")
+Profile = 1
+Offset = Vector3(0.056, 0.224, 0.1)
+Rotation = Vector3(-30, 0, 0)
+Size = Vector3(0.088, 0.04, 0.088)
+Sides = 8
+Wobble = 0.0
+Role = 0
+Mirror = true
+
+[resource]
+script = ExtResource("2_fpins")
+Id = "wide"
+DisplayName = "Wide open"
+Slot = "eyes"
+Shapes = Array[ExtResource("1_kvc3e")]([SubResource("Resource_aec1g"), SubResource("Resource_b8hqn"), SubResource("Resource_bp2x6")])

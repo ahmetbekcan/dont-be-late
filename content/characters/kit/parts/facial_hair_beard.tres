@@ -5,25 +5,28 @@
 
 [sub_resource type="Resource" id="Resource_seqc5"]
 script = ExtResource("1_7qlsv")
-Profile = 5
-Offset = Vector3(0, 0.045, 0.055)
-Size = Vector3(0.25, 0.16, 0.18)
+Profile = 4
+Offset = Vector3(0, 0.105, 0.132)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.02, 0.08, 0.02)
 Sides = 8
-Wobble = 0.08
+Wobble = 0.0
 Role = 1
 
 [sub_resource type="Resource" id="Resource_xf6tu"]
 script = ExtResource("1_7qlsv")
-Profile = 4
-Offset = Vector3(0, 0.118, 0.14)
-Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.03, 0.1, 0.03)
-Wobble = 0.08
+Profile = 5
+Offset = Vector3(0, 0.06, 0.035)
+Size = Vector3(0.255, 0.15, 0.2)
+Sides = 10
+Rings = 3
+Wobble = 0.0
 Role = 1
 
 [resource]
 script = ExtResource("2_it085")
 Id = "beard"
-DisplayName = "Beard"
+DisplayName = "Short beard"
 Slot = "facial_hair"
 Shapes = Array[ExtResource("1_7qlsv")]([SubResource("Resource_seqc5"), SubResource("Resource_xf6tu")])
+Weight = 2.0

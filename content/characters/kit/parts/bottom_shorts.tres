@@ -10,4 +10,3 @@ Id = "shorts"
 DisplayName = "Shorts"
 Slot = "bottom"
 DefaultPrimary = Color(0.15, 0.35, 0.75, 1)
-Weight = 2.0

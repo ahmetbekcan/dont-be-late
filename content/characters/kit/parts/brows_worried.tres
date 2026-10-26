@@ -6,11 +6,10 @@
 [sub_resource type="Resource" id="Resource_12jr5"]
 script = ExtResource("1_aeps6")
 Profile = 4
-Offset = Vector3(0.062, 0.278, 0.142)
-Rotation = Vector3(0, 0, 110)
-Size = Vector3(0.022, 0.085, 0.025)
-Sides = 5
-Wobble = 0.04
+Offset = Vector3(0.058, 0.252, 0.13)
+Rotation = Vector3(-8, 0, 104)
+Size = Vector3(0.016, 0.07, 0.016)
+Wobble = 0.0
 Role = 1
 Mirror = true
 

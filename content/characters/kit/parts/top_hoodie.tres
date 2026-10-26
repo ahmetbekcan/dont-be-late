@@ -8,7 +8,8 @@ script = ExtResource("1_6xaol")
 Joint = "Neck"
 Offset = Vector3(0, 0.03, -0.11)
 Size = Vector3(0.3, 0.15, 0.15)
-Sides = 9
+Sides = 10
+Wobble = 0.0
 
 [sub_resource type="Resource" id="Resource_qesfh"]
 script = ExtResource("1_6xaol")

@@ -6,28 +6,29 @@
 [sub_resource type="Resource" id="Resource_rt06y"]
 script = ExtResource("1_42gpy")
 Profile = 4
-Offset = Vector3(0, 0.1, 0.13)
+Offset = Vector3(0, 0.089, 0.126)
 Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.022, 0.075, 0.026)
-Wobble = 0.02
+Size = Vector3(0.016, 0.06, 0.02)
+Sides = 8
+Wobble = 0.0
 Role = 9
 
 [sub_resource type="Resource" id="Resource_s2yhh"]
 script = ExtResource("1_42gpy")
 Profile = 4
-Offset = Vector3(0, 0.083, 0.128)
+Offset = Vector3(0, 0.075, 0.124)
 Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.026, 0.065, 0.028)
-Wobble = 0.02
+Size = Vector3(0.02, 0.052, 0.022)
+Sides = 8
+Wobble = 0.0
 Role = 9
 
 [sub_resource type="Resource" id="Resource_ltnc8"]
 script = ExtResource("1_42gpy")
 Profile = 4
-Offset = Vector3(0, 0.092, 0.136)
+Offset = Vector3(0, 0.082, 0.133)
 Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.008, 0.07, 0.01)
-Sides = 4
+Size = Vector3(0.006, 0.056, 0.008)
 Wobble = 0.0
 Role = 6
 
@@ -37,4 +38,4 @@ Id = "lips"
 DisplayName = "Lips"
 Slot = "mouth"
 Shapes = Array[ExtResource("1_42gpy")]([SubResource("Resource_rt06y"), SubResource("Resource_s2yhh"), SubResource("Resource_ltnc8")])
-Weight = 3.0
+Weight = 2.0

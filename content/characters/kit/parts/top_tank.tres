@@ -9,7 +9,7 @@ Joint = "Spine"
 Profile = 4
 Offset = Vector3(0.1, -0.03, 0)
 Size = Vector3(0.04, 0.1, 0.18)
-Wobble = 0.01
+Wobble = 0.0
 Mirror = true
 FromTorsoTop = true
 

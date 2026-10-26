@@ -16,9 +16,11 @@ HideUnderHat = true
 [sub_resource type="Resource" id="Resource_p4v3b"]
 script = ExtResource("1_fnlxr")
 Profile = 5
-Offset = Vector3(0, 0.24000001, -0.07)
-Size = Vector3(0.28, 0.18, 0.16)
-Sides = 8
+Offset = Vector3(0, 0.23, -0.06)
+Size = Vector3(0.272, 0.16, 0.17)
+Sides = 10
+Rings = 3
+Wobble = 0.0
 Role = 1
 
 [resource]

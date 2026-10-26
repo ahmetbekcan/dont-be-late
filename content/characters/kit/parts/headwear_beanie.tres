@@ -7,17 +7,18 @@
 script = ExtResource("1_54ti5")
 Profile = 1
 Offset = Vector3(0, 0.3, -0.005)
-Size = Vector3(0.31, 0.19, 0.32)
-Sides = 9
+Size = Vector3(0.3, 0.19, 0.31)
+Sides = 10
 Rings = 3
+Wobble = 0.0
 
 [sub_resource type="Resource" id="Resource_6v0kk"]
 script = ExtResource("1_54ti5")
 Profile = 4
 Offset = Vector3(0, 0.235, -0.005)
-Size = Vector3(0.32, 0.07, 0.33)
-Sides = 10
-Wobble = 0.02
+Size = Vector3(0.31, 0.065, 0.32)
+Sides = 12
+Wobble = 0.0
 
 [resource]
 script = ExtResource("2_qpyjl")
