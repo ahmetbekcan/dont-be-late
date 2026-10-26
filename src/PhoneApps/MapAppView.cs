@@ -20,7 +20,8 @@ public partial class MapAppView : PhoneAppView
     private const float ChipsHeight = 58;
     private const float CardHeight = 74;
 
-    private ButtonGroup _chipGroup = new();
+    private readonly System.Collections.Generic.List<GodotObject> _owned = new();
+    private ButtonGroup _chipGroup = null!;
     private CityLayout? _city;
     private Node3D? _player;
     private Label _placeName = null!;
@@ -62,6 +63,7 @@ public partial class MapAppView : PhoneAppView
 
         _player = GetTree().GetFirstNodeInGroup("player") as Node3D;
         _chipGroup = new ButtonGroup();
+        _owned.Add(_chipGroup);
         Map = new CityMapView
         {
             Name = "Map",
@@ -138,6 +140,17 @@ public partial class MapAppView : PhoneAppView
             _sinceRefresh = 0;
             Refresh();
         }
+    }
+
+    public override void _ExitTree()
+    {
+        // Let go of the styles and button group we made, on the main thread (not in the garbage collector).
+        foreach (var resource in _owned)
+        {
+            resource.Dispose();
+        }
+
+        _owned.Clear();
     }
 
     /// <summary>Picks a landmark: shows the walk there and frames you and it on the map.</summary>
@@ -271,6 +284,7 @@ public partial class MapAppView : PhoneAppView
             if (button.GetThemeStylebox(state) is StyleBoxFlat flat)
             {
                 var tinted = (StyleBoxFlat)flat.Duplicate();
+                _owned.Add(tinted);
                 tinted.BorderColor = landmark.Rule.MapColor;
                 button.AddThemeStyleboxOverride(state, tinted);
             }
