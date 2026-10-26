@@ -171,6 +171,34 @@ public class CityTest
         AssertString(view.PlaceText).IsEqual("Home\nYou're here");
     }
 
+    [TestCase]
+    public async Task TheMapStillWorksAfterPuttingThePhoneAwayAndBack()
+    {
+        var scene = await LoadPreview();
+        var runner = _runner!;
+        var phone = scene.GetNode<PhoneScreen>("Phone");
+        var hotbar = scene.GetNode<HotbarHolder>("Player/Hotbar");
+        hotbar.Select(0);
+        await runner.Step(10);
+        phone.OpenApp("map");
+        await runner.Step(5);
+
+        hotbar.Select(0);
+        await runner.Step(10);
+        AssertBool(phone.IsOpen).IsFalse();
+        hotbar.Select(0);
+        await runner.Step(10);
+
+        AssertBool(phone.IsOpen).IsTrue();
+        var view = phone.CurrentView as MapAppView;
+        AssertObject(view).IsNotNull();
+        AssertObject(view!.Map).IsNotNull();
+        AssertBool(view.Map!.IsVisibleInTree()).IsTrue();
+        phone.Back();
+        AssertObject(phone.CurrentApp).IsNull();
+        AssertBool(phone.IsOpen).IsTrue();
+    }
+
     private async Task<Node> LoadPreview()
     {
         var tree = (SceneTree)Engine.GetMainLoop();
