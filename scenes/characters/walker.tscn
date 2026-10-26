@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterBody.cs" id="1_body"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/RandomLook.cs" id="2_random"]
+[ext_resource type="Resource" path="res://content/characters/kit/catalog.tres" id="3_catalog"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterIdle.cs" id="4_idle"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterWalk.cs" id="5_walk"]
+
+[sub_resource type="CapsuleShape3D" id="shape"]
+radius = 0.3
+height = 1.8
+
+[node name="Walker" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("shape")
+
+[node name="Body" type="Node3D" parent="."]
+script = ExtResource("1_body")
+
+[node name="RandomLook" type="Node" parent="Body"]
+script = ExtResource("2_random")
+Catalog = ExtResource("3_catalog")
+
+[node name="Idle" type="Node" parent="Body"]
+script = ExtResource("4_idle")
+LookAround = 12.0
+
+[node name="Walk" type="Node" parent="Body"]
+script = ExtResource("5_walk")

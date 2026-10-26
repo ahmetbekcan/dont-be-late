@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TrafficSettings" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/TrafficSettings.cs" id="1_traffic"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/DriverProfile.cs" id="2_driver"]
+[ext_resource type="Resource" path="res://content/city/drivers/calm.tres" id="d_calm"]
+[ext_resource type="Resource" path="res://content/city/drivers/normal.tres" id="d_normal"]
+[ext_resource type="Resource" path="res://content/city/drivers/in_a_hurry.tres" id="d_in_a_hurry"]
+[ext_resource type="Resource" path="res://content/city/drivers/crazy.tres" id="d_crazy"]
+
+[resource]
+script = ExtResource("1_traffic")
+MaxCars = 20
+Drivers = Array[ExtResource("2_driver")]([ExtResource("d_calm"), ExtResource("d_normal"), ExtResource("d_in_a_hurry"), ExtResource("d_crazy")])

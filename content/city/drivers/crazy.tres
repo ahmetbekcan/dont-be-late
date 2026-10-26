@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DriverProfile" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/DriverProfile.cs" id="1_driver"]
+
+[resource]
+script = ExtResource("1_driver")
+Id = "crazy"
+Weight = 0.7
+SpeedFactor = Vector2(1.3, 1.6)
+SpeedDrift = 0.25
+DriftInterval = Vector2(1.5, 4)
+Acceleration = Vector2(4.5, 6)
+Braking = Vector2(5, 7)
+FollowGap = Vector2(1, 1.4)
+TimeGap = Vector2(0.5, 0.8)
+ReactionTime = Vector2(0.1, 0.25)
+RunAmberChance = 1.0
+RunRedChance = 0.6
+PlayerAwareness = Vector2(0.05, 0.4)
+HonkPatience = Vector2(0, 0.3)

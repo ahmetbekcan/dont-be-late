@@ -44,6 +44,7 @@ public partial class CityStage : Node3D
     {
         Current = this;
         CityCommands.Register();
+        CityLifeCommands.Register();
         Settings = CityStore.Load();
         _runs = RunManager.Instance;
         if (_runs == null)

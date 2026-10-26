@@ -32,6 +32,19 @@
 [ext_resource type="Resource" path="res://content/phone/apps/map.tres" id="30_app_map"]
 [ext_resource type="Resource" path="res://content/phone/apps/weather.tres" id="31_app_wx"]
 [ext_resource type="Resource" path="res://content/phone/apps/messages.tres" id="32_app_msg"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CitySimulation.cs" id="40_life"]
+[ext_resource type="Resource" path="res://content/city/traffic.tres" id="41_traffic"]
+[ext_resource type="Resource" path="res://content/city/crowd.tres" id="42_crowd"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/TrafficSpawner.cs" id="43_cars"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CarModel.cs" id="44_carmodel"]
+[ext_resource type="Resource" path="res://content/city/cars/hatchback.tres" id="45_hatch"]
+[ext_resource type="Resource" path="res://content/city/cars/sedan.tres" id="46_sedan"]
+[ext_resource type="Resource" path="res://content/city/cars/van.tres" id="47_van"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CrowdSpawner.cs" id="48_crowd"]
+[ext_resource type="PackedScene" path="res://scenes/characters/walker.tscn" id="49_walker"]
+[ext_resource type="Script" path="res://src/City/TrafficReactions.cs" id="50_reactions"]
+[ext_resource type="Resource" path="res://content/status/bruised.tres" id="51_bruised"]
+[ext_resource type="Resource" path="res://content/status/limping.tres" id="52_limping"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 
@@ -67,6 +80,29 @@ Player = NodePath("../Player")
 [node name="City" type="Node3D" parent="Stage"]
 script = ExtResource("2_builder")
 Style = ExtResource("3_style")
+
+[node name="Life" type="Node" parent="Stage" node_paths=PackedStringArray("City", "Target")]
+script = ExtResource("40_life")
+City = NodePath("../City")
+Target = NodePath("../../Player")
+Traffic = ExtResource("41_traffic")
+Crowd = ExtResource("42_crowd")
+
+[node name="Traffic" type="Node3D" parent="Stage/Life"]
+script = ExtResource("43_cars")
+Models = Array[ExtResource("44_carmodel")]([ExtResource("45_hatch"), ExtResource("46_sedan"), ExtResource("47_van")])
+Colors = PackedColorArray(0.92, 0.3, 0.3, 1, 0.3, 0.55, 0.95, 1, 1, 0.8, 0.25, 1, 0.35, 0.75, 0.45, 1, 0.95, 0.95, 0.95, 1, 0.6, 0.4, 0.85, 1)
+
+[node name="Crowd" type="Node3D" parent="Stage/Life"]
+script = ExtResource("48_crowd")
+WalkerScene = ExtResource("49_walker")
+
+[node name="TrafficReactions" type="Node" parent="." node_paths=PackedStringArray("Simulation", "Player")]
+script = ExtResource("50_reactions")
+Simulation = NodePath("../Stage/Life")
+Player = NodePath("../Player")
+Bruised = ExtResource("51_bruised")
+Limping = ExtResource("52_limping")
 
 [node name="Player" parent="." node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("4_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

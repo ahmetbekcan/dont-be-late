@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DriverProfile" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/DriverProfile.cs" id="1_driver"]
+
+[resource]
+script = ExtResource("1_driver")
+Id = "normal"
+Weight = 4
+RunAmberChance = 0.2

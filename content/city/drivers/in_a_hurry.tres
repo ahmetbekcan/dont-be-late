@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DriverProfile" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/DriverProfile.cs" id="1_driver"]
+
+[resource]
+script = ExtResource("1_driver")
+Id = "in_a_hurry"
+Weight = 2
+SpeedFactor = Vector2(1.05, 1.25)
+SpeedDrift = 0.12
+Acceleration = Vector2(3, 4)
+FollowGap = Vector2(1.5, 2)
+TimeGap = Vector2(0.9, 1.2)
+ReactionTime = Vector2(0.2, 0.4)
+RunAmberChance = 0.7
+RunRedChance = 0.1
+PlayerAwareness = Vector2(0.6, 0.85)
+HonkPatience = Vector2(0.5, 1.5)

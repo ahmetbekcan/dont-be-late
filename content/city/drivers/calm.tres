@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DriverProfile" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/DriverProfile.cs" id="1_driver"]
+
+[resource]
+script = ExtResource("1_driver")
+Id = "calm"
+Weight = 5
+SpeedFactor = Vector2(0.75, 0.9)
+SpeedDrift = 0.05
+Acceleration = Vector2(1.6, 2.2)
+FollowGap = Vector2(2.5, 3.5)
+TimeGap = Vector2(1.6, 2.2)
+RunAmberChance = 0.0
+PlayerAwareness = Vector2(0.95, 1)
+HonkPatience = Vector2(4, 7)

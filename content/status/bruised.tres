@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="1_toast"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectDefinition.cs" id="2_status"]
+
+[sub_resource type="Resource" id="Toast"]
+script = ExtResource("1_toast")
+EventName = "toast"
+Payload = "A car clips you. Everything hurts a little."
+
+[resource]
+script = ExtResource("2_status")
+Id = "bruised"
+DisplayName = "Bruised"
+Duration = 40.0
+Multipliers = Dictionary[String, float]({
+"move_speed": 0.8,
+"sprint_speed": 0.75
+})
+OnApplied = SubResource("Toast")
