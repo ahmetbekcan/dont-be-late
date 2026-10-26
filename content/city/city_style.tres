@@ -13,6 +13,20 @@
 [ext_resource type="Resource" path="res://content/city/props/tree.tres" id="11_tree"]
 [ext_resource type="Resource" path="res://content/city/props/bench.tres" id="12_bench"]
 [ext_resource type="Resource" path="res://content/city/props/bin.tres" id="13_bin"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/asphalt.tres" id="m_asphalt"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/door.tres" id="m_door"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/grass.tres" id="m_grass"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/kerb.tres" id="m_kerb"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/lot.tres" id="m_lot"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/outskirts.tres" id="m_outskirts"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/parking.tres" id="m_parking"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/path.tres" id="m_path"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/pavement.tres" id="m_pavement"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/roof.tres" id="m_roof"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/trim.tres" id="m_trim"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/wall.tres" id="m_wall"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/window.tres" id="m_window"]
+
 
 [sub_resource type="Resource" id="Grid"]
 script = ExtResource("2_grid")
@@ -68,3 +82,18 @@ AsphaltColor = Color(0.32, 0.34, 0.4, 1)
 PavementColor = Color(0.8, 0.79, 0.78, 1)
 KerbColor = Color(0.66, 0.66, 0.7, 1)
 OutskirtsColor = Color(0.5, 0.72, 0.4, 1)
+Materials = Dictionary[String, Material]({
+"asphalt": ExtResource("m_asphalt"),
+"door": ExtResource("m_door"),
+"grass": ExtResource("m_grass"),
+"kerb": ExtResource("m_kerb"),
+"lot": ExtResource("m_lot"),
+"outskirts": ExtResource("m_outskirts"),
+"parking": ExtResource("m_parking"),
+"path": ExtResource("m_path"),
+"pavement": ExtResource("m_pavement"),
+"roof": ExtResource("m_roof"),
+"trim": ExtResource("m_trim"),
+"wall": ExtResource("m_wall"),
+"window": ExtResource("m_window"),
+})

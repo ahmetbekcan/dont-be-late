@@ -71,6 +71,30 @@ public class CityTest
     }
 
     [TestCase]
+    public void EverySurfaceKindHasAMaterial()
+    {
+        var style = GD.Load<CityStyle>(StylePath);
+        string[] surfaces =
+        {
+            CitySurfaces.Asphalt, CitySurfaces.Pavement, CitySurfaces.Kerb, CitySurfaces.Outskirts, CitySurfaces.Lot,
+            CitySurfaces.Path, CitySurfaces.Wall, CitySurfaces.Roof, CitySurfaces.Trim, CitySurfaces.Window, CitySurfaces.Door,
+        };
+        foreach (string surface in surfaces)
+        {
+            AssertObject(style.MaterialFor(surface)).OverrideFailureMessage($"no material for {surface}").IsNotNull();
+        }
+
+        // Lot uses that name their own ground get a material for it too.
+        foreach (var entry in style.LotUses!.Entries)
+        {
+            if (entry is LotUse use && use.GroundSurface.Length > 0)
+            {
+                AssertObject(style.MaterialFor(use.GroundSurface)).OverrideFailureMessage($"no material for {use.Id}'s {use.GroundSurface}").IsNotNull();
+            }
+        }
+    }
+
+    [TestCase]
     public void NewEachRunFollowsTheRunSeedAndKeptIgnoresIt()
     {
         var settings = new CitySettings { Mode = CitySeedMode.NewEachRun };
@@ -110,6 +134,12 @@ public class CityTest
         AssertFloat(CityLayout.ToPlan(player.GlobalPosition).DistanceTo(home.Position)).IsLess(3f);
         AssertFloat(player.GlobalPosition.Y).IsGreater(stage.Layout.GroundHeight - 0.05f);
         AssertBool(player.IsOnFloor()).IsTrue();
+
+        // The built city wears the style's materials.
+        var mesh = (ArrayMesh)scene.GetNode<MeshInstance3D>("Stage/City/City/Ground").Mesh;
+        int walls = CitySurfaceMesh.Find(mesh, CitySurfaces.Wall);
+        AssertInt(walls).IsGreaterEqual(0);
+        AssertObject(mesh.SurfaceGetMaterial(walls)).IsSame(GD.Load<CityStyle>(StylePath).MaterialFor(CitySurfaces.Wall));
     }
 
     [TestCase]

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/materials/city/shaders/city_asphalt.gdshader" id="1_s"]
+
+[resource]
+shader = ExtResource("1_s")
+shader_parameter/speckle = 0.35
+shader_parameter/speckle_density = 0.15
+shader_parameter/patches = 0.3
+shader_parameter/cracks = 0.7

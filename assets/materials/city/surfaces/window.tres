@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/materials/city/shaders/city_window.gdshader" id="1_s"]
+
+[resource]
+shader = ExtResource("1_s")
+shader_parameter/frame_width = 0.08
+shader_parameter/bar_width = 0.035
+shader_parameter/panes_across = 2
+shader_parameter/panes_up = 2
+shader_parameter/frame_variety = 0.6
+shader_parameter/sill = 0.1
+shader_parameter/curtain_chance = 0.45
+shader_parameter/blind_chance = 0.3
+shader_parameter/lit_chance = 0.18

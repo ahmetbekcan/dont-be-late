@@ -19,4 +19,5 @@ MinArea = 180.0
 GroundColor = Color(0.45, 0.72, 0.35, 1)
 MapColor = Color(0.55, 0.82, 0.45, 1)
 Category = "park"
+GroundSurface = "grass"
 Builder = SubResource("Builder")

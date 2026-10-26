@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/materials/city/shaders/city_grass.gdshader" id="1_s"]
+
+[resource]
+shader = ExtResource("1_s")
+shader_parameter/patch_contrast = 0.35
+shader_parameter/blades = 0.3
+shader_parameter/flower_density = 0.06

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/materials/city/shaders/city_tiles.gdshader" id="1_s"]
+
+[resource]
+shader = ExtResource("1_s")
+shader_parameter/tile_size = Vector2(0.22, 0.22)
+shader_parameter/grout_width = 0.02
+shader_parameter/grout_shade = 0.6
+shader_parameter/edge_shade = 0.3
+shader_parameter/tile_variation = 0.2
+shader_parameter/wobble = 0.02
+shader_parameter/grime = 0.2
+shader_parameter/grain = 0.15

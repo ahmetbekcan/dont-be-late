@@ -21,4 +21,5 @@ Weight = 0.5
 GroundColor = Color(0.5, 0.52, 0.56, 1)
 MapColor = Color(0.8, 0.8, 0.82, 1)
 Category = "parking"
+GroundSurface = "parking"
 Builder = SubResource("Builder")
