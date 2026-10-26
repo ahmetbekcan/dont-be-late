@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="InventorySkin" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InventorySkin.cs" id="1_skin"]
+
+[resource]
+script = ExtResource("1_skin")
+CellSize = Vector2(76, 76)
+CornerRadius = 18
+OutlineWidth = 4
+CellColor = Color(1, 0.97, 0.9, 0.95)
+CellHoverColor = Color(1, 1, 1, 1)
+OutlineColor = Color(0.12, 0.13, 0.26, 1)
+SelectedColor = Color(1, 0.86, 0.35, 1)
+AccentColor = Color(1, 0.5, 0.25, 1)
+SelectedOutlineWidth = 5
+EmptyCellColor = Color(0.12, 0.13, 0.26, 0.3)
+EmptyIconOpacity = 0.3
+ShadowSize = 1
+ShadowColor = Color(0.12, 0.13, 0.26, 1)
+ShadowOffset = Vector2(0, 5)
+TooltipColor = Color(1, 1, 1, 1)
+TooltipOutlineColor = Color(0.12, 0.13, 0.26, 1)
+FontSize = 20
+SmallFontSize = 15
+TextColor = Color(0.12, 0.13, 0.26, 1)
+MutedTextColor = Color(0.3, 0.32, 0.45, 1)
+CountColor = Color(1, 1, 1, 1)
+TextOutlineColor = Color(0.12, 0.13, 0.26, 1)
+BackdropBlur = 2.0
+BackdropTint = Color(0.12, 0.13, 0.3, 0.4)

@@ -34,6 +34,7 @@ Consequences catch up with you as the morning goes on: rain soaks you, puddles f
 | WASD / mouse | Move / look |
 | Shift, Space, Ctrl | Sprint, jump, crouch |
 | E, F, R | Interact (each object shows which key does what) |
+| Tab or I | Inventory: see what you wear and carry, swap, take off, drop |
 | Q / left click | Drop / throw a held object |
 | `` ` `` or F1 | Debug console (`help`, `scenario force rain`, `restart`, `bus next`, `time 7:59`, `give boots`, `meter wetness 80`, `status`...) |
 | F3 | Debug overlay |

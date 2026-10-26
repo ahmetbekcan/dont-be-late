@@ -1,0 +1,354 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/EquipmentVisual.cs" id="ev"]
+
+[sub_resource type="StandardMaterial3D" id="mat_skin"]
+albedo_color = Color(0.96, 0.76, 0.6, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_shirt"]
+albedo_color = Color(0.27, 0.52, 0.88, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_jeans"]
+albedo_color = Color(0.18, 0.24, 0.42, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_hair"]
+albedo_color = Color(0.35, 0.22, 0.12, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_white"]
+albedo_color = Color(0.97, 0.97, 0.97, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_black"]
+albedo_color = Color(0.05, 0.05, 0.07, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_mouth"]
+albedo_color = Color(0.45, 0.15, 0.15, 1)
+roughness = 0.85
+
+[sub_resource type="CapsuleMesh" id="mesh_1"]
+material = SubResource("mat_jeans")
+radius = 0.095
+height = 0.84
+radial_segments = 8
+rings = 2
+
+[sub_resource type="CapsuleMesh" id="mesh_2"]
+material = SubResource("mat_shirt")
+radius = 0.23
+height = 0.74
+radial_segments = 8
+rings = 2
+
+[sub_resource type="CapsuleMesh" id="mesh_3"]
+material = SubResource("mat_skin")
+radius = 0.06
+height = 0.64
+radial_segments = 8
+rings = 2
+
+[sub_resource type="CapsuleMesh" id="mesh_4"]
+material = SubResource("mat_shirt")
+radius = 0.085
+height = 0.3
+radial_segments = 8
+rings = 2
+
+[sub_resource type="SphereMesh" id="mesh_5"]
+material = SubResource("mat_skin")
+radius = 0.065
+height = 0.13
+radial_segments = 10
+rings = 6
+
+[sub_resource type="CylinderMesh" id="mesh_6"]
+material = SubResource("mat_skin")
+top_radius = 0.06
+bottom_radius = 0.07
+height = 0.12
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="mesh_7"]
+material = SubResource("mat_skin")
+radius = 0.17
+height = 0.36
+radial_segments = 10
+rings = 6
+
+[sub_resource type="SphereMesh" id="mesh_8"]
+material = SubResource("mat_hair")
+radius = 0.178
+height = 0.2
+radial_segments = 10
+rings = 6
+
+[sub_resource type="SphereMesh" id="mesh_9"]
+material = SubResource("mat_white")
+radius = 0.058
+height = 0.116
+radial_segments = 10
+rings = 6
+
+[sub_resource type="SphereMesh" id="mesh_10"]
+material = SubResource("mat_black")
+radius = 0.026
+height = 0.052
+radial_segments = 10
+rings = 6
+
+[sub_resource type="BoxMesh" id="mesh_11"]
+material = SubResource("mat_mouth")
+size = Vector3(0.07, 0.018, 0.02)
+
+[sub_resource type="BoxMesh" id="mesh_12"]
+material = SubResource("mat_skin")
+size = Vector3(0.1, 0.06, 0.2)
+
+[sub_resource type="BoxMesh" id="mesh_13"]
+material = SubResource("mat_white")
+size = Vector3(0.12, 0.09, 0.26)
+
+[sub_resource type="StandardMaterial3D" id="mat_sole"]
+albedo_color = Color(0.85, 0.25, 0.25, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="mesh_14"]
+material = SubResource("mat_sole")
+size = Vector3(0.125, 0.025, 0.265)
+
+[sub_resource type="StandardMaterial3D" id="mat_boots"]
+albedo_color = Color(0.22, 0.38, 0.22, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="mesh_15"]
+material = SubResource("mat_boots")
+size = Vector3(0.13, 0.3, 0.15)
+
+[sub_resource type="BoxMesh" id="mesh_16"]
+material = SubResource("mat_boots")
+size = Vector3(0.13, 0.1, 0.26)
+
+[sub_resource type="StandardMaterial3D" id="mat_slippers"]
+albedo_color = Color(1, 0.6, 0.75, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="mesh_17"]
+material = SubResource("mat_slippers")
+size = Vector3(0.13, 0.065, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="mat_pom"]
+albedo_color = Color(1, 0.85, 0.9, 1)
+roughness = 0.85
+
+[sub_resource type="SphereMesh" id="mesh_18"]
+material = SubResource("mat_pom")
+radius = 0.04
+height = 0.08
+radial_segments = 10
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="mat_umbrella"]
+albedo_color = Color(0.15, 0.2, 0.5, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="mesh_19"]
+material = SubResource("mat_umbrella")
+top_radius = 0.025
+bottom_radius = 0.075
+height = 0.55
+radial_segments = 8
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="mat_metal"]
+albedo_color = Color(0.7, 0.7, 0.72, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="mesh_20"]
+material = SubResource("mat_metal")
+top_radius = 0.008
+bottom_radius = 0.008
+height = 0.9
+radial_segments = 8
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="mat_handle"]
+albedo_color = Color(0.4, 0.25, 0.12, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="mesh_21"]
+material = SubResource("mat_handle")
+top_radius = 0.022
+bottom_radius = 0.022
+height = 0.12
+radial_segments = 8
+rings = 1
+
+[node name="InventoryFigure" type="Node3D"]
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="LegL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.47, 0)
+
+[node name="LegR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.47, 0)
+
+[node name="Torso" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_2")
+transform = Transform3D(1.0000, 0.0000, 0.0000, -0.0000, 1.0000, 0.0000, 0.0000, 0.0000, 0.7200, 0, 1.16, 0)
+
+[node name="ArmL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_3")
+transform = Transform3D(0.9903, -0.1392, 0.0000, 0.1392, 0.9903, 0.0000, 0.0000, 0.0000, 1.0000, -0.31, 1.1, 0)
+
+[node name="ArmR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_3")
+transform = Transform3D(0.9903, 0.1392, 0.0000, -0.1392, 0.9903, 0.0000, 0.0000, 0.0000, 1.0000, 0.31, 1.1, 0)
+
+[node name="SleeveL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_4")
+transform = Transform3D(0.9848, -0.1736, 0.0000, 0.1736, 0.9848, 0.0000, 0.0000, 0.0000, 1.0000, -0.29, 1.3, 0)
+
+[node name="SleeveR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_4")
+transform = Transform3D(0.9848, 0.1736, 0.0000, -0.1736, 0.9848, 0.0000, 0.0000, 0.0000, 1.0000, 0.29, 1.3, 0)
+
+[node name="HandL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355, 0.79, 0)
+
+[node name="HandR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355, 0.79, 0)
+
+[node name="Neck" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52, 0)
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Hair" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_8")
+transform = Transform3D(1.0000, 0.0000, 0.0000, -0.0000, 1.0000, 0.0000, 0.0000, 0.0000, 1.0200, 0, 1.81, -0.015)
+
+[node name="EyeL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_9")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065, 1.72, 0.135)
+
+[node name="EyeR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_9")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065, 1.72, 0.135)
+
+[node name="PupilL" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_10")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058, 1.715, 0.188)
+
+[node name="PupilR" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_10")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072, 1.725, 0.188)
+
+[node name="Mouth" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_11")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61, 0.155)
+
+[node name="BareFeet" type="Node3D" parent="."]
+script = ExtResource("ev")
+SlotId = "feet"
+ShowWhenEmpty = true
+
+[node name="FootL" type="MeshInstance3D" parent="BareFeet"]
+mesh = SubResource("mesh_12")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.03, 0.04)
+
+[node name="FootR" type="MeshInstance3D" parent="BareFeet"]
+mesh = SubResource("mesh_12")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.03, 0.04)
+
+[node name="Sneakers" type="Node3D" parent="."]
+script = ExtResource("ev")
+SlotId = "feet"
+ItemIds = PackedStringArray("sneakers")
+
+[node name="ShoeL" type="MeshInstance3D" parent="Sneakers"]
+mesh = SubResource("mesh_13")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.06, 0.04)
+
+[node name="SoleL" type="MeshInstance3D" parent="Sneakers"]
+mesh = SubResource("mesh_14")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.0125, 0.04)
+
+[node name="ShoeR" type="MeshInstance3D" parent="Sneakers"]
+mesh = SubResource("mesh_13")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.06, 0.04)
+
+[node name="SoleR" type="MeshInstance3D" parent="Sneakers"]
+mesh = SubResource("mesh_14")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.0125, 0.04)
+
+[node name="Boots" type="Node3D" parent="."]
+script = ExtResource("ev")
+SlotId = "feet"
+ItemIds = PackedStringArray("boots")
+
+[node name="ShaftL" type="MeshInstance3D" parent="Boots"]
+mesh = SubResource("mesh_15")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.15, -0.01)
+
+[node name="ToeL" type="MeshInstance3D" parent="Boots"]
+mesh = SubResource("mesh_16")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.05, 0.04)
+
+[node name="ShaftR" type="MeshInstance3D" parent="Boots"]
+mesh = SubResource("mesh_15")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.15, -0.01)
+
+[node name="ToeR" type="MeshInstance3D" parent="Boots"]
+mesh = SubResource("mesh_16")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.05, 0.04)
+
+[node name="Slippers" type="Node3D" parent="."]
+script = ExtResource("ev")
+SlotId = "feet"
+ItemIds = PackedStringArray("slippers")
+
+[node name="SlipperL" type="MeshInstance3D" parent="Slippers"]
+mesh = SubResource("mesh_17")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.0325, 0.04)
+
+[node name="PomL" type="MeshInstance3D" parent="Slippers"]
+mesh = SubResource("mesh_18")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 0.07, 0.13)
+
+[node name="SlipperR" type="MeshInstance3D" parent="Slippers"]
+mesh = SubResource("mesh_17")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.0325, 0.04)
+
+[node name="PomR" type="MeshInstance3D" parent="Slippers"]
+mesh = SubResource("mesh_18")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.07, 0.13)
+
+[node name="Umbrella" type="Node3D" parent="."]
+script = ExtResource("ev")
+SlotId = "hand"
+ItemIds = PackedStringArray("umbrella")
+
+[node name="Canopy" type="MeshInstance3D" parent="Umbrella"]
+mesh = SubResource("mesh_19")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37, 0.38, 0.05)
+
+[node name="Shaft" type="MeshInstance3D" parent="Umbrella"]
+mesh = SubResource("mesh_20")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37, 0.4, 0.05)
+
+[node name="Handle" type="MeshInstance3D" parent="Umbrella"]
+mesh = SubResource("mesh_21")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37, 0.84, 0.05)

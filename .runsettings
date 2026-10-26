@@ -13,5 +13,6 @@
   </RunConfiguration>
   <GdUnit4>
     <DisplayName>FullyQualifiedName</DisplayName>
+    <CompileProcessTimeout>60000</CompileProcessTimeout>
   </GdUnit4>
 </RunSettings>

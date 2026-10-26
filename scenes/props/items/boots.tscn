@@ -1,0 +1,61 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactable.cs" id="1_6ti7r"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/InteractionVerb.cs" id="2_tb3hu"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemPickup.cs" id="3_h6wxu"]
+[ext_resource type="Resource" path="res://content/items/boots.tres" id="4_j0m1j"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/Carryable.cs" id="5_8he7p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0prv"]
+albedo_color = Color(0.2, 0.3, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3dm4s"]
+material = SubResource("StandardMaterial3D_q0prv")
+size = Vector3(0.35, 0.22, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j18si"]
+size = Vector3(0.35, 0.22, 0.3)
+
+[sub_resource type="Resource" id="Resource_yxiku"]
+script = ExtResource("2_tb3hu")
+Id = "wear"
+Prompt = "Put on"
+
+[sub_resource type="Resource" id="Resource_csi6k"]
+script = ExtResource("2_tb3hu")
+Id = "take"
+Prompt = "Put in bag"
+InputAction = "interact_alt"
+
+[sub_resource type="Resource" id="Resource_gbwom"]
+script = ExtResource("2_tb3hu")
+Id = "pick_up"
+Prompt = "Pick up (throw)"
+InputAction = "interact_alt2"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c703u"]
+size = Vector3(0.55, 0.42000002, 0.5)
+
+[node name="Boots" type="RigidBody3D" unique_id=772189419]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1151641595]
+mesh = SubResource("BoxMesh_3dm4s")
+
+[node name="Shape" type="CollisionShape3D" parent="." unique_id=1050387074]
+shape = SubResource("BoxShape3D_j18si")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1235284873]
+script = ExtResource("1_6ti7r")
+DisplayName = "Rain boots"
+Verbs = Array[ExtResource("2_tb3hu")]([SubResource("Resource_yxiku"), SubResource("Resource_csi6k"), SubResource("Resource_gbwom")])
+
+[node name="Shape" type="CollisionShape3D" parent="Interactable" unique_id=1075907350]
+shape = SubResource("BoxShape3D_c703u")
+
+[node name="ItemPickup" type="Node" parent="." unique_id=763703620]
+script = ExtResource("3_h6wxu")
+Item = ExtResource("4_j0m1j")
+EquipVerb = "wear"
+
+[node name="Carryable" type="Node" parent="." unique_id=31506921]
+script = ExtResource("5_8he7p")

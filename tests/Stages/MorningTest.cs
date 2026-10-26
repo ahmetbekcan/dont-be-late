@@ -356,4 +356,32 @@ public class MorningTest
         AssertBool(Buses.TryBoard()).IsTrue();
         AssertString(EndScreen.MessageText).Contains("slippers");
     }
+
+    [TestCase]
+    public async Task TheInventoryScreenSwapsAndDropsThingsIntoTheWorld()
+    {
+        await LoadMorning();
+        var screen = _scene.GetNode<InventoryScreen>("InventoryScreen");
+        Use("Sneakers", "wear");
+        Use("Boots", "wear");
+        AssertBool(Inventory.IsEquipped("boots")).IsTrue();
+        AssertBool(Inventory.Stacks.Any(s => s.Id == "sneakers")).IsTrue();
+
+        screen.Open();
+        AssertBool(_scene.GetTree().Paused).IsTrue();
+        AssertBool(screen.Equip("sneakers")).IsTrue();
+        AssertBool(Inventory.IsEquipped("sneakers")).IsTrue();
+
+        var boots = screen.Drop("boots");
+        screen.Close();
+        await _runner.Step(30);
+
+        AssertObject(boots).IsNotNull();
+        AssertBool(Inventory.Has("boots")).IsFalse();
+
+        // The boots landed in the flat; put them back on from the floor.
+        AssertFloat(boots!.GlobalPosition.Y).IsBetween(2.9f, 3.6f);
+        boots.GetNode<Interactable>("Interactable").Interact("wear", Player, _scene.GetNode<Interactor>("Player/Head/Interactor").Context);
+        AssertBool(Inventory.IsEquipped("boots")).IsTrue();
+    }
 }

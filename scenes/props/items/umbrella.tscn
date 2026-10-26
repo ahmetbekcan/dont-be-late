@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactable.cs" id="1_p1wsj"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/InteractionVerb.cs" id="2_j8qb8"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemPickup.cs" id="3_ymoag"]
+[ext_resource type="Resource" path="res://content/items/umbrella.tres" id="4_osaom"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/Carryable.cs" id="5_701hj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muu04"]
+albedo_color = Color(0.15, 0.2, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dnkg4"]
+material = SubResource("StandardMaterial3D_muu04")
+size = Vector3(0.08, 0.9, 0.08)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pb467"]
+size = Vector3(0.08, 0.9, 0.08)
+
+[sub_resource type="Resource" id="Resource_n8253"]
+script = ExtResource("2_j8qb8")
+Id = "take"
+Prompt = "Take"
+
+[sub_resource type="Resource" id="Resource_tfq2c"]
+script = ExtResource("2_j8qb8")
+Id = "pick_up"
+Prompt = "Pick up (throw)"
+InputAction = "interact_alt2"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47hiu"]
+size = Vector3(0.28, 1.1, 0.28)
+
+[node name="Umbrella" type="RigidBody3D" unique_id=1510475965]
+mass = 0.6
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1600424714]
+mesh = SubResource("BoxMesh_dnkg4")
+
+[node name="Shape" type="CollisionShape3D" parent="." unique_id=436081862]
+shape = SubResource("BoxShape3D_pb467")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1797779900]
+script = ExtResource("1_p1wsj")
+DisplayName = "Umbrella"
+Verbs = Array[ExtResource("2_j8qb8")]([SubResource("Resource_n8253"), SubResource("Resource_tfq2c")])
+
+[node name="Shape" type="CollisionShape3D" parent="Interactable" unique_id=1585244281]
+shape = SubResource("BoxShape3D_47hiu")
+
+[node name="ItemPickup" type="Node" parent="." unique_id=829941469]
+script = ExtResource("3_ymoag")
+Item = ExtResource("4_osaom")
+EquipOnTake = true
+
+[node name="Carryable" type="Node" parent="." unique_id=1531661167]
+script = ExtResource("5_701hj")

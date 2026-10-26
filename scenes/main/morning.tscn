@@ -1,54 +1,60 @@
 [gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://scenes/stages/home/home.tscn" id="1_hwk53"]
-[ext_resource type="PackedScene" path="res://scenes/stages/street/street.tscn" id="2_ginbs"]
-[ext_resource type="PackedScene" path="res://addons/ReusableGameSystems/Characters/FirstPersonPlayer.tscn" id="3_2nhnt"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CharacterMotor.cs" id="4_4ntss"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactor.cs" id="5_ngrwd"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/PlayerInputSource.cs" id="6_l3x7u"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/MouseLook.cs" id="7_jojug"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/SprintAbility.cs" id="8_oc0ks"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/JumpAbility.cs" id="9_6x5v0"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CrouchAbility.cs" id="10_d8qxn"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/ClimbAbility.cs" id="11_1f0qk"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CarryAbility.cs" id="12_6eyer"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/InventoryHolder.cs" id="13_xoyhw"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterHolder.cs" id="14_ecuqb"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterDefinition.cs" id="15_tkfjh"]
-[ext_resource type="Resource" path="res://content/meters/wetness.tres" id="16_ny8vx"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectHolder.cs" id="17_ny7lv"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusSpeedAbility.cs" id="18_8duxv"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/HardLanding.cs" id="19_w5a0l"]
-[ext_resource type="Resource" path="res://content/status/limping.tres" id="20_2yai6"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/ApplyStatusEffect.cs" id="21_dnrhj"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/ConditionalActivator.cs" id="22_nvd7e"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/Condition.cs" id="23_terxn"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/FlagCondition.cs" id="24_vr0mf"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/NotCondition.cs" id="25_cgs10"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/AllCondition.cs" id="26_qhtoi"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/WorldState/WorldStateStore.cs" id="27_hgt7a"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/ConsequenceSystem.cs" id="28_hfh3m"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterTrigger.cs" id="29_mxbjl"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="30_y585p"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ClockLabel.cs" id="31_sw7ex"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InteractionPrompt.cs" id="32_ld4m5"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ToastLabel.cs" id="33_6qgy6"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/StatusEffectLabel.cs" id="34_olgof"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/MeterBar.cs" id="35_787ld"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EquipmentLabel.cs" id="36_p0c76"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EndScreen.cs" id="37_ocry4"]
-[ext_resource type="Script" path="res://src/Stages/MorningDirector.cs" id="38_n08op"]
-[ext_resource type="Resource" path="res://content/scenarios/home_pool.tres" id="39_w3d8b"]
-[ext_resource type="Resource" path="res://content/scenarios/base_morning.tres" id="40_fv88a"]
+[ext_resource type="PackedScene" path="res://scenes/stages/home/home.tscn" id="1_l3x7u"]
+[ext_resource type="PackedScene" path="res://scenes/stages/street/street.tscn" id="2_jojug"]
+[ext_resource type="PackedScene" path="res://addons/ReusableGameSystems/Characters/FirstPersonPlayer.tscn" id="3_oc0ks"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CharacterMotor.cs" id="4_6x5v0"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactor.cs" id="5_d8qxn"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/PlayerInputSource.cs" id="6_1f0qk"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/MouseLook.cs" id="7_6eyer"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/SprintAbility.cs" id="8_xoyhw"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/JumpAbility.cs" id="9_ecuqb"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CrouchAbility.cs" id="10_tkfjh"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/ClimbAbility.cs" id="11_ny8vx"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/CarryAbility.cs" id="12_ny7lv"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/InventoryHolder.cs" id="13_8duxv"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterHolder.cs" id="14_w5a0l"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterDefinition.cs" id="15_2yai6"]
+[ext_resource type="Resource" path="res://content/meters/wetness.tres" id="16_dnrhj"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusEffectHolder.cs" id="17_nvd7e"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/StatusSpeedAbility.cs" id="18_terxn"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/HardLanding.cs" id="19_vr0mf"]
+[ext_resource type="Resource" path="res://content/status/limping.tres" id="20_cgs10"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/ApplyStatusEffect.cs" id="21_qhtoi"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/ConditionalActivator.cs" id="22_hgt7a"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/Condition.cs" id="23_hfh3m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/FlagCondition.cs" id="24_mxbjl"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/NotCondition.cs" id="25_y585p"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/AllCondition.cs" id="26_sw7ex"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/WorldState/WorldStateStore.cs" id="27_ld4m5"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/ConsequenceSystem.cs" id="28_6qgy6"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterTrigger.cs" id="29_olgof"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Consequences/EmitEventEffect.cs" id="30_787ld"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ClockLabel.cs" id="31_p0c76"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InteractionPrompt.cs" id="32_ocry4"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ToastLabel.cs" id="33_n08op"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/StatusEffectLabel.cs" id="34_w3d8b"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/MeterBar.cs" id="35_fv88a"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EquipmentLabel.cs" id="36_rgrly"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InventoryScreen.cs" id="37_4i2mk"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EquipmentSlotSpec.cs" id="38_y4iof"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/slot_feet.png" id="39_hw3if"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/slot_hand.png" id="40_qyyni"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory_figure.tscn" id="41_yf2fv"]
+[ext_resource type="Resource" path="res://assets/ui/inventory_skins/toy.tres" id="41_skin"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EndScreen.cs" id="42_vvooy"]
+[ext_resource type="Script" path="res://src/Stages/MorningDirector.cs" id="43_cc1f0"]
+[ext_resource type="Resource" path="res://content/scenarios/home_pool.tres" id="44_tsk28"]
+[ext_resource type="Resource" path="res://content/scenarios/base_morning.tres" id="45_4pfut"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgrly"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0csqs"]
 
-[sub_resource type="Sky" id="Sky_4i2mk"]
-sky_material = SubResource("ProceduralSkyMaterial_rgrly")
+[sub_resource type="Sky" id="Sky_ti11c"]
+sky_material = SubResource("ProceduralSkyMaterial_0csqs")
 
-[sub_resource type="Environment" id="Environment_y4iof"]
+[sub_resource type="Environment" id="Environment_8icmk"]
 background_mode = 2
-sky = SubResource("Sky_4i2mk")
+sky = SubResource("Sky_ti11c")
 ambient_light_source = 3
 ambient_light_energy = 0.5
 tonemap_mode = 2
@@ -57,68 +63,80 @@ tonemap_mode = 2
 radius = 0.4
 height = 1.8
 
-[sub_resource type="Resource" id="Resource_hw3if"]
-script = ExtResource("21_dnrhj")
-Status = ExtResource("20_2yai6")
+[sub_resource type="Resource" id="Resource_x1d66"]
+script = ExtResource("21_qhtoi")
+Status = ExtResource("20_cgs10")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyyni"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v84nv"]
 transparency = 1
 albedo_color = Color(0.85, 0.9, 1, 0.6)
 
-[sub_resource type="BoxMesh" id="BoxMesh_yf2fv"]
-material = SubResource("StandardMaterial3D_qyyni")
+[sub_resource type="BoxMesh" id="BoxMesh_dji2v"]
+material = SubResource("StandardMaterial3D_v84nv")
 size = Vector3(0.02, 0.45, 0.02)
 
-[sub_resource type="Resource" id="Resource_vvooy"]
-script = ExtResource("24_vr0mf")
+[sub_resource type="Resource" id="Resource_uftcc"]
+script = ExtResource("24_mxbjl")
 Key = "raining"
 
-[sub_resource type="Resource" id="Resource_cc1f0"]
-script = ExtResource("24_vr0mf")
+[sub_resource type="Resource" id="Resource_oajqs"]
+script = ExtResource("24_mxbjl")
 Key = "indoors"
 
-[sub_resource type="Resource" id="Resource_tsk28"]
-script = ExtResource("25_cgs10")
-Inner = SubResource("Resource_cc1f0")
+[sub_resource type="Resource" id="Resource_jac1f"]
+script = ExtResource("25_y585p")
+Inner = SubResource("Resource_oajqs")
 
-[sub_resource type="Resource" id="Resource_4pfut"]
-script = ExtResource("26_qhtoi")
-Conditions = Array[ExtResource("23_terxn")]([SubResource("Resource_vvooy"), SubResource("Resource_tsk28")])
+[sub_resource type="Resource" id="Resource_kce25"]
+script = ExtResource("26_sw7ex")
+Conditions = Array[ExtResource("23_hfh3m")]([SubResource("Resource_uftcc"), SubResource("Resource_jac1f")])
 
-[sub_resource type="Resource" id="Resource_0csqs"]
-script = ExtResource("30_y585p")
+[sub_resource type="Resource" id="Resource_k4xyr"]
+script = ExtResource("30_787ld")
 EventName = "toast"
 Payload = "You're getting wet."
 
-[sub_resource type="Resource" id="Resource_ti11c"]
-script = ExtResource("30_y585p")
+[sub_resource type="Resource" id="Resource_uc2od"]
+script = ExtResource("30_787ld")
 EventName = "toast"
 Payload = "You're soaked through."
 
-[sub_resource type="Resource" id="Resource_8icmk"]
-script = ExtResource("30_y585p")
+[sub_resource type="Resource" id="Resource_363kn"]
+script = ExtResource("30_787ld")
 EventName = "toast"
 Payload = "You're drying off a bit."
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1d66"]
-bg_color = Color(0.3, 0.55, 0.95, 1)
+[sub_resource type="Resource" id="Resource_fsiad"]
+script = ExtResource("38_y4iof")
+SlotId = "feet"
+Label = "Feet"
+EmptyIcon = ExtResource("39_hw3if")
+Height = 0.92
 
-[node name="Morning" type="Node3D" unique_id=319040760]
+[sub_resource type="Resource" id="Resource_8eyrs"]
+script = ExtResource("38_y4iof")
+SlotId = "hand"
+Label = "Hand"
+EmptyIcon = ExtResource("40_qyyni")
+Side = 1
+Height = 0.55
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=844562914]
-environment = SubResource("Environment_y4iof")
+[node name="Morning" type="Node3D" unique_id=1157697221]
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=160430031]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=275812350]
+environment = SubResource("Environment_8icmk")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=288574202]
 transform = Transform3D(0.9396926, -0.24184474, 0.24184474, 0, 0.70710677, 0.70710677, -0.34202012, -0.664463, 0.664463, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Home" type="Node3D" parent="." unique_id=548807930 instance=ExtResource("1_hwk53")]
+[node name="Home" type="Node3D" parent="." unique_id=1601243690 instance=ExtResource("1_l3x7u")]
 
-[node name="Street" type="Node3D" parent="." unique_id=1710273473 instance=ExtResource("2_ginbs")]
+[node name="Street" type="Node3D" parent="." unique_id=1892133454 instance=ExtResource("2_jojug")]
 
-[node name="Player" parent="." unique_id=643573574 node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("3_2nhnt")]
+[node name="Player" parent="." unique_id=1509565835 node_paths=PackedStringArray("InputSource", "ViewReference") groups=["player"] instance=ExtResource("3_oc0ks")]
 transform = Transform3D(-0.7638152, 0, -0.645435, 0, 1, 0, 0.645435, 0, -0.7638152, -3.4, 3.05, -1.6)
-script = ExtResource("4_4ntss")
+script = ExtResource("4_6x5v0")
 InputSource = NodePath("Input")
 ViewReference = NodePath("Head")
 
@@ -134,63 +152,63 @@ current = true
 fov = 80.0
 
 [node name="Interactor" parent="Player/Head" index="1"]
-script = ExtResource("5_ngrwd")
+script = ExtResource("5_d8qxn")
 
 [node name="HoldPoint" parent="Player/Head" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.3, -1.1)
 
 [node name="Input" parent="Player" index="2"]
-script = ExtResource("6_l3x7u")
+script = ExtResource("6_1f0qk")
 
 [node name="MouseLook" parent="Player" index="3" node_paths=PackedStringArray("YawTarget", "PitchTarget")]
-script = ExtResource("7_jojug")
+script = ExtResource("7_6eyer")
 YawTarget = NodePath("..")
 PitchTarget = NodePath("../Head")
 
 [node name="Sprint" parent="Player" index="4"]
-script = ExtResource("8_oc0ks")
+script = ExtResource("8_xoyhw")
 
 [node name="Jump" parent="Player" index="5"]
-script = ExtResource("9_6x5v0")
+script = ExtResource("9_ecuqb")
 
 [node name="Crouch" parent="Player" index="6" node_paths=PackedStringArray("Shape", "Head")]
-script = ExtResource("10_d8qxn")
+script = ExtResource("10_tkfjh")
 Shape = NodePath("../Shape")
 Head = NodePath("../Head")
 
 [node name="Climb" parent="Player" index="7"]
-script = ExtResource("11_1f0qk")
+script = ExtResource("11_ny8vx")
 
 [node name="Carry" parent="Player" index="8" node_paths=PackedStringArray("HoldPoint")]
-script = ExtResource("12_6eyer")
+script = ExtResource("12_ny7lv")
 HoldPoint = NodePath("../Head/HoldPoint")
 
 [node name="Inventory" parent="Player" index="9"]
-script = ExtResource("13_xoyhw")
+script = ExtResource("13_8duxv")
 RegisterAsGlobalService = true
 
 [node name="Meters" parent="Player" index="10"]
-script = ExtResource("14_ecuqb")
-Definitions = Array[ExtResource("15_tkfjh")]([ExtResource("16_ny8vx")])
+script = ExtResource("14_w5a0l")
+Definitions = Array[ExtResource("15_2yai6")]([ExtResource("16_dnrhj")])
 RegisterAsGlobalService = true
 
 [node name="StatusEffects" parent="Player" index="11"]
-script = ExtResource("17_ny7lv")
+script = ExtResource("17_nvd7e")
 RegisterAsGlobalService = true
 
 [node name="StatusSpeed" parent="Player" index="12" node_paths=PackedStringArray("Holder")]
-script = ExtResource("18_8duxv")
+script = ExtResource("18_terxn")
 Holder = NodePath("../StatusEffects")
 
 [node name="HardLanding" parent="Player" index="13"]
-script = ExtResource("19_w5a0l")
-Effect = SubResource("Resource_hw3if")
+script = ExtResource("19_vr0mf")
+Effect = SubResource("Resource_x1d66")
 
-[node name="Drizzle" type="CPUParticles3D" parent="Player" unique_id=1989857580]
+[node name="Drizzle" type="CPUParticles3D" parent="Player" unique_id=1048747835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 amount = 500
 lifetime = 0.6
-mesh = SubResource("BoxMesh_yf2fv")
+mesh = SubResource("BoxMesh_dji2v")
 emission_shape = 3
 emission_box_extents = Vector3(7, 0.5, 7)
 direction = Vector3(0, -1, 0)
@@ -199,55 +217,55 @@ gravity = Vector3(0, -30, 0)
 initial_velocity_min = 8.0
 initial_velocity_max = 10.0
 
-[node name="ActiveWhen" type="Node" parent="Player/Drizzle" unique_id=838128243]
-script = ExtResource("22_nvd7e")
-Condition = SubResource("Resource_4pfut")
+[node name="ActiveWhen" type="Node" parent="Player/Drizzle" unique_id=1873953387]
+script = ExtResource("22_hgt7a")
+Condition = SubResource("Resource_kce25")
 
-[node name="World" type="Node" parent="." unique_id=443102335]
-script = ExtResource("27_hgt7a")
+[node name="World" type="Node" parent="." unique_id=940559219]
+script = ExtResource("27_ld4m5")
 
-[node name="Consequences" type="Node" parent="." unique_id=1905903810]
-script = ExtResource("28_hfh3m")
+[node name="Consequences" type="Node" parent="." unique_id=1519127521]
+script = ExtResource("28_6qgy6")
 
-[node name="Feedback" type="Node" parent="." unique_id=1915493457]
+[node name="Feedback" type="Node" parent="." unique_id=1890429462]
 
-[node name="Wetness25Up" type="Node" parent="Feedback" unique_id=1468837665]
-script = ExtResource("29_mxbjl")
+[node name="Wetness25Up" type="Node" parent="Feedback" unique_id=1775871830]
+script = ExtResource("29_olgof")
 MeterId = "wetness"
 Threshold = 25.0
-Effect = SubResource("Resource_0csqs")
+Effect = SubResource("Resource_k4xyr")
 
-[node name="Wetness60Up" type="Node" parent="Feedback" unique_id=88209090]
-script = ExtResource("29_mxbjl")
+[node name="Wetness60Up" type="Node" parent="Feedback" unique_id=797142193]
+script = ExtResource("29_olgof")
 MeterId = "wetness"
 Threshold = 60.0
-Effect = SubResource("Resource_ti11c")
+Effect = SubResource("Resource_uc2od")
 
-[node name="Wetness60Down" type="Node" parent="Feedback" unique_id=81318893]
-script = ExtResource("29_mxbjl")
+[node name="Wetness60Down" type="Node" parent="Feedback" unique_id=922405014]
+script = ExtResource("29_olgof")
 MeterId = "wetness"
 Threshold = 60.0
 Direction = 1
-Effect = SubResource("Resource_8icmk")
+Effect = SubResource("Resource_363kn")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=537965663]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=614070568]
 
-[node name="Clock" type="Label" parent="HUD" unique_id=611437528]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -0.5
+[node name="ClockBox" type="CenterContainer" parent="HUD" unique_id=396491231]
+anchors_preset = 10
+anchor_right = 1.0
 offset_top = 12.0
-offset_right = 0.5
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 40
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-horizontal_alignment = 1
-script = ExtResource("31_sw7ex")
-WarnFrom = "08:05"
+offset_bottom = 80.0
+mouse_filter = 2
 
-[node name="Crosshair" type="Label" parent="HUD" unique_id=886446739]
+[node name="Clock" type="Label" parent="HUD/ClockBox" unique_id=1109284683]
+layout_mode = 2
+theme_type_variation = &"HudClock"
+horizontal_alignment = 1
+script = ExtResource("31_p0c76")
+WarnFrom = "08:05"
+WarningColor = Color(0.85, 0.15, 0.1, 1)
+
+[node name="Crosshair" type="Label" parent="HUD" unique_id=2135892759]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -255,39 +273,41 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Prompt" type="Label" parent="HUD" unique_id=1406799579 node_paths=PackedStringArray("Interactor")]
+[node name="PromptBox" type="VBoxContainer" parent="HUD" unique_id=2138944871]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = 10.0
-offset_right = 0.5
-offset_bottom = 11.5
-theme_override_font_sizes/font_size = 18
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-script = ExtResource("32_ld4m5")
-Interactor = NodePath("../../Player/Head/Interactor")
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 600.0
+offset_bottom = 300.0
+mouse_filter = 2
 
-[node name="Toast" type="Label" parent="HUD" unique_id=1820031477]
-anchors_preset = 7
-anchor_left = 0.5
+[node name="Prompt" type="Label" parent="HUD/PromptBox" unique_id=2143349425 node_paths=PackedStringArray("Interactor")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"HudPrompt"
+script = ExtResource("32_ocry4")
+Interactor = NodePath("../../../Player/Head/Interactor")
+
+[node name="ToastBox" type="CenterContainer" parent="HUD" unique_id=244685792]
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -120.0
-offset_right = 500.0
-offset_bottom = -80.0
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-horizontal_alignment = 1
-script = ExtResource("33_6qgy6")
+offset_top = -150.0
+offset_bottom = -90.0
+mouse_filter = 2
 
-[node name="You" type="VBoxContainer" parent="HUD" unique_id=999657858]
+[node name="Toast" type="Label" parent="HUD/ToastBox" unique_id=872282668]
+layout_mode = 2
+theme_type_variation = &"HudToast"
+horizontal_alignment = 1
+script = ExtResource("33_n08op")
+
+[node name="You" type="VBoxContainer" parent="HUD" unique_id=719894312]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -295,50 +315,62 @@ offset_left = 16.0
 offset_top = -110.0
 offset_right = 520.0
 offset_bottom = -16.0
+theme_override_constants/separation = 6
 alignment = 2
 
-[node name="Status" type="Label" parent="HUD/You" unique_id=173673511]
+[node name="Status" type="Label" parent="HUD/You" unique_id=1195320591]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
-theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-script = ExtResource("34_olgof")
+size_flags_horizontal = 0
+theme_type_variation = &"HudStatus"
+script = ExtResource("34_w3d8b")
 
-[node name="Wetness" type="ProgressBar" parent="HUD/You" unique_id=1423129857]
+[node name="Wetness" type="ProgressBar" parent="HUD/You" unique_id=878281033]
 custom_minimum_size = Vector2(200, 16)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_x1d66")
-script = ExtResource("35_787ld")
+script = ExtResource("35_fv88a")
 MeterId = "wetness"
 
-[node name="Label" type="Label" parent="HUD/You/Wetness" unique_id=1928781106]
+[node name="Label" type="Label" parent="HUD/You/Wetness" unique_id=989178323]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 8.0
 offset_top = -1.0
-offset_right = 6.0
+offset_right = 8.0
 offset_bottom = -1.0
-theme_override_font_sizes/font_size = 12
+theme_type_variation = &"HudTiny"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "wet"
 
-[node name="Gear" type="Label" parent="HUD/You" unique_id=1740798158]
+[node name="Gear" type="Label" parent="HUD/You" unique_id=2017319216]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-script = ExtResource("36_p0c76")
+size_flags_horizontal = 0
+theme_type_variation = &"HudGear"
+script = ExtResource("36_rgrly")
 Slots = PackedStringArray("feet", "hand")
 SlotLabels = PackedStringArray("Feet", "Hand")
 EmptyText = "nothing"
 
-[node name="EndScreen" type="CanvasLayer" parent="." unique_id=1913526405]
-script = ExtResource("37_ocry4")
+[node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=329997960 node_paths=PackedStringArray("Holder", "DropPoint")]
+script = ExtResource("37_4i2mk")
+Holder = NodePath("../Player/Inventory")
+DropPoint = NodePath("../Player/Head/HoldPoint")
+Skin = ExtResource("41_skin")
+UseAction = "interact"
+RotateLeftAction = "move_left"
+RotateRightAction = "move_right"
+SlotSpecs = Array[ExtResource("38_y4iof")]([SubResource("Resource_fsiad"), SubResource("Resource_8eyrs")])
+FigureScene = ExtResource("41_yf2fv")
+EquipText = "Put on"
+MouseHintText = "Drag onto a slot or yourself to wear  ·  drag off to drop  ·  A/D to turn"
 
-[node name="Director" type="Node" parent="." unique_id=88323814 node_paths=PackedStringArray("World", "Consequences", "Buses", "EndScreen")]
-script = ExtResource("38_n08op")
-ScenarioPool = ExtResource("39_w3d8b")
-BaseRules = ExtResource("40_fv88a")
+[node name="EndScreen" type="CanvasLayer" parent="." unique_id=219996350]
+script = ExtResource("42_vvooy")
+BackgroundColor = Color(0.08, 0.1, 0.22, 0.7)
+
+[node name="Director" type="Node" parent="." unique_id=1378647795 node_paths=PackedStringArray("World", "Consequences", "Buses", "EndScreen")]
+script = ExtResource("43_cc1f0")
+ScenarioPool = ExtResource("44_tsk28")
+BaseRules = ExtResource("45_4pfut")
 World = NodePath("../World")
 Consequences = NodePath("../Consequences")
 Buses = NodePath("../Street/Buses")

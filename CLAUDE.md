@@ -55,9 +55,17 @@ If a library system is missing something this game needs, **improve the library 
 - **Loose coupling:** systems communicate through the event bus and signals, not direct references.
 - **Autoloads only for true globals:** event bus, clock, run manager, RNG, save. Everything else is a node or resource. Autoloads are scenes in `scenes/autoload/` (so their exports can be tuned) named `Events`, `Rng`, `Runs`, `Clock`; an autoload name can't match its `[GlobalClass]` name. From C#, use the class's static `Instance` (e.g. `GameClock.Instance`).
 - **Determinism:** all randomness goes through the seeded RNG service so any run can be replayed from its seed.
-- **Input actions** (in `project.godot`): `move_forward/back/left/right`, `sprint`, `jump`, `crouch`, `interact`, `interact_alt`, `interact_alt2`, `drop`, `throw`. Use these names; add new actions in the editor's Input Map rather than hardcoding keys.
+- **Input actions** (in `project.godot`): `move_forward/back/left/right`, `sprint`, `jump`, `crouch`, `interact`, `interact_alt`, `interact_alt2`, `drop`, `throw`, `inventory`. Use these names; add new actions in the editor's Input Map rather than hardcoding keys.
 - **Player:** start from the library's `Characters/FirstPersonPlayer.tscn` (motor, camera, interactor, abilities, inventory, meters, status effects) instead of building a new controller.
 - **Custom resources and nodes:** mark reusable `Resource` and `Node` classes with `[GlobalClass]` so they appear in the editor's Create dialog and inspector.
+
+## UI look
+
+- The game's look is the **toy box** style: chunky rounded panels, thick navy outlines, bright colors, the Fredoka font. It lives in one theme, `assets/ui/toy_theme.tres`, set as the project theme (`gui/theme/custom`).
+- **Don't style nodes one by one.** Use the theme, and its type variations for special pieces (`HudClock`, `HudToast`, `HudPrompt`, `HudStatus`, `HudGear`, the library's `EndScreen...` variations). Add new variations to the theme for new pieces.
+- **The inventory screen** is styled by an `InventorySkin` (`assets/ui/inventory_skins/*.tres`), set on `InventoryScreen.Skin` in `morning.tscn`. Its 3D figure is `scenes/ui/inventory_figure.tscn`; `EquipmentVisual` nodes there show what's worn (add one when adding a wearable item).
+- Item icons are `ItemDefinition.Icon` PNGs in `assets/ui/icons/` (rendered from Noto Color Emoji, OFL) until there's custom art. Fonts and icons ship with their license files.
+- Before building a new player-facing screen, render 2-3 mockups and let the user pick.
 
 ## Code style
 
@@ -89,6 +97,7 @@ The core rule: **never block the player; let the world react.** The player can d
   - `Facts` set when the morning starts (e.g. `raining`, `cat_on_shoes`);
   - optional `Consequences` registered when the morning starts.
 - **Scenarios only set facts.** Everything else reacts to them: zones and props switch on (`ConditionalActivator`), NPCs change behavior (the cat sits on the shoes), conditions in data change outcomes.
+- **Items in the world:** each item's `WorldScene` (`scenes/props/items/<id>.tscn`) is what it becomes when dropped from the inventory screen (Tab). Those objects can be put on, put in the bag, or carried and thrown.
 - **Facts the world keeps:** `indoors` (inside the flat), `under_cover` (bus shelter), plus scenario facts.
 - **To add a scenario:**
   1. Create the `.tres` and add it to `content/scenarios/home_pool.tres`.

@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="1_mcmyj"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/slippers.png" id="1_ro258"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="2_ubfyr"]
 
 [resource]
-script = ExtResource("1_mcmyj")
+script = ExtResource("2_ubfyr")
 Id = "slippers"
 DisplayName = "Slippers"
 Description = "Fluffy. Not for outside."
+Icon = ExtResource("1_ro258")
 EquipSlot = "feet"
+WorldScene = "res://scenes/props/items/slippers.tscn"

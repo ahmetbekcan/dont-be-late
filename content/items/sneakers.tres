@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="1_3ia64"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/sneakers.png" id="1_1n5n2"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="2_u4elo"]
 
 [resource]
-script = ExtResource("1_3ia64")
+script = ExtResource("2_u4elo")
 Id = "sneakers"
 DisplayName = "Sneakers"
 Description = "Comfortable. Not waterproof."
+Icon = ExtResource("1_1n5n2")
 EquipSlot = "feet"
+WorldScene = "res://scenes/props/items/sneakers.tscn"
