@@ -16,5 +16,5 @@ SunColor = Color(1, 0.95, 0.88, 1)
 SunEnergy = 1.95
 AmbientEnergy = 0.5
 FogColor = Color(0.85, 0.87, 0.9, 1)
-FogDensity = 0.003
+FogDensity = 0.0010
 Exposure = 1.0

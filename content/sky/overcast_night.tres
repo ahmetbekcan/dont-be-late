@@ -20,5 +20,5 @@ Stars = 0.0
 Moon = 0.0
 MoonEnergy = 0.05
 FogColor = Color(0.08, 0.09, 0.1, 1)
-FogDensity = 0.01
+FogDensity = 0.0035
 Exposure = 1.4

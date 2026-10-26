@@ -1,3 +1,4 @@
+using Godot;
 using System.Text;
 using DontBeLate.City;
 using ReusableGameSystems.CityGen;
@@ -60,6 +61,9 @@ public static class CityCommands
                     return stage.MovePlayerTo(id) ? $"at {id}" : throw new CommandException($"No landmark '{id}'. Try 'city' for the list.");
                 }
 
+                case "beach":
+                    return stage.MovePlayerToShore() ? "on the beach" : throw new CommandException("This city has no coast.");
+
                 case "paths":
                     if (stage.City != null)
                     {
@@ -71,7 +75,7 @@ public static class CityCommands
                 default:
                     throw args.UsageError();
             }
-        }, "city [info | new | seed <code> | keep | mode run|kept | goto <landmark> | paths]");
+        }, "city [info | new | seed <code> | keep | mode run|kept | goto <landmark> | beach | paths]");
     }
 
     private static string Describe(CityStage stage)
@@ -90,6 +94,11 @@ public static class CityCommands
         }
 
         text.Append($"\n{layout.Lots.Count} lots, {layout.Signals.Count} junctions with lights, {layout.Seats.Count} seats");
+        if (layout.Surroundings is { HasCoast: true } around)
+        {
+            float heading = Mathf.RadToDeg(around.CoastHeading.Angle());
+            text.Append($"\nsea toward {heading:0}° ('city beach' to go there)");
+        }
         foreach (var landmark in layout.Landmarks)
         {
             var p = layout.LandmarkWorldPosition(landmark);

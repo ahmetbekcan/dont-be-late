@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://addons/ReusableGameSystems/Landscape/ocean.gdshader" id="1_s"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_s")
+shader_parameter/shallow_color = Color(0.28, 0.6, 0.65, 1)
+shader_parameter/deep_color = Color(0.04, 0.18, 0.33, 1)
+shader_parameter/depth_fade = 5.0
+shader_parameter/clarity = 0.6
+shader_parameter/foam_width = 0.4
+shader_parameter/wave_size = 6.0
+shader_parameter/wave_strength = 0.12
+shader_parameter/facet_size = 0.0
+shader_parameter/roughness_value = 0.04
+shader_parameter/specular_value = 0.8

@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Zones/EffectZone.cs" id="1_zone"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/AddMeterEffect.cs" id="2_meter"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/StatusEffects/ApplyStatusEffect.cs" id="3_status"]
+[ext_resource type="Resource" path="res://content/status/wet_socks.tres" id="4_socks"]
+
+[sub_resource type="Resource" id="Socks"]
+script = ExtResource("3_status")
+Status = ExtResource("4_socks")
+
+[sub_resource type="Resource" id="Soak"]
+script = ExtResource("2_meter")
+MeterId = "wetness"
+Amount = 12.0
+
+[node name="SeaZone" type="Area3D"]
+script = ExtResource("1_zone")
+EnterEffect = SubResource("Socks")
+StayEffect = SubResource("Soak")
+StayInterval = 0.5

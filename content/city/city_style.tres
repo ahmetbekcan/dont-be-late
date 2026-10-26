@@ -26,6 +26,11 @@
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/trim.tres" id="m_trim"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/wall.tres" id="m_wall"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/window.tres" id="m_window"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/sand.tres" id="m_sand"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/sea_floor.tres" id="m_sea_floor"]
+[ext_resource type="PackedScene" path="res://scenes/props/city/sea_zone.tscn" id="sea_zone"]
+[ext_resource type="Material" path="res://content/city/sea.tres" id="sea_material"]
+[ext_resource type="Resource" path="res://content/city/backdrop.tres" id="backdrop"]
 
 
 [sub_resource type="Resource" id="Grid"]
@@ -96,4 +101,10 @@ Materials = Dictionary[String, Material]({
 "trim": ExtResource("m_trim"),
 "wall": ExtResource("m_wall"),
 "window": ExtResource("m_window"),
+"sand": ExtResource("m_sand"),
+"sea_floor": ExtResource("m_sea_floor"),
 })
+Coast = true
+SeaZone = ExtResource("sea_zone")
+SeaMaterial = ExtResource("sea_material")
+Backdrop = ExtResource("backdrop")

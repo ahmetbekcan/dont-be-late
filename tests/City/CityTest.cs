@@ -181,6 +181,42 @@ public class CityTest
     }
 
     [TestCase]
+    public async Task WadingIntoTheSeaSoaksYou()
+    {
+        var scene = await LoadPreview();
+        var stage = scene.GetNode<CityStage>("Stage");
+        var player = scene.GetNode<CharacterMotor>("Player");
+        var wetness = scene.GetNode<ReusableGameSystems.Meters.MeterHolder>("Player/Meters").Get("wetness")!;
+        var status = scene.GetNode<ReusableGameSystems.StatusEffects.StatusEffectHolder>("Player/StatusEffects").Effects;
+
+        // On the beach: dry.
+        AssertBool(stage.MovePlayerToShore()).IsTrue();
+        var shoreAt = player.GlobalPosition;
+        await _runner!.StepSeconds(1);
+        float dry = wetness.Value;
+        AssertBool(status.Has("wet_socks")).IsFalse();
+
+        // A few steps out into the water (straight out from the shore, whichever way the player looks).
+        var style = stage.Layout!.Style;
+        var around = stage.Layout.Surroundings!;
+        int coast = -1;
+        for (int i = 0; i < around.Outline.Count; i++)
+        {
+            if (around.IsCoast(i) && (coast < 0 || around.Outline.EdgeLength(i) > around.Outline.EdgeLength(coast)))
+            {
+                coast = i;
+            }
+        }
+
+        player.GlobalPosition += CityLayout.DirectionToWorld(around.Outward(coast)) * (style.BeachWidth + 4f);
+        var movedTo = player.GlobalPosition;
+        await _runner.StepSeconds(2);
+        AssertFloat(player.GlobalPosition.Y).OverrideFailureMessage($"shore {shoreAt} moved {movedTo} now {player.GlobalPosition} paused {player.GetTree().Paused} vel {player.Velocity} floor {player.IsOnFloor()} proc {player.CanProcess()} out {around.Outward(coast)} mid {around.Outline.EdgeMiddle(coast)}").IsLess(style.WaterLevel);
+        AssertBool(status.Has("wet_socks")).IsTrue();
+        AssertFloat(wetness.Value).IsGreater(dry + 20f);
+    }
+
+    [TestCase]
     public async Task TheMapShowsThePlacesAndTheWayThere()
     {
         var scene = await LoadPreview();

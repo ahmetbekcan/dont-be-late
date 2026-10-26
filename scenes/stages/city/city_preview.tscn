@@ -47,6 +47,8 @@
 [ext_resource type="Resource" path="res://content/status/limping.tres" id="52_limping"]
 [ext_resource type="PackedScene" path="res://scenes/main/sky.tscn" id="53_sky"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/StreetLights.cs" id="54_lights"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterDefinition.cs" id="55_meterdef"]
+[ext_resource type="Resource" path="res://content/meters/wetness.tres" id="56_wetness"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule"]
 radius = 0.4
@@ -149,6 +151,7 @@ StartingItems = Array[ExtResource("21_itemdef")]([ExtResource("22_phone_item")])
 
 [node name="Meters" parent="Player" index="10"]
 script = ExtResource("15_meters")
+Definitions = Array[ExtResource("55_meterdef")]([ExtResource("56_wetness")])
 RegisterAsGlobalService = true
 
 [node name="StatusEffects" parent="Player" index="11"]

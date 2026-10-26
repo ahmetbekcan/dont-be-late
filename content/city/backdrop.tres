@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BackdropSettings" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Landscape/BackdropSettings.cs" id="1_b"]
+
+[resource]
+script = ExtResource("1_b")
+Reach = 1400.0
+MountainHeight = 280.0
+MountainSize = 320.0
+Peakiness = 2.2
+Ridges = 0.85
+Roughness = 2.5
+SnowLine = 130.0
+RockLine = 70.0
+RockSlope = 0.45
+Woods = 0.3

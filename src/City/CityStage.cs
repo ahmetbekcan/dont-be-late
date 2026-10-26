@@ -144,6 +144,35 @@ public partial class CityStage : Node3D
         return true;
     }
 
+    /// <summary>Puts the player on the beach in the middle of the longest coast side, facing the sea. False without a coast.</summary>
+    public bool MovePlayerToShore()
+    {
+        var around = Layout?.Surroundings;
+        if (Player == null || Layout == null || around == null || !around.HasCoast)
+        {
+            return false;
+        }
+
+        int best = -1;
+        for (int i = 0; i < around.Outline.Count; i++)
+        {
+            if (around.IsCoast(i) && (best < 0 || around.Outline.EdgeLength(i) > around.Outline.EdgeLength(best)))
+            {
+                best = i;
+            }
+        }
+
+        var outward = around.Outward(best);
+        var spot = around.Outline.EdgeMiddle(best) + (outward * (Layout.Style.PavementWidth + 1f));
+        if (Player is CharacterBody3D body)
+        {
+            body.Velocity = Vector3.Zero;
+        }
+
+        Player.GlobalTransform = new Transform3D(CityLayout.FacingBasis(outward), CityLayout.ToWorld(spot, Layout.GroundHeight + 0.3f));
+        return true;
+    }
+
     private void OnRunStarted(RunStarted started)
     {
         Build(Settings.SeedFor(started.Seed));
