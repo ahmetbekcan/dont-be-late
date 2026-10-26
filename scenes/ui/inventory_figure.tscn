@@ -10,6 +10,7 @@
 [ext_resource type="Resource" path="res://content/characters/worn/held_umbrella.tres" id="8_umbrella"]
 [ext_resource type="Resource" path="res://content/characters/worn/held_phone.tres" id="9_phone"]
 [ext_resource type="Script" path="res://src/Characters/PlayerFigure.cs" id="10_player"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterIdle.cs" id="11_idle"]
 
 [sub_resource type="Resource" id="map_sneakers"]
 script = ExtResource("4_map")
@@ -51,3 +52,7 @@ EmptyWhenUnequipped = PackedStringArray("shoes", "held")
 
 [node name="Player" type="Node" parent="Body"]
 script = ExtResource("10_player")
+
+[node name="Idle" type="Node" parent="Body"]
+script = ExtResource("11_idle")
+LookAround = 12.0

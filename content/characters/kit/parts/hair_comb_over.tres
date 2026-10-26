@@ -5,16 +5,24 @@
 
 [sub_resource type="Resource" id="Resource_prw53"]
 script = ExtResource("1_fnlxr")
-Profile = 7
-Offset = Vector3(0, 0.335, 0)
-Rotation = Vector3(0, 0, 8)
-Size = Vector3(0.22, 0.025, 0.24)
-Sides = 4
-Wobble = 0.1
+Profile = 1
+Offset = Vector3(0, 0.315, 0)
+Rotation = Vector3(0, 0, 6)
+Size = Vector3(0.23, 0.045, 0.25)
+Sides = 8
+Role = 1
+HideUnderHat = true
+
+[sub_resource type="Resource" id="Resource_p4v3b"]
+script = ExtResource("1_fnlxr")
+Profile = 5
+Offset = Vector3(0, 0.24000001, -0.07)
+Size = Vector3(0.28, 0.18, 0.16)
+Sides = 8
 Role = 1
 
 [resource]
 script = ExtResource("2_svfev")
 Id = "comb_over"
 DisplayName = "Comb-over"
-Shapes = Array[ExtResource("1_fnlxr")]([SubResource("Resource_prw53")])
+Shapes = Array[ExtResource("1_fnlxr")]([SubResource("Resource_prw53"), SubResource("Resource_p4v3b")])

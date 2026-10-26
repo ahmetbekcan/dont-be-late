@@ -23,8 +23,8 @@ Mirror = true
 [sub_resource type="Resource" id="Resource_rlnek"]
 script = ExtResource("1_w7688")
 Profile = 1
-Offset = Vector3(0.058, 0.218, 0.115)
-Size = Vector3(0.1, 0.05, 0.1)
+Offset = Vector3(0.062, 0.218, 0.112)
+Size = Vector3(0.12, 0.06, 0.12)
 Sides = 8
 Wobble = 0.02
 Role = 0

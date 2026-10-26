@@ -5,11 +5,11 @@
 
 [sub_resource type="Resource" id="Resource_wlvr1"]
 script = ExtResource("1_5xbsx")
-Profile = 7
-Offset = Vector3(0, 0.118, 0.138)
-Size = Vector3(0.1, 0.024, 0.03)
-Sides = 4
-Wobble = 0.1
+Profile = 4
+Offset = Vector3(0, 0.118, 0.14)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.03, 0.1, 0.03)
+Wobble = 0.08
 Role = 1
 
 [resource]

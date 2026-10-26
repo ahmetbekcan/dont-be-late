@@ -3,11 +3,21 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_0oa8e"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_owycs"]
 
+[sub_resource type="Resource" id="Resource_44tqa"]
+script = ExtResource("1_0oa8e")
+Joint = "Neck"
+Profile = 4
+Offset = Vector3(0, -0.005, -0.005)
+Size = Vector3(0.165, 0.045, 0.155)
+Sides = 10
+Wobble = 0.01
+
 [resource]
 script = ExtResource("2_owycs")
 Covers = 54
 Id = "longsleeve"
 DisplayName = "Long sleeves"
 Slot = "top"
+Shapes = Array[ExtResource("1_0oa8e")]([SubResource("Resource_44tqa")])
 DefaultPrimary = Color(0.25, 0.6, 0.3, 1)
 Weight = 2.0

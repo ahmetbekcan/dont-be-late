@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_lf2cr"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_nveai"]
+
+[sub_resource type="Resource" id="Resource_2uehh"]
+script = ExtResource("1_lf2cr")
+Offset = Vector3(0, 0.3, -0.03)
+Size = Vector3(0.42, 0.36, 0.4)
+Sides = 10
+Rings = 4
+Wobble = 0.04
+Role = 1
+
+[resource]
+script = ExtResource("2_nveai")
+Id = "afro"
+DisplayName = "Afro"
+Shapes = Array[ExtResource("1_lf2cr")]([SubResource("Resource_2uehh")])

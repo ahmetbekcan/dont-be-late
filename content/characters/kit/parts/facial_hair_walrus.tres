@@ -8,8 +8,7 @@ script = ExtResource("1_puchc")
 Profile = 4
 Offset = Vector3(0, 0.112, 0.14)
 Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.13, 0.045, 0.04)
-Sides = 5
+Size = Vector3(0.05, 0.13, 0.045)
 Wobble = 0.1
 Role = 1
 

@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_elfqm"]
 script = ExtResource("1_k1rbr")
 Offset = Vector3(0, 0.15, 0.143)
-Size = Vector3(0.045, 0.045, 0.045)
+Size = Vector3(0.05, 0.045, 0.045)
 Role = 0
 
 [resource]

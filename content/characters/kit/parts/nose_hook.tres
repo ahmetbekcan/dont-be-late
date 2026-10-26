@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_55qjw"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_6s5jv"]
+
+[sub_resource type="Resource" id="Resource_d3wts"]
+script = ExtResource("1_55qjw")
+Profile = 4
+Offset = Vector3(0, 0.17, 0.15)
+Rotation = Vector3(30, 0, 0)
+Size = Vector3(0.04, 0.09, 0.045)
+Role = 0
+
+[sub_resource type="Resource" id="Resource_jeyr2"]
+script = ExtResource("1_55qjw")
+Offset = Vector3(0, 0.135, 0.17)
+Size = Vector3(0.045, 0.04, 0.04)
+Role = 0
+
+[resource]
+script = ExtResource("2_6s5jv")
+Id = "hook"
+DisplayName = "Hooked"
+Slot = "nose"
+Shapes = Array[ExtResource("1_55qjw")]([SubResource("Resource_d3wts"), SubResource("Resource_jeyr2")])

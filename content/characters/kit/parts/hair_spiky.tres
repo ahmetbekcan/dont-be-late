@@ -6,42 +6,54 @@
 [sub_resource type="Resource" id="Resource_ogbj3"]
 script = ExtResource("1_xbd0m")
 Profile = 1
-Offset = Vector3(0, 0.3, -0.008)
-Size = Vector3(0.29, 0.13, 0.3)
-Sides = 8
-Wobble = 0.06
+Offset = Vector3(0, 0.29, -0.006)
+Size = Vector3(0.29, 0.15, 0.29999998)
+Sides = 9
+Rings = 3
 Role = 1
+HideUnderHat = true
 
 [sub_resource type="Resource" id="Resource_sk3gs"]
 script = ExtResource("1_xbd0m")
-Profile = 2
-Offset = Vector3(0, 0.39, 0.02)
-Rotation = Vector3(15, 0, 0)
-Size = Vector3(0.07, 0.1, 0.07)
-Sides = 4
+Profile = 5
+Offset = Vector3(0, 0.23500001, -0.07)
+Size = Vector3(0.28, 0.19000001, 0.16)
+Sides = 8
 Role = 1
 
 [sub_resource type="Resource" id="Resource_08urt"]
 script = ExtResource("1_xbd0m")
 Profile = 2
-Offset = Vector3(0.07, 0.37, -0.02)
-Rotation = Vector3(0, 0, -25)
-Size = Vector3(0.07, 0.1, 0.07)
-Sides = 4
+Offset = Vector3(0, 0.39, 0.03)
+Rotation = Vector3(20, 0, 0)
+Size = Vector3(0.07, 0.11, 0.07)
+Sides = 5
 Role = 1
-Mirror = true
+HideUnderHat = true
 
 [sub_resource type="Resource" id="Resource_tci0o"]
 script = ExtResource("1_xbd0m")
 Profile = 2
-Offset = Vector3(0, 0.37, -0.08)
+Offset = Vector3(0.07, 0.375, -0.01)
+Rotation = Vector3(0, 0, -28)
+Size = Vector3(0.07, 0.1, 0.07)
+Sides = 5
+Role = 1
+Mirror = true
+HideUnderHat = true
+
+[sub_resource type="Resource" id="Resource_8wusd"]
+script = ExtResource("1_xbd0m")
+Profile = 2
+Offset = Vector3(0, 0.38, -0.07)
 Rotation = Vector3(-30, 0, 0)
 Size = Vector3(0.07, 0.1, 0.07)
-Sides = 4
+Sides = 5
 Role = 1
+HideUnderHat = true
 
 [resource]
 script = ExtResource("2_yxrsh")
 Id = "spiky"
 DisplayName = "Spiky"
-Shapes = Array[ExtResource("1_xbd0m")]([SubResource("Resource_ogbj3"), SubResource("Resource_sk3gs"), SubResource("Resource_08urt"), SubResource("Resource_tci0o")])
+Shapes = Array[ExtResource("1_xbd0m")]([SubResource("Resource_ogbj3"), SubResource("Resource_sk3gs"), SubResource("Resource_08urt"), SubResource("Resource_tci0o"), SubResource("Resource_8wusd")])

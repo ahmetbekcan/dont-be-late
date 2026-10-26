@@ -6,14 +6,24 @@
 [sub_resource type="Resource" id="Resource_6043e"]
 script = ExtResource("1_gbls2")
 Profile = 1
-Offset = Vector3(0, 0.27, 0)
-Size = Vector3(0.31, 0.16, 0.31)
-Sides = 9
-Wobble = 0.03
+Offset = Vector3(0, 0.255, 0)
+Size = Vector3(0.305, 0.19, 0.31)
+Sides = 10
+Rings = 3
+Wobble = 0.02
+Role = 1
+HideUnderHat = true
+
+[sub_resource type="Resource" id="Resource_ykef3"]
+script = ExtResource("1_gbls2")
+Profile = 5
+Offset = Vector3(0, 0.245, -0.07)
+Size = Vector3(0.28, 0.17000002, 0.16)
+Sides = 8
 Role = 1
 
 [resource]
 script = ExtResource("2_dqxd0")
 Id = "bowl"
 DisplayName = "Bowl cut"
-Shapes = Array[ExtResource("1_gbls2")]([SubResource("Resource_6043e")])
+Shapes = Array[ExtResource("1_gbls2")]([SubResource("Resource_6043e"), SubResource("Resource_ykef3")])

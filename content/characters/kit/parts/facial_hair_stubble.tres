@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_qrxqp"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_itdp8"]
+
+[sub_resource type="Resource" id="Resource_6i8rs"]
+script = ExtResource("1_qrxqp")
+Profile = 5
+Offset = Vector3(0, 0.07, 0.03)
+Size = Vector3(0.262, 0.15, 0.2)
+Sides = 8
+Wobble = 0.01
+Role = 8
+
+[resource]
+script = ExtResource("2_itdp8")
+Id = "stubble"
+DisplayName = "Stubble"
+Slot = "facial_hair"
+Shapes = Array[ExtResource("1_qrxqp")]([SubResource("Resource_6i8rs")])

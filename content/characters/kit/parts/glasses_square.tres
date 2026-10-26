@@ -6,8 +6,8 @@
 [sub_resource type="Resource" id="Resource_s4f6n"]
 script = ExtResource("1_tds8g")
 Profile = 7
-Offset = Vector3(0.058, 0.235, 0.186)
-Size = Vector3(0.09, 0.014, 0.016)
+Offset = Vector3(0.062, 0.238, 0.19)
+Size = Vector3(0.1, 0.014, 0.016)
 Sides = 4
 Wobble = 0.0
 Mirror = true
@@ -15,8 +15,8 @@ Mirror = true
 [sub_resource type="Resource" id="Resource_ptjh4"]
 script = ExtResource("1_tds8g")
 Profile = 7
-Offset = Vector3(0.058, 0.178, 0.186)
-Size = Vector3(0.09, 0.012, 0.016)
+Offset = Vector3(0.062, 0.172, 0.19)
+Size = Vector3(0.1, 0.012, 0.016)
 Sides = 4
 Wobble = 0.0
 Mirror = true

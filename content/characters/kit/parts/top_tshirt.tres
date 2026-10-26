@@ -3,11 +3,21 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_ibdh8"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_vi6lm"]
 
+[sub_resource type="Resource" id="Resource_ll7fy"]
+script = ExtResource("1_ibdh8")
+Joint = "Neck"
+Profile = 4
+Offset = Vector3(0, -0.005, -0.005)
+Size = Vector3(0.165, 0.045, 0.155)
+Sides = 10
+Wobble = 0.01
+
 [resource]
 script = ExtResource("2_vi6lm")
 Covers = 22
 Id = "tshirt"
 DisplayName = "T-shirt"
 Slot = "top"
+Shapes = Array[ExtResource("1_ibdh8")]([SubResource("Resource_ll7fy")])
 DefaultPrimary = Color(0.25, 0.5, 0.9, 1)
 Weight = 3.0

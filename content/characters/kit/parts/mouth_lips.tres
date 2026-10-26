@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_42gpy"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_3id37"]
+
+[sub_resource type="Resource" id="Resource_rt06y"]
+script = ExtResource("1_42gpy")
+Profile = 4
+Offset = Vector3(0, 0.1, 0.13)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.022, 0.075, 0.026)
+Wobble = 0.02
+Role = 9
+
+[sub_resource type="Resource" id="Resource_s2yhh"]
+script = ExtResource("1_42gpy")
+Profile = 4
+Offset = Vector3(0, 0.083, 0.128)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.026, 0.065, 0.028)
+Wobble = 0.02
+Role = 9
+
+[sub_resource type="Resource" id="Resource_ltnc8"]
+script = ExtResource("1_42gpy")
+Profile = 4
+Offset = Vector3(0, 0.092, 0.136)
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.008, 0.07, 0.01)
+Sides = 4
+Wobble = 0.0
+Role = 6
+
+[resource]
+script = ExtResource("2_3id37")
+Id = "lips"
+DisplayName = "Lips"
+Slot = "mouth"
+Shapes = Array[ExtResource("1_42gpy")]([SubResource("Resource_rt06y"), SubResource("Resource_s2yhh"), SubResource("Resource_ltnc8")])
+Weight = 3.0

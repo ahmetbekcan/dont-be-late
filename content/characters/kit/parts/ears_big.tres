@@ -5,10 +5,22 @@
 
 [sub_resource type="Resource" id="Resource_2jibi"]
 script = ExtResource("1_bc4v3")
-Offset = Vector3(0.145, 0.185, -0.01)
-Rotation = Vector3(0, 0, -12)
-Size = Vector3(0.04, 0.11, 0.085)
+Profile = 5
+Offset = Vector3(0.14, 0.185, -0.01)
+Rotation = Vector3(0, 20, -16)
+Size = Vector3(0.04, 0.115, 0.085)
+Sides = 7
 Role = 0
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_hitoa"]
+script = ExtResource("1_bc4v3")
+Profile = 5
+Offset = Vector3(0.154, 0.185, -0.0059999996)
+Rotation = Vector3(0, 20, -16)
+Size = Vector3(0.018, 0.0713, 0.04675)
+Wobble = 0.0
+Role = 8
 Mirror = true
 
 [resource]
@@ -16,4 +28,4 @@ script = ExtResource("2_610em")
 Id = "big"
 DisplayName = "Big"
 Slot = "ears"
-Shapes = Array[ExtResource("1_bc4v3")]([SubResource("Resource_2jibi")])
+Shapes = Array[ExtResource("1_bc4v3")]([SubResource("Resource_2jibi"), SubResource("Resource_hitoa")])

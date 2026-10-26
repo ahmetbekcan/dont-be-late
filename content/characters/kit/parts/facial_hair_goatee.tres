@@ -5,11 +5,10 @@
 
 [sub_resource type="Resource" id="Resource_wftc2"]
 script = ExtResource("1_da674")
-Profile = 2
-Offset = Vector3(0, 0.04, 0.12)
+Profile = 9
+Offset = Vector3(0, 0.045, 0.12)
 Rotation = Vector3(180, 0, 0)
-Size = Vector3(0.05, 0.07, 0.04)
-Sides = 5
+Size = Vector3(0.05, 0.08, 0.04)
 Role = 1
 
 [resource]

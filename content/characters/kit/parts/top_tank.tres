@@ -3,10 +3,21 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_4p4tj"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_kxebj"]
 
+[sub_resource type="Resource" id="Resource_gkddd"]
+script = ExtResource("1_4p4tj")
+Joint = "Spine"
+Profile = 4
+Offset = Vector3(0.1, -0.03, 0)
+Size = Vector3(0.04, 0.1, 0.18)
+Wobble = 0.01
+Mirror = true
+FromTorsoTop = true
+
 [resource]
 script = ExtResource("2_kxebj")
 Covers = 6
 Id = "tank"
 DisplayName = "Tank top"
 Slot = "top"
+Shapes = Array[ExtResource("1_4p4tj")]([SubResource("Resource_gkddd")])
 DefaultPrimary = Color(0.95, 0.95, 0.93, 1)

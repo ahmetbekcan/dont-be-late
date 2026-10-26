@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_kly8e"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_42ws3"]
+
+[sub_resource type="Resource" id="Resource_aq1vt"]
+script = ExtResource("1_kly8e")
+Profile = 4
+Offset = Vector3(0.062, 0.278, 0.142)
+Rotation = Vector3(0, 0, 82)
+Size = Vector3(0.012, 0.08, 0.018)
+Sides = 5
+Wobble = 0.04
+Role = 1
+Mirror = true
+
+[resource]
+script = ExtResource("2_42ws3")
+Id = "thin"
+DisplayName = "Thin"
+Slot = "brows"
+Shapes = Array[ExtResource("1_kly8e")]([SubResource("Resource_aq1vt")])
+Weight = 2.0

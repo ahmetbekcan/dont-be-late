@@ -6,9 +6,34 @@
 [sub_resource type="Resource" id="Resource_ih1e2"]
 script = ExtResource("1_6xaol")
 Joint = "Neck"
-Offset = Vector3(0, 0.03, -0.12)
-Size = Vector3(0.3, 0.14, 0.14)
-Sides = 7
+Offset = Vector3(0, 0.03, -0.11)
+Size = Vector3(0.3, 0.15, 0.15)
+Sides = 9
+
+[sub_resource type="Resource" id="Resource_qesfh"]
+script = ExtResource("1_6xaol")
+Joint = "Spine"
+Profile = 7
+Offset = Vector3(0, 0.14, 0.004)
+Size = Vector3(0.22, 0.09, 0.02)
+Sides = 4
+Wobble = 0.0
+Role = 3
+OnTorsoFront = true
+
+[sub_resource type="Resource" id="Resource_4ryqx"]
+script = ExtResource("1_6xaol")
+Joint = "Spine"
+Profile = 4
+Offset = Vector3(0.035, -0.09, 0.008)
+Size = Vector3(0.01, 0.09, 0.01)
+Sides = 4
+Wobble = 0.0
+Role = 7
+Color = Color(0.95, 0.95, 0.95, 1)
+Mirror = true
+FromTorsoTop = true
+OnTorsoFront = true
 
 [resource]
 script = ExtResource("2_n57vk")
@@ -16,5 +41,6 @@ Covers = 54
 Id = "hoodie"
 DisplayName = "Hoodie"
 Slot = "top"
-Shapes = Array[ExtResource("1_6xaol")]([SubResource("Resource_ih1e2")])
+Shapes = Array[ExtResource("1_6xaol")]([SubResource("Resource_ih1e2"), SubResource("Resource_qesfh"), SubResource("Resource_4ryqx")])
 DefaultPrimary = Color(0.5, 0.5, 0.52, 1)
+DefaultSecondary = Color(0.42, 0.42, 0.44, 1)

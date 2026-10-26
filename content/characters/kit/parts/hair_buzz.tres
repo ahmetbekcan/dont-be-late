@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_d18d6"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_a7c1x"]
+
+[sub_resource type="Resource" id="Resource_fkx14"]
+script = ExtResource("1_d18d6")
+Profile = 1
+Offset = Vector3(0, 0.27, -0.01)
+Size = Vector3(0.268, 0.15, 0.285)
+Sides = 9
+Rings = 3
+Wobble = 0.01
+Role = 1
+HideUnderHat = true
+
+[sub_resource type="Resource" id="Resource_xh5nh"]
+script = ExtResource("1_d18d6")
+Profile = 5
+Offset = Vector3(0, 0.245, -0.07)
+Size = Vector3(0.28, 0.17000002, 0.16)
+Sides = 8
+Role = 1
+
+[resource]
+script = ExtResource("2_a7c1x")
+Id = "buzz"
+DisplayName = "Buzz cut"
+Shapes = Array[ExtResource("1_d18d6")]([SubResource("Resource_fkx14"), SubResource("Resource_xh5nh")])
+Weight = 2.0

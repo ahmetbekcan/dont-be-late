@@ -6,20 +6,31 @@
 [sub_resource type="Resource" id="Resource_wldtp"]
 script = ExtResource("1_5d7xi")
 Profile = 1
-Offset = Vector3(0, 0.3, -0.008)
-Size = Vector3(0.29, 0.13, 0.3)
-Sides = 8
-Wobble = 0.06
+Offset = Vector3(0, 0.29, -0.006)
+Size = Vector3(0.29, 0.15, 0.29999998)
+Sides = 9
+Rings = 3
 Role = 1
+HideUnderHat = true
 
 [sub_resource type="Resource" id="Resource_xwfyt"]
 script = ExtResource("1_5d7xi")
-Offset = Vector3(0, 0.37, -0.1)
-Size = Vector3(0.12, 0.11, 0.11)
+Profile = 5
+Offset = Vector3(0, 0.23500001, -0.07)
+Size = Vector3(0.28, 0.19000001, 0.16)
+Sides = 8
 Role = 1
+
+[sub_resource type="Resource" id="Resource_i8wem"]
+script = ExtResource("1_5d7xi")
+Offset = Vector3(0, 0.37, -0.09)
+Size = Vector3(0.12, 0.11, 0.11)
+Sides = 7
+Role = 1
+HideUnderHat = true
 
 [resource]
 script = ExtResource("2_eyt2l")
 Id = "bun"
 DisplayName = "Bun"
-Shapes = Array[ExtResource("1_5d7xi")]([SubResource("Resource_wldtp"), SubResource("Resource_xwfyt")])
+Shapes = Array[ExtResource("1_5d7xi")]([SubResource("Resource_wldtp"), SubResource("Resource_xwfyt"), SubResource("Resource_i8wem")])

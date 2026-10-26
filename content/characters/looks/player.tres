@@ -1,30 +1,32 @@
 [gd_resource type="Resource" script_class="CharacterLook" format=3]
 
-[ext_resource type="Resource" path="res://content/characters/kit/bodies/average.tres" id="1_5188f"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_pymnd"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/head_egg.tres" id="3_l7x4m"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_googly.tres" id="4_q10ev"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_button.tres" id="5_i3xvv"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_round.tres" id="6_rn4gk"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_line.tres" id="7_igodi"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_short.tres" id="8_xi0x7"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/top_tshirt.tres" id="9_i2qwv"]
-[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_jeans.tres" id="10_y7fni"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterLook.cs" id="11_gedbn"]
+[ext_resource type="Resource" path="res://content/characters/kit/bodies/average.tres" id="1_pymnd"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_l7x4m"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/head_egg.tres" id="3_q10ev"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/eyes_googly.tres" id="4_i3xvv"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/brows_normal.tres" id="5_rn4gk"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/nose_button.tres" id="6_igodi"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/ears_round.tres" id="7_xi0x7"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/mouth_lips.tres" id="8_i2qwv"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/hair_short.tres" id="9_y7fni"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/top_tshirt.tres" id="10_gedbn"]
+[ext_resource type="Resource" path="res://content/characters/kit/parts/bottom_jeans.tres" id="11_spsrh"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterLook.cs" id="12_0ahqn"]
 
 [resource]
-script = ExtResource("11_gedbn")
-Body = ExtResource("1_5188f")
+script = ExtResource("12_0ahqn")
+Body = ExtResource("1_pymnd")
 SkinColor = Color(0.94, 0.76, 0.6, 1)
-Parts = Dictionary[String, ExtResource("2_pymnd")]({
-"bottom": ExtResource("10_y7fni"),
-"ears": ExtResource("6_rn4gk"),
-"eyes": ExtResource("4_q10ev"),
-"hair": ExtResource("8_xi0x7"),
-"head": ExtResource("3_l7x4m"),
-"mouth": ExtResource("7_igodi"),
-"nose": ExtResource("5_i3xvv"),
-"top": ExtResource("9_i2qwv")
+Parts = Dictionary[String, ExtResource("2_l7x4m")]({
+"bottom": ExtResource("11_spsrh"),
+"brows": ExtResource("5_rn4gk"),
+"ears": ExtResource("7_xi0x7"),
+"eyes": ExtResource("4_i3xvv"),
+"hair": ExtResource("9_y7fni"),
+"head": ExtResource("3_q10ev"),
+"mouth": ExtResource("8_i2qwv"),
+"nose": ExtResource("6_igodi"),
+"top": ExtResource("10_gedbn")
 })
 PrimaryColors = Dictionary[String, Color]({
 "top": Color(0.27, 0.52, 0.88, 1)

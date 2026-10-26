@@ -6,11 +6,12 @@
 [sub_resource type="Resource" id="Resource_614fc"]
 script = ExtResource("1_shumc")
 Joint = "FootL"
-Profile = 7
-Offset = Vector3(0, -0.066, 0.045)
-Size = Vector3(0.112, 0.024, 0.255)
-Sides = 4
-Wobble = 0.02
+Profile = 4
+Offset = Vector3(0, -0.07, 0.05)
+Rotation = Vector3(90, 0, 0)
+Size = Vector3(0.13, 0.29, 0.035)
+Sides = 8
+Wobble = 0.01
 Role = 3
 Mirror = true
 

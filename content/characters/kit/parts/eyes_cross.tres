@@ -14,7 +14,7 @@ Mirror = true
 
 [sub_resource type="Resource" id="Resource_6vpqj"]
 script = ExtResource("1_tnc4d")
-Offset = Vector3(0.04, 0.2, 0.168)
+Offset = Vector3(0.042, 0.2, 0.168)
 Size = Vector3(0.045, 0.045, 0.045)
 Wobble = 0.0
 Role = 5

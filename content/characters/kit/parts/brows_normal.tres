@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterPart" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_xtlt2"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_2dn8h"]
+
+[sub_resource type="Resource" id="Resource_asv0p"]
+script = ExtResource("1_xtlt2")
+Profile = 4
+Offset = Vector3(0.062, 0.278, 0.142)
+Rotation = Vector3(0, 0, 84)
+Size = Vector3(0.022, 0.085, 0.025)
+Sides = 5
+Wobble = 0.04
+Role = 1
+Mirror = true
+
+[resource]
+script = ExtResource("2_2dn8h")
+Id = "normal"
+DisplayName = "Normal"
+Slot = "brows"
+Shapes = Array[ExtResource("1_xtlt2")]([SubResource("Resource_asv0p")])
+Weight = 3.0

@@ -9,7 +9,6 @@ Profile = 2
 Offset = Vector3(0, 0.15, 0.185)
 Rotation = Vector3(90, 0, 0)
 Size = Vector3(0.05, 0.12, 0.05)
-Sides = 5
 Role = 0
 
 [resource]

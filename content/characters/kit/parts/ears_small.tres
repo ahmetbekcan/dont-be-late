@@ -5,9 +5,22 @@
 
 [sub_resource type="Resource" id="Resource_bjjex"]
 script = ExtResource("1_xpb0w")
-Offset = Vector3(0.13, 0.175, 0)
-Size = Vector3(0.03, 0.055, 0.045)
+Profile = 5
+Offset = Vector3(0.128, 0.175, 0)
+Rotation = Vector3(0, 20, -10)
+Size = Vector3(0.03, 0.06, 0.045)
+Sides = 7
 Role = 0
+Mirror = true
+
+[sub_resource type="Resource" id="Resource_tpba2"]
+script = ExtResource("1_xpb0w")
+Profile = 5
+Offset = Vector3(0.1385, 0.175, 0.004)
+Rotation = Vector3(0, 20, -10)
+Size = Vector3(0.013499999, 0.0372, 0.024750002)
+Wobble = 0.0
+Role = 8
 Mirror = true
 
 [resource]
@@ -15,4 +28,4 @@ script = ExtResource("2_n7fsf")
 Id = "small"
 DisplayName = "Small"
 Slot = "ears"
-Shapes = Array[ExtResource("1_xpb0w")]([SubResource("Resource_bjjex")])
+Shapes = Array[ExtResource("1_xpb0w")]([SubResource("Resource_bjjex"), SubResource("Resource_tpba2")])

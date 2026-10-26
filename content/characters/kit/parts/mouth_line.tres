@@ -5,10 +5,11 @@
 
 [sub_resource type="Resource" id="Resource_lt5ky"]
 script = ExtResource("1_osr6w")
-Profile = 7
+Profile = 4
 Offset = Vector3(0, 0.092, 0.128)
-Size = Vector3(0.075, 0.014, 0.025)
-Sides = 4
+Rotation = Vector3(0, 0, 90)
+Size = Vector3(0.016, 0.075, 0.022)
+Sides = 5
 Wobble = 0.0
 Role = 6
 
@@ -18,4 +19,4 @@ Id = "line"
 DisplayName = "Line"
 Slot = "mouth"
 Shapes = Array[ExtResource("1_osr6w")]([SubResource("Resource_lt5ky")])
-Weight = 3.0
+Weight = 2.0

@@ -5,17 +5,17 @@
 
 [sub_resource type="Resource" id="Resource_53kgf"]
 script = ExtResource("1_425es")
-Profile = 3
+Profile = 4
 Offset = Vector3(0, 0.33, 0)
-Size = Vector3(0.28, 0.14, 0.29)
-Sides = 8
+Size = Vector3(0.3, 0.17, 0.31)
+Sides = 10
 
 [sub_resource type="Resource" id="Resource_dollc"]
 script = ExtResource("1_425es")
 Profile = 8
 Offset = Vector3(0, 0.265, 0)
 Size = Vector3(0.42, 0.02, 0.43)
-Sides = 9
+Sides = 12
 
 [resource]
 script = ExtResource("2_oxqt4")
@@ -24,4 +24,4 @@ DisplayName = "Bucket hat"
 Slot = "headwear"
 Shapes = Array[ExtResource("1_425es")]([SubResource("Resource_53kgf"), SubResource("Resource_dollc")])
 DefaultPrimary = Color(0.95, 0.8, 0.3, 1)
-Hides = PackedStringArray("hair")
+HidesHairTop = true
