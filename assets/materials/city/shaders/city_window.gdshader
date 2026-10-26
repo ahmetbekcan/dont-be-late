@@ -33,6 +33,11 @@ uniform vec4 blind_color : source_color = vec4(0.93, 0.9, 0.82, 1.0);
 uniform float lit_chance : hint_range(0.0, 1.0) = 0.12;
 uniform vec4 lit_color : source_color = vec4(1.0, 0.85, 0.55, 1.0);
 uniform float lit_energy : hint_range(0.0, 8.0) = 1.2;
+// At night (sky_night from the SkyCycle) more rooms are lit, they glow brighter and dark glass reflects less sky.
+uniform float lit_chance_night : hint_range(0.0, 1.0) = 0.55;
+uniform float lit_energy_night : hint_range(0.0, 8.0) = 3.0;
+uniform float glass_night : hint_range(0.0, 1.0) = 0.12;
+global uniform float sky_night;
 
 float box(vec2 p, vec2 lo, vec2 hi) {
 	vec2 aa = fwidth(p) * 0.75;
@@ -53,13 +58,14 @@ void fragment() {
 	glass = mix(glass, glass * city_linear(COLOR.rgb) * 1.6, tint_strength);
 	float streak = smoothstep(0.08, 0.0, abs(fract(uv.x * 0.9 + uv.y * 0.6 + r) - 0.5) - 0.12);
 	glass += vec3(streak * glare * 0.35);
+	glass *= mix(1.0, glass_night, sky_night);
 	vec3 emission = vec3(0.0);
 	float rough = 0.08;
 
-	bool lit = r_lit < lit_chance;
+	bool lit = r_lit < mix(lit_chance, lit_chance_night, sky_night);
 	if (lit) {
 		glass = mix(glass * 0.4, lit_color.rgb, 0.85);
-		emission = lit_color.rgb * lit_energy;
+		emission = lit_color.rgb * mix(lit_energy, lit_energy_night, sky_night);
 	}
 
 	// Curtains hang from both sides; blinds come down from the top.

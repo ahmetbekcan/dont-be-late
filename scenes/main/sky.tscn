@@ -1,0 +1,103 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Sky/SkyCycle.cs" id="1_cycle"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Sky/SkyKeyframe.cs" id="2_key"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/FlagCondition.cs" id="3_flag"]
+[ext_resource type="Material" path="res://content/sky/sky_material.tres" id="4_mat"]
+[ext_resource type="Resource" path="res://content/sky/overcast.tres" id="5_over"]
+[ext_resource type="Resource" path="res://content/sky/overcast_night.tres" id="6_overnight"]
+[ext_resource type="Resource" path="res://content/sky/night.tres" id="l_night"]
+[ext_resource type="Resource" path="res://content/sky/predawn.tres" id="l_predawn"]
+[ext_resource type="Resource" path="res://content/sky/dawn.tres" id="l_dawn"]
+[ext_resource type="Resource" path="res://content/sky/morning.tres" id="l_morning"]
+[ext_resource type="Resource" path="res://content/sky/day.tres" id="l_day"]
+[ext_resource type="Resource" path="res://content/sky/afternoon.tres" id="l_afternoon"]
+[ext_resource type="Resource" path="res://content/sky/golden_hour.tres" id="l_golden_hour"]
+[ext_resource type="Resource" path="res://content/sky/dusk.tres" id="l_dusk"]
+[ext_resource type="Resource" path="res://content/sky/twilight.tres" id="l_twilight"]
+
+[sub_resource type="Resource" id="k_1_0"]
+script = ExtResource("2_key")
+Hour = 1.0
+Look = ExtResource("l_night")
+
+[sub_resource type="Resource" id="k_5_4"]
+script = ExtResource("2_key")
+Hour = 5.4
+Look = ExtResource("l_predawn")
+
+[sub_resource type="Resource" id="k_6_9"]
+script = ExtResource("2_key")
+Hour = 6.9
+Look = ExtResource("l_dawn")
+
+[sub_resource type="Resource" id="k_7_9"]
+script = ExtResource("2_key")
+Hour = 7.9
+Look = ExtResource("l_morning")
+
+[sub_resource type="Resource" id="k_10_5"]
+script = ExtResource("2_key")
+Hour = 10.5
+Look = ExtResource("l_day")
+
+[sub_resource type="Resource" id="k_16_0"]
+script = ExtResource("2_key")
+Hour = 16.0
+Look = ExtResource("l_afternoon")
+
+[sub_resource type="Resource" id="k_18_7"]
+script = ExtResource("2_key")
+Hour = 18.7
+Look = ExtResource("l_golden_hour")
+
+[sub_resource type="Resource" id="k_19_6"]
+script = ExtResource("2_key")
+Hour = 19.6
+Look = ExtResource("l_dusk")
+
+[sub_resource type="Resource" id="k_20_4"]
+script = ExtResource("2_key")
+Hour = 20.4
+Look = ExtResource("l_twilight")
+
+[sub_resource type="Resource" id="k_22_0"]
+script = ExtResource("2_key")
+Hour = 22.0
+Look = ExtResource("l_night")
+
+[sub_resource type="Resource" id="Raining"]
+script = ExtResource("3_flag")
+Key = "raining"
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 2
+ambient_light_source = 3
+tonemap_mode = 2
+
+[node name="Sky" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+light_color = Color(0.75, 0.82, 1, 1)
+light_energy = 0.0
+shadow_enabled = true
+directional_shadow_max_distance = 80.0
+
+[node name="Cycle" type="Node" parent="." node_paths=PackedStringArray("Environment", "Sun", "Moon")]
+script = ExtResource("1_cycle")
+Environment = NodePath("../WorldEnvironment")
+Sun = NodePath("../Sun")
+Moon = NodePath("../Moon")
+Keyframes = Array[ExtResource("2_key")]([SubResource("k_1_0"), SubResource("k_5_4"), SubResource("k_6_9"), SubResource("k_7_9"), SubResource("k_10_5"), SubResource("k_16_0"), SubResource("k_18_7"), SubResource("k_19_6"), SubResource("k_20_4"), SubResource("k_22_0")])
+SkyMaterial = ExtResource("4_mat")
+OvercastLook = ExtResource("5_over")
+OvercastNightLook = ExtResource("6_overnight")
+OvercastWhen = SubResource("Raining")
+NightShaderParameter = "sky_night"

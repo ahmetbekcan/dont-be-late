@@ -135,11 +135,18 @@ public class CityTest
         AssertFloat(player.GlobalPosition.Y).IsGreater(stage.Layout.GroundHeight - 0.05f);
         AssertBool(player.IsOnFloor()).IsTrue();
 
+        // The sky follows the morning clock: daylight, sun up in the east.
+        var sky = scene.GetNode<ReusableGameSystems.Sky.SkyCycle>("Sky/Cycle");
+        AssertFloat(sky.CurrentHour).IsBetween(7f, 9f);
+        AssertFloat(sky.NightAmount).IsEqualApprox(0f, 0.01f);
+        AssertFloat(sky.SunDirection.Y).IsGreater(0.05f);
+        AssertBool(scene.GetNode<DirectionalLight3D>("Sky/Sun").Visible).IsTrue();
+
         // The built city wears the style's materials.
         var mesh = (ArrayMesh)scene.GetNode<MeshInstance3D>("Stage/City/City/Ground").Mesh;
         int walls = CitySurfaceMesh.Find(mesh, CitySurfaces.Wall);
         AssertInt(walls).IsGreaterEqual(0);
-        AssertObject(mesh.SurfaceGetMaterial(walls)).IsSame(GD.Load<CityStyle>(StylePath).MaterialFor(CitySurfaces.Wall));
+        AssertObject(mesh.SurfaceGetMaterial(walls)).IsSame(GD.Load<CityStyle>(StylePath).MaterialFor(CitySurfaces.Wall)!);
     }
 
     [TestCase]

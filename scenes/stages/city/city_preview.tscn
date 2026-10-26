@@ -45,18 +45,7 @@
 [ext_resource type="Script" path="res://src/City/TrafficReactions.cs" id="50_reactions"]
 [ext_resource type="Resource" path="res://content/status/bruised.tres" id="51_bruised"]
 [ext_resource type="Resource" path="res://content/status/limping.tres" id="52_limping"]
-
-[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
-
-[sub_resource type="Sky" id="Sky"]
-sky_material = SubResource("SkyMaterial")
-
-[sub_resource type="Environment" id="Environment"]
-background_mode = 2
-sky = SubResource("Sky")
-ambient_light_source = 3
-ambient_light_energy = 0.5
-tonemap_mode = 2
+[ext_resource type="PackedScene" path="res://scenes/main/sky.tscn" id="53_sky"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule"]
 radius = 0.4
@@ -64,13 +53,8 @@ height = 1.8
 
 [node name="CityPreview" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment")
+[node name="Sky" parent="." instance=ExtResource("53_sky")]
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.9396926, -0.24184474, 0.24184474, 0, 0.70710677, 0.70710677, -0.34202012, -0.664463, 0.664463, 0, 0, 0)
-shadow_enabled = true
-directional_shadow_max_distance = 120.0
 
 [node name="Stage" type="Node3D" parent="." node_paths=PackedStringArray("City", "Player")]
 script = ExtResource("1_stage")

@@ -68,18 +68,7 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterCreatorScreen.cs" id="80_creator"]
 [ext_resource type="Resource" path="res://content/characters/kit/catalog.tres" id="81_catalog"]
 [ext_resource type="Script" path="res://src/Characters/PlayerCreator.cs" id="82_pcreator"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0csqs"]
-
-[sub_resource type="Sky" id="Sky_ti11c"]
-sky_material = SubResource("ProceduralSkyMaterial_0csqs")
-
-[sub_resource type="Environment" id="Environment_8icmk"]
-background_mode = 2
-sky = SubResource("Sky_ti11c")
-ambient_light_source = 3
-ambient_light_energy = 0.5
-tonemap_mode = 2
+[ext_resource type="PackedScene" path="res://scenes/main/sky.tscn" id="90_sky"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
 radius = 0.4
@@ -137,12 +126,7 @@ Height = 0.92
 
 [node name="Morning" type="Node3D" unique_id=1157697221]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=275812350]
-environment = SubResource("Environment_8icmk")
-
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=288574202]
-transform = Transform3D(0.9396926, -0.24184474, 0.24184474, 0, 0.70710677, 0.70710677, -0.34202012, -0.664463, 0.664463, 0, 0, 0)
-shadow_enabled = true
+[node name="Sky" parent="." unique_id=275812351 instance=ExtResource("90_sky")]
 
 [node name="Home" type="Node3D" parent="." unique_id=1601243690 instance=ExtResource("1_l3x7u")]
 

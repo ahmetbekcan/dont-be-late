@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://addons/ReusableGameSystems/Sky/sky_cycle.gdshader" id="1_s"]
+
+[resource]
+shader = ExtResource("1_s")
+shader_parameter/horizon_blend = 0.28
+shader_parameter/sun_disc_size = 0.05
+shader_parameter/sun_disc_energy = 10.0
+shader_parameter/cloud_scale = 1.6
+shader_parameter/cloud_softness = 0.35
+shader_parameter/cloud_detail = 0.85
+shader_parameter/cloud_shading = 0.4
+shader_parameter/cloud_bands = 0
+shader_parameter/cloud_rim = 1.6
+shader_parameter/cloud_horizon = 0.3
+shader_parameter/moon_disc_size = 0.032
+shader_parameter/moon_disc_energy = 1.6
+shader_parameter/moon_glow = 0.35
+shader_parameter/moon_markings = 0.35
+shader_parameter/star_density = 150.0
+shader_parameter/star_share = 0.12
+shader_parameter/star_brightness = 2.5
+shader_parameter/star_twinkle = 0.4

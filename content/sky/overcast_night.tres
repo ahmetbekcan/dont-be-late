@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SkyLook" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Sky/SkyLook.cs" id="1_l"]
+
+[resource]
+script = ExtResource("1_l")
+ZenithColor = Color(0.05, 0.055, 0.07, 1)
+HorizonColor = Color(0.09, 0.1, 0.12, 1)
+GroundColor = Color(0.04, 0.04, 0.05, 1)
+SunGlowColor = Color(0, 0, 0, 1)
+SunGlow = 0.0
+CloudCover = 0.9
+CloudColor = Color(0.12, 0.13, 0.15, 1)
+CloudShadeColor = Color(0.06, 0.065, 0.08, 1)
+SunColor = Color(0.5, 0.5, 0.5, 1)
+SunEnergy = 0.0
+AmbientEnergy = 0.5
+AmbientColor = Color(0.05, 0.055, 0.07, 1)
+Stars = 0.0
+Moon = 0.0
+MoonEnergy = 0.05
+FogColor = Color(0.08, 0.09, 0.1, 1)
+FogDensity = 0.01
+Exposure = 1.4
