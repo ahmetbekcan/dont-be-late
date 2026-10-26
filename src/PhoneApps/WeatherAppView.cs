@@ -37,4 +37,11 @@ public partial class WeatherAppView : PhoneAppView
         AddLabel(column, HeadingText, PhoneScreen.TitleVariation).HorizontalAlignment = HorizontalAlignment.Center;
         AddLabel(column, ShowsRain ? app.RainText : app.DryText, PhoneScreen.MutedVariation).HorizontalAlignment = HorizontalAlignment.Center;
     }
+
+    /// <summary>The weather may have turned while the phone was away.</summary>
+    public override void OnShown()
+    {
+        FreeChildren(this);
+        OnOpened();
+    }
 }

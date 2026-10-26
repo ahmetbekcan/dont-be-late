@@ -62,6 +62,8 @@ public partial class BusesAppView : PhoneAppView
         Refresh();
     }
 
+    public override void OnShown() => Refresh();
+
     public override void _Process(double delta)
     {
         // Updates every game minute (and every few seconds near a bus, for "at the stop").

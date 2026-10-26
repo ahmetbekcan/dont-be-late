@@ -20,7 +20,7 @@ public partial class MapAppView : PhoneAppView
     private const float ChipsHeight = 58;
     private const float CardHeight = 74;
 
-    private readonly ButtonGroup _chipGroup = new();
+    private ButtonGroup _chipGroup = new();
     private CityLayout? _city;
     private Node3D? _player;
     private Label _placeName = null!;
@@ -61,6 +61,7 @@ public partial class MapAppView : PhoneAppView
         }
 
         _player = GetTree().GetFirstNodeInGroup("player") as Node3D;
+        _chipGroup = new ButtonGroup();
         Map = new CityMapView
         {
             Name = "Map",
@@ -100,8 +101,37 @@ public partial class MapAppView : PhoneAppView
         Callable.From(ShowPlayer).CallDeferred();
     }
 
+    /// <summary>Back out of the pocket: same zoom and pick, unless the town itself changed (then start over).</summary>
+    public override void OnShown()
+    {
+        if (CityBuilder.Current?.Layout != _city)
+        {
+            // Out of the tree now, so the new map and buttons get their names back.
+            for (int i = GetChildCount() - 1; i >= 0; i--)
+            {
+                var child = GetChild(i);
+                RemoveChild(child);
+                child.QueueFree();
+            }
+
+            Map = null;
+            Selected = null;
+            RouteLength = 0;
+            OnOpened();
+            return;
+        }
+
+        Refresh();
+    }
+
     public override void _Process(double delta)
     {
+        // No route updates while the phone is in your pocket.
+        if (!IsVisibleInTree())
+        {
+            return;
+        }
+
         _sinceRefresh += delta;
         if (_sinceRefresh >= RefreshSeconds)
         {

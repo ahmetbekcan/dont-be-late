@@ -172,7 +172,7 @@ public class CityTest
     }
 
     [TestCase]
-    public async Task TheMapStillWorksAfterPuttingThePhoneAwayAndBack()
+    public async Task TheMapKeepsItsZoomAndPickWhileThePhoneIsAway()
     {
         var scene = await LoadPreview();
         var runner = _runner!;
@@ -182,6 +182,9 @@ public class CityTest
         await runner.Step(10);
         phone.OpenApp("map");
         await runner.Step(5);
+        var view = (MapAppView)phone.CurrentView!;
+        view.Select("bank");
+        view.Map!.Zoom = 3.3f;
 
         hotbar.Select(0);
         await runner.Step(10);
@@ -190,13 +193,38 @@ public class CityTest
         await runner.Step(10);
 
         AssertBool(phone.IsOpen).IsTrue();
-        var view = phone.CurrentView as MapAppView;
-        AssertObject(view).IsNotNull();
-        AssertObject(view!.Map).IsNotNull();
-        AssertBool(view.Map!.IsVisibleInTree()).IsTrue();
+        AssertObject(phone.CurrentView).IsSame(view);
+        AssertString(view.Selected).IsEqual("bank");
+        AssertFloat(view.Map!.Zoom).IsEqualApprox(3.3f, 0.001f);
+        AssertBool(view.Map.IsVisibleInTree()).IsTrue();
         phone.Back();
         AssertObject(phone.CurrentApp).IsNull();
         AssertBool(phone.IsOpen).IsTrue();
+    }
+
+    [TestCase]
+    public async Task ANewCityWhileThePhoneIsAwayGivesAFreshMap()
+    {
+        var scene = await LoadPreview();
+        var runner = _runner!;
+        var phone = scene.GetNode<PhoneScreen>("Phone");
+        var hotbar = scene.GetNode<HotbarHolder>("Player/Hotbar");
+        hotbar.Select(0);
+        await runner.Step(10);
+        phone.OpenApp("map");
+        await runner.Step(5);
+        var view = (MapAppView)phone.CurrentView!;
+        view.Select("bank");
+
+        hotbar.Select(0);
+        await runner.Step(5);
+        scene.GetNode<CityStage>("Stage").NewCity();
+        hotbar.Select(0);
+        await runner.Step(5);
+
+        AssertObject(view.Selected).IsNull();
+        AssertObject(view.Map!.Layout).IsSame(scene.GetNode<CityStage>("Stage").Layout!);
+        AssertInt(view.GetNode("Places").GetChildCount()).IsEqual(Landmarks.Length);
     }
 
     private async Task<Node> LoadPreview()
