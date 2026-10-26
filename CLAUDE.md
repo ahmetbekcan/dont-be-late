@@ -26,8 +26,8 @@ When unsure, split it: a generic mechanism in the library, the specific use in t
 ```
 addons/ReusableGameSystems/  library (git submodule): one folder per system, namespace ReusableGameSystems.<Folder>
 src/<Area>/                  game C# code, namespace DontBeLate.<Area>
-                             (Scenarios, Obstacles, Requirements, Stages, WakeUp, Clues, Carryover, Scoring, DebugCommands)
-content/                     data resources (.tres): scenarios, obstacles, items, meters, status, conditions, consequences, carryover, dialogue, journal
+                             (Scenarios, Obstacles, Requirements, Stages, WakeUp, Clues, Carryover, Scoring, PhoneApps, DebugCommands)
+content/                     data resources (.tres): scenarios, obstacles, items, meters, status, conditions, consequences, carryover, dialogue, journal, phone (apps, messages)
 scenes/                      main (morning.tscn: the playable world), stages/{home,street,bus,office}, wake_up, ui, props, characters
 assets/                      models, materials, textures, audio/{music,sfx}, fonts
 localization/                translation files
@@ -64,6 +64,7 @@ If a library system is missing something this game needs, **improve the library 
 - The game's look is the **toy box** style: chunky rounded panels, thick navy outlines, bright colors, the Fredoka font. It lives in one theme, `assets/ui/toy_theme.tres`, set as the project theme (`gui/theme/custom`).
 - **Don't style nodes one by one.** Use the theme, and its type variations for special pieces (`HudClock`, `HudToast`, `HudPrompt`, `HudStatus`, `HudGear`, the library's `EndScreen...` variations). Add new variations to the theme for new pieces.
 - **The inventory screen** is styled by an `InventorySkin` (`assets/ui/inventory_skins/*.tres`), set on `InventoryScreen.Skin` in `morning.tscn`. Its 3D figure is `scenes/ui/inventory_figure.tscn`; `EquipmentVisual` nodes there show what's worn (add one when adding a wearable item).
+- **The phone** is the library's `PhoneScreen` (`Phone` in `morning.tscn`, the default "real phone" skin). The player starts with the `phone` item (slot 1); holding it opens the phone, cursor free, camera still, legs still walking. Apps are `.tres` in `content/phone/apps/` (Buses and Weather are game apps in `src/PhoneApps/`; Map is a "coming soon" `TextPhoneApp` until navigation exists; Messages is the library's). Messages arrive from `content/phone/messages/` via the `Messages` scheduler (clock time plus an optional condition, e.g. the rain alert only when `raining`). App icons are Noto emoji PNGs in `assets/ui/icons/phone/`.
 - **The hotbar** (always visible at the bottom, `HUD/Hotbar`) is the library's `HotbarHud` over `Player/Hotbar` (`HotbarHolder`, `Size` = number of slots, 1-10). Keys 1-0 / mouse wheel take an item in hand; it stays in the bag; Q drops it (or whatever you carry). The item in hand shows at `Player/Head/HeldItem` (an item's `HeldScene`, e.g. `scenes/props/items/held/`, else its world scene's meshes). Holding is what matters for hand items: the umbrella only keeps you dry in hand (`HeldItemCondition`).
 - Item icons are `ItemDefinition.Icon` PNGs in `assets/ui/icons/` (rendered from Noto Color Emoji, OFL) until there's custom art. Fonts and icons ship with their license files.
 - Before building a new player-facing screen, render 2-3 mockups and let the user pick.
@@ -115,6 +116,7 @@ The debug console and overlay must be able to force any scenario, set the clock,
 - Standard commands already cover time, runs/seed, facts, items, consequences and events (`help` in the console). Add new items to `content/items/item_catalog.tres` so `give` can find them.
 - Register game commands with `DebugConsole.Instance?.Commands.Register(...)` and watches with `DebugOverlay.Instance?.Watch(...)`. Put them in `src/DebugCommands/`.
 - Scenario commands: `scenario` (active), `scenario list`, `scenario force <id>` (next morning), `scenario clear`, `restart`.
+- `phone [open | close | apps | <app>]` and `msg <from> <text>` drive the phone.
 - `hold` shows the hotbar; `hold <slot | item | none>` takes something in hand.
 - Bus commands: `bus` (timetable), `bus next` (jump to just before the next bus), `bus board`. The library's `meter` and `status` commands show or change the player's wetness and status effects.
 

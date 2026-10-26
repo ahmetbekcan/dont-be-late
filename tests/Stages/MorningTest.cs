@@ -4,6 +4,7 @@ using ReusableGameSystems.Tests;
 using System.Linq;
 using System.Threading.Tasks;
 using DontBeLate.Obstacles;
+using DontBeLate.PhoneApps;
 using DontBeLate.Scenarios;
 using DontBeLate.Stages;
 using GdUnit4;
@@ -13,6 +14,7 @@ using ReusableGameSystems.Clock;
 using ReusableGameSystems.Interaction;
 using ReusableGameSystems.Items;
 using ReusableGameSystems.Meters;
+using ReusableGameSystems.Phone;
 using ReusableGameSystems.Runs;
 using ReusableGameSystems.StatusEffects;
 using ReusableGameSystems.UI;
@@ -249,7 +251,8 @@ public class MorningTest
         AssertInt(hud.Cells.Count).IsEqual(10);
         AssertString(hud.Cells[0].KeyText).IsEqual("1");
         AssertString(hud.Cells[9].KeyText).IsEqual("0");
-        AssertObject(hud.Cells[0].Stack?.Id).IsEqual("umbrella");
+        AssertObject(hud.Cells[0].Stack?.Id).IsEqual("phone");
+        AssertObject(hud.Cells[1].Stack?.Id).IsEqual("umbrella");
 
         var screen = _scene.GetNode<InventoryScreen>("InventoryScreen");
         screen.Open();
@@ -258,7 +261,8 @@ public class MorningTest
         AssertBool(hud.Visible).IsTrue();
 
         // Q drops what's in hand.
-        _scene.GetNode<HotbarHolder>("Player/Hotbar").Select(0);
+        var bar = _scene.GetNode<HotbarHolder>("Player/Hotbar");
+        bar.Select(bar.Hotbar!.IndexOf("umbrella"));
         Input.ParseInputEvent(new InputEventAction { Action = "drop", Pressed = true });
         Input.ParseInputEvent(new InputEventAction { Action = "drop", Pressed = false });
         await _runner.Step(2);
@@ -425,5 +429,42 @@ public class MorningTest
         AssertFloat(boots!.GlobalPosition.Y).IsBetween(2.9f, 3.6f);
         boots.GetNode<Interactable>("Interactable").Interact("wear", Player, _scene.GetNode<Interactor>("Player/Head/Interactor").Context);
         AssertBool(Inventory.IsEquipped("boots")).IsTrue();
+    }
+
+    [TestCase]
+    public async Task ThePhoneShowsBusesWeatherAndMessages()
+    {
+        await LoadMorning("rain");
+        var phone = _scene.GetNode<PhoneScreen>("Phone");
+        var hotbar = _scene.GetNode<HotbarHolder>("Player/Hotbar");
+
+        // You start with the phone in slot 1; holding it opens it.
+        AssertInt(hotbar.Hotbar!.IndexOf("phone")).IsEqual(0);
+        hotbar.Select(0);
+        await _runner.Step(1);
+        AssertBool(phone.IsOpen).IsTrue();
+
+        AssertBool(phone.OpenApp("buses")).IsTrue();
+        await _runner.Step(1);
+        var buses = (BusesAppView)phone.CurrentView!;
+        AssertString(buses.Headline).StartsWith("Next: 07:45");
+        AssertInt(buses.StatusLabels.Count).IsEqual(3);
+
+        phone.OpenApp("weather");
+        await _runner.Step(1);
+        AssertBool(((WeatherAppView)phone.CurrentView!).ShowsRain).IsTrue();
+
+        // Messages arrive with the clock (the rain alert only because it's raining).
+        await SetTime("08:06");
+        await _runner.Step(20);
+        var senders = phone.Inbox.Messages.Select(m => m.From).ToList();
+        AssertBool(senders.Contains("Weather Alert")).IsTrue();
+        AssertBool(senders.Contains("Boss")).IsTrue();
+        AssertInt(senders.Count(f => f == "Boss")).IsEqual(1);
+
+        // Putting it away (another slot, or back from home) closes it.
+        phone.GoHome();
+        phone.Back();
+        AssertBool(phone.IsOpen).IsFalse();
     }
 }

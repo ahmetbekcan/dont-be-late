@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BusesPhoneApp" format=3]
+
+[ext_resource type="Script" path="res://src/PhoneApps/BusesPhoneApp.cs" id="1_app"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/phone/bus.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_app")
+Id = "buses"
+Title = "Buses"
+Color = Color(1, 0.62, 0.2, 1)
+StopName = "Stop: Maple Street"
+Icon = ExtResource("2_icon")

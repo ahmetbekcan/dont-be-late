@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ScheduledMessage" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/ScheduledMessage.cs" id="1_sched"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneMessage.cs" id="2_msg"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/FlagCondition.cs" id="3_flag"]
+
+[sub_resource type="Resource" id="when"]
+script = ExtResource("3_flag")
+Key = "raining"
+
+[sub_resource type="Resource" id="message"]
+script = ExtResource("2_msg")
+From = "Weather Alert"
+Text = "Rain warning for your area until 10:00."
+
+[resource]
+script = ExtResource("1_sched")
+At = "07:33"
+When = SubResource("when")
+Message = SubResource("message")

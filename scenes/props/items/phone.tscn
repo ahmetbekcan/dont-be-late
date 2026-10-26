@@ -1,0 +1,69 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/Interactable.cs" id="1_int"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Interaction/InteractionVerb.cs" id="2_verb"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemPickup.cs" id="3_pick"]
+[ext_resource type="Resource" path="res://content/items/phone.tres" id="4_item"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Characters/Carryable.cs" id="5_carry"]
+
+[sub_resource type="StandardMaterial3D" id="mat_case"]
+albedo_color = Color(0.13, 0.13, 0.15, 1)
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="mat_screen"]
+albedo_color = Color(0.12, 0.18, 0.35, 1)
+roughness = 0.1
+metallic = 0.2
+
+[sub_resource type="BoxMesh" id="mesh_case"]
+material = SubResource("mat_case")
+size = Vector3(0.08, 0.012, 0.16)
+
+[sub_resource type="BoxMesh" id="mesh_screen"]
+material = SubResource("mat_screen")
+size = Vector3(0.07, 0.002, 0.135)
+
+[sub_resource type="BoxShape3D" id="shape_body"]
+size = Vector3(0.08, 0.012, 0.16)
+
+[sub_resource type="Resource" id="verb_take"]
+script = ExtResource("2_verb")
+Id = "take"
+Prompt = "Put in pocket"
+
+[sub_resource type="Resource" id="verb_pick"]
+script = ExtResource("2_verb")
+Id = "pick_up"
+Prompt = "Pick up (throw)"
+InputAction = "interact_alt2"
+
+[sub_resource type="BoxShape3D" id="shape_area"]
+size = Vector3(0.3, 0.2, 0.35)
+
+[node name="Phone" type="RigidBody3D"]
+mass = 0.2
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("mesh_case")
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0065, 0)
+mesh = SubResource("mesh_screen")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("shape_body")
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource("1_int")
+DisplayName = "Phone"
+Verbs = Array[ExtResource("2_verb")]([SubResource("verb_take"), SubResource("verb_pick")])
+
+[node name="Shape" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("shape_area")
+
+[node name="ItemPickup" type="Node" parent="."]
+script = ExtResource("3_pick")
+Item = ExtResource("4_item")
+
+[node name="Carryable" type="Node" parent="."]
+script = ExtResource("5_carry")

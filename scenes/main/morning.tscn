@@ -49,6 +49,22 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HeldItemView.cs" id="51_held"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/HotbarHud.cs" id="52_hud"]
 
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneScreen.cs" id="60_phone"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/MessageScheduler.cs" id="61_sched"]
+[ext_resource type="Resource" path="res://content/phone/apps/messages.tres" id="62_app_msg"]
+[ext_resource type="Resource" path="res://content/phone/apps/buses.tres" id="63_app_bus"]
+[ext_resource type="Resource" path="res://content/phone/apps/weather.tres" id="64_app_wx"]
+[ext_resource type="Resource" path="res://content/phone/apps/map.tres" id="65_app_map"]
+[ext_resource type="Resource" path="res://content/phone/messages/mum_alarm.tres" id="66_m1"]
+[ext_resource type="Resource" path="res://content/phone/messages/rain_alert.tres" id="67_m2"]
+[ext_resource type="Resource" path="res://content/phone/messages/group_chat.tres" id="68_m3"]
+[ext_resource type="Resource" path="res://content/phone/messages/boss_meeting.tres" id="69_m4"]
+[ext_resource type="Resource" path="res://content/phone/messages/boss_where.tres" id="70_m5"]
+[ext_resource type="Resource" path="res://content/items/phone.tres" id="71_phone_item"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/ItemDefinition.cs" id="72_itemdef"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/PhoneApp.cs" id="73_appscript"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/ScheduledMessage.cs" id="74_schedscript"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0csqs"]
 
 [sub_resource type="Sky" id="Sky_ti11c"]
@@ -180,6 +196,7 @@ HoldPoint = NodePath("../Head/HoldPoint")
 [node name="Inventory" parent="Player" index="9"]
 script = ExtResource("13_8duxv")
 RegisterAsGlobalService = true
+StartingItems = Array[ExtResource("72_itemdef")]([ExtResource("71_phone_item")])
 
 [node name="Meters" parent="Player" index="10"]
 script = ExtResource("14_w5a0l")
@@ -360,6 +377,19 @@ Hotbar = NodePath("../../Player/Hotbar")
 Skin = ExtResource("41_skin")
 CellSize = Vector2(58, 58)
 HideWhileOpen = NodePath("../../InventoryScreen")
+
+[node name="Phone" type="CanvasLayer" parent="." node_paths=PackedStringArray("Hotbar", "Look")]
+script = ExtResource("60_phone")
+Apps = Array[ExtResource("73_appscript")]([ExtResource("63_app_bus"), ExtResource("65_app_map"), ExtResource("64_app_wx"), ExtResource("62_app_msg")])
+Hotbar = NodePath("../Player/Hotbar")
+Look = NodePath("../Player/MouseLook")
+DayText = "Tuesday"
+HomeSubtitle = "Work starts at 9:00"
+
+[node name="Messages" type="Node" parent="." node_paths=PackedStringArray("Phone")]
+script = ExtResource("61_sched")
+Phone = NodePath("../Phone")
+Messages = Array[ExtResource("74_schedscript")]([ExtResource("66_m1"), ExtResource("67_m2"), ExtResource("68_m3"), ExtResource("69_m4"), ExtResource("70_m5")])
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=329997960 node_paths=PackedStringArray("Holder", "DropPoint", "Hotbar")]
 script = ExtResource("37_4i2mk")

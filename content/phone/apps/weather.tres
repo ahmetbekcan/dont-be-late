@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeatherPhoneApp" format=3]
+
+[ext_resource type="Script" path="res://src/PhoneApps/WeatherPhoneApp.cs" id="1_app"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/phone/weather.png" id="2_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/phone/umbrella_rain.png" id="3_rain"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/phone/sun.png" id="4_sun"]
+
+[resource]
+script = ExtResource("1_app")
+Id = "weather"
+Title = "Weather"
+Color = Color(0.35, 0.6, 1, 1)
+Icon = ExtResource("2_icon")
+RainPicture = ExtResource("3_rain")
+DryPicture = ExtResource("4_sun")
+RainHeading = "Rain all morning"
+RainText = "Puddles everywhere. Take an umbrella, and think about your shoes."
+DryHeading = "Dry and mild"
+DryText = "No rain expected. Any shoes will do."

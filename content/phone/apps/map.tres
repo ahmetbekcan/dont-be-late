@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TextPhoneApp" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Phone/TextPhoneApp.cs" id="1_app"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/phone/map.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_app")
+Id = "map"
+Title = "Map"
+Color = Color(0.3, 0.75, 0.4, 1)
+Heading = "Navigation coming soon"
+Body = "Turn-by-turn directions to work will live here."
+Icon = ExtResource("2_icon")
