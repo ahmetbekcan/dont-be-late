@@ -46,6 +46,7 @@
 [ext_resource type="Resource" path="res://content/status/bruised.tres" id="51_bruised"]
 [ext_resource type="Resource" path="res://content/status/limping.tres" id="52_limping"]
 [ext_resource type="PackedScene" path="res://scenes/main/sky.tscn" id="53_sky"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/StreetLights.cs" id="54_lights"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule"]
 radius = 0.4
@@ -64,6 +65,10 @@ Player = NodePath("../Player")
 [node name="City" type="Node3D" parent="Stage"]
 script = ExtResource("2_builder")
 Style = ExtResource("3_style")
+
+[node name="StreetLights" type="Node3D" parent="Stage" node_paths=PackedStringArray("City")]
+script = ExtResource("54_lights")
+City = NodePath("../City")
 
 [node name="Life" type="Node" parent="Stage" node_paths=PackedStringArray("City", "Target")]
 script = ExtResource("40_life")

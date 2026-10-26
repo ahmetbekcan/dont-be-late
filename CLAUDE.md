@@ -115,6 +115,10 @@ The core rule: **never block the player; let the world react.** The player can d
 - It follows the game clock through a full day and night. The "golden" looks are in `content/sky/` (night, predawn, dawn, morning, day, afternoon, golden_hour, dusk, twilight), and `sky_material.tres` sets the cloud, sun, moon and star style. Keyframe hours are set on `Cycle` in `sky.tscn`.
 - It turns overcast while `raining` is set (`overcast.tres`, or `overcast_night.tres` in the dark).
 - It publishes how dark it is as the global shader parameter `sky_night` (0 day, 1 night; declared in `project.godot`). City windows light up with it; use it for anything that should glow at night.
+- Lights after dark:
+  - Street lamp lenses and car head and tail lights glow, following the library's `NightGlow`. The sky sets it, counting heavy rain as a little dark, so car lights come on in the rain.
+  - `Stage/StreetLights` in `city_preview.tscn` puts real spotlights under the 16 lamps nearest the camera.
+  - The `Traffic` spawner shines headlight beams from cars near the camera.
 
 ## The city
 
