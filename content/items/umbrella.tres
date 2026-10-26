@@ -9,5 +9,5 @@ Id = "umbrella"
 DisplayName = "Umbrella"
 Description = "Keeps the rain off. Mostly."
 Icon = ExtResource("1_gwv65")
-EquipSlot = "hand"
 WorldScene = "res://scenes/props/items/umbrella.tscn"
+HeldScene = "res://scenes/props/items/held/umbrella_held.tscn"

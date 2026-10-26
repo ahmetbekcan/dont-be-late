@@ -14,5 +14,7 @@
   <GdUnit4>
     <DisplayName>FullyQualifiedName</DisplayName>
     <CompileProcessTimeout>60000</CompileProcessTimeout>
+    <!-- No window: tests never grab the mouse or steal focus. Remove to watch tests run. -->
+    <Parameters>--headless</Parameters>
   </GdUnit4>
 </RunSettings>

@@ -35,17 +35,19 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/ToastLabel.cs" id="33_n08op"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/StatusEffectLabel.cs" id="34_w3d8b"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/MeterBar.cs" id="35_fv88a"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EquipmentLabel.cs" id="36_rgrly"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/InventoryScreen.cs" id="37_4i2mk"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EquipmentSlotSpec.cs" id="38_y4iof"]
 [ext_resource type="Texture2D" path="res://assets/ui/icons/slot_feet.png" id="39_hw3if"]
-[ext_resource type="Texture2D" path="res://assets/ui/icons/slot_hand.png" id="40_qyyni"]
 [ext_resource type="PackedScene" path="res://scenes/ui/inventory_figure.tscn" id="41_yf2fv"]
 [ext_resource type="Resource" path="res://assets/ui/inventory_skins/toy.tres" id="41_skin"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/EndScreen.cs" id="42_vvooy"]
 [ext_resource type="Script" path="res://src/Stages/MorningDirector.cs" id="43_cc1f0"]
 [ext_resource type="Resource" path="res://content/scenarios/home_pool.tres" id="44_tsk28"]
 [ext_resource type="Resource" path="res://content/scenarios/base_morning.tres" id="45_4pfut"]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HotbarHolder.cs" id="50_hotbar"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Items/HeldItemView.cs" id="51_held"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/UI/HotbarHud.cs" id="52_hud"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0csqs"]
 
@@ -112,14 +114,6 @@ SlotId = "feet"
 Label = "Feet"
 EmptyIcon = ExtResource("39_hw3if")
 Height = 0.92
-
-[sub_resource type="Resource" id="Resource_8eyrs"]
-script = ExtResource("38_y4iof")
-SlotId = "hand"
-Label = "Hand"
-EmptyIcon = ExtResource("40_qyyni")
-Side = 1
-Height = 0.55
 
 [node name="Morning" type="Node3D" unique_id=1157697221]
 
@@ -221,6 +215,18 @@ initial_velocity_max = 10.0
 script = ExtResource("22_hgt7a")
 Condition = SubResource("Resource_kce25")
 
+[node name="Hotbar" type="Node" parent="Player" node_paths=PackedStringArray("Holder", "DropPoint", "Carry")]
+script = ExtResource("50_hotbar")
+Holder = NodePath("../Inventory")
+DropPoint = NodePath("../Head/HoldPoint")
+Carry = NodePath("../Carry")
+RegisterAsGlobalService = true
+
+[node name="HeldItem" type="Node3D" parent="Player/Head" node_paths=PackedStringArray("Hotbar")]
+transform = Transform3D(0.53, 0.14, 0.1, -0.14, 0.53, 0.05, -0.08, -0.07, 0.54, 0.36, -0.3, -0.6)
+script = ExtResource("51_held")
+Hotbar = NodePath("../../Hotbar")
+
 [node name="World" type="Node" parent="." unique_id=940559219]
 script = ExtResource("27_ld4m5")
 
@@ -297,8 +303,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -150.0
-offset_bottom = -90.0
+offset_top = -190.0
+offset_bottom = -130.0
 mouse_filter = 2
 
 [node name="Toast" type="Label" parent="HUD/ToastBox" unique_id=872282668]
@@ -341,24 +347,30 @@ theme_type_variation = &"HudTiny"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "wet"
 
-[node name="Gear" type="Label" parent="HUD/You" unique_id=2017319216]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_type_variation = &"HudGear"
-script = ExtResource("36_rgrly")
-Slots = PackedStringArray("feet", "hand")
-SlotLabels = PackedStringArray("Feet", "Hand")
-EmptyText = "nothing"
+[node name="Hotbar" type="VBoxContainer" parent="HUD" node_paths=PackedStringArray("Hotbar", "HideWhileOpen")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+offset_bottom = -14.0
+mouse_filter = 2
+script = ExtResource("52_hud")
+Hotbar = NodePath("../../Player/Hotbar")
+Skin = ExtResource("41_skin")
+CellSize = Vector2(58, 58)
+HideWhileOpen = NodePath("../../InventoryScreen")
 
-[node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=329997960 node_paths=PackedStringArray("Holder", "DropPoint")]
+[node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=329997960 node_paths=PackedStringArray("Holder", "DropPoint", "Hotbar")]
 script = ExtResource("37_4i2mk")
+Hotbar = NodePath("../Player/Hotbar")
 Holder = NodePath("../Player/Inventory")
 DropPoint = NodePath("../Player/Head/HoldPoint")
 Skin = ExtResource("41_skin")
 UseAction = "interact"
 RotateLeftAction = "move_left"
 RotateRightAction = "move_right"
-SlotSpecs = Array[ExtResource("38_y4iof")]([SubResource("Resource_fsiad"), SubResource("Resource_8eyrs")])
+SlotSpecs = Array[ExtResource("38_y4iof")]([SubResource("Resource_fsiad")])
 FigureScene = ExtResource("41_yf2fv")
 EquipText = "Put on"
 MouseHintText = "Drag onto a slot or yourself to wear  ·  drag off to drop  ·  A/D to turn"

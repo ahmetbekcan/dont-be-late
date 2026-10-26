@@ -209,7 +209,7 @@ public class MorningTest
     }
 
     [TestCase]
-    public async Task RainSoaksYouUnlessYouHaveTheUmbrella()
+    public async Task RainSoaksYouUnlessYouHoldTheUmbrella()
     {
         await LoadMorning("rain");
         Use("Sneakers", "wear");
@@ -217,10 +217,52 @@ public class MorningTest
         float soaked = Wetness.Value;
         AssertFloat(soaked).IsGreater(2f);
 
+        // In the bag it doesn't help.
         Wetness.Set(0);
         Use("Umbrella", "take");
         await _runner.Step(60);
+        AssertFloat(Wetness.Value).IsGreater(0.5f);
+
+        // In hand (its number key) it does, and it shows in front of the camera.
+        var hotbar = _scene.GetNode<HotbarHolder>("Player/Hotbar").Hotbar!;
+        int slot = hotbar.IndexOf("umbrella");
+        AssertInt(slot).IsGreaterEqual(0);
+        Input.ParseInputEvent(new InputEventAction { Action = $"hotbar_{slot + 1}", Pressed = true });
+        Input.ParseInputEvent(new InputEventAction { Action = $"hotbar_{slot + 1}", Pressed = false });
+        await _runner.Step(2);
+        AssertString(hotbar.HeldItemId).IsEqual("umbrella");
+        AssertObject(_scene.GetNode<HeldItemView>("Player/Head/HeldItem").Shown).IsNotNull();
+
+        Wetness.Set(0);
+        await _runner.Step(60);
         AssertFloat(Wetness.Value).IsLess(0.5f);
+    }
+
+    [TestCase]
+    public async Task TheHotbarShowsTheBagWithNumbersAndHidesBehindTheInventory()
+    {
+        await LoadMorning();
+        Use("Umbrella", "take");
+        Use("Sneakers", "take");
+        await _runner.Step(2);
+        var hud = _scene.GetNode<HotbarHud>("HUD/Hotbar");
+        AssertInt(hud.Cells.Count).IsEqual(10);
+        AssertString(hud.Cells[0].KeyText).IsEqual("1");
+        AssertString(hud.Cells[9].KeyText).IsEqual("0");
+        AssertObject(hud.Cells[0].Stack?.Id).IsEqual("umbrella");
+
+        var screen = _scene.GetNode<InventoryScreen>("InventoryScreen");
+        screen.Open();
+        AssertBool(hud.Visible).IsFalse();
+        screen.Close();
+        AssertBool(hud.Visible).IsTrue();
+
+        // Q drops what's in hand.
+        _scene.GetNode<HotbarHolder>("Player/Hotbar").Select(0);
+        Input.ParseInputEvent(new InputEventAction { Action = "drop", Pressed = true });
+        Input.ParseInputEvent(new InputEventAction { Action = "drop", Pressed = false });
+        await _runner.Step(2);
+        AssertBool(Inventory.Has("umbrella")).IsFalse();
     }
 
     [TestCase]

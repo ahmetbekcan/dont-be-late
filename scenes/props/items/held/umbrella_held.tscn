@@ -1,0 +1,79 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_canopy"]
+albedo_color = Color(0.2, 0.28, 0.65, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_metal"]
+albedo_color = Color(0.75, 0.75, 0.78, 1)
+metallic = 0.6
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="mat_handle"]
+albedo_color = Color(0.45, 0.28, 0.14, 1)
+roughness = 0.7
+
+[sub_resource type="CylinderMesh" id="canopy"]
+material = SubResource("mat_canopy")
+top_radius = 0.065
+bottom_radius = 0.018
+height = 0.55
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="tie"]
+material = SubResource("mat_canopy")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.03
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="shaft"]
+material = SubResource("mat_metal")
+top_radius = 0.009
+bottom_radius = 0.009
+height = 0.9
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="grip"]
+material = SubResource("mat_handle")
+top_radius = 0.022
+bottom_radius = 0.022
+height = 0.14
+radial_segments = 8
+rings = 1
+
+[sub_resource type="TorusMesh" id="hook"]
+material = SubResource("mat_handle")
+inner_radius = 0.035
+outer_radius = 0.06
+rings = 12
+ring_segments = 6
+
+[node name="UmbrellaHeld" type="Node3D"]
+
+[node name="Grip" type="MeshInstance3D" parent="."]
+mesh = SubResource("grip")
+cast_shadow = 0
+
+[node name="Hook" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0.047, 0.07, 0)
+mesh = SubResource("hook")
+cast_shadow = 0
+
+[node name="Shaft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+mesh = SubResource("shaft")
+cast_shadow = 0
+
+[node name="Canopy" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+mesh = SubResource("canopy")
+cast_shadow = 0
+
+[node name="Tie" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("tie")
+cast_shadow = 0

@@ -338,8 +338,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 0.07, 0.13)
 
 [node name="Umbrella" type="Node3D" parent="."]
 script = ExtResource("ev")
-SlotId = "hand"
 ItemIds = PackedStringArray("umbrella")
+FollowsHand = true
 
 [node name="Canopy" type="MeshInstance3D" parent="Umbrella"]
 mesh = SubResource("mesh_19")

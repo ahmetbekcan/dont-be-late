@@ -64,6 +64,7 @@ If a library system is missing something this game needs, **improve the library 
 - The game's look is the **toy box** style: chunky rounded panels, thick navy outlines, bright colors, the Fredoka font. It lives in one theme, `assets/ui/toy_theme.tres`, set as the project theme (`gui/theme/custom`).
 - **Don't style nodes one by one.** Use the theme, and its type variations for special pieces (`HudClock`, `HudToast`, `HudPrompt`, `HudStatus`, `HudGear`, the library's `EndScreen...` variations). Add new variations to the theme for new pieces.
 - **The inventory screen** is styled by an `InventorySkin` (`assets/ui/inventory_skins/*.tres`), set on `InventoryScreen.Skin` in `morning.tscn`. Its 3D figure is `scenes/ui/inventory_figure.tscn`; `EquipmentVisual` nodes there show what's worn (add one when adding a wearable item).
+- **The hotbar** (always visible at the bottom, `HUD/Hotbar`) is the library's `HotbarHud` over `Player/Hotbar` (`HotbarHolder`, `Size` = number of slots, 1-10). Keys 1-0 / mouse wheel take an item in hand; it stays in the bag; Q drops it (or whatever you carry). The item in hand shows at `Player/Head/HeldItem` (an item's `HeldScene`, e.g. `scenes/props/items/held/`, else its world scene's meshes). Holding is what matters for hand items: the umbrella only keeps you dry in hand (`HeldItemCondition`).
 - Item icons are `ItemDefinition.Icon` PNGs in `assets/ui/icons/` (rendered from Noto Color Emoji, OFL) until there's custom art. Fonts and icons ship with their license files.
 - Before building a new player-facing screen, render 2-3 mockups and let the user pick.
 
@@ -114,12 +115,13 @@ The debug console and overlay must be able to force any scenario, set the clock,
 - Standard commands already cover time, runs/seed, facts, items, consequences and events (`help` in the console). Add new items to `content/items/item_catalog.tres` so `give` can find them.
 - Register game commands with `DebugConsole.Instance?.Commands.Register(...)` and watches with `DebugOverlay.Instance?.Watch(...)`. Put them in `src/DebugCommands/`.
 - Scenario commands: `scenario` (active), `scenario list`, `scenario force <id>` (next morning), `scenario clear`, `restart`.
+- `hold` shows the hotbar; `hold <slot | item | none>` takes something in hand.
 - Bus commands: `bus` (timetable), `bus next` (jump to just before the next bus), `bus board`. The library's `meter` and `status` commands show or change the player's wetness and status effects.
 
 ## Workflow
 
 - Build toward the first playable: event bus, RNG, run manager, clock → blackboard, conditions, content pool, delayed consequences → controller, interaction, inventory → debug console → Home stage with two scenarios.
-- Run tests before committing: `dotnet test` (uses `.runsettings`; set `GODOT_BIN` there to your Godot .NET executable).
+- Run tests before committing: `dotnet test` (uses `.runsettings`; set `GODOT_BIN` there to your Godot .NET executable). Tests run Godot `--headless` (no window, so they never grab the mouse); remove `<Parameters>` there to watch them run.
 - **Keep the test loop fast:**
   - While working, run only the tests you touched: `dotnet test --filter "FullyQualifiedName~MorningTest"` (add `--no-build` when only re-running). Run the full suite once before committing.
   - In scene tests, advance time with `runner.Step(frames)` / `StepSeconds(s)` (library `TestTime`), never `SimulateFrames(n, 16)`: it runs 8x faster than real time with the same physics step.
