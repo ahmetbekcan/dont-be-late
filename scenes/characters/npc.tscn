@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/RandomLook.cs" id="2_random"]
 [ext_resource type="Resource" path="res://content/characters/kit/catalog.tres" id="3_catalog"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterIdle.cs" id="4_idle"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterBlink.cs" id="20_blink"]
 
 [sub_resource type="CapsuleShape3D" id="shape"]
 radius = 0.3
@@ -24,3 +25,6 @@ Catalog = ExtResource("3_catalog")
 
 [node name="Idle" type="Node" parent="Body"]
 script = ExtResource("4_idle")
+
+[node name="Blink" type="Node" parent="Body"]
+script = ExtResource("20_blink")
