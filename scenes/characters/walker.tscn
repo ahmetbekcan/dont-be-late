@@ -12,6 +12,19 @@
 [ext_resource type="Resource" path="res://content/characters/gestures/phone.tres" id="8_phone"]
 [ext_resource type="Resource" path="res://content/characters/gestures/talk.tres" id="9_talk"]
 [ext_resource type="Resource" path="res://content/characters/gestures/browse.tres" id="10_browse"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterClips.cs" id="11_clips"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterClip.cs" id="12_clip"]
+[ext_resource type="Resource" path="res://content/characters/clips/idle.tres" id="13_idle"]
+[ext_resource type="Resource" path="res://content/characters/clips/walk.tres" id="14_walk"]
+[ext_resource type="Resource" path="res://content/characters/clips/jog.tres" id="15_jog"]
+[ext_resource type="Resource" path="res://content/characters/clips/sit.tres" id="16_sit"]
+[ext_resource type="Resource" path="res://content/characters/clips/startled.tres" id="17_startled"]
+[ext_resource type="Resource" path="res://content/characters/clips/talk.tres" id="18_talk"]
+[ext_resource type="Resource" path="res://content/characters/clips/sit_talk.tres" id="19_sit_talk"]
+[ext_resource type="Resource" path="res://content/characters/clips/interact.tres" id="22_interact"]
+[ext_resource type="Resource" path="res://content/characters/clips/dance.tres" id="23_dance"]
+[ext_resource type="Resource" path="res://content/characters/clips/walk_formal.tres" id="24_walk_formal"]
+[ext_resource type="Resource" path="res://content/characters/clips/sprint.tres" id="25_sprint"]
 
 [sub_resource type="CapsuleShape3D" id="shape"]
 radius = 0.3
@@ -45,6 +58,15 @@ FarDistance = 12.0
 
 [node name="Walk" type="Node" parent="Body"]
 script = ExtResource("5_walk")
+
+[node name="Clips" type="Node" parent="Body"]
+script = ExtResource("11_clips")
+Idle = ExtResource("13_idle")
+Walk = ExtResource("14_walk")
+Run = ExtResource("15_jog")
+Sit = ExtResource("16_sit")
+Actions = Array[ExtResource("12_clip")]([ExtResource("17_startled"), ExtResource("18_talk"), ExtResource("19_sit_talk"), ExtResource("22_interact"), ExtResource("23_dance"), ExtResource("24_walk_formal"), ExtResource("25_sprint")])
+Skip = Array[String](["Head"])
 
 [node name="Gestures" type="Node" parent="Body"]
 script = ExtResource("6_gestures")

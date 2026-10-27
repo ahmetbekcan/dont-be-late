@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClipBakery.cs" id="1_bakery"]
+[ext_resource type="PackedScene" path="res://assets/animations/quaternius_ual/animation_library.glb" id="2_source"]
+
+[node name="BakeClips" type="Node"]
+script = ExtResource("1_bakery")
+Source = ExtResource("2_source")
+Clips = {
+"dance": "Dance",
+"idle": "Idle",
+"interact": "Interact",
+"jog": "Jog_Fwd",
+"sit": "Sitting_Idle",
+"sit_talk": "Sitting_Talking",
+"sprint": "Sprint",
+"startled": "Hit_Chest",
+"talk": "Idle_Talking",
+"walk": "Walk",
+"walk_formal": "Walk_Formal"
+}
+UpperBodyOnly = Array[String](["startled", "talk", "interact"])
+OutputFolder = "res://content/characters/clips"
+BakeOnReady = true
+QuitWhenDone = true
