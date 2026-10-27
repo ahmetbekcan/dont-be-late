@@ -13,6 +13,8 @@ Wobble = 0.0
 Role = 7
 Color = Color(0.08, 0.08, 0.1, 1)
 Mirror = true
+Surface = 1
+SurfaceSink = -0.022
 
 [sub_resource type="Resource" id="Resource_oh1fq"]
 script = ExtResource("1_11uyj")
@@ -30,6 +32,8 @@ Size = Vector3(0.01, 0.012, 0.14)
 Sides = 4
 Wobble = 0.0
 Mirror = true
+Surface = 4
+SurfaceSink = 0.001
 
 [resource]
 script = ExtResource("2_vb0eo")

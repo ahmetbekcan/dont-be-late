@@ -1,49 +1,16 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_xi4ri"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_l2vwl"]
-
-[sub_resource type="Resource" id="Resource_dbwhv"]
-script = ExtResource("1_xi4ri")
-Offset = Vector3(0, 0.248, -0.024)
-Size = Vector3(0.275, 0.27, 0.29)
-Sides = 10
-Rings = 4
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_5xgt7"]
-script = ExtResource("1_xi4ri")
-Profile = 5
-Offset = Vector3(0, 0.215, -0.06)
-Size = Vector3(0.272, 0.19, 0.17)
-Sides = 10
-Rings = 3
-Wobble = 0.0
-Role = 1
-
-[sub_resource type="Resource" id="Resource_bt6yi"]
-script = ExtResource("1_xi4ri")
-Profile = 4
-Offset = Vector3(0, 0.16, -0.115)
-Size = Vector3(0.27, 0.36, 0.08)
-Sides = 8
-Wobble = 0.04
-Role = 1
-
-[sub_resource type="Resource" id="Resource_ub8hp"]
-script = ExtResource("1_xi4ri")
-Profile = 4
-Offset = Vector3(0.132, 0.17, -0.03)
-Size = Vector3(0.05, 0.27, 0.13)
-Wobble = 0.04
-Role = 1
-Mirror = true
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="1_hlong"]
 
 [resource]
-script = ExtResource("2_l2vwl")
+script = ExtResource("1_hlong")
+HairlineSideburn = -5.0
+HairlineSide = -5.0
+HairlineBack = -30.0
+TopVolume = 0.015
+Length = 0.3
+LengthSpread = 125.0
 Id = "long"
 DisplayName = "Long"
-Shapes = Array[ExtResource("1_xi4ri")]([SubResource("Resource_dbwhv"), SubResource("Resource_5xgt7"), SubResource("Resource_bt6yi"), SubResource("Resource_ub8hp")])
+Hides = PackedStringArray("ears")
 Weight = 2.0

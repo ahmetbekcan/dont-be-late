@@ -11,6 +11,8 @@ Sides = 8
 Wobble = 0.0
 Role = 4
 Mirror = true
+Surface = 1
+SurfaceSink = 0.065
 
 [sub_resource type="Resource" id="Resource_b8hqn"]
 script = ExtResource("1_kvc3e")

@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_lpuv3")
 Covers = 136
+HemAt = 0.55
 Id = "shorts"
 DisplayName = "Shorts"
 Slot = "bottom"

@@ -13,6 +13,8 @@ Sides = 8
 Wobble = 0.0
 Role = 0
 Mirror = true
+Surface = 2
+SurfaceSink = 0.02
 
 [sub_resource type="Resource" id="Resource_tpba2"]
 script = ExtResource("1_xpb0w")

@@ -11,6 +11,8 @@ Rotation = Vector3(0, 0, 90)
 Size = Vector3(0.014, 0.062, 0.016)
 Wobble = 0.0
 Role = 6
+Surface = 1
+SurfaceSink = 0.004
 
 [resource]
 script = ExtResource("2_2b0qw")

@@ -12,6 +12,8 @@ Size = Vector3(0.09, 0.01, 0.09)
 Sides = 12
 Wobble = 0.0
 Mirror = true
+Surface = 1
+SurfaceSink = -0.022
 
 [sub_resource type="Resource" id="Resource_vmpyl"]
 script = ExtResource("1_glyo1")
@@ -41,6 +43,8 @@ Size = Vector3(0.01, 0.012, 0.14)
 Sides = 4
 Wobble = 0.0
 Mirror = true
+Surface = 4
+SurfaceSink = 0.001
 
 [resource]
 script = ExtResource("2_cg7u0")

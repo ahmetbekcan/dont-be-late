@@ -15,6 +15,7 @@ Wobble = 0.01
 [resource]
 script = ExtResource("2_vi6lm")
 Covers = 22
+HemAt = 0.5
 Id = "tshirt"
 DisplayName = "T-shirt"
 Slot = "top"

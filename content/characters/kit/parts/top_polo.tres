@@ -37,6 +37,7 @@ OnTorsoFront = true
 [resource]
 script = ExtResource("2_uisix")
 Covers = 22
+HemAt = 0.5
 Id = "polo"
 DisplayName = "Polo"
 Slot = "top"

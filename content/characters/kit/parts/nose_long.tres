@@ -12,6 +12,8 @@ Size = Vector3(0.036, 0.085, 0.04)
 Sides = 8
 Wobble = 0.0
 Role = 0
+Surface = 1
+SurfaceSink = 0.025
 
 [resource]
 script = ExtResource("2_8a3sp")

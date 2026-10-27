@@ -10,6 +10,8 @@ Size = Vector3(0.04, 0.03, 0.025)
 Sides = 8
 Wobble = 0.0
 Role = 6
+Surface = 1
+SurfaceSink = 0.004
 
 [resource]
 script = ExtResource("2_hyst5")

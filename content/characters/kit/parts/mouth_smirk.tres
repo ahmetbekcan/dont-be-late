@@ -11,6 +11,8 @@ Rotation = Vector3(0, 0, 90)
 Size = Vector3(0.011, 0.05, 0.014)
 Wobble = 0.0
 Role = 6
+Surface = 1
+SurfaceSink = 0.004
 
 [sub_resource type="Resource" id="Resource_thdjp"]
 script = ExtResource("1_0i5c7")
@@ -20,6 +22,8 @@ Rotation = Vector3(0, 0, 120)
 Size = Vector3(0.011, 0.022, 0.014)
 Wobble = 0.0
 Role = 6
+Surface = 1
+SurfaceSink = 0.004
 
 [resource]
 script = ExtResource("2_s3gq3")

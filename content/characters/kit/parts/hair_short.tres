@@ -1,31 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_rhr1j"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_gv7e0"]
-
-[sub_resource type="Resource" id="Resource_k22wh"]
-script = ExtResource("1_rhr1j")
-Offset = Vector3(0, 0.248, -0.024)
-Size = Vector3(0.275, 0.27, 0.29)
-Sides = 10
-Rings = 4
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_2mi1a"]
-script = ExtResource("1_rhr1j")
-Profile = 5
-Offset = Vector3(0, 0.225, -0.06)
-Size = Vector3(0.272, 0.17, 0.17)
-Sides = 10
-Rings = 3
-Wobble = 0.0
-Role = 1
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="1_hshrt"]
 
 [resource]
-script = ExtResource("2_gv7e0")
+script = ExtResource("1_hshrt")
 Id = "short"
 DisplayName = "Short"
-Shapes = Array[ExtResource("1_rhr1j")]([SubResource("Resource_k22wh"), SubResource("Resource_2mi1a")])
 Weight = 3.0

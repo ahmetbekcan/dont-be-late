@@ -1,27 +1,20 @@
 [gd_resource type="Resource" script_class="ClothingPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_wloip"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPrint.cs" id="1_vprnt"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ClothingPart.cs" id="2_pvk1l"]
 
-[sub_resource type="Resource" id="Resource_xibu4"]
-script = ExtResource("1_wloip")
-Joint = "Spine"
-Profile = 2
-Offset = Vector3(0, -0.055, 0.002)
-Rotation = Vector3(180, 0, 0)
-Size = Vector3(0.11, 0.11, 0.012)
-Sides = 3
-Wobble = 0.0
+[sub_resource type="Resource" id="Resource_vneck"]
+script = ExtResource("1_vprnt")
+Outline = PackedVector2Array(-0.07, 0.06, 0.07, 0.06, 0, -0.11)
 Role = 0
-FromTorsoTop = true
-OnTorsoFront = true
 
 [resource]
 script = ExtResource("2_pvk1l")
 Covers = 22
+HemAt = 0.5
+Prints = Array[ExtResource("1_vprnt")]([SubResource("Resource_vneck")])
 Id = "vneck"
 DisplayName = "V-neck"
 Slot = "top"
-Shapes = Array[ExtResource("1_wloip")]([SubResource("Resource_xibu4")])
 DefaultPrimary = Color(0.2, 0.75, 0.95, 1)
 Weight = 2.0
