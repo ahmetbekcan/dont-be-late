@@ -1,24 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="BrowPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_aeps6"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_vqrmw"]
-
-[sub_resource type="Resource" id="Resource_12jr5"]
-script = ExtResource("1_aeps6")
-Profile = 4
-Offset = Vector3(0.058, 0.252, 0.13)
-Rotation = Vector3(-8, 0, 104)
-Size = Vector3(0.016, 0.07, 0.016)
-Wobble = 0.0
-Role = 1
-Mirror = true
-Surface = 1
-SurfaceSink = 0.003
-SurfaceAlong = true
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BrowPart.cs" id="1_s"]
 
 [resource]
-script = ExtResource("2_vqrmw")
+script = ExtResource("1_s")
 Id = "worried"
 DisplayName = "Worried"
 Slot = "brows"
-Shapes = Array[ExtResource("1_aeps6")]([SubResource("Resource_12jr5")])
+Position = Vector3(0.058, 0.252, 0)
+Length = 0.07
+Thickness = 0.016
+Slant = 16.0

@@ -1,24 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="BrowPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_asa1m"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_vxhc2"]
-
-[sub_resource type="Resource" id="Resource_m8y4n"]
-script = ExtResource("1_asa1m")
-Profile = 4
-Offset = Vector3(0.058, 0.248, 0.13)
-Rotation = Vector3(-8, 0, 76)
-Size = Vector3(0.018, 0.075, 0.017)
-Wobble = 0.0
-Role = 1
-Mirror = true
-Surface = 1
-SurfaceSink = 0.003
-SurfaceAlong = true
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/BrowPart.cs" id="1_s"]
 
 [resource]
-script = ExtResource("2_vxhc2")
+script = ExtResource("1_s")
 Id = "stern"
 DisplayName = "Stern"
 Slot = "brows"
-Shapes = Array[ExtResource("1_asa1m")]([SubResource("Resource_m8y4n")])
+Position = Vector3(0.058, 0.248, 0)
+Length = 0.075
+Thickness = 0.018
+Slant = -12.0
+Arch = 0.0

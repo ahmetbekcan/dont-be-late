@@ -183,6 +183,22 @@ public class CityLifeTest
         {
             AssertFloat(car.Position.DistanceTo(ReusableGameSystems.CityGen.CityLayout.ToPlan(player.GlobalPosition))).IsLessEqual(sim.Traffic.DespawnRadius);
         }
+
+        // A bang near them: the people around are startled, and it shows on their faces.
+        var crowd = scene.GetNode<CrowdSpawner>("Stage/Life/Crowd");
+        AssertObject(crowd.Feelings[ReusableGameSystems.CityLife.WalkerFeelings.Annoyed]).IsNotNull();
+        sim.DrawAttention(ReusableGameSystems.CityGen.CityLayout.ToPlan(player.GlobalPosition), 1000, 1);
+        await runner.Step(1);
+        int surprised = 0;
+        foreach (var child in crowd.GetChildren())
+        {
+            if (child is Node3D { Visible: true } shown && shown.GetNodeOrNull<CharacterFace>("Body/Face") is { } face)
+            {
+                surprised += face.Showing?.Id == "surprised" ? 1 : 0;
+            }
+        }
+
+        AssertInt(surprised).IsGreater(0);
     }
 
     [TestCase]

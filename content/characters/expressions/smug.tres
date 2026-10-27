@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FaceExpression" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/FaceExpression.cs" id="1_s"]
+
+[resource]
+script = ExtResource("1_s")
+Id = "smug"
+Speed = 0.4
+BrowRaise = 0.15
+BrowSlant = -0.2
+LidOpen = -0.4
+MouthCurve = 0.5
+MouthSkew = 0.8

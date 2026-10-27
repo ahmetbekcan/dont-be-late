@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FaceExpression" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/FaceExpression.cs" id="1_s"]
+
+[resource]
+script = ExtResource("1_s")
+Id = "sleepy"
+Speed = 1.2
+BrowRaise = -0.1
+LidOpen = -0.55
+MouthCurve = -0.1

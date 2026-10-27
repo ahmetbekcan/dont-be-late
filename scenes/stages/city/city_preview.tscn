@@ -42,6 +42,8 @@
 [ext_resource type="Resource" path="res://content/city/cars/van.tres" id="47_van"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CrowdSpawner.cs" id="48_crowd"]
 [ext_resource type="PackedScene" path="res://scenes/characters/walker.tscn" id="49_walker"]
+[ext_resource type="Resource" path="res://content/characters/expressions/annoyed.tres" id="60_annoyed"]
+[ext_resource type="Resource" path="res://content/characters/expressions/surprised.tres" id="61_surprised"]
 [ext_resource type="Script" path="res://src/City/TrafficReactions.cs" id="50_reactions"]
 [ext_resource type="Resource" path="res://content/status/bruised.tres" id="51_bruised"]
 [ext_resource type="Resource" path="res://content/status/limping.tres" id="52_limping"]
@@ -87,6 +89,10 @@ Colors = PackedColorArray(0.92, 0.3, 0.3, 1, 0.3, 0.55, 0.95, 1, 1, 0.8, 0.25, 1
 [node name="Crowd" type="Node3D" parent="Stage/Life"]
 script = ExtResource("48_crowd")
 WalkerScene = ExtResource("49_walker")
+Feelings = {
+"annoyed": ExtResource("60_annoyed"),
+"startled": ExtResource("61_surprised")
+}
 
 [node name="TrafficReactions" type="Node" parent="." node_paths=PackedStringArray("Simulation", "Player")]
 script = ExtResource("50_reactions")

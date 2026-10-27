@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FaceExpression" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/FaceExpression.cs" id="1_s"]
+
+[resource]
+script = ExtResource("1_s")
+Id = "scared"
+Speed = 0.12
+Overshoot = 0.4
+BrowRaise = 0.8
+BrowSlant = 0.8
+BrowSqueeze = 0.4
+LidOpen = 0.9
+MouthCurve = -0.4
+MouthOpen = 0.45
+MouthWidth = 0.3

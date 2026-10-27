@@ -1,23 +1,12 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="MouthPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_jja56"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_2b0qw"]
-
-[sub_resource type="Resource" id="Resource_78cyk"]
-script = ExtResource("1_jja56")
-Profile = 4
-Offset = Vector3(0, 0.083, 0.127)
-Rotation = Vector3(0, 0, 90)
-Size = Vector3(0.014, 0.062, 0.016)
-Wobble = 0.0
-Role = 6
-Surface = 1
-SurfaceSink = 0.004
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/MouthPart.cs" id="1_s"]
 
 [resource]
-script = ExtResource("2_2b0qw")
+script = ExtResource("1_s")
 Id = "neutral"
 DisplayName = "Neutral"
 Slot = "mouth"
-Shapes = Array[ExtResource("1_jja56")]([SubResource("Resource_78cyk")])
+Width = 0.062
+Thickness = 0.014
 Weight = 4.0
