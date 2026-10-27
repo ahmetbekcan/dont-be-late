@@ -1,7 +1,18 @@
 [gd_resource type="Resource" script_class="CrowdSettings" format=3]
 
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CrowdSettings.cs" id="1_crowd"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/WalkerProfile.cs" id="2_profile"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/WalkerActivityDefinition.cs" id="3_activity"]
+[ext_resource type="Resource" path="res://content/city/walkers/commuter.tres" id="w_commuter"]
+[ext_resource type="Resource" path="res://content/city/walkers/stroller.tres" id="w_stroller"]
+[ext_resource type="Resource" path="res://content/city/walkers/local.tres" id="w_local"]
+[ext_resource type="Resource" path="res://content/city/walkers/phone_zombie.tres" id="w_phone_zombie"]
+[ext_resource type="Resource" path="res://content/city/activities/check_phone.tres" id="a_check_phone"]
+[ext_resource type="Resource" path="res://content/city/activities/chat.tres" id="a_chat"]
+[ext_resource type="Resource" path="res://content/city/activities/window_shop.tres" id="a_window_shop"]
 
 [resource]
 script = ExtResource("1_crowd")
 MaxWalkers = 30
+Profiles = Array[ExtResource("2_profile")]([ExtResource("w_commuter"), ExtResource("w_stroller"), ExtResource("w_local"), ExtResource("w_phone_zombie")])
+Activities = Array[ExtResource("3_activity")]([ExtResource("a_check_phone"), ExtResource("a_chat"), ExtResource("a_window_shop")])

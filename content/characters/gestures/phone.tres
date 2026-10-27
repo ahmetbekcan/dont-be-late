@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterGesture" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterGesture.cs" id="1_gesture"]
+[ext_resource type="Resource" path="res://content/characters/worn/held_phone.tres" id="2_phone"]
+
+[resource]
+script = ExtResource("1_gesture")
+Id = "phone"
+Pose = Dictionary[String, Vector3]({
+"ElbowL": Vector3(-6, 0, 0),
+"ElbowR": Vector3(-95, 0, 0),
+"Head": Vector3(24, 0, 0),
+"ShoulderL": Vector3(-6, 0, 0),
+"ShoulderR": Vector3(-25, 25, 0),
+"Spine": Vector3(5, 0, 0)
+})
+Wiggle = Dictionary[String, Vector3]({
+"Head": Vector3(2, 3, 0),
+"HandR": Vector3(0, 0, 4)
+})
+WiggleRate = 0.35
+Hold = ExtResource("2_phone")
+KeepMotion = 0.15

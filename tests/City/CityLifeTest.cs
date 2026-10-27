@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using DontBeLate.City;
 using GdUnit4;
 using Godot;
+using ReusableGameSystems.Appearance;
 using ReusableGameSystems.Characters;
 using ReusableGameSystems.CityLife;
 using ReusableGameSystems.StatusEffects;
@@ -53,6 +54,114 @@ public class CityLifeTest
         }
 
         AssertThat(ids).Contains("calm", "normal", "in_a_hurry", "crazy");
+    }
+
+    [TestCase]
+    public void TheCrowdHasKindsOfPeopleWithThingsToDo()
+    {
+        var crowd = GD.Load<CrowdSettings>("res://content/city/crowd.tres");
+        var activities = new System.Collections.Generic.List<string>();
+        foreach (var activity in crowd.Activities)
+        {
+            activities.Add(activity.Id);
+            AssertFloat(activity.Weight).IsGreater(0);
+        }
+
+        AssertThat(activities).Contains("check_phone", "chat", "window_shop");
+
+        var kinds = new System.Collections.Generic.List<string>();
+        foreach (var profile in crowd.Profiles)
+        {
+            kinds.Add(profile.Id);
+            AssertFloat(profile.Weight).IsGreater(0);
+            foreach (string id in profile.Activities)
+            {
+                AssertThat(activities).OverrideFailureMessage($"{profile.Id} does unknown activity {id}").Contains(id);
+            }
+        }
+
+        AssertThat(kinds).Contains("commuter", "stroller", "local", "phone_zombie");
+
+        // Every gesture the walkers use, the walker scene can show.
+        var walker = GD.Load<PackedScene>("res://scenes/characters/walker.tscn").Instantiate();
+        var gestures = walker.GetNode<CharacterGestures>("Body/Gestures");
+        var known = new System.Collections.Generic.List<string>();
+        foreach (var gesture in gestures.Gestures)
+        {
+            known.Add(gesture.Id);
+        }
+
+        walker.Free();
+        foreach (var activity in crowd.Activities)
+        {
+            AssertThat(known).Contains(activity.Gesture);
+        }
+
+        foreach (var profile in crowd.Profiles)
+        {
+            if (profile.WalkingGesture.Length > 0)
+            {
+                AssertThat(known).Contains(profile.WalkingGesture);
+            }
+        }
+
+        // Window shopping happens at shops, which the city has.
+        var uses = GD.Load<ReusableGameSystems.Pools.ContentPool>("res://content/city/lot_uses/lot_uses.tres");
+        var useIds = new System.Collections.Generic.List<string>();
+        foreach (var use in uses.Entries)
+        {
+            useIds.Add(use.Id);
+        }
+
+        foreach (string use in GD.Load<WalkerActivityDefinition>("res://content/city/activities/window_shop.tres").LotUses)
+        {
+            AssertThat(useIds).Contains(use);
+        }
+    }
+
+    [TestCase]
+    public async Task PeopleInThePreviewChatAndExplainThemselves()
+    {
+        var scene = await LoadPreview();
+        var runner = _runner!;
+        await runner.StepSeconds(0.5);
+        var sim = scene.GetNode<CitySimulation>("Stage/Life").Sim!;
+        var player = scene.GetNode<Node3D>("Player");
+        var registry = new ReusableGameSystems.DebugTools.CommandRegistry();
+        DontBeLate.DebugCommands.CityLifeCommands.Register(registry);
+
+        // Nearest to the player: chat with whoever is near (someone is, in a crowd this size, or "can't").
+        var result = registry.Execute("crowd do chat");
+        AssertBool(result.Success).IsTrue();
+        var nearest = sim.NearestWalker(ReusableGameSystems.CityGen.CityLayout.ToPlan(player.GlobalPosition))!;
+        if (nearest.Partner != null)
+        {
+            await runner.Step(5);
+            AssertString(registry.Execute("crowd why").Output).Contains("chat");
+            bool talking = false;
+            foreach (var child in scene.GetNode<CrowdSpawner>("Stage/Life/Crowd").GetChildren())
+            {
+                if (child is Node3D { Visible: true } shown
+                    && ReusableGameSystems.CityGen.CityLayout.ToPlan(shown.GlobalPosition).DistanceTo(nearest.Position) < 0.01f)
+                {
+                    talking = shown.GetNode<CharacterGestures>("Body/Gestures").Gesture == "talk";
+                }
+            }
+
+            AssertBool(talking).IsTrue();
+        }
+
+        AssertString(registry.Execute("crowd kinds").Output).Contains("Activities: check_phone, chat, window_shop");
+
+        // Labels over everyone near: on, then off.
+        AssertString(registry.Execute("crowd labels").Output).StartsWith("labels on");
+        var labels = scene.GetNode<CrowdLabels>("Stage/Life/CrowdLabels");
+        await runner.Step(15);
+        AssertInt(labels.ShownCount).IsGreater(0);
+        AssertString(registry.Execute("crowd labels off").Output).IsEqual("labels off");
+        await runner.Step(2);
+        AssertInt(labels.ShownCount).IsEqual(0);
+        AssertBool(registry.Execute("crowd do juggle").Success).IsFalse();
     }
 
     [TestCase]

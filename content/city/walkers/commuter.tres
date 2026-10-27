@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WalkerProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/WalkerProfile.cs" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+WalkSpeed = Vector2(1.5, 1.8)
+Curiosity = Vector2(0.05, 0.25)
+StopsPerMinute = Vector2(0.1, 0.4)
+ArriveActivityChance = 0.2
+Activities = PackedStringArray("check_phone")
+WalkingGesture = "phone"
+WalkingGestureChance = 0.15
+Id = "commuter"
+Weight = 4.0

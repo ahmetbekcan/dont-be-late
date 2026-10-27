@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CharacterGesture" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterGesture.cs" id="1_gesture"]
+
+[resource]
+script = ExtResource("1_gesture")
+Id = "talk"
+Pose = Dictionary[String, Vector3]({
+"ElbowL": Vector3(-25, 0, 0),
+"ElbowR": Vector3(-55, 0, 0),
+"ShoulderL": Vector3(-6, 0, 0),
+"ShoulderR": Vector3(-15, 12, 0)
+})
+Wiggle = Dictionary[String, Vector3]({
+"ElbowL": Vector3(8, 0, 0),
+"ElbowR": Vector3(20, 0, 0),
+"Head": Vector3(5, 8, 3),
+"ShoulderR": Vector3(6, 10, 5),
+"Spine": Vector3(1.5, 3, 0)
+})
+WiggleRate = 0.8
+KeepMotion = 0.6

@@ -71,7 +71,7 @@ public static class CityLifeCommands
             }
         }, "traffic [info | on | off | count <n> | drivers | crazy]");
 
-        registry.Register("crowd", "People: on/off or how many.", args =>
+        registry.Register("crowd", "People: on/off, how many, what kinds, what the nearest one is up to, or make them do something.", args =>
         {
             var sim = Sim();
             switch (args.GetString(0, "info").ToLowerInvariant())
@@ -80,13 +80,41 @@ public static class CityLifeCommands
                 {
                     int sitting = 0;
                     int waiting = 0;
+                    int busy = 0;
                     foreach (var walker in sim.Walkers)
                     {
                         sitting += walker.Activity == WalkerActivity.Sitting ? 1 : 0;
                         waiting += walker.Activity == WalkerActivity.WaitingToCross ? 1 : 0;
+                        busy += walker.Activity == WalkerActivity.Busy ? 1 : 0;
                     }
 
-                    return $"{sim.Walkers.Count} of {sim.MaxWalkers} people ({sitting} sitting, {waiting} waiting to cross)";
+                    return $"{sim.Walkers.Count} of {sim.MaxWalkers} people ({sitting} sitting, {waiting} waiting to cross, {busy} busy)";
+                }
+
+                case "kinds":
+                    return Kinds(sim);
+                case "labels":
+                {
+                    var labels = Labels(true)!;
+                    labels.Visible = args.GetString(1, labels.Visible ? "off" : "on").ToLowerInvariant() switch
+                    {
+                        "on" => true,
+                        "off" => false,
+                        _ => throw args.UsageError(),
+                    };
+                    return labels.Visible ? $"labels on (people within {labels.Range:0} m)" : "labels off";
+                }
+
+                case "why":
+                    return Why(sim, NearestWalker(sim));
+                case "do":
+                {
+                    string id = args.GetString(1, "");
+                    var activity = sim.FindActivity(id) ?? throw new CommandException($"No activity '{id}'. Activities: {ActivityIds(sim)}");
+                    var walker = NearestWalker(sim);
+                    return sim.StartActivity(walker, activity)
+                        ? $"walker {walker.Id} ({walker.Position.DistanceTo(PlayerPlan()!.Value):0} m away): {id}"
+                        : $"walker {walker.Id} can't {id} right now (on a crossing, or nowhere or nobody near)";
                 }
 
                 case "on":
@@ -103,7 +131,7 @@ public static class CityLifeCommands
                 default:
                     throw args.UsageError();
             }
-        }, "crowd [info | on | off | count <n>]");
+        }, "crowd [info | on | off | count <n> | kinds | why | do <activity> | labels [on | off]]");
 
         registry.Register("signals", "Shows the traffic lights at the junction nearest you.", _ =>
         {
@@ -151,6 +179,93 @@ public static class CityLifeCommands
 
     private static Vector2? PlayerPlan() =>
         (Engine.GetMainLoop() as SceneTree)?.GetFirstNodeInGroup("player") is Node3D player ? CityLayout.ToPlan(player.GlobalPosition) : null;
+
+    /// <summary>The labels under the simulation (made, hidden, on first use).</summary>
+    private static CrowdLabels? Labels(bool make)
+    {
+        var life = CitySimulation.Current ?? throw new CommandException("No traffic in this stage.");
+        foreach (var child in life.GetChildren())
+        {
+            if (child is CrowdLabels found)
+            {
+                return found;
+            }
+        }
+
+        if (!make)
+        {
+            return null;
+        }
+
+        var labels = new CrowdLabels { Name = "CrowdLabels", Visible = false };
+        life.AddChild(labels);
+        return labels;
+    }
+
+    private static WalkerState NearestWalker(CityLifeSim sim)
+    {
+        var player = PlayerPlan() ?? throw new CommandException("No player.");
+        return sim.NearestWalker(player) ?? throw new CommandException("No people.");
+    }
+
+    /// <summary>What a walker is up to and why.</summary>
+    private static string Why(CityLifeSim sim, WalkerState walker)
+    {
+        var traits = walker.Traits;
+        var text = new StringBuilder($"walker {walker.Id}, a {traits.Profile} ({traits.WalkSpeed:0.0} m/s, curiosity {traits.Curiosity:0.00}, {traits.StopsPerMinute:0.0} stops/min): ");
+        text.Append(walker.Activity switch
+        {
+            WalkerActivity.Busy => $"{walker.Doing?.Id ?? "busy"} for {walker.TimeLeft:0} s more" + (walker.Partner is { } p ? $" with walker {p.Id}" : ""),
+            WalkerActivity.Sitting => $"sitting for {walker.TimeLeft:0} s more",
+            WalkerActivity.Idle => $"standing about for {walker.TimeLeft:0.0} s more",
+            WalkerActivity.WaitingToCross => "waiting to cross",
+            WalkerActivity.Blocked => "blocked by you",
+            _ => walker.Goal == WalkerGoal.Building ? $"on the way to {walker.Doing?.Id}" : $"walking to a {walker.Goal.ToString().ToLowerInvariant()}",
+        });
+        if (walker.Gesture.Length > 0)
+        {
+            text.Append($"; gesture {walker.Gesture}");
+        }
+
+        if (walker.LookAt is { } look)
+        {
+            text.Append(PlayerPlan() is { } player && look.DistanceTo(player) < 0.5f ? "; looking at you" : $"; looking at {look.X:0},{look.Y:0}");
+        }
+
+        return text.ToString();
+    }
+
+    private static string Kinds(CityLifeSim sim)
+    {
+        var counts = new SortedDictionary<string, int>();
+        foreach (var walker in sim.Walkers)
+        {
+            counts.TryGetValue(walker.Traits.Profile, out int n);
+            counts[walker.Traits.Profile] = n + 1;
+        }
+
+        var text = new StringBuilder($"{sim.Walkers.Count} people:");
+        foreach (var (profile, count) in counts)
+        {
+            text.Append($" {count} {profile},");
+        }
+
+        return text.ToString().TrimEnd(',') + $". Activities: {ActivityIds(sim)}";
+    }
+
+    private static string ActivityIds(CityLifeSim sim)
+    {
+        var ids = new List<string>();
+        foreach (var activity in sim.Crowd.Activities)
+        {
+            if (activity != null)
+            {
+                ids.Add(activity.Id);
+            }
+        }
+
+        return ids.Count > 0 ? string.Join(", ", ids) : "none";
+    }
 
     private static TrafficReactions? Reactions()
     {

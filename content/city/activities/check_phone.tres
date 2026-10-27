@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WalkerActivityDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/WalkerActivityDefinition.cs" id="1_activity"]
+
+[resource]
+script = ExtResource("1_activity")
+Duration = Vector2(4, 12)
+Gesture = "phone"
+Absorbing = true
+Id = "check_phone"
+Weight = 3.0

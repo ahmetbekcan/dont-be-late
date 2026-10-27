@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterGesture" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterGesture.cs" id="1_gesture"]
+
+[resource]
+script = ExtResource("1_gesture")
+Id = "browse"
+Pose = Dictionary[String, Vector3]({
+"ElbowL": Vector3(-70, 0, 0),
+"ElbowR": Vector3(-125, 0, 0),
+"Head": Vector3(8, 0, -6),
+"ShoulderL": Vector3(-10, -30, 0),
+"ShoulderR": Vector3(-35, 30, 0),
+"Spine": Vector3(4, 0, 0)
+})
+Wiggle = Dictionary[String, Vector3]({
+"Head": Vector3(2, 14, 2)
+})
+WiggleRate = 0.25
+BlendTime = 0.6
+KeepMotion = 0.2
