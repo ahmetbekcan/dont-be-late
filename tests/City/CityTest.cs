@@ -23,7 +23,7 @@ public class CityTest
     private const string PreviewPath = "res://scenes/stages/city/city_preview.tscn";
     private const string TestPath = "user://test_city.tres";
 
-    private static readonly string[] Landmarks = { "home", "bus_stop", "photo_studio", "bank", "cafe", "barbershop", "pharmacy", "school", "hospital" };
+    private static readonly string[] Landmarks = { "home", "bus_stop", "photo_studio", "bank", "cafe", "barbershop", "pharmacy", "school", "hospital", "stadium", "mall" };
 
     private ISceneRunner? _runner;
 
@@ -71,18 +71,28 @@ public class CityTest
     }
 
     [TestCase]
-    public void SchoolsAndHospitalsGetBigPlotsAndShopsHaveNames()
+    public void BigPlacesGetBigPlotsAndShopsHaveNames()
     {
         var style = GD.Load<CityStyle>(StylePath);
+        float smallest = 1;
+        string sizes = "";
         for (ulong seed = 1; seed <= 30; seed++)
         {
             var city = CityGenerator.Generate(style, seed);
-            foreach (string id in new[] { "school", "hospital" })
+            foreach (string id in new[] { "school", "hospital", "stadium", "mall" })
             {
                 var lot = city.Lots[city.FindLandmark(id)!.LotId];
                 AssertFloat(lot.Area).OverrideFailureMessage($"{id} on {lot.Area:0} m² in city {seed}").IsGreater(style.LotMaxArea);
                 AssertObject(lot.Footprint).IsNotNull();
             }
+
+            // The stadium is always the same shape, and not much smaller than full size.
+            var stadium = city.Lots[city.FindLandmark("stadium")!.LotId];
+            var arena = (ArenaBuilder)stadium.Use!.Builder!;
+            var fit = arena.Fit(stadium)!.Value;
+            AssertFloat(fit.Size.X / fit.Size.Y).IsEqualApprox(arena.FullSize.X / arena.FullSize.Y, 0.001f);
+            smallest = Mathf.Min(smallest, fit.Scale);
+            sizes += $" {seed}:{fit.Scale:0.00}";
 
             // Shops in the pool have names on their signs; a landmark shop shows the landmark's name.
             int named = 0;
@@ -97,6 +107,9 @@ public class CityTest
 
             AssertInt(named).OverrideFailureMessage($"no named shops in city {seed}").IsGreater(2);
         }
+
+        // The stadium is never much smaller than full size (it picks the plot where it fits biggest).
+        AssertFloat(smallest).OverrideFailureMessage($"stadium sizes:{sizes}").IsGreater(0.8f);
     }
 
     [TestCase]

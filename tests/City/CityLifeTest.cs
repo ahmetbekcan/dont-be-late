@@ -105,12 +105,20 @@ public class CityLifeTest
             }
         }
 
-        // Window shopping happens at shops, which the city has.
+        // Window shopping happens at shops (in the pool, or landmarks like the mall), which the city has.
         var uses = GD.Load<ReusableGameSystems.Pools.ContentPool>("res://content/city/lot_uses/lot_uses.tres");
         var useIds = new System.Collections.Generic.List<string>();
         foreach (var use in uses.Entries)
         {
             useIds.Add(use.Id);
+        }
+
+        foreach (var landmark in GD.Load<ReusableGameSystems.CityGen.CityStyle>("res://content/city/city_style.tres").Landmarks)
+        {
+            if (landmark.Use != null)
+            {
+                useIds.Add(landmark.Use.Id);
+            }
         }
 
         foreach (string use in GD.Load<WalkerActivityDefinition>("res://content/city/activities/window_shop.tres").LotUses)

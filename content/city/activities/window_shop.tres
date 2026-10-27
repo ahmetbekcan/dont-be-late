@@ -7,6 +7,6 @@ script = ExtResource("1_activity")
 Place = 1
 Duration = Vector2(6, 15)
 Gesture = "browse"
-LotUses = PackedStringArray("shop", "bakery", "grocery", "florist", "barbershop", "pharmacy")
+LotUses = PackedStringArray("shop", "bakery", "grocery", "florist", "barbershop", "pharmacy", "mall")
 Id = "window_shop"
 Weight = 1.0

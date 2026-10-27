@@ -14,6 +14,8 @@
 [ext_resource type="Resource" path="res://content/city/landmarks/pharmacy.tres" id="lm_pharmacy"]
 [ext_resource type="Resource" path="res://content/city/landmarks/school.tres" id="lm_school"]
 [ext_resource type="Resource" path="res://content/city/landmarks/hospital.tres" id="lm_hospital"]
+[ext_resource type="Resource" path="res://content/city/landmarks/stadium.tres" id="lm_stadium"]
+[ext_resource type="Resource" path="res://content/city/landmarks/mall.tres" id="lm_mall"]
 [ext_resource type="Resource" path="res://content/city/props/lamp.tres" id="10_lamp"]
 [ext_resource type="Resource" path="res://content/city/props/tree.tres" id="11_tree"]
 [ext_resource type="Resource" path="res://content/city/props/bench.tres" id="12_bench"]
@@ -87,7 +89,7 @@ Inset = 0.45
 script = ExtResource("1_style")
 Layout = SubResource("Grid")
 LotUses = ExtResource("5_uses")
-Landmarks = Array[ExtResource("3_rule")]([ExtResource("6_home"), ExtResource("7_stop"), ExtResource("8_photo"), ExtResource("9_bank"), ExtResource("lm_cafe"), ExtResource("lm_barbershop"), ExtResource("lm_pharmacy"), ExtResource("lm_school"), ExtResource("lm_hospital")])
+Landmarks = Array[ExtResource("3_rule")]([ExtResource("6_home"), ExtResource("7_stop"), ExtResource("8_photo"), ExtResource("9_bank"), ExtResource("lm_cafe"), ExtResource("lm_barbershop"), ExtResource("lm_pharmacy"), ExtResource("lm_school"), ExtResource("lm_hospital"), ExtResource("lm_stadium"), ExtResource("lm_mall")])
 Furniture = Array[ExtResource("4_furniture")]([SubResource("Lamps"), SubResource("Trees"), SubResource("Benches"), SubResource("Bins")])
 AsphaltColor = Color(0.32, 0.34, 0.4, 1)
 PavementColor = Color(0.8, 0.79, 0.78, 1)

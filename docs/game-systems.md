@@ -59,7 +59,7 @@ Built on the library, kept in the game repo:
 - **Obstacles:** the puzzle boxes, built from interactables, NPCs and rideables.
 - **Requirement chains:** no bus card → no balance → kiosk only takes cash.
 - **The four stages** and their scenes.
-- **The town:** a generated city (library `CityGen`) with the game's lot uses, props and landmarks (home, bus stop, photo studio, bank, cafe, barbershop, pharmacy, school, hospital). Shops have awnings, named signs and props; the school and hospital stand behind fenced yards on merged lots. It's new every run or one kept city, and the phone's Map app shows it with walking routes.
+- **The town:** a generated city (library `CityGen`) with the game's lot uses, props and landmarks (home, bus stop, photo studio, bank, cafe, barbershop, pharmacy, school, hospital, stadium, mall). Shops have awnings, named signs and props; the school, hospital and mall stand behind yards on merged lots, and the stadium (always the same shape) stands in a plaza on the block where it fits best. It's new every run or one kept city, and the phone's Map app shows it with walking routes.
 - **Wake-up mini games:** snooze fight, heavy eyelids, dream escape.
 - **Clue presentation:** radio, window puddles, sticky notes, phone alerts.
 - **Carryover content:** the specific return variants (shotgun neighbor, police tourist, kid with friends).

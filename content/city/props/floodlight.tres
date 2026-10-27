@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CompoundPropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CompoundPropModel.cs" id="1_m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropPart.cs" id="2_p"]
+
+[sub_resource type="Resource" id="P0"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.45, 15, 0.45)
+Color = Color(0.55, 0.57, 0.6, 1)
+Sides = 6
+
+[sub_resource type="Resource" id="P1"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(3.2, 1.8, 0.35)
+Offset = Vector3(0, 14.6, 0.1)
+Rotation = Vector3(-20, 0, 0)
+Color = Color(0.3, 0.32, 0.36, 1)
+
+[sub_resource type="Resource" id="P2"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(2.9, 1.5, 0.12)
+Offset = Vector3(0, 14.75, -0.15)
+Rotation = Vector3(-20, 0, 0)
+Color = Color(1, 0.97, 0.85, 1)
+Glows = true
+
+[resource]
+script = ExtResource("1_m")
+Id = "floodlight"
+CollisionSize = Vector3(0.6, 15, 0.6)
+CollisionCenter = Vector3(0, 7.5, 0)
+Parts = Array[ExtResource("2_p")]([SubResource("P0"), SubResource("P1"), SubResource("P2")])
