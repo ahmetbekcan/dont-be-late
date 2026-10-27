@@ -37,6 +37,12 @@ public partial class PlayerCreator : Node
         }
 
         Inventory?.AddFigureButton(ButtonText, OpenFromInventory, closeFirst: true);
+
+        // Started with "-- --creator" (play_game.bat looks): straight into the creator to try clothes.
+        if (System.Array.IndexOf(OS.GetCmdlineUserArgs(), "--creator") >= 0)
+        {
+            CallDeferred(MethodName.Open);
+        }
     }
 
     public override void _ExitTree()
