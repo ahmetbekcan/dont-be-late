@@ -1,30 +1,15 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_gbls2"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_dqxd0"]
-
-[sub_resource type="Resource" id="Resource_6043e"]
-script = ExtResource("1_gbls2")
-Offset = Vector3(0, 0.235, -0.004)
-Size = Vector3(0.285, 0.29, 0.3)
-Sides = 10
-Rings = 4
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_ykef3"]
-script = ExtResource("1_gbls2")
-Profile = 5
-Offset = Vector3(0, 0.235, -0.06)
-Size = Vector3(0.272, 0.15, 0.17)
-Sides = 10
-Rings = 3
-Wobble = 0.0
-Role = 1
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="2_dqxd0"]
 
 [resource]
 script = ExtResource("2_dqxd0")
+Thickness = 0.02
+TopVolume = 0.012
+HairlineFront = 34.0
+HairlineTemple = 30.0
+HairlineSideburn = 26.0
+HairlineSide = 24.0
+HairlineBack = 0.0
 Id = "bowl"
 DisplayName = "Bowl cut"
-Shapes = Array[ExtResource("1_gbls2")]([SubResource("Resource_6043e"), SubResource("Resource_ykef3")])

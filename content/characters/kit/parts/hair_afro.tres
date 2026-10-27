@@ -1,19 +1,18 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_lf2cr"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_nveai"]
-
-[sub_resource type="Resource" id="Resource_2uehh"]
-script = ExtResource("1_lf2cr")
-Offset = Vector3(0, 0.3, -0.03)
-Size = Vector3(0.42, 0.36, 0.4)
-Sides = 10
-Rings = 4
-Wobble = 0.04
-Role = 1
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="2_nveai"]
 
 [resource]
 script = ExtResource("2_nveai")
+Thickness = 0.075
+TopVolume = 0.07
+FrontVolume = 0.01
+HairlineFront = 48.0
+HairlineTemple = 36.0
+HairlineSideburn = 18.0
+HairlineSide = 14.0
+HairlineBack = -22.0
+Curls = 0.12
+CurlSize = 0.08
 Id = "afro"
 DisplayName = "Afro"
-Shapes = Array[ExtResource("1_lf2cr")]([SubResource("Resource_2uehh")])

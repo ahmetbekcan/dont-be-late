@@ -1,40 +1,12 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_1bo72"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_bosn8"]
-
-[sub_resource type="Resource" id="Resource_jo0u7"]
-script = ExtResource("1_1bo72")
-Offset = Vector3(0, 0.248, -0.024)
-Size = Vector3(0.275, 0.27, 0.29)
-Sides = 10
-Rings = 4
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_r0c7q"]
-script = ExtResource("1_1bo72")
-Profile = 5
-Offset = Vector3(0, 0.225, -0.06)
-Size = Vector3(0.272, 0.17, 0.17)
-Sides = 10
-Rings = 3
-Wobble = 0.0
-Role = 1
-
-[sub_resource type="Resource" id="Resource_8cefq"]
-script = ExtResource("1_1bo72")
-Profile = 9
-Offset = Vector3(0, 0.36, 0.08)
-Rotation = Vector3(60, 0, 0)
-Size = Vector3(0.16, 0.14, 0.1)
-Sides = 7
-Role = 1
-HideUnderHat = true
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="2_bosn8"]
 
 [resource]
 script = ExtResource("2_bosn8")
+Thickness = 0.012
+TopVolume = 0.012
+FrontVolume = 0.07
+HairlineFront = 56.0
 Id = "quiff"
 DisplayName = "Quiff"
-Shapes = Array[ExtResource("1_1bo72")]([SubResource("Resource_jo0u7"), SubResource("Resource_r0c7q"), SubResource("Resource_8cefq")])

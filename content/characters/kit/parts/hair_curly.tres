@@ -1,63 +1,12 @@
-[gd_resource type="Resource" script_class="CharacterPart" format=3]
+[gd_resource type="Resource" script_class="HairShellPart" format=3]
 
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/ShapeSpec.cs" id="1_ix14a"]
-[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterPart.cs" id="2_3hie6"]
-
-[sub_resource type="Resource" id="Resource_fr2yf"]
-script = ExtResource("1_ix14a")
-Offset = Vector3(0, 0.248, -0.024)
-Size = Vector3(0.3, 0.17, 0.315)
-Sides = 10
-Rings = 4
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_70wdn"]
-script = ExtResource("1_ix14a")
-Profile = 5
-Offset = Vector3(0, 0.225, -0.06)
-Size = Vector3(0.272, 0.17, 0.17)
-Sides = 10
-Rings = 3
-Wobble = 0.0
-Role = 1
-
-[sub_resource type="Resource" id="Resource_vwe8b"]
-script = ExtResource("1_ix14a")
-Offset = Vector3(0.08, 0.35, 0.06)
-Size = Vector3(0.09, 0.09, 0.09)
-Wobble = 0.0
-Role = 1
-Mirror = true
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_xmu4p"]
-script = ExtResource("1_ix14a")
-Offset = Vector3(0, 0.38, 0)
-Wobble = 0.0
-Role = 1
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_6ml8w"]
-script = ExtResource("1_ix14a")
-Offset = Vector3(0.1, 0.33, -0.06)
-Size = Vector3(0.09, 0.09, 0.09)
-Wobble = 0.0
-Role = 1
-Mirror = true
-HideUnderHat = true
-
-[sub_resource type="Resource" id="Resource_ohekd"]
-script = ExtResource("1_ix14a")
-Offset = Vector3(0.12, 0.25, -0.06)
-Size = Vector3(0.08, 0.08, 0.08)
-Wobble = 0.0
-Role = 1
-Mirror = true
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/HairShellPart.cs" id="2_3hie6"]
 
 [resource]
 script = ExtResource("2_3hie6")
+Thickness = 0.022
+TopVolume = 0.025
+Curls = 0.6
+CurlSize = 0.045
 Id = "curly"
 DisplayName = "Curly"
-Shapes = Array[ExtResource("1_ix14a")]([SubResource("Resource_fr2yf"), SubResource("Resource_70wdn"), SubResource("Resource_vwe8b"), SubResource("Resource_xmu4p"), SubResource("Resource_6ml8w"), SubResource("Resource_ohekd")])
