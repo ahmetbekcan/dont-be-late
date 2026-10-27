@@ -9,6 +9,11 @@
 [ext_resource type="Resource" path="res://content/city/landmarks/bus_stop.tres" id="7_stop"]
 [ext_resource type="Resource" path="res://content/city/landmarks/photo_studio.tres" id="8_photo"]
 [ext_resource type="Resource" path="res://content/city/landmarks/bank.tres" id="9_bank"]
+[ext_resource type="Resource" path="res://content/city/landmarks/cafe.tres" id="lm_cafe"]
+[ext_resource type="Resource" path="res://content/city/landmarks/barbershop.tres" id="lm_barbershop"]
+[ext_resource type="Resource" path="res://content/city/landmarks/pharmacy.tres" id="lm_pharmacy"]
+[ext_resource type="Resource" path="res://content/city/landmarks/school.tres" id="lm_school"]
+[ext_resource type="Resource" path="res://content/city/landmarks/hospital.tres" id="lm_hospital"]
 [ext_resource type="Resource" path="res://content/city/props/lamp.tres" id="10_lamp"]
 [ext_resource type="Resource" path="res://content/city/props/tree.tres" id="11_tree"]
 [ext_resource type="Resource" path="res://content/city/props/bench.tres" id="12_bench"]
@@ -26,6 +31,7 @@
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/trim.tres" id="m_trim"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/wall.tres" id="m_wall"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/window.tres" id="m_window"]
+[ext_resource type="Material" path="res://assets/materials/city/surfaces/shop_window.tres" id="m_shop_window"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/sand.tres" id="m_sand"]
 [ext_resource type="Material" path="res://assets/materials/city/surfaces/sea_floor.tres" id="m_sea_floor"]
 [ext_resource type="PackedScene" path="res://scenes/props/city/sea_zone.tscn" id="sea_zone"]
@@ -81,7 +87,7 @@ Inset = 0.45
 script = ExtResource("1_style")
 Layout = SubResource("Grid")
 LotUses = ExtResource("5_uses")
-Landmarks = Array[ExtResource("3_rule")]([ExtResource("6_home"), ExtResource("7_stop"), ExtResource("8_photo"), ExtResource("9_bank")])
+Landmarks = Array[ExtResource("3_rule")]([ExtResource("6_home"), ExtResource("7_stop"), ExtResource("8_photo"), ExtResource("9_bank"), ExtResource("lm_cafe"), ExtResource("lm_barbershop"), ExtResource("lm_pharmacy"), ExtResource("lm_school"), ExtResource("lm_hospital")])
 Furniture = Array[ExtResource("4_furniture")]([SubResource("Lamps"), SubResource("Trees"), SubResource("Benches"), SubResource("Bins")])
 AsphaltColor = Color(0.32, 0.34, 0.4, 1)
 PavementColor = Color(0.8, 0.79, 0.78, 1)
@@ -101,6 +107,7 @@ Materials = Dictionary[String, Material]({
 "trim": ExtResource("m_trim"),
 "wall": ExtResource("m_wall"),
 "window": ExtResource("m_window"),
+"shop_window": ExtResource("m_shop_window"),
 "sand": ExtResource("m_sand"),
 "sea_floor": ExtResource("m_sea_floor"),
 })

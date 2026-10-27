@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/barbershop.png" id="icon"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/barbershop.tres" id="use"]
+
+[resource]
+script = ExtResource("l")
+Id = "barbershop"
+DisplayName = "Barbershop"
+Category = "shop"
+Icon = ExtResource("icon")
+MapColor = Color(0.2, 0.35, 0.8, 1)
+Use = ExtResource("use")
+MinSpacing = 50.0

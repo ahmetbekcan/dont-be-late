@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="LotUse" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/ShopfrontBuilder.cs" id="b"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropModel.cs" id="pm"]
+[ext_resource type="Resource" path="res://content/city/props/planter.tres" id="p0"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("b")
+MinFloors = 1
+MaxFloors = 3
+StreetSetback = 0.8
+WallColors = PackedColorArray(0.98, 0.88, 0.8, 1, 0.95, 0.8, 0.6, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.45, 0.28, 0.2, 1)
+AwningColors = PackedColorArray(0.95, 0.6, 0.7, 1, 0.98, 0.95, 0.9, 1)
+Striped = true
+SignTexts = PackedStringArray("The Rolling Scone", "Knead to Know", "Upper Crust", "Bread Pitt", "Crumbs")
+SignColor = Color(0.55, 0.3, 0.25, 1)
+SignTextColor = Color(0.98, 0.92, 0.85, 1)
+DoorProps = Array[ExtResource("pm")]([ExtResource("p0")])
+DoorPropChance = 0.5
+
+[resource]
+script = ExtResource("u")
+Id = "bakery"
+Weight = 0.35
+MinFrontage = 8
+MapColor = Color(0.98, 0.85, 0.75, 1)
+Category = "shop"
+Builder = SubResource("Builder")

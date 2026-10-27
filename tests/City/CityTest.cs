@@ -23,7 +23,7 @@ public class CityTest
     private const string PreviewPath = "res://scenes/stages/city/city_preview.tscn";
     private const string TestPath = "user://test_city.tres";
 
-    private static readonly string[] Landmarks = { "home", "bus_stop", "photo_studio", "bank" };
+    private static readonly string[] Landmarks = { "home", "bus_stop", "photo_studio", "bank", "cafe", "barbershop", "pharmacy", "school", "hospital" };
 
     private ISceneRunner? _runner;
 
@@ -67,6 +67,35 @@ public class CityTest
             // Home and the bus stop are a walk apart, so missing the bus means something.
             float walk = city.FindLandmark("home")!.Position.DistanceTo(city.FindLandmark("bus_stop")!.Position);
             AssertFloat(walk).OverrideFailureMessage($"home and bus stop {walk:0} m apart in city {seed}").IsGreater(40f);
+        }
+    }
+
+    [TestCase]
+    public void SchoolsAndHospitalsGetBigPlotsAndShopsHaveNames()
+    {
+        var style = GD.Load<CityStyle>(StylePath);
+        for (ulong seed = 1; seed <= 30; seed++)
+        {
+            var city = CityGenerator.Generate(style, seed);
+            foreach (string id in new[] { "school", "hospital" })
+            {
+                var lot = city.Lots[city.FindLandmark(id)!.LotId];
+                AssertFloat(lot.Area).OverrideFailureMessage($"{id} on {lot.Area:0} m² in city {seed}").IsGreater(style.LotMaxArea);
+                AssertObject(lot.Footprint).IsNotNull();
+            }
+
+            // Shops in the pool have names on their signs; a landmark shop shows the landmark's name.
+            int named = 0;
+            foreach (var lot in city.Lots)
+            {
+                if (lot.Use?.Builder is ShopfrontBuilder)
+                {
+                    named += lot.SignText.Length > 0 ? 1 : 0;
+                    AssertFloat(lot.SignHeight).IsGreater(2f);
+                }
+            }
+
+            AssertInt(named).OverrideFailureMessage($"no named shops in city {seed}").IsGreater(2);
         }
     }
 

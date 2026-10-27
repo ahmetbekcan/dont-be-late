@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/cafe.png" id="icon"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/cafe.tres" id="use"]
+
+[resource]
+script = ExtResource("l")
+Id = "cafe"
+DisplayName = "Cafe"
+Category = "food"
+Icon = ExtResource("icon")
+MapColor = Color(0.55, 0.35, 0.2, 1)
+Use = ExtResource("use")
+Preference = 1
+MinSpacing = 50.0

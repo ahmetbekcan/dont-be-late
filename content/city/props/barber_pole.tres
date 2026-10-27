@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="CompoundPropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CompoundPropModel.cs" id="1_m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropPart.cs" id="2_p"]
+
+[sub_resource type="Resource" id="P0"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.3, 0.12, 0.3)
+Color = Color(0.75, 0.75, 0.78, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P1"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.08, 0.5, 0.08)
+Offset = Vector3(0, 0.12, 0)
+Color = Color(0.75, 0.75, 0.78, 1)
+Sides = 6
+
+[sub_resource type="Resource" id="P2"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 0.62, 0)
+Rotation = Vector3(0, 0, 8)
+Color = Color(0.86, 0.16, 0.18, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P3"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 0.72, 0)
+Rotation = Vector3(0, 18, 8)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P4"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 0.8200000000000001, 0)
+Rotation = Vector3(0, 36, 8)
+Color = Color(0.15, 0.35, 0.8, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P5"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 0.92, 0)
+Rotation = Vector3(0, 54, 8)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P6"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.02, 0)
+Rotation = Vector3(0, 72, 8)
+Color = Color(0.86, 0.16, 0.18, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P7"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.12, 0)
+Rotation = Vector3(0, 90, 8)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P8"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.2200000000000002, 0)
+Rotation = Vector3(0, 108, 8)
+Color = Color(0.15, 0.35, 0.8, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P9"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.32, 0)
+Rotation = Vector3(0, 126, 8)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P10"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.42, 0)
+Rotation = Vector3(0, 144, 8)
+Color = Color(0.86, 0.16, 0.18, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P11"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.2, 0.1, 0.2)
+Offset = Vector3(0, 1.52, 0)
+Rotation = Vector3(0, 162, 8)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P12"]
+script = ExtResource("2_p")
+Shape = 1
+Size = Vector3(0.24, 0.16, 0.24)
+Offset = Vector3(0, 1.63, 0)
+Color = Color(0.75, 0.75, 0.78, 1)
+Sides = 10
+
+[resource]
+script = ExtResource("1_m")
+Id = "barber_pole"
+CollisionSize = Vector3(0.3, 1.8, 0.3)
+CollisionCenter = Vector3(0, 0.9, 0)
+Parts = Array[ExtResource("2_p")]([SubResource("P0"), SubResource("P1"), SubResource("P2"), SubResource("P3"), SubResource("P4"), SubResource("P5"), SubResource("P6"), SubResource("P7"), SubResource("P8"), SubResource("P9"), SubResource("P10"), SubResource("P11"), SubResource("P12")])

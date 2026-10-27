@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="LotUse" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/ShopfrontBuilder.cs" id="b"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropModel.cs" id="pm"]
+[ext_resource type="Resource" path="res://content/city/props/fruit_stand.tres" id="p0"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("b")
+MinFloors = 1
+MaxFloors = 2
+StreetSetback = 2.2
+WallColors = PackedColorArray(0.9, 0.85, 0.7, 1, 0.75, 0.82, 0.7, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.45, 0.28, 0.2, 1)
+AwningColors = PackedColorArray(0.25, 0.6, 0.3, 1)
+Striped = false
+SignTexts = PackedStringArray("Corner Shop", "Fresh Mart", "Mini Market", "Open Late", "Lettuce Turnip")
+TerraceProps = Array[ExtResource("pm")]([ExtResource("p0")])
+
+[resource]
+script = ExtResource("u")
+Id = "grocery"
+Weight = 0.35
+MinFrontage = 10
+MapColor = Color(0.8, 0.9, 0.7, 1)
+Category = "shop"
+Builder = SubResource("Builder")

@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/school.png" id="icon"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/YardBuildingBuilder.cs" id="b"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropModel.cs" id="pm"]
+[ext_resource type="Resource" path="res://content/city/props/basketball_hoop.tres" id="p0"]
+[ext_resource type="Resource" path="res://content/city/props/climbing_frame.tres" id="p1"]
+[ext_resource type="Resource" path="res://content/city/props/bench.tres" id="p2"]
+[ext_resource type="Resource" path="res://content/city/props/tree.tres" id="p3"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("b")
+MinFloors = 2
+MaxFloors = 2
+StreetSetback = 1.5
+WallColors = PackedColorArray(0.8, 0.45, 0.32, 1, 0.92, 0.82, 0.6, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.2, 0.35, 0.6, 1)
+YardDepth = 10
+FenceColor = Color(0.2, 0.45, 0.3, 1)
+YardProps = Array[ExtResource("pm")]([ExtResource("p0"), ExtResource("p1"), ExtResource("p2"), ExtResource("p3")])
+YardPropCount = Vector2i(4, 7)
+CanopyWidth = 3.5
+
+[sub_resource type="Resource" id="Use"]
+script = ExtResource("u")
+Id = "school"
+MinArea = 500
+MinFrontage = 18
+GroundSurface = "asphalt"
+MapColor = Color(0.95, 0.85, 0.65, 1)
+Category = "education"
+Builder = SubResource("Builder")
+
+[resource]
+script = ExtResource("l")
+Id = "school"
+DisplayName = "School"
+Category = "education"
+Icon = ExtResource("icon")
+MapColor = Color(0.95, 0.55, 0.15, 1)
+Use = SubResource("Use")
+MinSpacing = 60.0

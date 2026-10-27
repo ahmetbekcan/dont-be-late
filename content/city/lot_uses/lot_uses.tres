@@ -9,7 +9,13 @@
 [ext_resource type="Resource" path="res://content/city/lot_uses/park.tres" id="u_park"]
 [ext_resource type="Resource" path="res://content/city/lot_uses/woods.tres" id="u_woods"]
 [ext_resource type="Resource" path="res://content/city/lot_uses/parking.tres" id="u_parking"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/cafe.tres" id="u_cafe"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/barbershop.tres" id="u_barbershop"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/bakery.tres" id="u_bakery"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/grocery.tres" id="u_grocery"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/florist.tres" id="u_florist"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/pharmacy.tres" id="u_pharmacy"]
 
 [resource]
 script = ExtResource("1_pool")
-Entries = Array[ExtResource("2_entry")]([ExtResource("u_house"), ExtResource("u_flats"), ExtResource("u_shop"), ExtResource("u_office"), ExtResource("u_park"), ExtResource("u_woods"), ExtResource("u_parking")])
+Entries = Array[ExtResource("2_entry")]([ExtResource("u_house"), ExtResource("u_flats"), ExtResource("u_shop"), ExtResource("u_office"), ExtResource("u_park"), ExtResource("u_woods"), ExtResource("u_parking"), ExtResource("u_cafe"), ExtResource("u_barbershop"), ExtResource("u_bakery"), ExtResource("u_grocery"), ExtResource("u_florist"), ExtResource("u_pharmacy")])

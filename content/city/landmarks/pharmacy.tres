@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/pharmacy.png" id="icon"]
+[ext_resource type="Resource" path="res://content/city/lot_uses/pharmacy.tres" id="use"]
+
+[resource]
+script = ExtResource("l")
+Id = "pharmacy"
+DisplayName = "Pharmacy"
+Category = "health"
+Icon = ExtResource("icon")
+MapColor = Color(0.15, 0.6, 0.4, 1)
+Use = ExtResource("use")
+MinSpacing = 50.0

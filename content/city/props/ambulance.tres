@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="CompoundPropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CompoundPropModel.cs" id="1_m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropPart.cs" id="2_p"]
+
+[sub_resource type="Resource" id="P0"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(2, 1.75, 4.8)
+Offset = Vector3(0, 0.3, 0)
+Color = Color(0.97, 0.96, 0.93, 1)
+
+[sub_resource type="Resource" id="P1"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(2.03, 0.3, 4.83)
+Offset = Vector3(0, 0.95, 0)
+Color = Color(0.86, 0.16, 0.18, 1)
+
+[sub_resource type="Resource" id="P2"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(1.7, 0.6, 0.05)
+Offset = Vector3(0, 1.3, -2.41)
+Color = Color(0.3, 0.45, 0.6, 1)
+
+[sub_resource type="Resource" id="P3"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.9, 0.15, 0.3)
+Offset = Vector3(0, 2.05, -1.8)
+Color = Color(0.25, 0.45, 1, 1)
+Glows = true
+
+[sub_resource type="Resource" id="P4"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.6, 0.6, 0.6)
+Offset = Vector3(-0.9, 0, -1.5)
+Rotation = Vector3(0, 0, 90)
+Color = Color(0.15, 0.15, 0.17, 1)
+Sides = 8
+
+[sub_resource type="Resource" id="P5"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.6, 0.6, 0.6)
+Offset = Vector3(0.9, 0, -1.5)
+Rotation = Vector3(0, 0, 90)
+Color = Color(0.15, 0.15, 0.17, 1)
+Sides = 8
+
+[sub_resource type="Resource" id="P6"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.6, 0.6, 0.6)
+Offset = Vector3(-0.9, 0, 1.5)
+Rotation = Vector3(0, 0, 90)
+Color = Color(0.15, 0.15, 0.17, 1)
+Sides = 8
+
+[sub_resource type="Resource" id="P7"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.6, 0.6, 0.6)
+Offset = Vector3(0.9, 0, 1.5)
+Rotation = Vector3(0, 0, 90)
+Color = Color(0.15, 0.15, 0.17, 1)
+Sides = 8
+
+[resource]
+script = ExtResource("1_m")
+Id = "ambulance"
+CollisionSize = Vector3(2, 2.1, 4.8)
+CollisionCenter = Vector3(0, 1.05, 0)
+Parts = Array[ExtResource("2_p")]([SubResource("P0"), SubResource("P1"), SubResource("P2"), SubResource("P3"), SubResource("P4"), SubResource("P5"), SubResource("P6"), SubResource("P7")])

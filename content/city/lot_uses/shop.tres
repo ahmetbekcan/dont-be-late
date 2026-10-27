@@ -16,7 +16,7 @@ DoorColor = Color(0.45, 0.28, 0.2, 1)
 [resource]
 script = ExtResource("1_u")
 Id = "shop"
-Weight = 1.5
+Weight = 0.6
 MinFrontage = 10.0
 MapColor = Color(1.0, 0.8, 0.65, 1)
 Category = "shop"

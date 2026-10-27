@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="LandmarkRule" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LandmarkRule.cs" id="l"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/map/hospital.png" id="icon"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/LotUse.cs" id="u"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/YardBuildingBuilder.cs" id="b"]
+[ext_resource type="Texture2D" path="res://assets/textures/city/red_cross.png" id="emblem"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropModel.cs" id="pm"]
+[ext_resource type="Resource" path="res://content/city/props/ambulance.tres" id="p0"]
+[ext_resource type="Resource" path="res://content/city/props/car_blue.tres" id="p1"]
+[ext_resource type="Resource" path="res://content/city/props/car_red.tres" id="p2"]
+[ext_resource type="Resource" path="res://content/city/props/car_yellow.tres" id="p3"]
+
+[sub_resource type="Resource" id="Builder"]
+script = ExtResource("b")
+MinFloors = 4
+MaxFloors = 5
+StreetSetback = 1.5
+WallColors = PackedColorArray(0.95, 0.95, 0.93, 1, 0.85, 0.9, 0.95, 1)
+RoofColor = Color(0.42, 0.4, 0.45, 1)
+WindowColor = Color(0.3, 0.5, 0.8, 1)
+DoorColor = Color(0.3, 0.5, 0.7, 1)
+YardDepth = 11
+FenceColor = Color(0.6, 0.62, 0.65, 1)
+YardProps = Array[ExtResource("pm")]([ExtResource("p0"), ExtResource("p1"), ExtResource("p2"), ExtResource("p3")])
+YardPropCount = Vector2i(4, 7)
+YardPropSpacing = 5.5
+AlignYardProps = true
+CanopyWidth = 6
+Emblem = ExtResource("emblem")
+EmblemSize = 2.6
+
+[sub_resource type="Resource" id="Use"]
+script = ExtResource("u")
+Id = "hospital"
+MinArea = 500
+MinFrontage = 18
+GroundSurface = "parking"
+MapColor = Color(0.95, 0.85, 0.85, 1)
+Category = "health"
+Builder = SubResource("Builder")
+
+[resource]
+script = ExtResource("l")
+Id = "hospital"
+DisplayName = "Hospital"
+Category = "health"
+Icon = ExtResource("icon")
+MapColor = Color(0.86, 0.16, 0.18, 1)
+Use = SubResource("Use")
+MinSpacing = 60.0

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="CompoundPropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CompoundPropModel.cs" id="1_m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropPart.cs" id="2_p"]
+
+[sub_resource type="Resource" id="P0"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.12, 3.2, 0.12)
+Color = Color(0.2, 0.22, 0.28, 1)
+Sides = 6
+
+[sub_resource type="Resource" id="P1"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.08, 0.08, 0.5)
+Offset = Vector3(0, 2.9, -0.25)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P2"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(1.2, 0.8, 0.05)
+Offset = Vector3(0, 2.7, -0.52)
+Color = Color(0.97, 0.96, 0.93, 1)
+
+[sub_resource type="Resource" id="P3"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.4, 0.3, 0.06)
+Offset = Vector3(0, 2.85, -0.55)
+Color = Color(0.86, 0.3, 0.2, 1)
+
+[sub_resource type="Resource" id="P4"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.46, 0.03, 0.46)
+Offset = Vector3(0, 2.95, -0.8)
+Color = Color(0.95, 0.45, 0.15, 1)
+Sides = 10
+
+[resource]
+script = ExtResource("1_m")
+Id = "basketball_hoop"
+CollisionSize = Vector3(0.25, 3.2, 0.25)
+CollisionCenter = Vector3(0, 1.6, 0)
+Parts = Array[ExtResource("2_p")]([SubResource("P0"), SubResource("P1"), SubResource("P2"), SubResource("P3"), SubResource("P4")])

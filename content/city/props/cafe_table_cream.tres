@@ -1,0 +1,132 @@
+[gd_resource type="Resource" script_class="CompoundPropModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/CompoundPropModel.cs" id="1_m"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/PropPart.cs" id="2_p"]
+
+[sub_resource type="Resource" id="P0"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.08, 0.72, 0.08)
+Color = Color(0.2, 0.22, 0.28, 1)
+Sides = 6
+
+[sub_resource type="Resource" id="P1"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.5, 0.04, 0.5)
+Color = Color(0.2, 0.22, 0.28, 1)
+Sides = 10
+
+[sub_resource type="Resource" id="P2"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.8, 0.04, 0.8)
+Offset = Vector3(0, 0.72, 0)
+Color = Color(0.97, 0.96, 0.93, 1)
+Sides = 12
+
+[sub_resource type="Resource" id="P3"]
+script = ExtResource("2_p")
+Shape = 3
+Size = Vector3(0.05, 2.1, 0.05)
+Color = Color(0.85, 0.85, 0.82, 1)
+Sides = 6
+
+[sub_resource type="Resource" id="P4"]
+script = ExtResource("2_p")
+Shape = 2
+Size = Vector3(2.1, 0.45, 2.1)
+Offset = Vector3(0, 1.85, 0)
+Color = Color(0.95, 0.9, 0.78, 1)
+Sides = 8
+
+[sub_resource type="Resource" id="P5"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.42, 0.06, 0.42)
+Offset = Vector3(-0.7, 0.45, 0)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P6"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.06, 0.45, 0.42)
+Offset = Vector3(-0.9, 0.45, 0)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P7"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(-0.52, 0, 0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P8"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(-0.52, 0, -0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P9"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(-0.88, 0, 0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P10"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(-0.88, 0, -0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P11"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.42, 0.06, 0.42)
+Offset = Vector3(0.7, 0.45, 0)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P12"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.06, 0.45, 0.42)
+Offset = Vector3(0.9, 0.45, 0)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P13"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(0.52, 0, 0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P14"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(0.52, 0, -0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P15"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(0.88, 0, 0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[sub_resource type="Resource" id="P16"]
+script = ExtResource("2_p")
+Shape = 7
+Size = Vector3(0.04, 0.45, 0.04)
+Offset = Vector3(0.88, 0, -0.18)
+Color = Color(0.2, 0.22, 0.28, 1)
+
+[resource]
+script = ExtResource("1_m")
+Id = "cafe_table_cream"
+CollisionSize = Vector3(2, 1, 0.9)
+CollisionCenter = Vector3(0, 0.5, 0)
+Parts = Array[ExtResource("2_p")]([SubResource("P0"), SubResource("P1"), SubResource("P2"), SubResource("P3"), SubResource("P4"), SubResource("P5"), SubResource("P6"), SubResource("P7"), SubResource("P8"), SubResource("P9"), SubResource("P10"), SubResource("P11"), SubResource("P12"), SubResource("P13"), SubResource("P14"), SubResource("P15"), SubResource("P16")])
