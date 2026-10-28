@@ -1,3 +1,4 @@
 [submodule "addons/ReusableGameSystems"]
 	path = addons/ReusableGameSystems
 	url = https://github.com/ahmetbekcan/ReusableGameSystems.git
+	branch = main
