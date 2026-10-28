@@ -234,8 +234,8 @@ public class CityTest
         AssertInt(sim.Citizens.Count).IsEqual(400);
 
         // Stand where someone is walking to work: they're on the street, as one of the town's people.
-        var commuter = sim.Citizens.FirstOrDefault(c => c.Status == CitizenStatus.Travelling && c.Trip != null)
-            ?? sim.Citizens.First(c => c.IsEmbodied && c.Status == CitizenStatus.Travelling);
+        var commuter = sim.Citizens.FirstOrDefault(c => c.Status == CitizenStatus.Travelling && c.Trip is { Mode: TravelMode.Walk })
+            ?? sim.Citizens.First(c => c.Walker != null && c.Status == CitizenStatus.Travelling);
         var player = scene.GetNode<Node3D>("Player");
         player.GlobalPosition = CityLayout.ToWorld(commuter.Position, 0.5f);
         await _runner!.Step(5);

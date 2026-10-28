@@ -70,3 +70,4 @@ Names = ExtResource("51_resource")
 EmbodyRadius = 65.0
 MaxEmbodied = 45
 RethinkMinutes = 40.0
+DriveOver = 100.0

@@ -9,5 +9,5 @@
 
 [resource]
 script = ExtResource("1_traffic")
-MaxCars = 20
+MaxCars = 8
 Drivers = Array[ExtResource("2_driver")]([ExtResource("d_calm"), ExtResource("d_normal"), ExtResource("d_in_a_hurry"), ExtResource("d_crazy")])

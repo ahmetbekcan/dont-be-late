@@ -32,3 +32,4 @@ Routine = ExtResource("2_resource")
 Walker = ExtResource("3_resource")
 TagRules = Array[ExtResource("4_script")]([SubResource("CitizenTagRule_1")])
 Traits = Array[ExtResource("5_script")]([SubResource("CitizenTraitRange_2"), SubResource("CitizenTraitRange_3")])
+CarOwnership = 0.5

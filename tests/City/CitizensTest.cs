@@ -1,5 +1,6 @@
 namespace DontBeLate.Tests.City;
 
+using System.Collections.Generic;
 using System.Linq;
 using GdUnit4;
 using Godot;
@@ -64,12 +65,25 @@ public class CitizensTest
         sim.Start(At(0, 7.5f));
         int arrivedAtWork = 0;
         int mostOnTheWay = 0;
+        var drove = new HashSet<Citizen>();
         sim.Arrived += (citizen, place) => arrivedAtWork += place == citizen.DayPlace ? 1 : 0;
         for (double t = sim.Time; t < At(0, 8.5f); t += 15)
         {
             sim.Step(t, null);
             mostOnTheWay = System.Math.Max(mostOnTheWay, sim.Citizens.Count(c => c.Status == CitizenStatus.Travelling));
+            foreach (var citizen in sim.Citizens)
+            {
+                if (citizen.Trip?.Mode == TravelMode.Drive)
+                {
+                    drove.Add(citizen);
+                }
+            }
         }
+
+        // Car owners with a longer commute drive it.
+        var owners = sim.Citizens.Where(c => c.HasCar && c.DayPlace != null).Select(c => c.Home!.Position.DistanceTo(c.DayPlace!.Position)).OrderBy(d => d).ToList();
+        AssertInt(drove.Count).OverrideFailureMessage($"{drove.Count} drove; {sim.Citizens.Count(c => c.HasCar)} own cars; commutes median {owners.ElementAtOrDefault(owners.Count / 2):0} max {owners.LastOrDefault():0}; town {sim.Layout.Bounds.Size}; kerbs {sim.Places.Count(p => p.Kerb.IsValid)}/{sim.Places.Count}").IsGreater(20);
+        AssertBool(drove.All(c => c.HasCar)).IsTrue();
 
         // Trips across town take minutes, so the rush is a stream of people rather than everyone at once.
         AssertInt(arrivedAtWork).OverrideFailureMessage($"{arrivedAtWork} got to work or school by 8:30").IsGreater(150);

@@ -223,7 +223,8 @@ public class CityLifeTest
         await runner.StepSeconds(1);
         var life = scene.GetNode<CitySimulation>("Stage/Life");
         var sim = life.Sim!;
-        AssertInt(sim.Cars.Count).IsGreater(10);
+        // Anonymous traffic fills up to its count; the town's own drivers come on top.
+        AssertInt(sim.Cars.Count(c => c.Owner == null)).IsEqual(sim.MaxCars);
         // Passers-by fill up to the crowd's count; the town's own people (citizens) come on top.
         int passersBy = 0;
         foreach (var walker in sim.Walkers)
