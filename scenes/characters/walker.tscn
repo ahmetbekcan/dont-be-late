@@ -25,6 +25,7 @@
 [ext_resource type="Resource" path="res://content/characters/clips/dance.tres" id="23_dance"]
 [ext_resource type="Resource" path="res://content/characters/clips/walk_formal.tres" id="24_walk_formal"]
 [ext_resource type="Resource" path="res://content/characters/clips/sprint.tres" id="25_sprint"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Appearance/CharacterLod.cs" id="26_lod"]
 
 [sub_resource type="CapsuleShape3D" id="shape"]
 radius = 0.3
@@ -71,3 +72,6 @@ Skip = Array[String](["Head"])
 [node name="Gestures" type="Node" parent="Body"]
 script = ExtResource("6_gestures")
 Gestures = Array[ExtResource("7_gesture")]([ExtResource("8_phone"), ExtResource("9_talk"), ExtResource("10_browse")])
+
+[node name="Lod" type="Node" parent="Body"]
+script = ExtResource("26_lod")
