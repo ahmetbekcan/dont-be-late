@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CitizenNeed" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenNeed.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "fun"
+RisePerHour = Vector2(0.01, 0.04)
+Start = Vector2(0.0, 0.6)
+Threshold = 0.5

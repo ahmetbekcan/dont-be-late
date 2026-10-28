@@ -1,5 +1,6 @@
 using DontBeLate.DebugCommands;
 using Godot;
+using ReusableGameSystems.Citizens;
 using ReusableGameSystems.CityGen;
 using ReusableGameSystems.Randomness;
 using ReusableGameSystems.Runs;
@@ -45,6 +46,7 @@ public partial class CityStage : Node3D
         Current = this;
         CityCommands.Register();
         CityLifeCommands.Register();
+        CitizenCommands.Register();
         ClipCommands.Register();
         Settings = CityStore.Load();
         _runs = RunManager.Instance;

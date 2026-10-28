@@ -13,6 +13,6 @@
 
 [resource]
 script = ExtResource("1_crowd")
-MaxWalkers = 30
+MaxWalkers = 12
 Profiles = Array[ExtResource("2_profile")]([ExtResource("w_commuter"), ExtResource("w_stroller"), ExtResource("w_local"), ExtResource("w_phone_zombie")])
 Activities = Array[ExtResource("3_activity")]([ExtResource("a_check_phone"), ExtResource("a_chat"), ExtResource("a_window_shop")])

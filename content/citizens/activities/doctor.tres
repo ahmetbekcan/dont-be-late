@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CitizenActivity" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "doctor"
+DisplayName = "seeing a doctor"
+Where = 2
+Offer = "treatment"
+Duration = Vector2(45.0, 120.0)
+Satisfies = {
+"health": 1.0
+}
+Weight = 0.6

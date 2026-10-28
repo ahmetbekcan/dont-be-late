@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceType" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/PlaceType.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "park"
+DisplayName = "park"
+Match = PackedStringArray("park", "woods")
+Offers = PackedStringArray("stroll")
+Indoor = false
+Opens = 6.0
+Closes = 22.0
+SpotsPerHundredSquareMeters = 1.2

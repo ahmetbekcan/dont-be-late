@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CitizenActivity" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="1_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/NotCondition.cs" id="2_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Conditions/FlagCondition.cs" id="3_script"]
+[ext_resource type="Resource" path="res://content/citizens/on_site/scroll_phone.tres" id="4_resource"]
+
+[sub_resource type="Resource" id="FlagCondition_1"]
+script = ExtResource("3_script")
+Key = "raining"
+
+[sub_resource type="Resource" id="NotCondition_2"]
+script = ExtResource("2_script")
+Inner = SubResource("FlagCondition_1")
+
+[resource]
+script = ExtResource("1_script")
+Id = "park"
+DisplayName = "in the park"
+Where = 2
+Offer = "stroll"
+Duration = Vector2(20.0, 60.0)
+Satisfies = {
+"fresh_air": 0.9,
+"fun": 0.3
+}
+Trait = "sporty"
+When = SubResource("NotCondition_2")
+OnSite = ExtResource("4_resource")

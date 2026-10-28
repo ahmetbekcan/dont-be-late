@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using DontBeLate.City;
 using Godot;
+using ReusableGameSystems.Citizens;
 using ReusableGameSystems.CityGen;
 using ReusableGameSystems.CityLife;
 using ReusableGameSystems.DebugTools;
@@ -197,7 +198,7 @@ public static class CityLifeCommands
             return null;
         }
 
-        var labels = new CrowdLabels { Name = "CrowdLabels", Visible = false };
+        var labels = new CitizenLabels { Name = "CrowdLabels", Visible = false };
         life.AddChild(labels);
         return labels;
     }

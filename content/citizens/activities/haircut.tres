@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CitizenActivity" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "haircut"
+DisplayName = "getting a haircut"
+Where = 2
+Offer = "haircut"
+Duration = Vector2(20.0, 45.0)
+Satisfies = {
+"grooming": 1.0
+}

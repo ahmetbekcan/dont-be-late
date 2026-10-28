@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CityEvent" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CityEvent.cs" id="1_script"]
+[ext_resource type="Resource" path="res://content/citizens/activities/watch_match.tres" id="2_resource"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "midweek_match"
+DisplayName = "Rovers v United (midweek)"
+Place = "stadium"
+Days = 4
+Start = 19.5
+End = 21.5
+ArriveEarly = Vector2(20.0, 60.0)
+Activity = ExtResource("2_resource")
+AttendeeTags = PackedStringArray("fan:*")
+Attendance = 0.5

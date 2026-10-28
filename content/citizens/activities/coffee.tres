@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CitizenActivity" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "coffee"
+DisplayName = "having a coffee"
+Where = 2
+Offer = "coffee"
+Duration = Vector2(10.0, 30.0)
+Satisfies = {
+"hunger": 0.6,
+"fun": 0.2
+}
+Trait = "sociable"
+MaxDistance = 600.0

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CitizenRoutine" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenRoutine.cs" id="1_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/RoutineEntry.cs" id="2_script"]
+[ext_resource type="Resource" path="res://content/citizens/activities/sleep.tres" id="3_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/study.tres" id="4_resource"]
+
+[sub_resource type="Resource" id="RoutineEntry_1"]
+script = ExtResource("2_script")
+Days = 0
+Start = 22.0
+End = 6.75
+Jitter = 30.0
+Activity = ExtResource("3_resource")
+
+[sub_resource type="Resource" id="RoutineEntry_2"]
+script = ExtResource("2_script")
+Days = 31
+Start = 7.9
+End = 15.0
+Jitter = 12.0
+Activity = ExtResource("4_resource")
+Chance = 0.98
+
+[resource]
+script = ExtResource("1_script")
+Entries = Array[ExtResource("2_script")]([SubResource("RoutineEntry_1"), SubResource("RoutineEntry_2")])

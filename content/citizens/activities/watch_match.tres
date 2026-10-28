@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CitizenActivity" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+Id = "watch_match"
+DisplayName = "at the match"
+Where = 2
+Offer = "match"
+Duration = Vector2(0.0, 0.0)
+Satisfies = {
+"fun": 1.0
+}

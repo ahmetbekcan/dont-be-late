@@ -51,6 +51,8 @@
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityGen/StreetLights.cs" id="54_lights"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Meters/MeterDefinition.cs" id="55_meterdef"]
 [ext_resource type="Resource" path="res://content/meters/wetness.tres" id="56_wetness"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenLife.cs" id="70_citizens"]
+[ext_resource type="Resource" path="res://content/citizens/citizens.tres" id="71_citizen_settings"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule"]
 radius = 0.4
@@ -93,6 +95,10 @@ Feelings = {
 "annoyed": ExtResource("60_annoyed"),
 "startled": ExtResource("61_surprised")
 }
+
+[node name="Citizens" type="Node" parent="Stage/Life"]
+script = ExtResource("70_citizens")
+Settings = ExtResource("71_citizen_settings")
 
 [node name="TrafficReactions" type="Node" parent="." node_paths=PackedStringArray("Simulation", "Player")]
 script = ExtResource("50_reactions")

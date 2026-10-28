@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="CitizenSettings" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenSettings.cs" id="1_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenArchetype.cs" id="2_script"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/office_worker.tres" id="3_resource"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/shop_worker.tres" id="4_resource"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/student.tres" id="5_resource"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/carer.tres" id="6_resource"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/night_worker.tres" id="7_resource"]
+[ext_resource type="Resource" path="res://content/citizens/archetypes/retiree.tres" id="8_resource"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/PlaceType.cs" id="9_script"]
+[ext_resource type="Resource" path="res://content/citizens/places/home.tres" id="10_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/cafe.tres" id="11_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/bakery.tres" id="12_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/grocery.tres" id="13_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/pharmacy.tres" id="14_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/barbershop.tres" id="15_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/florist.tres" id="16_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/mall.tres" id="17_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/shop.tres" id="18_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/bank.tres" id="19_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/office.tres" id="20_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/school.tres" id="21_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/hospital.tres" id="22_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/stadium.tres" id="23_resource"]
+[ext_resource type="Resource" path="res://content/citizens/places/park.tres" id="24_resource"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/PlaceSource.cs" id="25_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CoastPlaceSource.cs" id="26_script"]
+[ext_resource type="Resource" path="res://content/citizens/places/beach.tres" id="27_resource"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenNeed.cs" id="28_script"]
+[ext_resource type="Resource" path="res://content/citizens/needs/hunger.tres" id="29_resource"]
+[ext_resource type="Resource" path="res://content/citizens/needs/groceries.tres" id="30_resource"]
+[ext_resource type="Resource" path="res://content/citizens/needs/health.tres" id="31_resource"]
+[ext_resource type="Resource" path="res://content/citizens/needs/grooming.tres" id="32_resource"]
+[ext_resource type="Resource" path="res://content/citizens/needs/fresh_air.tres" id="33_resource"]
+[ext_resource type="Resource" path="res://content/citizens/needs/fun.tres" id="34_resource"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenActivity.cs" id="35_script"]
+[ext_resource type="Resource" path="res://content/citizens/activities/coffee.tres" id="36_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/breakfast.tres" id="37_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/lunch.tres" id="38_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/groceries.tres" id="39_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/pharmacy.tres" id="40_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/doctor.tres" id="41_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/haircut.tres" id="42_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/flowers.tres" id="43_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/browse.tres" id="44_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/park.tres" id="45_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/beach.tres" id="46_resource"]
+[ext_resource type="Resource" path="res://content/citizens/activities/home.tres" id="47_resource"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CityEvent.cs" id="48_script"]
+[ext_resource type="Resource" path="res://content/citizens/events/home_match.tres" id="49_resource"]
+[ext_resource type="Resource" path="res://content/citizens/events/midweek_match.tres" id="50_resource"]
+[ext_resource type="Resource" path="res://content/citizens/names.tres" id="51_resource"]
+
+[sub_resource type="Resource" id="CoastPlaceSource_1"]
+script = ExtResource("26_script")
+Type = ExtResource("27_resource")
+
+[resource]
+script = ExtResource("1_script")
+Count = 400
+Archetypes = Array[ExtResource("2_script")]([ExtResource("3_resource"), ExtResource("4_resource"), ExtResource("5_resource"), ExtResource("6_resource"), ExtResource("7_resource"), ExtResource("8_resource")])
+PlaceTypes = Array[ExtResource("9_script")]([ExtResource("10_resource"), ExtResource("11_resource"), ExtResource("12_resource"), ExtResource("13_resource"), ExtResource("14_resource"), ExtResource("15_resource"), ExtResource("16_resource"), ExtResource("17_resource"), ExtResource("18_resource"), ExtResource("19_resource"), ExtResource("20_resource"), ExtResource("21_resource"), ExtResource("22_resource"), ExtResource("23_resource"), ExtResource("24_resource")])
+ExtraPlaces = Array[ExtResource("25_script")]([SubResource("CoastPlaceSource_1")])
+Needs = Array[ExtResource("28_script")]([ExtResource("29_resource"), ExtResource("30_resource"), ExtResource("31_resource"), ExtResource("32_resource"), ExtResource("33_resource"), ExtResource("34_resource")])
+Activities = Array[ExtResource("35_script")]([ExtResource("36_resource"), ExtResource("37_resource"), ExtResource("38_resource"), ExtResource("39_resource"), ExtResource("40_resource"), ExtResource("41_resource"), ExtResource("42_resource"), ExtResource("43_resource"), ExtResource("44_resource"), ExtResource("45_resource"), ExtResource("46_resource")])
+Idle = ExtResource("47_resource")
+Events = Array[ExtResource("48_script")]([ExtResource("49_resource"), ExtResource("50_resource")])
+Names = ExtResource("51_resource")
+EmbodyRadius = 65.0
+MaxEmbodied = 45
+RethinkMinutes = 40.0

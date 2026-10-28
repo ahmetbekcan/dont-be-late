@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceType" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/PlaceType.cs" id="1_script"]
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/PlaceRole.cs" id="2_script"]
+
+[sub_resource type="Resource" id="PlaceRole_1"]
+script = ExtResource("2_script")
+Role = "worker"
+Count = Vector2i(2, 3)
+
+[resource]
+script = ExtResource("1_script")
+Id = "bakery"
+DisplayName = "bakery"
+Match = PackedStringArray("bakery")
+Tags = PackedStringArray("retail")
+Offers = PackedStringArray("breakfast", "lunch")
+Opens = 6.0
+Closes = 15.0
+OpenDays = 63
+Capacity = 6
+Roles = Array[ExtResource("2_script")]([SubResource("PlaceRole_1")])

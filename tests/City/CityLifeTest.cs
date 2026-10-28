@@ -1,5 +1,7 @@
 namespace DontBeLate.Tests.City;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DontBeLate.City;
 using GdUnit4;
@@ -54,6 +56,47 @@ public class CityLifeTest
         }
 
         AssertThat(ids).Contains("calm", "normal", "in_a_hurry", "crazy");
+    }
+
+    /// <summary>
+    /// Minutes of the game's traffic in the game's city: no car waits for good, and no junction stays claimed by a car
+    /// that has left it. Short lanes between junctions used to leak claims, freezing a queue and the people waiting to
+    /// cross in front of it.
+    /// </summary>
+    [TestCase]
+    public void TrafficNeverJams()
+    {
+        var style = GD.Load<ReusableGameSystems.CityGen.CityStyle>("res://content/city/city_style.tres");
+        var traffic = GD.Load<TrafficSettings>("res://content/city/traffic.tres");
+        var crowd = GD.Load<CrowdSettings>("res://content/city/crowd.tres");
+        const double dt = 1.0 / 30;
+        for (ulong seed = 1; seed <= 3; seed++)
+        {
+            var layout = ReusableGameSystems.CityGen.CityGenerator.Generate(style, seed);
+            var sim = new CityLifeSim(layout, traffic, crowd, seed) { MaxCars = 30 };
+            sim.Populate(null);
+            var still = new System.Collections.Generic.Dictionary<CarState, double>();
+            for (int i = 0; i < 30 * 240; i++)
+            {
+                sim.Step(dt, i * dt, null);
+                foreach (var car in sim.Cars)
+                {
+                    still[car] = car.Speed < 0.05f ? still.GetValueOrDefault(car) + dt : 0;
+                    AssertFloat((float)still[car]).OverrideFailureMessage($"car {car.Id} stuck on lane {car.Lane} in city {seed}").IsLess(90f);
+                }
+
+                if (i % 30 == 0)
+                {
+                    foreach (var lane in layout.Lanes.Lanes)
+                    {
+                        if (sim.IsClaimed(lane.Id))
+                        {
+                            AssertBool(sim.Cars.Any(c => c.Claimed == lane.Id)).OverrideFailureMessage($"junction path {lane.Id} claimed by nobody in city {seed}").IsTrue();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     [TestCase]
@@ -181,7 +224,14 @@ public class CityLifeTest
         var life = scene.GetNode<CitySimulation>("Stage/Life");
         var sim = life.Sim!;
         AssertInt(sim.Cars.Count).IsGreater(10);
-        AssertInt(sim.Walkers.Count).IsGreater(15);
+        // Passers-by fill up to the crowd's count; the town's own people (citizens) come on top.
+        int passersBy = 0;
+        foreach (var walker in sim.Walkers)
+        {
+            passersBy += walker.Owner == null ? 1 : 0;
+        }
+
+        AssertInt(passersBy).IsGreaterEqual(sim.MaxWalkers - 2);
         AssertInt(scene.GetNode<TrafficSpawner>("Stage/Life/Traffic").ShownCount).IsEqual(sim.Cars.Count);
         AssertInt(scene.GetNode<CrowdSpawner>("Stage/Life/Crowd").ShownCount).IsEqual(sim.Walkers.Count);
 

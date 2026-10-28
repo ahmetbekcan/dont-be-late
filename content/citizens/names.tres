@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CitizenNames" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Citizens/CitizenNames.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+FirstNames = PackedStringArray("Ada", "Ali", "Amara", "Ben", "Bilal", "Carla", "Chen", "Dara", "Deniz", "Eli", "Elif", "Emre", "Fatma", "Finn", "Gina", "Hana", "Hugo", "Ines", "Ivan", "Jade", "Jonas", "Kai", "Kemal", "Lea", "Leo", "Lina", "Luca", "Maya", "Mehmet", "Mia", "Nadia", "Noah", "Olga", "Omar", "Pia", "Raj", "Rosa", "Sam", "Sara", "Selin", "Tariq", "Tom", "Uma", "Vera", "Yusuf", "Zeynep", "Zoe")
+LastNames = PackedStringArray("Abbott", "Aydin", "Baker", "Brown", "Celik", "Costa", "Demir", "Diaz", "Evans", "Fischer", "Garcia", "Gray", "Hill", "Ito", "Jansen", "Kaya", "Khan", "Kim", "Lopez", "Moreau", "Novak", "Nowak", "Okafor", "Ortiz", "Patel", "Rossi", "Sahin", "Silva", "Smith", "Tanaka", "Yilmaz")
