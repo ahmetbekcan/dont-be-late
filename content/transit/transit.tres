@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TransitSettings" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/Transit/TransitSettings.cs" id="1_transit"]
+[ext_resource type="Resource" path="res://content/city/cars/bus.tres" id="2_bus"]
+
+[resource]
+script = ExtResource("1_transit")
+Lines = 2
+LineNames = PackedStringArray("Number 9", "Number 12")
+StopLandmarks = PackedStringArray("bus_stop")
+StopSpacing = 110.0
+Headway = 10.0
+ServiceStart = 6.0
+ServiceEnd = 23.0
+Speed = 7.0
+Dwell = 20.0
+Vehicle = ExtResource("2_bus")

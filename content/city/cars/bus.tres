@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CarModel" format=3]
+
+[ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CarModel.cs" id="1_car"]
+
+[resource]
+script = ExtResource("1_car")
+Id = "bus"
+CollisionSize = Vector3(2.5, 3.1, 10.5)
+CollisionCenter = Vector3(0, 1.55, 0)
+Size = Vector3(2.5, 3.1, 10.5)
+BodyColor = Color(0.96, 0.72, 0.18, 1)
+CabinLength = 0.95
