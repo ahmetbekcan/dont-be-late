@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="CarModel" format=3]
 
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CarModel.cs" id="1_car"]
+[ext_resource type="PackedScene" uid="uid://dyneumsuuok7k" path="res://assets/models/cars/sedan.glb" id="2_model"]
 
 [resource]
 script = ExtResource("1_car")
 Id = "sedan"
-CollisionSize = Vector3(1.8, 1.75, 4.4)
-CollisionCenter = Vector3(0, 0.875, 0)
-Size = Vector3(1.8, 1.75, 4.4)
+Scene = ExtResource("2_model")
+CollisionSize = Vector3(1.75, 1.7, 4.4)
+CollisionCenter = Vector3(0, 0.85, 0)
+Size = Vector3(1.75, 1.7, 4.4)
 BodyColor = Color(0.3, 0.55, 0.95, 1)
 CabinLength = 0.46
 WheelSize = 0.62
