@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="CarModel" format=3]
 
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CarModel.cs" id="1_car"]
+[ext_resource type="PackedScene" uid="uid://c8ryjkhr1tv3" path="res://assets/models/cars/hatchback.glb" id="2_model"]
 
 [resource]
 script = ExtResource("1_car")
 Id = "hatchback"
-CollisionSize = Vector3(1.75, 1.75, 3.9)
-CollisionCenter = Vector3(0, 0.875, 0)
-Size = Vector3(1.75, 1.75, 3.9)
+Scene = ExtResource("2_model")
+CollisionSize = Vector3(1.95, 1.77, 3.9)
+CollisionCenter = Vector3(0, 0.885, 0)
+Size = Vector3(1.95, 1.77, 3.9)
 BodyColor = Color(0.92, 0.3, 0.3, 1)
 CabinLength = 0.5
 WheelSize = 0.6
