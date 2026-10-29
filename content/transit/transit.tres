@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/Transit/TransitSettings.cs" id="1_transit"]
 [ext_resource type="Resource" path="res://content/city/cars/bus.tres" id="2_bus"]
+[ext_resource type="PackedScene" path="res://scenes/props/city/bus_stop.tscn" id="3_stop"]
 
 [resource]
 script = ExtResource("1_transit")
@@ -15,3 +16,4 @@ ServiceEnd = 23.0
 Speed = 7.0
 Dwell = 20.0
 Vehicle = ExtResource("2_bus")
+StopScene = ExtResource("3_stop")

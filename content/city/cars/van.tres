@@ -5,8 +5,12 @@
 [resource]
 script = ExtResource("1_car")
 Id = "van"
-CollisionSize = Vector3(1.9, 2.0, 4.4)
-CollisionCenter = Vector3(0, 1.0, 0)
-Size = Vector3(1.9, 2.0, 4.4)
+CollisionSize = Vector3(1.9, 2.05, 4.6)
+CollisionCenter = Vector3(0, 1.025, 0)
+Size = Vector3(1.9, 2.05, 4.6)
 BodyColor = Color(0.95, 0.95, 0.95, 1)
 CabinLength = 0.75
+WheelSize = 0.66
+BodyBottom = 0.2
+SillHeight = 1.0
+DriverSeat = Vector3(0, 0.15, 0)

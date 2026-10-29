@@ -6,6 +6,7 @@ using DontBeLate.City;
 using GdUnit4;
 using Godot;
 using ReusableGameSystems.CityGen;
+using ReusableGameSystems.CityLife;
 using ReusableGameSystems.Tests;
 using ReusableGameSystems.Transit;
 using static GdUnit4.Assertions;
@@ -53,6 +54,32 @@ public class BusLinesTest
             var sim = transit.Sim!;
             AssertInt(sim.Lines.Count).IsEqual(2);
 
+            // A shelter at every stop that isn't the bus stop landmark already, square to the road; a bay painted at each.
+            int generated = sim.Stops.Count(s => s.Landmark == null && s.Lines.Count > 0);
+            var shelters = transit.StopsNode!.GetChildren().OfType<Node3D>().Where(n => n.Name.ToString().StartsWith("Stop")).ToList();
+            AssertInt(shelters.Count).IsEqual(generated);
+            AssertObject(transit.StopsNode.GetNodeOrNull("Bays")).IsNotNull();
+            foreach (var shelter in shelters)
+            {
+                var placed = sim.Stops.First(s => $"Stop{s.Id}" == shelter.Name.ToString());
+                var lane = sim.Layout.Lanes.Lanes[placed.Kerb.Lane];
+                lane.PointAt(placed.Kerb.Distance, out var along);
+                AssertFloat(Mathf.Abs(placed.Facing.Dot(along))).IsLess(0.01f);
+                AssertBool(shelter.GlobalBasis.IsEqualApprox(CityLayout.FacingBasis(placed.Facing))).IsTrue();
+            }
+
+            // No parking in the bays: buses pull in to the kerb.
+            var parking = scene.GetNode<CitySimulation>("Stage/Life").Sim!.Parking;
+            foreach (var placed in sim.Stops.Where(s => s.Lines.Count > 0))
+            {
+                var (from, to) = sim.Bay(placed);
+                foreach (var spot in sim.Layout.Parking.Where(p => p.Lane == placed.Kerb.Lane && p.Distance > from && p.Distance < to))
+                {
+                    AssertBool(parking.IsClosed(spot.Id)).IsTrue();
+                    AssertBool(parking.CarAt(spot.Id, out _, out _)).IsFalse();
+                }
+            }
+
             // Wait at a stop on the pavement: a bus comes along.
             var stop = sim.Lines[0].Stops[1];
             var player = scene.GetNode<Node3D>("Player");
@@ -64,6 +91,22 @@ public class BusLinesTest
             }
 
             AssertInt(sim.ShownCount).OverrideFailureMessage($"no bus in a minute (next due in {wait:0} s)").IsGreater(0);
+
+            // The phone's Buses app: this stop and the next buses of each line.
+            var phone = scene.GetNode<ReusableGameSystems.Phone.PhoneScreen>("Phone");
+            scene.GetNode<ReusableGameSystems.Items.HotbarHolder>("Player/Hotbar").Select(0);
+            await runner.Step(10);
+            AssertBool(phone.OpenApp("buses")).IsTrue();
+            await runner.Step(5);
+            var app = (DontBeLate.PhoneApps.BusesAppView)phone.CurrentView!;
+            AssertObject(app.Stop).IsSame(sim.NearestStop(CityLayout.ToPlan(player.GlobalPosition)));
+            AssertInt(app.LineLabels.Count).IsEqual(app.Stop!.Lines.Count);
+            foreach (var label in app.LineLabels)
+            {
+                AssertString(label.Text).IsNotEmpty();
+            }
+
+            AssertString(app.Headline).StartsWith(app.Stop.Name);
         }
         finally
         {

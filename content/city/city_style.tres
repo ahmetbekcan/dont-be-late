@@ -45,11 +45,13 @@
 script = ExtResource("2_grid")
 Columns = 4
 Rows = 4
-BlockSizeMin = 42.0
-BlockSizeMax = 60.0
+BlockSizeMin = 46.4
+BlockSizeMax = 64.4
 MaxTiltDegrees = 3.0
 StreetWidth = 8.0
 MainRoadWidth = 11.0
+StreetParking = 2.2
+MainRoadParking = 2.2
 MainRoadsPerAxis = 1
 DropChance = 0.15
 

@@ -10,3 +10,6 @@ CollisionCenter = Vector3(0, 1.55, 0)
 Size = Vector3(2.5, 3.1, 10.5)
 BodyColor = Color(0.96, 0.72, 0.18, 1)
 CabinLength = 0.95
+WheelSize = 1.0
+BodyBottom = 0.35
+SillHeight = 1.25

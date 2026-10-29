@@ -1,14 +1,18 @@
 using System.Collections.Generic;
 using DontBeLate.Stages;
 using Godot;
+using ReusableGameSystems.CityGen;
+using ReusableGameSystems.CityLife;
 using ReusableGameSystems.Clock;
 using ReusableGameSystems.Phone;
+using ReusableGameSystems.Transit;
 
 namespace DontBeLate.PhoneApps;
 
 /// <summary>
-/// Live bus times from the street's <see cref="BusService"/>: each bus, when it leaves, when it gets you to work,
-/// whether that's on time, and how long until it comes (or that it's gone).
+/// Live bus times. On the street (<see cref="BusService"/>): each bus, when it leaves, when it gets you to work,
+/// whether that's on time, and how long until it comes (or that it's gone). In a generated town
+/// (<see cref="TransitLife"/>): the stop nearest you and the next buses of each line calling there.
 /// </summary>
 public partial class BusesAppView : PhoneAppView
 {
@@ -23,6 +27,18 @@ public partial class BusesAppView : PhoneAppView
 
     public string Headline => _headline.Text;
 
+    /// <summary>The stop shown in a generated town, or null.</summary>
+    public TransitStop? Stop { get; private set; }
+
+    /// <summary>Next buses shown per line at <see cref="Stop"/>, a line each (for tests).</summary>
+    public IReadOnlyList<Label> LineLabels => _lines;
+
+    private readonly List<Label> _lines = new();
+    private VBoxContainer? _list;
+
+    /// <summary>How many coming buses to list per line.</summary>
+    private const int Upcoming = 3;
+
     public override void OnOpened()
     {
         var list = AddList();
@@ -31,6 +47,13 @@ public partial class BusesAppView : PhoneAppView
         var buses = BusService.Current;
         if (buses == null)
         {
+            _list = list;
+            if (TransitLife.Current?.Sim != null)
+            {
+                RefreshTown();
+                return;
+            }
+
             _headline.Text = "No bus stop nearby.";
             return;
         }
@@ -78,6 +101,12 @@ public partial class BusesAppView : PhoneAppView
     /// <summary>Recomputes every line from the clock.</summary>
     public void Refresh()
     {
+        if (BusService.Current == null && TransitLife.Current?.Sim != null)
+        {
+            RefreshTown();
+            return;
+        }
+
         if (BusService.Current is not { } buses || GameClock.Instance is not { } clock)
         {
             return;
@@ -98,6 +127,75 @@ public partial class BusesAppView : PhoneAppView
             : next > last
                 ? "No bus gets you there by " + timetable.WorkStarts + "."
                 : $"Next: {timetable.Arrivals[next]}, {Until(now, timetable.Arrivals[next])}";
+    }
+
+    /// <summary>The stop nearest you in a generated town and the next buses of each line there.</summary>
+    private void RefreshTown()
+    {
+        if (TransitLife.Current is not { Sim: { } sim } transit || _list == null)
+        {
+            return;
+        }
+
+        var target = CitySimulation.Current?.Target;
+        var here = target != null && IsInstanceValid(target) ? CityLayout.ToPlan(target.GlobalPosition) : Vector2.Zero;
+        var stop = sim.NearestStop(here);
+        if (stop == null)
+        {
+            _headline.Text = "No bus stop nearby.";
+            return;
+        }
+
+        // Moved to another stop: new cards.
+        if (stop != Stop)
+        {
+            Stop = stop;
+            foreach (var label in _lines)
+            {
+                label.GetParent()?.QueueFree();
+            }
+
+            _lines.Clear();
+            foreach (var line in stop.Lines)
+            {
+                var card = AddCard(_list);
+                var index = line.IndexOf(stop);
+                var towards = index + 1 < line.Stops.Count ? line.Stops[^1].Name : line.Stops[0].Name;
+                AddLabel(card, $"{line.Name} to {towards}", PhoneScreen.BigVariation);
+                _lines.Add(AddLabel(card, "", PhoneScreen.AccentVariation));
+            }
+        }
+
+        double now = transit.Time;
+        _headline.Text = $"{stop.Name}, {Mathf.RoundToInt(here.DistanceTo(stop.WaitPosition) / 10) * 10} m away";
+        for (int i = 0; i < stop.Lines.Count && i < _lines.Count; i++)
+        {
+            var line = stop.Lines[i];
+            int index = line.IndexOf(stop);
+            bool atStop = false;
+            foreach (var bus in sim.Shown)
+            {
+                atStop |= bus.Line == line && bus.Stop == stop && !double.IsNaN(bus.LeavesAt);
+            }
+
+            var times = new List<string>();
+            double after = now;
+            for (int n = 0; n < Upcoming; n++)
+            {
+                double next = line.NextAt(index, after);
+                if (double.IsPositiveInfinity(next))
+                {
+                    break;
+                }
+
+                var clock = new ClockTime(next % 86400);
+                int minutes = (int)System.Math.Ceiling((next - now) / 60.0);
+                times.Add(n == 0 ? $"{clock} ({(minutes <= 0 ? "now" : $"in {minutes} min")})" : clock.ToString());
+                after = next + 1;
+            }
+
+            _lines[i].Text = atStop ? "At the stop!" : times.Count > 0 ? string.Join("  ·  ", times) : "No more buses today.";
+        }
     }
 
     private static string StatusOf(BusTimetable timetable, int bus, ClockTime now, BusPhase phase) => phase switch

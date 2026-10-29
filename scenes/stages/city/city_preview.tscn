@@ -32,6 +32,7 @@
 [ext_resource type="Resource" path="res://content/phone/apps/map.tres" id="30_app_map"]
 [ext_resource type="Resource" path="res://content/phone/apps/weather.tres" id="31_app_wx"]
 [ext_resource type="Resource" path="res://content/phone/apps/messages.tres" id="32_app_msg"]
+[ext_resource type="Resource" path="res://content/phone/apps/buses.tres" id="33_app_buses"]
 [ext_resource type="Script" path="res://addons/ReusableGameSystems/CityLife/CitySimulation.cs" id="40_life"]
 [ext_resource type="Resource" path="res://content/city/traffic.tres" id="41_traffic"]
 [ext_resource type="Resource" path="res://content/city/crowd.tres" id="42_crowd"]
@@ -257,7 +258,7 @@ CellSize = Vector2(58, 58)
 
 [node name="Phone" type="CanvasLayer" parent="." node_paths=PackedStringArray("Hotbar", "Look")]
 script = ExtResource("28_phone")
-Apps = Array[ExtResource("29_appscript")]([ExtResource("30_app_map"), ExtResource("31_app_wx"), ExtResource("32_app_msg")])
+Apps = Array[ExtResource("29_appscript")]([ExtResource("30_app_map"), ExtResource("33_app_buses"), ExtResource("31_app_wx"), ExtResource("32_app_msg")])
 Hotbar = NodePath("../Player/Hotbar")
 Look = NodePath("../Player/MouseLook")
 DayText = "Any day"

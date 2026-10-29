@@ -5,8 +5,11 @@
 [resource]
 script = ExtResource("1_car")
 Id = "sedan"
-CollisionSize = Vector3(1.8, 1.45, 4.2)
-CollisionCenter = Vector3(0, 0.725, 0)
-Size = Vector3(1.8, 1.45, 4.2)
+CollisionSize = Vector3(1.8, 1.75, 4.4)
+CollisionCenter = Vector3(0, 0.875, 0)
+Size = Vector3(1.8, 1.75, 4.4)
 BodyColor = Color(0.3, 0.55, 0.95, 1)
 CabinLength = 0.46
+WheelSize = 0.62
+BodyBottom = 0.18
+SillHeight = 0.95
